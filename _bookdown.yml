@@ -1,0 +1,9 @@
+rmd_files: [
+  "index.Rmd",
+  "01-intro.Rmd",
+  "02-literature.Rmd",
+  "../module-1-git/module-1-git.Rmd",
+  "../module-3-multi/samplemultiembedJuly.Rmd",
+  "../module-5-optimization/OptimizationModule.Rmd"
+  ]
+delete_merged_file: true
