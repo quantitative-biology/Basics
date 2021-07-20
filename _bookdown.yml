@@ -5,6 +5,7 @@ rmd_files: [
   "02-literature.Rmd",
   "07-try.Rmd",
   "../module-1-git/module-1-git.Rmd",
+  "../module-1-git/module-1-git-advanced.Rmd",
   "../module-3-multi/samplemultiembedJuly.Rmd",
   "../module-5-optimization/OptimizationModule.Rmd"
   ]
