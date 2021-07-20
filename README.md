@@ -10,6 +10,8 @@ In R,
 bookdown::render_book("index.Rmd", "bookdown::gitbook")
 ```
 
+If you get errors such as it not finding an `.Rmd` file, then make sure you've updated (`git fetch` and `git rebase`) for each separate repository called `module-X-...`. 
+
 You'll need to install some R packages for some of the modules, so check the error messages you get.
 
 We should list all required packages in `preamble.Rmd` so that are all loaded up front (and give errors straight away if they need installing).
