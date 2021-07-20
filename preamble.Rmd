@@ -1,0 +1,17 @@
+```{r echo = FALSE}
+
+# We should list the required packages here, it's best to load them up front.
+# library(...)
+
+# From  https://bookdown.org/yihui/rmarkdown-cookbook/font-color.html
+#  to then say `r colorize("some words in red", "red")` etc. ("red" is the
+#  default so you don't need to say that.
+colorize <- function(x, color = "red") {
+  if (knitr::is_latex_output()) {
+    sprintf("\\textcolor{%s}{%s}", color, x)
+  } else if (knitr::is_html_output()) {
+    sprintf("<span style='color: %s;'>%s</span>", color,
+      x)
+  } else x
+}
+```
