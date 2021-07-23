@@ -6,6 +6,7 @@ rmd_files: [
   "../module-1-git/module-1-git.Rmd",
   "../module-1-git/module-1-git-intro.Rmd",
   "../module-1-git/module-1-git-advanced.Rmd",
+  "../module-2-rmarkdown/module-2-rmarkdown.Rmd",
   "../module-3-multi/samplemultiembedJuly.Rmd",
   "../module-5-optimization/OptimizationModule.Rmd"
   ]
