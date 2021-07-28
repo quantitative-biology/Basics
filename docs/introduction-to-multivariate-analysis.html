@@ -1,0 +1,1766 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>6 Introduction to multivariate analysis | Further Git and GitHub</title>
+  <meta name="description" content="This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook." />
+  <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="6 Introduction to multivariate analysis | Further Git and GitHub" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook." />
+  <meta name="github-repo" content="rstudio/bookdown-demo" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="6 Introduction to multivariate analysis | Further Git and GitHub" />
+  
+  <meta name="twitter:description" content="This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook." />
+  
+
+<meta name="author" content="Andrew Edwards" />
+
+
+<meta name="date" content="2021-05-07" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="introduction-to-r-markdown.html"/>
+<link rel="next" href="optimization.html"/>
+<script src="libs/header-attrs-2.7/header-attrs.js"></script>
+<script src="libs/jquery-3.5.1/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+<script src="libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
+<link href="libs/bsTable-3.3.7/bootstrapTable.min.css" rel="stylesheet" />
+<script src="libs/bsTable-3.3.7/bootstrapTable.js"></script>
+<script src="libs/htmlwidgets-1.5.3/htmlwidgets.js"></script>
+<script src="libs/plotly-binding-4.9.4/plotly.js"></script>
+<script src="libs/typedarray-0.1/typedarray.min.js"></script>
+<link href="libs/crosstalk-1.1.1/css/crosstalk.css" rel="stylesheet" />
+<script src="libs/crosstalk-1.1.1/js/crosstalk.min.js"></script>
+<link href="libs/plotly-htmlwidgets-css-1.57.1/plotly-htmlwidgets.css" rel="stylesheet" />
+<script src="libs/plotly-main-1.57.1/plotly-latest.min.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Prerequisites</a></li>
+<li class="chapter" data-level="2" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>2</b> Introduction</a></li>
+<li class="chapter" data-level="3" data-path="literature.html"><a href="literature.html"><i class="fa fa-check"></i><b>3</b> Literature</a></li>
+<li class="chapter" data-level="4" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html"><i class="fa fa-check"></i><b>4</b> Introduction to Git and GitHub</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#motivation"><i class="fa fa-check"></i><b>4.1</b> Motivation</a></li>
+<li class="chapter" data-level="4.2" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#getting-set-up-for-the-first-time"><i class="fa fa-check"></i><b>4.2</b> Getting set up for the first time</a>
+<ul>
+<li class="chapter" data-level="4.2.1" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#what-you-will-end-up-having-installed"><i class="fa fa-check"></i><b>4.2.1</b> What you will end up having installed</a></li>
+<li class="chapter" data-level="4.2.2" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#get-a-github-account"><i class="fa fa-check"></i><b>4.2.2</b> Get a GitHub account</a></li>
+<li class="chapter" data-level="4.2.3" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#text-editor"><i class="fa fa-check"></i><b>4.2.3</b> Text Editor</a></li>
+<li class="chapter" data-level="4.2.4" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#install-the-git-application-on-your-machine"><i class="fa fa-check"></i><b>4.2.4</b> Install the Git application on your machine</a></li>
+<li class="chapter" data-level="4.2.5" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#git-shell"><i class="fa fa-check"></i><b>4.2.5</b> Git shell</a></li>
+<li class="chapter" data-level="4.2.6" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#git-shell-rstudio"><i class="fa fa-check"></i><b>4.2.6</b> Git shell, RStudio</a></li>
+<li class="chapter" data-level="4.2.7" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#powershell-and-posh-git"><i class="fa fa-check"></i><b>4.2.7</b> Powershell and posh-git</a></li>
+<li class="chapter" data-level="4.2.8" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#one-time-authentication"><i class="fa fa-check"></i><b>4.2.8</b> One-time authentication</a></li>
+<li class="chapter" data-level="4.2.9" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#configure-the-git-application"><i class="fa fa-check"></i><b>4.2.9</b> Configure the Git application</a></li>
+<li class="chapter" data-level="4.2.10" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#install-the-difftool"><i class="fa fa-check"></i><b>4.2.10</b> Install the difftool</a></li>
+<li class="chapter" data-level="4.2.11" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#cloning-the-git-course-repository"><i class="fa fa-check"></i><b>4.2.11</b> “Cloning” the git-course repository</a></li>
+<li class="chapter" data-level="4.2.12" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#copy-the-.gitignore-file"><i class="fa fa-check"></i><b>4.2.12</b> Copy the <em>.gitignore</em> file</a></li>
+<li class="chapter" data-level="4.2.13" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#edit-the-.gitconfig-file"><i class="fa fa-check"></i><b>4.2.13</b> Edit the <em>.gitconfig</em> file</a></li>
+<li class="chapter" data-level="4.2.14" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#mac-only-make-your-output-pretty"><i class="fa fa-check"></i><b>4.2.14</b> MAC only: make your output pretty</a></li>
+<li class="chapter" data-level="4.2.15" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#markdown-pad"><i class="fa fa-check"></i><b>4.2.15</b> Markdown Pad</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#using-git-and-github"><i class="fa fa-check"></i><b>4.3</b> Using Git and GitHub</a>
+<ul>
+<li class="chapter" data-level="4.3.1" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#definitions"><i class="fa fa-check"></i><b>4.3.1</b> Definitions</a></li>
+<li class="chapter" data-level="4.3.2" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#creating-a-new-repository"><i class="fa fa-check"></i><b>4.3.2</b> Creating a new repository</a></li>
+<li class="chapter" data-level="4.3.3" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#cloning-your-new-repository"><i class="fa fa-check"></i><b>4.3.3</b> Cloning your new repository</a></li>
+<li class="chapter" data-level="4.3.4" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#committing"><i class="fa fa-check"></i><b>4.3.4</b> Committing</a></li>
+<li class="chapter" data-level="4.3.5" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#exercise-1-create-edit-and-commit-simpletext.txt"><i class="fa fa-check"></i><b>4.3.5</b> Exercise 1: create, edit and commit <em>simpleText.txt</em></a></li>
+<li class="chapter" data-level="4.3.6" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#exercise-2-multiple-files"><i class="fa fa-check"></i><b>4.3.6</b> Exercise 2: multiple files</a></li>
+<li class="chapter" data-level="4.3.7" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#collaborating"><i class="fa fa-check"></i><b>4.3.7</b> Collaborating</a></li>
+<li class="chapter" data-level="4.3.8" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#exercise-3-collaborating-on-a-single-repository"><i class="fa fa-check"></i><b>4.3.8</b> Exercise 3: collaborating on a single repository</a></li>
+</ul></li>
+<li class="chapter" data-level="4.4" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#beyond-the-basics"><i class="fa fa-check"></i><b>4.4</b> Beyond the basics</a>
+<ul>
+<li class="chapter" data-level="4.4.1" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#workflow-tips"><i class="fa fa-check"></i><b>4.4.1</b> Workflow tips</a></li>
+<li class="chapter" data-level="4.4.2" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#so-ive-made-some-changes-but-dont-really-want-to-keep-them-git-stash"><i class="fa fa-check"></i><b>4.4.2</b> So I’ve made some changes but don’t really want to keep them – git stash</a></li>
+<li class="chapter" data-level="4.4.3" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#pull-requests"><i class="fa fa-check"></i><b>4.4.3</b> Pull requests</a></li>
+<li class="chapter" data-level="4.4.4" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#the-power-to-go-back"><i class="fa fa-check"></i><b>4.4.4</b> The power to go back</a></li>
+<li class="chapter" data-level="4.4.5" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#so-how-does-git-do-all-this"><i class="fa fa-check"></i><b>4.4.5</b> So how does Git do all this?</a></li>
+<li class="chapter" data-level="4.4.6" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#git-terminology"><i class="fa fa-check"></i><b>4.4.6</b> Git terminology</a></li>
+<li class="chapter" data-level="4.4.7" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#branching"><i class="fa fa-check"></i><b>4.4.7</b> Branching</a></li>
+<li class="chapter" data-level="4.4.8" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#undoing-stuff"><i class="fa fa-check"></i><b>4.4.8</b> Undoing stuff</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="introduction-to-r-markdown.html"><a href="introduction-to-r-markdown.html"><i class="fa fa-check"></i><b>5</b> Introduction to R Markdown</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="introduction-to-r-markdown.html"><a href="introduction-to-r-markdown.html#motivation-1"><i class="fa fa-check"></i><b>5.1</b> Motivation</a></li>
+<li class="chapter" data-level="5.2" data-path="introduction-to-r-markdown.html"><a href="introduction-to-r-markdown.html#basic-idea"><i class="fa fa-check"></i><b>5.2</b> Basic idea</a></li>
+<li class="chapter" data-level="5.3" data-path="introduction-to-r-markdown.html"><a href="introduction-to-r-markdown.html#simple-example"><i class="fa fa-check"></i><b>5.3</b> Simple example</a>
+<ul>
+<li class="chapter" data-level="5.3.1" data-path="introduction-to-r-markdown.html"><a href="introduction-to-r-markdown.html#exercise"><i class="fa fa-check"></i><b>5.3.1</b> Exercise</a></li>
+</ul></li>
+<li class="chapter" data-level="5.4" data-path="introduction-to-r-markdown.html"><a href="introduction-to-r-markdown.html#output-format"><i class="fa fa-check"></i><b>5.4</b> Output format</a></li>
+<li class="chapter" data-level="5.5" data-path="introduction-to-r-markdown.html"><a href="introduction-to-r-markdown.html#further-reading"><i class="fa fa-check"></i><b>5.5</b> Further reading</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="introduction-to-multivariate-analysis.html"><a href="introduction-to-multivariate-analysis.html"><i class="fa fa-check"></i><b>6</b> Introduction to multivariate analysis</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="introduction-to-multivariate-analysis.html"><a href="introduction-to-multivariate-analysis.html#multivariate-resemblance"><i class="fa fa-check"></i><b>6.1</b> Multivariate resemblance</a>
+<ul>
+<li class="chapter" data-level="6.1.1" data-path="introduction-to-multivariate-analysis.html"><a href="introduction-to-multivariate-analysis.html#binary-similarity-metrics"><i class="fa fa-check"></i><b>6.1.1</b> Binary Similarity metrics</a></li>
+<li class="chapter" data-level="6.1.2" data-path="introduction-to-multivariate-analysis.html"><a href="introduction-to-multivariate-analysis.html#quantitative-similarity-dissimilarity-metrics"><i class="fa fa-check"></i><b>6.1.2</b> Quantitative similarity &amp; dissimilarity metrics</a></li>
+<li class="chapter" data-level="6.1.3" data-path="introduction-to-multivariate-analysis.html"><a href="introduction-to-multivariate-analysis.html#comparing-more-than-two-communitiessamplessitesgenesspecies"><i class="fa fa-check"></i><b>6.1.3</b> Comparing more than two communities/samples/sites/genes/species</a></li>
+<li class="chapter" data-level="6.1.4" data-path="introduction-to-multivariate-analysis.html"><a href="introduction-to-multivariate-analysis.html#r-functions"><i class="fa fa-check"></i><b>6.1.4</b> R functions</a></li>
+</ul></li>
+<li class="chapter" data-level="6.2" data-path="introduction-to-multivariate-analysis.html"><a href="introduction-to-multivariate-analysis.html#cluster-analysis"><i class="fa fa-check"></i><b>6.2</b> Cluster Analysis</a>
+<ul>
+<li class="chapter" data-level="6.2.1" data-path="introduction-to-multivariate-analysis.html"><a href="introduction-to-multivariate-analysis.html#hierarchical-clustering-groups-are-nested-within-other-groups."><i class="fa fa-check"></i><b>6.2.1</b> Hierarchical clustering: groups are nested within other groups.</a></li>
+<li class="chapter" data-level="6.2.2" data-path="introduction-to-multivariate-analysis.html"><a href="introduction-to-multivariate-analysis.html#r-functions-1"><i class="fa fa-check"></i><b>6.2.2</b> R functions</a></li>
+<li class="chapter" data-level="6.2.3" data-path="introduction-to-multivariate-analysis.html"><a href="introduction-to-multivariate-analysis.html#how-many-clusters"><i class="fa fa-check"></i><b>6.2.3</b> How many clusters?</a></li>
+<li class="chapter" data-level="6.2.4" data-path="introduction-to-multivariate-analysis.html"><a href="introduction-to-multivariate-analysis.html#other-clustering-methods"><i class="fa fa-check"></i><b>6.2.4</b> Other clustering methods</a></li>
+<li class="chapter" data-level="6.2.5" data-path="introduction-to-multivariate-analysis.html"><a href="introduction-to-multivariate-analysis.html#exercise-cluster-analysis-of-isotope-data"><i class="fa fa-check"></i><b>6.2.5</b> Exercise: Cluster analysis of isotope data</a></li>
+</ul></li>
+<li class="chapter" data-level="6.3" data-path="introduction-to-multivariate-analysis.html"><a href="introduction-to-multivariate-analysis.html#ordination"><i class="fa fa-check"></i><b>6.3</b> Ordination</a>
+<ul>
+<li class="chapter" data-level="6.3.1" data-path="introduction-to-multivariate-analysis.html"><a href="introduction-to-multivariate-analysis.html#principal-components-analysis-pca"><i class="fa fa-check"></i><b>6.3.1</b> Principal Components Analysis (PCA)</a></li>
+<li class="chapter" data-level="6.3.2" data-path="introduction-to-multivariate-analysis.html"><a href="introduction-to-multivariate-analysis.html#exercise-pca-on-the-iris-data"><i class="fa fa-check"></i><b>6.3.2</b> Exercise: PCA on the iris data</a></li>
+<li class="chapter" data-level="6.3.3" data-path="introduction-to-multivariate-analysis.html"><a href="introduction-to-multivariate-analysis.html#principle-coordinates-analysis-pcoa"><i class="fa fa-check"></i><b>6.3.3</b> Principle Coordinates Analysis (PCoA)</a></li>
+<li class="chapter" data-level="6.3.4" data-path="introduction-to-multivariate-analysis.html"><a href="introduction-to-multivariate-analysis.html#nonmetric-multidimensional-scaling-nmds"><i class="fa fa-check"></i><b>6.3.4</b> Nonmetric Multidimensional Scaling (NMDS)</a></li>
+<li class="chapter" data-level="6.3.5" data-path="introduction-to-multivariate-analysis.html"><a href="introduction-to-multivariate-analysis.html#exercise-ordination"><i class="fa fa-check"></i><b>6.3.5</b> Exercise: Ordination</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="optimization.html"><a href="optimization.html"><i class="fa fa-check"></i><b>7</b> Optimization</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="optimization.html"><a href="optimization.html#introduction"><i class="fa fa-check"></i><b>7.1</b> Introduction</a></li>
+<li class="chapter" data-level="7.2" data-path="optimization.html"><a href="optimization.html#fundamentals-of-optimization"><i class="fa fa-check"></i><b>7.2</b> Fundamentals of Optimization</a>
+<ul>
+<li class="chapter" data-level="7.2.1" data-path="optimization.html"><a href="optimization.html#fermats-theorem"><i class="fa fa-check"></i><b>7.2.1</b> Fermat’s Theorem</a></li>
+</ul></li>
+<li class="chapter" data-level="7.3" data-path="optimization.html"><a href="optimization.html#regression"><i class="fa fa-check"></i><b>7.3</b> Regression</a>
+<ul>
+<li class="chapter" data-level="7.3.1" data-path="optimization.html"><a href="optimization.html#linear-regression"><i class="fa fa-check"></i><b>7.3.1</b> Linear Regression</a></li>
+<li class="chapter" data-level="7.3.2" data-path="optimization.html"><a href="optimization.html#nonlinear-regression"><i class="fa fa-check"></i><b>7.3.2</b> Nonlinear Regression</a></li>
+</ul></li>
+<li class="chapter" data-level="7.4" data-path="optimization.html"><a href="optimization.html#iterative-optimization-algorithms"><i class="fa fa-check"></i><b>7.4</b> Iterative Optimization Algorithms</a>
+<ul>
+<li class="chapter" data-level="7.4.1" data-path="optimization.html"><a href="optimization.html#gradient-descent"><i class="fa fa-check"></i><b>7.4.1</b> Gradient Descent</a></li>
+</ul></li>
+<li class="chapter" data-level="7.5" data-path="optimization.html"><a href="optimization.html#calibration-of-dynamic-models"><i class="fa fa-check"></i><b>7.5</b> Calibration of Dynamic Models</a></li>
+<li class="chapter" data-level="7.6" data-path="optimization.html"><a href="optimization.html#uncertainty-analysis-and-bayesian-calibration"><i class="fa fa-check"></i><b>7.6</b> Uncertainty Analysis and Bayesian Calibration</a></li>
+<li class="chapter" data-level="7.7" data-path="optimization.html"><a href="optimization.html#references"><i class="fa fa-check"></i><b>7.7</b> References</a></li>
+</ul></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Further Git and GitHub</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="introduction-to-multivariate-analysis" class="section level1" number="6">
+<h1><span class="header-section-number">6</span> Introduction to multivariate analysis</h1>
+<p>In this module we’ll be disccusing multivariate quantitative methods. Analyses such as linear regression, where we relate a response, <em>y</em>, to a predictor variable, <em>x</em>, are univariate techniques. If we have multiple responses, <span class="math inline">\(y_1...y_n\)</span>, and multiple predictors, <span class="math inline">\(x_1...x_n\)</span>, we need multivariate approaches. For example, we may wish to understand how both precipitation and soil type are related to plant community composition. In this question, we may be tracking the abundance of over a dozen different species and many different sites with different types of soil, precipitation and other environmental factors. You can easily see that this is not a situation that ordinary univariate approaches are designed to handle!</p>
+<p>There are many types of multivariate analysis, and in this module and the next, we will only describe some of the most common ones. We can think of these different types of analysis as laying at different ends of a spectrum of treating the data as discrete vs continuous, and relying on identfying a reponse variable <em>a priori</em> versus letting the “data tell us” about explanatory features, i.e., latent variables (Fig. <a href="introduction-to-multivariate-analysis.html#fig:f1">6.1</a>.</p>
+<p><br>
+<br></p>
+<div class="figure"><span id="fig:f1"></span>
+<img src="_main_files/figure-html/f1-1.png" alt="A 4 quadrant plane titled Types of mulitvariate analysis.where the vertical axis has lables response variable at the top and latent variable at the bottom. The top left quadrant contans the text Regression in green, the bottom left contains the word Ordination in orange, the top right contains the word Classification in red, and the bottom right contains the word Clustering in blue." width="576" />
+<p class="caption">
+Figure 6.1: Types of multivariate analysis
+</p>
+</div>
+<p><br></p>
+<p><br>
+<br></p>
+<div id="multivariate-resemblance" class="section level2" number="6.1">
+<h2><span class="header-section-number">6.1</span> Multivariate resemblance</h2>
+<p>The starting point for a lot of the classic multivariate methods is to find metrics that describe how similar two individuals, samples, sites or species might be. A natural way to quantify similarity is to list those characters that are shared. For example, what genetic or morphological features are the same or different between two species? A <strong>resemblance measure</strong> quantifies similarity by adding up in some way the similarities and differences between two things. We can express the shared characters of objects as either:
+<strong>similarity (S)</strong>, which quantifies the degree of resemblance or <strong>dissimilarity (D)</strong> which quantifies the degree of difference.</p>
+<div id="binary-similarity-metrics" class="section level3" number="6.1.1">
+<h3><span class="header-section-number">6.1.1</span> Binary Similarity metrics</h3>
+<p>The simplest similarity metric just tallys the number of shared features. This is called a binary similarity metric, since we are just indicating a yes or no for each characteristic of the two things we wish to compare (Table <a href="introduction-to-multivariate-analysis.html#tab:t1">6.1</a>).
+<br>
+<br></p>
+<table style="width:50%;">
+<caption>
+<span id="tab:t1">Table 6.1: </span>List of shared attributes for two things
+</caption>
+<thead>
+<tr>
+<th style="text-align:center;">
+Attribute
+</th>
+<th style="text-align:center;">
+Object 1
+</th>
+<th style="text-align:center;">
+Object 2
+</th>
+<th style="text-align:center;">
+Similarity
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center;">
+Attribute 1
+</td>
+<td style="text-align:center;">
+1
+</td>
+<td style="text-align:center;">
+0
+</td>
+<td style="text-align:center;">
+x
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+Attribute 2
+</td>
+<td style="text-align:center;">
+0
+</td>
+<td style="text-align:center;">
+1
+</td>
+<td style="text-align:center;">
+x
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+Attribute 3
+</td>
+<td style="text-align:center;">
+0
+</td>
+<td style="text-align:center;">
+0
+</td>
+<td style="text-align:center;">
+✓
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+Attribute 4
+</td>
+<td style="text-align:center;">
+1
+</td>
+<td style="text-align:center;">
+1
+</td>
+<td style="text-align:center;">
+✓
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+Attribute 5
+</td>
+<td style="text-align:center;">
+1
+</td>
+<td style="text-align:center;">
+1
+</td>
+<td style="text-align:center;">
+✓
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+Attribute 6
+</td>
+<td style="text-align:center;">
+0
+</td>
+<td style="text-align:center;">
+0
+</td>
+<td style="text-align:center;">
+✓
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+Attribute 7
+</td>
+<td style="text-align:center;">
+0
+</td>
+<td style="text-align:center;">
+1
+</td>
+<td style="text-align:center;">
+x
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+Attribute 8
+</td>
+<td style="text-align:center;">
+0
+</td>
+<td style="text-align:center;">
+0
+</td>
+<td style="text-align:center;">
+✓
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+Attribute 9
+</td>
+<td style="text-align:center;">
+1
+</td>
+<td style="text-align:center;">
+1
+</td>
+<td style="text-align:center;">
+✓
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+Attribute 10
+</td>
+<td style="text-align:center;">
+1
+</td>
+<td style="text-align:center;">
+0
+</td>
+<td style="text-align:center;">
+x
+</td>
+</tr>
+</tbody>
+</table>
+<p>We could also use a shared <em>lack</em> of features as an indicator of similarity. The simple matching coefficient uses both shared features, and shared absent features to quantify similarity as <span class="math inline">\(S_m=\frac{a+d}{a+b+c+d}\)</span>, where <em>a</em> refers to the number of characteristics that object 1 possesses and <em>b</em> is the number that object 2 possesses and so on (see Table <a href="introduction-to-multivariate-analysis.html#tab:t2">6.2</a>).
+<br>
+<br>
+<br></p>
+<table style="width:50%; width: auto !important; " class="table table-bordered">
+<caption>
+<span id="tab:t2">Table 6.2: </span>Summary of shared and absent atributes
+</caption>
+<thead>
+<tr>
+<th style="empty-cells: hide;border-bottom:hidden;" colspan="1">
+</th>
+<th style="empty-cells: hide;border-bottom:hidden;" colspan="1">
+</th>
+<th style="border-bottom:hidden;padding-bottom:0; padding-left:3px;padding-right:3px;text-align: center; " colspan="1">
+<div style="border-bottom: 1px solid #ddd; padding-bottom: 5px; ">
+Object 1
+</div>
+</th>
+<th style="border-bottom:hidden;padding-bottom:0; padding-left:3px;padding-right:3px;text-align: center; " colspan="1">
+<div style="border-bottom: 1px solid #ddd; padding-bottom: 5px; ">
+Object 2
+</div>
+</th>
+</tr>
+<tr>
+<th style="text-align:center;">
+</th>
+<th style="text-align:center;">
+</th>
+<th style="text-align:center;">
+Present
+</th>
+<th style="text-align:center;">
+Absent
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center;font-weight: bold;">
+Object 1
+</td>
+<td style="text-align:center;font-weight: bold;">
+Present
+</td>
+<td style="text-align:center;">
+a
+</td>
+<td style="text-align:center;">
+b
+</td>
+</tr>
+<tr>
+<td style="text-align:center;font-weight: bold;">
+Object 2
+</td>
+<td style="text-align:center;font-weight: bold;">
+Absent
+</td>
+<td style="text-align:center;">
+c
+</td>
+<td style="text-align:center;">
+d
+</td>
+</tr>
+</tbody>
+</table>
+<p>We can further categorize similarity metrics as <strong>symmetric</strong>, where we regard both shared presence and shared absence as evidence of similarity, the simple matching coefficient, <span class="math inline">\(S_m\)</span> would be an example of this, or <strong>asymmetric</strong>, where we regard only shared presence as evidence of similarity (that is, we ignore shared absences).Asymmetric measures are most useful in analyzing ecological community data, since it is unlikely to be informative that two temperature zone communities lack tropical data, or that aquatic environments lack terrestrial species.</p>
+<p>The Jaccard index is an asymmetric binary similarity coefficient calculated as <span class="math inline">\(S_J=\frac{a}{a+b+c}\)</span>, while the quite similar Sørenson index is given as <span class="math inline">\(S_S=\frac{2a}{2a+b+c}\)</span>, and so gives greater weight to shared similarities. Both metrics range from 0 to 1, where a value of 1 indicates complete similarity.</p>
+<p>Let’s try an example. In the 70s, Watson (1974) compared the zooplankton species present in Lake Erie and Lake Ontario. We can use this information to compare how similar the communities in the two lakes were at this time. We can see that they shared a lot of species (Table <a href="introduction-to-multivariate-analysis.html#tab:t3">6.3</a>)!</p>
+<table style="width:50%;">
+<caption>
+<span id="tab:t3">Table 6.3: </span>Species presence and absence in lake Erie and lake Ontario (data from from Watson 1974)
+</caption>
+<thead>
+<tr>
+<th style="text-align:center;">
+species
+</th>
+<th style="text-align:center;">
+erie
+</th>
+<th style="text-align:center;">
+ontario
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center;">
+1
+</td>
+<td style="text-align:center;">
+1
+</td>
+<td style="text-align:center;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+2
+</td>
+<td style="text-align:center;">
+1
+</td>
+<td style="text-align:center;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+3
+</td>
+<td style="text-align:center;">
+1
+</td>
+<td style="text-align:center;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+4
+</td>
+<td style="text-align:center;">
+1
+</td>
+<td style="text-align:center;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+5
+</td>
+<td style="text-align:center;">
+1
+</td>
+<td style="text-align:center;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+6
+</td>
+<td style="text-align:center;">
+1
+</td>
+<td style="text-align:center;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+7
+</td>
+<td style="text-align:center;">
+1
+</td>
+<td style="text-align:center;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+8
+</td>
+<td style="text-align:center;">
+1
+</td>
+<td style="text-align:center;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+9
+</td>
+<td style="text-align:center;">
+1
+</td>
+<td style="text-align:center;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+10
+</td>
+<td style="text-align:center;">
+1
+</td>
+<td style="text-align:center;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+11
+</td>
+<td style="text-align:center;">
+1
+</td>
+<td style="text-align:center;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+12
+</td>
+<td style="text-align:center;">
+1
+</td>
+<td style="text-align:center;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+13
+</td>
+<td style="text-align:center;">
+1
+</td>
+<td style="text-align:center;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+14
+</td>
+<td style="text-align:center;">
+1
+</td>
+<td style="text-align:center;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+15
+</td>
+<td style="text-align:center;">
+1
+</td>
+<td style="text-align:center;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+16
+</td>
+<td style="text-align:center;">
+1
+</td>
+<td style="text-align:center;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+17
+</td>
+<td style="text-align:center;">
+1
+</td>
+<td style="text-align:center;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+18
+</td>
+<td style="text-align:center;">
+1
+</td>
+<td style="text-align:center;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+19
+</td>
+<td style="text-align:center;">
+1
+</td>
+<td style="text-align:center;">
+0
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+20
+</td>
+<td style="text-align:center;">
+0
+</td>
+<td style="text-align:center;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+21
+</td>
+<td style="text-align:center;">
+0
+</td>
+<td style="text-align:center;">
+0
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+22
+</td>
+<td style="text-align:center;">
+0
+</td>
+<td style="text-align:center;">
+0
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+23
+</td>
+<td style="text-align:center;">
+0
+</td>
+<td style="text-align:center;">
+0
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+24
+</td>
+<td style="text-align:center;">
+0
+</td>
+<td style="text-align:center;">
+0
+</td>
+</tr>
+</tbody>
+</table>
+<p><br></p>
+<p>We can calculate the similarity metrics quite easily using the <strong>table()</strong> function, where 1 indicates presence and 0 indicates absence. I have stored the information from Table <a href="introduction-to-multivariate-analysis.html#tab:t3">6.3</a> in the the dataframe <em>lksp</em>. I’m just going grab the presences and absences, since I don’t need the species names for my calculation.</p>
+<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb31-1"><a href="introduction-to-multivariate-analysis.html#cb31-1" aria-hidden="true" tabindex="-1"></a>tlake<span class="ot">=</span><span class="fu">table</span>(lksp[,<span class="fu">c</span>(<span class="st">&quot;erie&quot;</span>,<span class="st">&quot;ontario&quot;</span>)])</span>
+<span id="cb31-2"><a href="introduction-to-multivariate-analysis.html#cb31-2" aria-hidden="true" tabindex="-1"></a>tlake</span></code></pre></div>
+<pre><code>    ontario
+erie  1  0
+   1 18  1
+   0  1  4</code></pre>
+<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb33-1"><a href="introduction-to-multivariate-analysis.html#cb33-1" aria-hidden="true" tabindex="-1"></a>a<span class="ot">=</span>tlake[<span class="dv">1</span>,<span class="dv">1</span>]</span>
+<span id="cb33-2"><a href="introduction-to-multivariate-analysis.html#cb33-2" aria-hidden="true" tabindex="-1"></a>b<span class="ot">=</span>tlake[<span class="dv">1</span>,<span class="dv">2</span>]</span>
+<span id="cb33-3"><a href="introduction-to-multivariate-analysis.html#cb33-3" aria-hidden="true" tabindex="-1"></a>c<span class="ot">=</span>tlake[<span class="dv">2</span>,<span class="dv">1</span>]</span>
+<span id="cb33-4"><a href="introduction-to-multivariate-analysis.html#cb33-4" aria-hidden="true" tabindex="-1"></a>d<span class="ot">=</span>tlake[<span class="dv">2</span>,<span class="dv">2</span>]</span>
+<span id="cb33-5"><a href="introduction-to-multivariate-analysis.html#cb33-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb33-6"><a href="introduction-to-multivariate-analysis.html#cb33-6" aria-hidden="true" tabindex="-1"></a>S_j<span class="ot">=</span>a<span class="sc">/</span>(a<span class="sc">+</span>b<span class="sc">+</span>c)</span>
+<span id="cb33-7"><a href="introduction-to-multivariate-analysis.html#cb33-7" aria-hidden="true" tabindex="-1"></a>S_j</span></code></pre></div>
+<pre><code>[1] 0.9</code></pre>
+<div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb35-1"><a href="introduction-to-multivariate-analysis.html#cb35-1" aria-hidden="true" tabindex="-1"></a>S_s<span class="ot">=</span><span class="dv">2</span><span class="sc">*</span>a<span class="sc">/</span>(<span class="dv">2</span><span class="sc">*</span>a<span class="sc">+</span>b<span class="sc">+</span>c)</span>
+<span id="cb35-2"><a href="introduction-to-multivariate-analysis.html#cb35-2" aria-hidden="true" tabindex="-1"></a>S_s</span></code></pre></div>
+<pre><code>[1] 0.9473684</code></pre>
+<p>When a disimilarity or similarity metric has a finite range, we can simply convert from one to the other. For example, for similarities that range from 1 (identical) to 0 (completely different), dissimilarity would simply be 1-similarity.</p>
+</div>
+<div id="quantitative-similarity-dissimilarity-metrics" class="section level3" number="6.1.2">
+<h3><span class="header-section-number">6.1.2</span> Quantitative similarity &amp; dissimilarity metrics</h3>
+<p>While binary similarity metrics are easy to understand, there are a few problems. These metrics work best when we have a small number of characteristics and we have sampled very well (e.g., the zooplankton in Lake Erie and Ontario). However, these metrics are biased against maximum similarity values when we have lots of charactersitics (or species) and poor sampling.</p>
+<p>In addition, we sometimes have more information than just a “yes” or “no” which we could use to further characterize similarity. Quantiative similarity and dissimilarity metrics make use of this information. Some examples of quantitative similarity metrics are: Percentage similarity (Renkonen index), Morisita’s index of similarity (not dispersion) and Horn’s index.</p>
+<p>Quantitive dissimilarity metrics are perhaps more commonly used. In this case, we often talk about the “distance” between two things. Distances are of two types, either dissimilarity, converted from analogous similarity indices, or specific distance measures, such as Euclidean distance, which doesn’t have a counterpart in any similarity index. There are many, many such metrics, and obviously, you should choose the most accurate and meaningful distance measure for a given application. Legendre &amp; Legendre (2012) offer a key on how to select an appropriate measure for given data and problem (check their Tables 7.4-7.6). If you uncertain, then choose several distance measures and compare the results.</p>
+<p><strong>Euclidean Distance</strong></p>
+<p>Perhaps the mostly commonly used, and easiest to understand, dissimilarity, or distance, measure is Euclidian distance. This metric is zero for identical sampling units and has no fixed upper bound.</p>
+<p>Euclidean distance in multivariate space is derived from our understanding of distance in a Cartesian plane. If we had two species abundances measured in two different samples, we could then plot the abundance of species 1 and species 2 for each sample on a 2D plane, and draw a line between them. This would be our Euclidean distance: the shortest path between the two points (Fig. <a href="introduction-to-multivariate-analysis.html#fig:f2">6.2</a>).</p>
+<div class="figure"><span id="fig:f2"></span>
+<img src="_main_files/figure-html/f2-1.png" alt="" width="672" />
+<p class="caption">
+Figure 6.2: Euclidean Distance
+</p>
+</div>
+<p>We know that to calculate this distance we would just use the Pythagorean theorem as <span class="math inline">\(c=\sqrt{a^2+b^2}\)</span>. To generalize to n species we can say
+<span class="math inline">\(D^E_{jk}=\sqrt{\sum^n_{i=1}(X_{ij}-X_{ik})^2}\)</span>, where Euclidean distance between samples <em>j</em> and <em>k</em>, <span class="math inline">\(D^E_{jk}\)</span>, is calculated by summing over the distance in abundance of each of n species in the two samples.</p>
+<p><br>
+Let’s try an example. Given the species abundances in Table <a href="introduction-to-multivariate-analysis.html#tab:t4">6.4</a>, we can calculate the squared difference in abundance for each species, and sum that quantity.</p>
+<table style="width:50%;">
+<caption>
+<span id="tab:t4">Table 6.4: </span>Species abundance and distance calculations for two samples
+</caption>
+<thead>
+<tr>
+<th style="text-align:center;">
+</th>
+<th style="text-align:center;">
+sample j
+</th>
+<th style="text-align:center;">
+sample k
+</th>
+<th style="text-align:center;">
+<span class="math inline">\((X_j-X_k)^2\)</span>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center;">
+Species 1
+</td>
+<td style="text-align:center;">
+19
+</td>
+<td style="text-align:center;">
+35
+</td>
+<td style="text-align:center;">
+256
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+Species 2
+</td>
+<td style="text-align:center;">
+35
+</td>
+<td style="text-align:center;">
+10
+</td>
+<td style="text-align:center;">
+625
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+Species 3
+</td>
+<td style="text-align:center;">
+0
+</td>
+<td style="text-align:center;">
+0
+</td>
+<td style="text-align:center;">
+0
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+Species 4
+</td>
+<td style="text-align:center;">
+35
+</td>
+<td style="text-align:center;">
+5
+</td>
+<td style="text-align:center;">
+900
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+Species 5
+</td>
+<td style="text-align:center;">
+10
+</td>
+<td style="text-align:center;">
+50
+</td>
+<td style="text-align:center;">
+1600
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+Species 6
+</td>
+<td style="text-align:center;">
+0
+</td>
+<td style="text-align:center;">
+0
+</td>
+<td style="text-align:center;">
+0
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+Species 7
+</td>
+<td style="text-align:center;">
+0
+</td>
+<td style="text-align:center;">
+3
+</td>
+<td style="text-align:center;">
+9
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+Species 8
+</td>
+<td style="text-align:center;">
+0
+</td>
+<td style="text-align:center;">
+0
+</td>
+<td style="text-align:center;">
+0
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+Species 9
+</td>
+<td style="text-align:center;">
+30
+</td>
+<td style="text-align:center;">
+10
+</td>
+<td style="text-align:center;">
+400
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+Species 10
+</td>
+<td style="text-align:center;">
+2
+</td>
+<td style="text-align:center;">
+0
+</td>
+<td style="text-align:center;">
+4
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+TOTAL
+</td>
+<td style="text-align:center;">
+131
+</td>
+<td style="text-align:center;">
+113
+</td>
+<td style="text-align:center;">
+3794
+</td>
+</tr>
+</tbody>
+</table>
+<p>Then all we need to do is to take the square root of the sum to obtain the Euclidean distance. Did you get the correct answer of 61.6? Of course, R makes this much easier, I can calculate Euclidan distance using the <strong>dist()</strong> function, after creating a matrix of the two columns of species abundance data from my original <em>eu</em> dataframe.</p>
+<div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb37-1"><a href="introduction-to-multivariate-analysis.html#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="fu">dist</span>(<span class="fu">rbind</span>(eu<span class="sc">$</span>j[<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>], eu<span class="sc">$</span>k[<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>]), <span class="at">method =</span> <span class="st">&quot;euclidean&quot;</span>)</span></code></pre></div>
+<pre><code>         1
+2 61.59545</code></pre>
+<p>There are many other quantitative dissimilarity metrics. For example, Bray Curtis dissimilarity is frequently used by ecologists to quantify differences between samples based on abundance or count data. This measure is usually applied to raw abundance data, but can be applied to relative abundances. It is calculated as: <span class="math inline">\(BC_{ij}=1-\frac{C_{ij}}{S_{i}+S_{j}}\)</span>, where <span class="math inline">\(C_{ij}\)</span> is the sum over the smallest values for only those species in common between both sites, <span class="math inline">\(S_{i}\)</span> and <span class="math inline">\(S_{j}\)</span> are the sum of abundances at the two sites. This metric is directly related to the Sørenson binary similarity metric, and ranges from 0 to 1, with 0 indicating complete similarity. This is not at distance metric, and so, is not appropriate for some types of analysis.</p>
+</div>
+<div id="comparing-more-than-two-communitiessamplessitesgenesspecies" class="section level3" number="6.1.3">
+<h3><span class="header-section-number">6.1.3</span> Comparing more than two communities/samples/sites/genes/species</h3>
+<p>What about the situation where we want to compare more than two communtiies, species, samples or genes? We can simply generate a dissimilarity or similarity <strong>matrix</strong>, where each pairwise comparison is given.</p>
+<p>In the species composition matrix below (Table <a href="introduction-to-multivariate-analysis.html#tab:t5">6.5</a>), sample A and B do not share any species, while sample A and C share all species but differ in abundances (e.g. species 3 = 1 in sample A and 8 in sample C). The calculation of Euclidean distance using the <strong>dist()</strong> function produces a lower triangular matrix with the pairwise comparisons (I’ve included the distance with the sample itself on the diagonal).</p>
+<p>The Euclidan distance values suggest that A and B are the most similar! Euclidean distance puts more weight on differences in species abundances than on difference in species presences. As a result, two samples not sharing any species could appear more similar (with lower Euclidean distance) than two samples which share species that largely differ in their abundances.</p>
+<table style="width:50%;">
+<caption>
+<span id="tab:t5">Table 6.5: </span>Species abundance versus species presence and Euclidean distance
+</caption>
+<thead>
+<tr>
+<th style="text-align:center;">
+</th>
+<th style="text-align:center;">
+sample A
+</th>
+<th style="text-align:center;">
+sample B
+</th>
+<th style="text-align:center;">
+sample C
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center;">
+species 1
+</td>
+<td style="text-align:center;">
+0
+</td>
+<td style="text-align:center;">
+1
+</td>
+<td style="text-align:center;">
+0
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+species 2
+</td>
+<td style="text-align:center;">
+1
+</td>
+<td style="text-align:center;">
+0
+</td>
+<td style="text-align:center;">
+4
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+species 3
+</td>
+<td style="text-align:center;">
+1
+</td>
+<td style="text-align:center;">
+0
+</td>
+<td style="text-align:center;">
+8
+</td>
+</tr>
+</tbody>
+</table>
+<p><br>
+<br></p>
+<div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb39-1"><a href="introduction-to-multivariate-analysis.html#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="fu">dist</span>(<span class="fu">t</span>(meu[<span class="dv">2</span><span class="sc">:</span><span class="dv">4</span>]), <span class="at">method=</span><span class="st">&quot;euclidean&quot;</span>, <span class="at">diag=</span><span class="cn">TRUE</span>)</span></code></pre></div>
+<pre><code>         A        B        C
+A 0.000000                  
+B 1.732051 0.000000         
+C 7.615773 9.000000 0.000000</code></pre>
+<p>There are other disadvantages as well, and in general, there is simply no perfect metric. For example, you may dislike the fact that Euclidean distance also has no upper bound, and so it becomes difficult to understand <strong>how</strong> similar two things are (i.e., the metric can only be understood in a relative way when comparing many things, Sample A is more similar to sample B than sample C, for example). You could use a Bray-Curtis dissimilarity metric, which is quite easy to interpret, but this metric will also confound differences in species presences and differences in species counts (Greenacre 2017). The best policy is to be aware of the advantages and disadvantages of the metrics you choose, and interpret your analysis in light of this information.</p>
+</div>
+<div id="r-functions" class="section level3" number="6.1.4">
+<h3><span class="header-section-number">6.1.4</span> R functions</h3>
+<p>There are a number of functions in R that can be used to calculate similarity and dissimilarity metrics. Since we are usually not just comparing two objects, sites or samples, these functions can help make your calculations much quicker when you are comparing many units.</p>
+<p><strong>dist()</strong> offers a number of distance measures (e.g. euclidean,canberra and manhattan). The result is the distance matrix which gives the dissimilarity of each pair of objects, sites or samples. the matrix is an object of the class dist in R.</p>
+<p><strong>vegdist()</strong> (library vegan). The default distance used in this function is Bray-Curtis distance, which is considered more suitable for ecological data.</p>
+<p><strong>dsvdis()</strong> (library labdsv) Offers some other indices than vegdist (e.g. ruzicka (or Růžička), a quantitative analogue of Jaccard, and roberts.</p>
+<p>For full comparison of dist, vegdist and dsvdis,see <a href="http://ecology.msu.montana.edu/labdsv/R/labs/lab8/lab8.html" class="uri">http://ecology.msu.montana.edu/labdsv/R/labs/lab8/lab8.html</a>.</p>
+<p><strong>dist.ldc()</strong> (library adespatial) Includes 21 dissimilarity indices described in Legendre &amp; De Cáceres (2013), twelve of which are not readily available in other packages. Note that Bray-Curtis dissimilarity is called percentage difference (method = “percentdiff”).</p>
+<p><strong>designdist()</strong> (library vegan) Allows one to design virtually any distance measure using the formula for their calculation.</p>
+<p><strong>daisy()</strong> (library cluster) Offers euclidean, manhattan and gower distance.</p>
+<p><strong>distance()</strong> (library ecodist) Contains seven distance measures, but the function is more for demonstration (for larger matrices, the calculation takes rather long).</p>
+</div>
+</div>
+<div id="cluster-analysis" class="section level2" number="6.2">
+<h2><span class="header-section-number">6.2</span> Cluster Analysis</h2>
+<p>When we have a large number of things to compare, an examination of a matrix of similarlity or dissimilatiry metrics can be tedious or even impossible to do. One way to visualize the similarity among units is to use some form of cluster analysis. Clustering is the grouping of data objects into discrete similarity categories according to a defined similarity or dissimilarity measure.</p>
+<p>We can contrast clustering, which assumes that units (e.g., sites, communities, species or genes) can be grouped into discrete categories based on similarity, with ordination, which treats the similarity between units as a continuous gradient (we’ll discuss ordination in section 6.3). We can use clustering to do things like discern whether there are one or two or three different communities in three or four or five sampling units. It is used in many fields, such as machine learning, data mining, pattern recognition, image analysis, genomics, systems biology, etc. Machine learning typically regards data clustering as a form of unsupervised learning, or from our figure above (Fig <a href="introduction-to-multivariate-analysis.html#fig:f1">6.1</a>), as a technique that uses “latent” variables because we are not guided by <em>a priori</em> ideas of which variables or samples belong in which clusters.</p>
+<div id="hierarchical-clustering-groups-are-nested-within-other-groups." class="section level3" number="6.2.1">
+<h3><span class="header-section-number">6.2.1</span> Hierarchical clustering: groups are nested within other groups.</h3>
+<p>Perhaps the most familiar type of clustering is hierarchical. There are two kinds: <strong>divisive</strong> and <strong>agglomerative</strong>. In the divisive method, the entire set of units is divided into smaller and smaller groups. The agglomerative method starts with small groups of few units, and groups them into larger and larger clusters, until the entire data set is sampled (Pielou, 1984). Of course, once you have more than two units, you need some way to assess similarlity between the clusters. There are a couple of different methods here. Single linkage assigns the similairty between clusters to the most similar units in each cluster. Complete linkage uses the similarity between the most dissmilar units in each cluster, while average linkage averages over all the units in each cluster (Fig. <a href="introduction-to-multivariate-analysis.html#fig:f6">6.3</a>).</p>
+<div class="figure"><span id="fig:f6"></span>
+<img src="_main_files/figure-html/f6-1.png" alt="" width="672" />
+<p class="caption">
+Figure 6.3: Different methods of determining similarity between clusters
+</p>
+</div>
+<p><strong>Single Linkage Cluster Analysis</strong></p>
+<p>Single linkage cluster analysis is one of the easiest to explain. It is hierarchical, agglomerative technique. We start by creating a matrix of similarity (or dissimilarity) indices between the units we want to compare.</p>
+<p>Then we find the most similar pair of samples, and that will form the 1st cluster. Next, we find either: (a) the second most similar pair of samples or (b) highest similarity between a cluster and a sample, or (c) most similar pair of clusters, whichever is greatest. We then continue this process until until there is one big cluster. Remember that in single linkage, similarity between two clusters = similarity between the two nearest members of the clusters. Or if we are comparing a sample to a cluster, the similarity is defined as the similarity between sample and the nearest member of the cluster.</p>
+<div class="sourceCode" id="cb41"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb41-1"><a href="introduction-to-multivariate-analysis.html#cb41-1" aria-hidden="true" tabindex="-1"></a>cls<span class="ot">=</span><span class="fu">data.frame</span>(<span class="at">a=</span><span class="fu">c</span>(<span class="dv">5</span>,<span class="dv">6</span>,<span class="dv">34</span>,<span class="dv">1</span>,<span class="dv">12</span>),<span class="at">b=</span><span class="fu">c</span>(<span class="dv">10</span>,<span class="dv">5</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>),  <span class="at">c=</span><span class="fu">c</span>(<span class="dv">10</span>,<span class="dv">59</span>,<span class="dv">32</span>,<span class="dv">3</span>,<span class="dv">40</span>), <span class="at">d=</span><span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">63</span>,<span class="dv">10</span>,<span class="dv">29</span>,<span class="dv">45</span>), <span class="at">e=</span><span class="fu">c</span>(<span class="dv">44</span>,<span class="dv">35</span>,<span class="dv">40</span>,<span class="dv">12</span>,<span class="dv">20</span>))</span>
+<span id="cb41-2"><a href="introduction-to-multivariate-analysis.html#cb41-2" aria-hidden="true" tabindex="-1"></a>clsd<span class="ot">=</span><span class="fu">dist</span>(<span class="fu">t</span>(cls), <span class="at">method=</span><span class="st">&quot;euclidean&quot;</span>)</span>
+<span id="cb41-3"><a href="introduction-to-multivariate-analysis.html#cb41-3" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(clsd,<span class="dv">0</span>)</span></code></pre></div>
+<pre><code>   a  b  c  d
+b 33         
+c 60 71      
+d 76 76 36   
+e 51 62 48 66</code></pre>
+<div class="figure"><span id="fig:unnamed-chunk-14"></span>
+<img src="_main_files/figure-html/unnamed-chunk-14-1.png" alt="" width="672" />
+<p class="caption">
+Figure 6.4: Example of using a dissimilarity matrix to construct a single-linkage cluster diagra
+</p>
+</div>
+</div>
+<div id="r-functions-1" class="section level3" number="6.2.2">
+<h3><span class="header-section-number">6.2.2</span> R functions</h3>
+<p><strong>Agglomerative approach (bottom-up)</strong></p>
+<p><strong>hclust()</strong> calculates hierarchical cluster analysis and has it’s own plot function.</p>
+<p><strong>agnes()</strong> (library cluster) Contains six agglomerative algorithms, some not included in hclust.</p>
+<p><strong>Divisive approach (top-down)</strong>
+<strong>diana()</strong></p>
+</div>
+<div id="how-many-clusters" class="section level3" number="6.2.3">
+<h3><span class="header-section-number">6.2.3</span> How many clusters?</h3>
+<p>The hiearchical methods just keep going until all objects are included (agglomerative methods), or are each in their own group (divisive methods). However, neither endpoint is very useful. How do we select the number of groups? There are metrics and techniques to make this decision more objective, however, in this introduction, we’ll just mention that, for hierarchical methods, you can determine the number of groups a given degree of similarity, or set the number of groups and find the degree of similarity that results in that number of groups. Let’s try. We’ll use the <strong>cutree()</strong> function that works on cluster diagrams produced by the <strong>hclust()</strong> function (Fig. @ref{fig:hclustfig)).</p>
+<p>If we set our dissimilarity threshold at 40, we find that there are three groups: a&amp;b, c&amp;d, and e in its own group.</p>
+<div class="figure"><span id="fig:hclustfig"></span>
+<img src="_main_files/figure-html/hclustfig-1.png" alt="" width="480" />
+<p class="caption">
+Figure 6.5: Cluster diagram produced by the function <strong>hclust</strong> with cut-off line at euclidean distance=40 for group membership
+</p>
+</div>
+<pre><code>a b c d e 
+1 1 2 2 3 </code></pre>
+<hr />
+</div>
+<div id="other-clustering-methods" class="section level3" number="6.2.4">
+<h3><span class="header-section-number">6.2.4</span> Other clustering methods</h3>
+<p>There are other means of clustering data of course. Partitional clustering is the division of data objects into non-overlapping subsets, such that each data object is in exactly one subset</p>
+<div id="k-means-clustering" class="section level4" number="6.2.4.1">
+<h4><span class="header-section-number">6.2.4.1</span> K-means clustering</h4>
+<p>In one version of this, k-means clustering, each cluster is associated with a centroid (center point), and each
+data object is assigned to the cluster with the closest centroid. In this method, the number of clusters, K, must be specified in advance. Our method is:</p>
+<ol style="list-style-type: decimal">
+<li>Choose the number of K clusters</li>
+<li>Select K points as the initial centroids</li>
+<li>Calculate the distance of all items to the K centroids</li>
+<li>Assign items to closest centroid</li>
+<li>Recompute the centroid of each cluster</li>
+<li>Repeat from (3) until clusters assignments are stable</li>
+</ol>
+<p>K-means has problems when clusters are of differing sizes and densities, or are non-globular shapes. It is also very sensitive to outliers.</p>
+</div>
+<div id="fuzzy-c-means-clustering" class="section level4" number="6.2.4.2">
+<h4><span class="header-section-number">6.2.4.2</span> Fuzzy C-Means Clustering</h4>
+<p>In contrast to strict (or hard) clustering approaches, fuzzy (soft) clustering methods allow multiple cluster memberships of the clustered items.</p>
+<p>This is commonly achieved by assigning to each item a weight of belonging to each cluster. Thus, items at the edge of a cluster, may be in a cluster to a lesser degree than items at the center of a cluster. Typically, each item has as many coefficients (weights) as there are clusters that sum up for each item to one.</p>
+</div>
+</div>
+<div id="exercise-cluster-analysis-of-isotope-data" class="section level3" number="6.2.5">
+<h3><span class="header-section-number">6.2.5</span> Exercise: Cluster analysis of isotope data</h3>
+<p>Our first step is to download and import the dataset “Dataset_S1.csv” from Perkins et al. 2014 (see url below). This data contains δ15N and δ13C signatures for species from different food webs. Unfortunately, this data is saved in an .xlsx file.</p>
+<p>To read data into R one of the easiest options is to use the read.csv() function with the argument on a .csv file. These <strong>C</strong>omma <strong>S</strong>eparated <strong>F</strong>iles are one of your best options for reproducible research. They are human readable and easily handled by almost every type of software. In contrast Microsoft Excel uses a propriatory file format, is not fully backwards compatible, and although widely used, is not human readable. As a result, we need special tools to access this file outside of Microsoft software products</p>
+<p>We’ll download the data set using <strong>download.file()</strong>, and read it using the R library <em>openxlsx</em> (see example below).Once you have successfully read your data file into R, take a look at it! Type <em>iso</em> (or whatever you named your data object) to see if the data file was read in properly. Some datasets will be too large for this approach to be useful (the data will scroll right off the page). In that case, there are a number of commands to look at a portion of the dataset. You could use a command like names(iso).</p>
+<p>One of the best things to do is plot the imported data. Of course, this is not always possible with very large datasets, but this set should work. Use the plot() function plotting δ15N vs δ13C to take a quick look.</p>
+<div class="sourceCode" id="cb44"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb44-1"><a href="introduction-to-multivariate-analysis.html#cb44-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(openxlsx)</span>
+<span id="cb44-2"><a href="introduction-to-multivariate-analysis.html#cb44-2" aria-hidden="true" tabindex="-1"></a>urlj<span class="ot">=</span><span class="st">&quot;https://doi.org/10.1371/journal.pone.0093281.s001&quot;</span></span>
+<span id="cb44-3"><a href="introduction-to-multivariate-analysis.html#cb44-3" aria-hidden="true" tabindex="-1"></a><span class="fu">download.file</span>(urlj, <span class="st">&quot;p.xlsx&quot;</span>)</span>
+<span id="cb44-4"><a href="introduction-to-multivariate-analysis.html#cb44-4" aria-hidden="true" tabindex="-1"></a>iso<span class="ot">=</span><span class="fu">read.xlsx</span>(<span class="st">&quot;p.xlsx&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb45"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb45-1"><a href="introduction-to-multivariate-analysis.html#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(iso<span class="sc">$</span>N<span class="sc">~</span>iso<span class="sc">$</span>C, <span class="at">col=</span><span class="fu">as.numeric</span>(<span class="fu">as.factor</span>(iso<span class="sc">$</span>Food.Chain)),<span class="at">xlim=</span><span class="fu">c</span>(<span class="sc">-</span><span class="dv">35</span>, <span class="dv">0</span>), <span class="at">pch=</span><span class="fu">as.numeric</span>(<span class="fu">as.factor</span>(iso<span class="sc">$</span>Species)),  <span class="at">xlab=</span><span class="st">&quot;δ13C&quot;</span>, <span class="at">ylab=</span><span class="st">&quot;δ15N&quot;</span>)</span>
+<span id="cb45-2"><a href="introduction-to-multivariate-analysis.html#cb45-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb45-3"><a href="introduction-to-multivariate-analysis.html#cb45-3" aria-hidden="true" tabindex="-1"></a><span class="fu">legend</span>(<span class="st">&quot;topright&quot;</span>, <span class="at">legend=</span><span class="fu">unique</span>(<span class="fu">as.factor</span>(iso<span class="sc">$</span>Food.Chain)),<span class="at">pch=</span><span class="dv">1</span>,</span>
+<span id="cb45-4"><a href="introduction-to-multivariate-analysis.html#cb45-4" aria-hidden="true" tabindex="-1"></a><span class="at">col=</span><span class="fu">as.numeric</span>(<span class="fu">unique</span>(<span class="fu">as.factor</span>(iso<span class="sc">$</span>Food.Chain))), <span class="at">bty=</span><span class="st">&quot;n&quot;</span>, <span class="at">title=</span><span class="st">&quot;Food chain&quot;</span>)</span>
+<span id="cb45-5"><a href="introduction-to-multivariate-analysis.html#cb45-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb45-6"><a href="introduction-to-multivariate-analysis.html#cb45-6" aria-hidden="true" tabindex="-1"></a><span class="fu">legend</span>(<span class="st">&quot;bottomright&quot;</span>,<span class="at">legend=</span><span class="fu">as.character</span>(<span class="fu">unique</span>(<span class="fu">as.factor</span>(iso<span class="sc">$</span>Species))), <span class="at">pch=</span><span class="fu">as.numeric</span>(<span class="fu">unique</span>(<span class="fu">as.factor</span>(iso<span class="sc">$</span>Species))), <span class="at">bty=</span><span class="st">&quot;n&quot;</span>)</span></code></pre></div>
+<div class="figure"><span id="fig:chkperkins"></span>
+<img src="_main_files/figure-html/chkperkins-1.png" alt="" width="672" />
+<p class="caption">
+Figure 6.6: Isotope data from Perkins et al (2014)
+</p>
+</div>
+<p>We are going to use this data set to see if a cluster analysis on δ15N and δ13C can identify the foodweb. That is we are going to see if the latent variables identified by our clustering method match up to what we think we know about the data. Our first step is to create a dissimilarity matrix, but even before this, we must select that part of the data that we wish to use, just the δ15N and δ13C data, not the other components of the dataframe.</p>
+<p>In addition, our analysis will be affected by the missing data. So let’s get remove those rows with missing data right now using the <strong>complete.cases()</strong> function. The function returns a value of TRUE for every row in a dataframe that no missing values in any column. So niso=iso[complete.cases(mydata),], will be a new data frame with only complete row entries.</p>
+<p>The function <strong>dist()</strong> will generate a matrix of the pairwise Euclidean distances between pairs of observations. Now that you have a dissimilarity matrix, you complete a cluster analysis. The function <strong>hclust()</strong> will produce a data frame that can be sent to the <strong>plot()</strong> function plotted to visualize the recommended clustering. The method used to complete the analysis is indicated below the graph. Please adjust the arguments of the function to complete a single linkage analysis (look at help(hclust)) to determine the method to do this).</p>
+<div class="sourceCode" id="cb46"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb46-1"><a href="introduction-to-multivariate-analysis.html#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(iso)</span></code></pre></div>
+<pre><code>&#39;data.frame&#39;:   165 obs. of  7 variables:
+ $ Replicate      : num  1 2 3 4 5 6 7 8 9 10 ...
+ $ Food.Chain     : chr  &quot;Wheat&quot; &quot;Wheat&quot; &quot;Wheat&quot; &quot;Wheat&quot; ...
+ $ Species        : chr  &quot;Plant&quot; &quot;Plant&quot; &quot;Plant&quot; &quot;Plant&quot; ...
+ $ Tissue         : chr  &quot;Leaf&quot; &quot;Leaf&quot; &quot;Leaf&quot; &quot;Leaf&quot; ...
+ $ Lipid.Extracted: chr  &quot;No&quot; &quot;No&quot; &quot;No&quot; &quot;No&quot; ...
+ $ C              : num  -30.1 -31.7 -30.1 -30.9 -31 ...
+ $ N              : num  -3.47 -2.68 3.42 1.27 6.2 ...</code></pre>
+<div class="sourceCode" id="cb48"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb48-1"><a href="introduction-to-multivariate-analysis.html#cb48-1" aria-hidden="true" tabindex="-1"></a>diso<span class="ot">&lt;-</span><span class="fu">dist</span>((iso[,<span class="fu">c</span>(<span class="st">&quot;C&quot;</span>,<span class="st">&quot;N&quot;</span>)]), <span class="at">method=</span><span class="st">&quot;euclidean&quot;</span>)</span>
+<span id="cb48-2"><a href="introduction-to-multivariate-analysis.html#cb48-2" aria-hidden="true" tabindex="-1"></a>p<span class="ot">=</span><span class="fu">hclust</span>(diso,<span class="at">method=</span><span class="st">&quot;single&quot;</span>)</span>
+<span id="cb48-3"><a href="introduction-to-multivariate-analysis.html#cb48-3" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(p, <span class="at">cex=</span><span class="fl">0.5</span>,<span class="at">main=</span><span class="st">&quot;&quot;</span>)</span></code></pre></div>
+<div class="figure"><span id="fig:perkclust"></span>
+<img src="_main_files/figure-html/perkclust-1.png" alt="" width="672" />
+<p class="caption">
+Figure 6.7: Cluster figure of isotope data from Perkins et al. 2014)
+</p>
+</div>
+<p>When you graph your cluster using plot(), you notice that there are many individual measurements, but there are only a few large groups. Does it look like there is an outlier? If so, you may want to remove this point from the data set, and then rerun the analysis. The row numbers are used as labels by default, so this is easy to do (niso=niso[-5,]). Remember to remove the point from the dataframe that has all the food chain info in it, otherwise you will have problems plotting later.</p>
+<p>When you examine the data set, you noted that there are 4 Food.chain designations. We will use the cutree() function to cut our cluster tree to get the desired number of groups (4), and then save the group numbers to a new column in our original dataframe. For example, iso$clust&lt;- cutree(p,4).We can then plot the data using colours and symbols to see how well our clustering works</p>
+<div class="sourceCode" id="cb49"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb49-1"><a href="introduction-to-multivariate-analysis.html#cb49-1" aria-hidden="true" tabindex="-1"></a>niso<span class="ot">=</span>iso[<span class="fu">complete.cases</span>(iso),]</span>
+<span id="cb49-2"><a href="introduction-to-multivariate-analysis.html#cb49-2" aria-hidden="true" tabindex="-1"></a>niso<span class="ot">=</span>niso[<span class="sc">-</span><span class="dv">5</span>,]</span>
+<span id="cb49-3"><a href="introduction-to-multivariate-analysis.html#cb49-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb49-4"><a href="introduction-to-multivariate-analysis.html#cb49-4" aria-hidden="true" tabindex="-1"></a>net<span class="ot">=</span>niso[,<span class="fu">c</span>(<span class="st">&quot;C&quot;</span>,<span class="st">&quot;N&quot;</span>)]</span>
+<span id="cb49-5"><a href="introduction-to-multivariate-analysis.html#cb49-5" aria-hidden="true" tabindex="-1"></a>diso<span class="ot">&lt;-</span><span class="fu">dist</span>((net), <span class="at">method=</span><span class="st">&quot;euclidean&quot;</span>)</span>
+<span id="cb49-6"><a href="introduction-to-multivariate-analysis.html#cb49-6" aria-hidden="true" tabindex="-1"></a>p<span class="ot">=</span><span class="fu">hclust</span>(diso, <span class="at">method=</span><span class="st">&quot;single&quot;</span>)</span>
+<span id="cb49-7"><a href="introduction-to-multivariate-analysis.html#cb49-7" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(p,<span class="at">labels=</span><span class="cn">FALSE</span>, <span class="at">main=</span><span class="st">&quot;&quot;</span>)</span></code></pre></div>
+<div class="figure"><span id="fig:clust"></span>
+<img src="_main_files/figure-html/clust-1.png" alt="" width="672" />
+<p class="caption">
+Figure 6.8: Single linkage clustering on Perkins et al (2014) data with outlier removed
+</p>
+</div>
+<div class="sourceCode" id="cb50"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb50-1"><a href="introduction-to-multivariate-analysis.html#cb50-1" aria-hidden="true" tabindex="-1"></a>niso<span class="sc">$</span>clust<span class="ot">&lt;-</span><span class="fu">cutree</span>(p,<span class="at">k=</span><span class="dv">4</span>)</span>
+<span id="cb50-2"><a href="introduction-to-multivariate-analysis.html#cb50-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb50-3"><a href="introduction-to-multivariate-analysis.html#cb50-3" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(iso<span class="sc">$</span>N<span class="sc">~</span>iso<span class="sc">$</span>C, <span class="at">col=</span><span class="fu">as.numeric</span>(<span class="fu">as.factor</span>(niso<span class="sc">$</span>clust)),<span class="at">xlim=</span><span class="fu">c</span>(<span class="sc">-</span><span class="dv">35</span>, <span class="dv">0</span>), <span class="at">pch=</span><span class="fu">as.numeric</span>(<span class="fu">as.factor</span>(niso<span class="sc">$</span>Species)),  <span class="at">xlab=</span><span class="st">&quot;δ13C&quot;</span>, <span class="at">ylab=</span><span class="st">&quot;δ15N&quot;</span>)</span>
+<span id="cb50-4"><a href="introduction-to-multivariate-analysis.html#cb50-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb50-5"><a href="introduction-to-multivariate-analysis.html#cb50-5" aria-hidden="true" tabindex="-1"></a><span class="fu">legend</span>(<span class="st">&quot;topright&quot;</span>, <span class="at">legend=</span><span class="fu">unique</span>(<span class="fu">as.factor</span>(niso<span class="sc">$</span>clust)),<span class="at">pch=</span><span class="dv">1</span>,</span>
+<span id="cb50-6"><a href="introduction-to-multivariate-analysis.html#cb50-6" aria-hidden="true" tabindex="-1"></a><span class="at">col=</span><span class="fu">as.numeric</span>(<span class="fu">unique</span>(<span class="fu">as.factor</span>(niso<span class="sc">$</span>clust))), <span class="at">bty=</span><span class="st">&quot;n&quot;</span>, <span class="at">title=</span><span class="st">&quot;cluster&quot;</span>)</span>
+<span id="cb50-7"><a href="introduction-to-multivariate-analysis.html#cb50-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb50-8"><a href="introduction-to-multivariate-analysis.html#cb50-8" aria-hidden="true" tabindex="-1"></a><span class="fu">legend</span>(<span class="st">&quot;bottomright&quot;</span>,<span class="at">legend=</span><span class="fu">as.character</span>(<span class="fu">unique</span>(<span class="fu">as.factor</span>(niso<span class="sc">$</span>Species))), <span class="at">pch=</span><span class="fu">as.numeric</span>(<span class="fu">unique</span>(<span class="fu">as.factor</span>(niso<span class="sc">$</span>Species))), <span class="at">bty=</span><span class="st">&quot;n&quot;</span>,<span class="at">title=</span><span class="st">&quot;Species&quot;</span>)</span></code></pre></div>
+<div class="figure"><span id="fig:clustdata"></span>
+<img src="_main_files/figure-html/clustdata-1.png" alt="" width="672" />
+<p class="caption">
+Figure 6.9: Data from Perkins et al (2014) data with grouping from single linkage clustering superimposed
+</p>
+</div>
+<p>It doesn’t look like our cluster algorithm is matching up with our Food.chain data categories very well. Wheat- and Nettle-based distinguished, which makes sense when you consider that both of these plants use a C3 photosynthesis system. If you are not happy with the success of this clustering algorithm you could try other variants(.g., “complete” linkage) and a different number of groups.</p>
+Let’s try a non-hierarchical cluster analysis on the same data to see if it works better. The <strong>kmeans()</strong> function requires that we select the required number of clusters ahead of time (we want 4, so kclust=kmeans(niso[,c(“C,” “N”)], 4)), we can then save the assigned clusters to our dataframe and plot in a similar way
+<div class="figure"><span id="fig:kclust"></span>
+<img src="_main_files/figure-html/kclust-1.png" alt="" width="672" />
+<p class="caption">
+Figure 6.10: K means clustering on Perkins et al (2014) data
+</p>
+</div>
+<p>It looks like kmeans has the same problem with distinguishing C3 plant-based foodwebs. But we still get three groups that roughly map onto our information about the data.</p>
+</div>
+</div>
+<div id="ordination" class="section level2" number="6.3">
+<h2><span class="header-section-number">6.3</span> Ordination</h2>
+<p>While cluster analysis let’s us visualize multivariate data by grouping objects into dscrete categories, ordination uses continuous axes to help us accomplish the same task. Physicists grumble if space exceeds four dimensions, while biologists typically grapple with dozens of dimensions (species and/or samples). In effect, we “order” this multivariate data in order to produce a low dimensional picture (i.e., a graph in 1-3 dimensions). Just like cluster analysis, we will use similarity metrics to accomplish this. Also like cluster anlaysis, simple ordination is not a statistical test: it is a method of visualizing data.</p>
+<p>Essentially, we find axes in the data that explain a lot of variation, and rotate so we can use that axis as one of our dimensions of visual representation(Fig. <a href="introduction-to-multivariate-analysis.html#fig:dummy1">6.12</a>). Another way to think about it, is that we are going to summarize the raw data, which has many variables, p, by a smaller set of synthetic variables, k (Fig. <a href="introduction-to-multivariate-analysis.html#fig:dimred">6.11</a>). If the ordination is informative, it reduces a large number of original correlated variables to a small number of new uncorrelated variables. But it really is a bit of a balancing act between clarity of representation, ease of understanding, and oversimiplication. We will lose information in this data reduction, and if that information is important, then we can make the multivariate data harder to understand! Also note that if the original variables are not correlated, then we won’t gain anything with ordinaton.</p>
+<div class="figure"><span id="fig:dimred"></span>
+<img src="_main_files/figure-html/dimred-1.png" alt="" width="480" />
+<p class="caption">
+Figure 6.11: Ordination as data reduction. We summarize data with many variables (p) by a smaller set of derived or synthetic variables (k)
+</p>
+</div>
+<div class="figure"><span id="fig:dummy1"></span>
+<img src="_main_files/figure-html/dummy1-1.png" alt="" width="576" />
+<p class="caption">
+Figure 6.12: Synthetic axis rotation in ordination
+</p>
+</div>
+<p>There are lots of different ways to perform an ordination, but most methods are based on extracting the eigenvalues of a similarity matrix. The four most commonly used methods are: <em>Principle Component Analysis (PCA)</em>, which is the main eigenvector-based method, <em>Correspondence Analysis (CA)</em> which is used used on frequency data, <em>Principle Coordinate Analysis (PCoA)</em> which works on dissimilarity matrices, and <em>Non Metric Multidimensional Scaling (NMDS)</em> which is not an eigenvector method, instead it represents objects along a predetermined number of axes.</p>
+<table>
+<caption>
+<span id="tab:tord">Table 6.6: </span>Domains of Application of Ordination Methods (adpated from Legendre &amp; Legendre 2012)
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;">
+Method
+</th>
+<th style="text-align:left;">
+Distance
+</th>
+<th style="text-align:left;">
+Variables
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+Principal component analysis (PCA)
+</td>
+<td style="text-align:left;">
+Euclidean
+</td>
+<td style="text-align:left;">
+Quantitative data
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Correspondence analysis (CA)
+</td>
+<td style="text-align:left;">
+X^2
+</td>
+<td style="text-align:left;">
+Non-negative, quantitiative or binary data; species frequencies or presence/absence data
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Principal coordinate analysis (PCoA), metric (multidimensional) scaling, classical scaling
+</td>
+<td style="text-align:left;">
+Any
+</td>
+<td style="text-align:left;">
+Quantitative, semiquantitative, qualitative, or mixed
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Nonmetric multidimensional scaling (nMDS)
+</td>
+<td style="text-align:left;">
+Any
+</td>
+<td style="text-align:left;">
+Quantitative, semiquantitative, qualitative, or mixed
+</td>
+</tr>
+</tbody>
+</table>
+<p>Legendre &amp; Legendre (2012) provide a nice summary of when you should use each method Table <a href="introduction-to-multivariate-analysis.html#tab:tord">6.6</a></p>
+<div id="principal-components-analysis-pca" class="section level3" number="6.3.1">
+<h3><span class="header-section-number">6.3.1</span> Principal Components Analysis (PCA)</h3>
+<p>Principal Components Analysis is probably the most widely-used and well-known of the standard multivariate methods. It was invented by Pearson (1901) and Hotelling (1933), and first applied in ecology by Goodall (1954) under the name “factor analysis” (NB “principal factor analysis” is also a synonym of PCA). Like most ordination methods, PCA takes a data matrix of <em>n</em> objects by <em>p</em> variables, which may be correlated, and summarizes it by uncorrelated axes (principal components or principal axes) that are linear combinations of the original <em>p</em> variables. The first <em>k</em> components display as much as possible of the variation among objects. PCA uses Euclidean distance calculated from the <em>p</em> variables as the measure of dissimilarity among the <em>n</em> objects, and derives the best possible k-dimensional representation of the Euclidean distances among objects, where <span class="math inline">\(k &lt; p\)</span> .</p>
+<p>We can think about this spatially. Objects are represented as a cloud of n points in a multidimensional space with an axis for each of the p variables. So the centroid of the points is defined by the mean of each variable, and
+the variance of each variable is the average squared deviation of its n values around the mean of that variable (i.e., <span class="math inline">\(V_i= \frac{1}{n-1}\sum_{m=1}^{n}{(X_{im}-\bar{X_i)}^2}\)</span>). The degree to which the variables are linearly correlated is given by their covariances <span class="math inline">\(C_{ij}=\frac{1}{n-1}\sum_{m=1}^n{(X_{im}-\bar{X_i})(X_{jm}-\bar{X_j})}\)</span>. The objective of PCA is to rigidly rotate the axes of the p-dimenional space to new positions (principal axes) that have the following properties: they are ordered such that principal axis 1 (or the <em>principal component</em> has the highest variance, axis 2 has the next highest variance etc, and the covariance among each pair of principal axes is zero (the principal axes are uncorrelated) (Fig. <a href="introduction-to-multivariate-analysis.html#fig:varord">6.13</a>).</p>
+<div class="figure"><span id="fig:varord"></span>
+<img src="_main_files/figure-html/varord-1.png" alt="" width="672" />
+<p class="caption">
+Figure 6.13: Selecting the synthetic axes in ordination
+</p>
+</div>
+<p>So our steps are to compute the variance-covariance matrix of the data, calculate the eigenvalues of this matrix and then calculate the associated eigenvectors. Then, the jth eigenvalue is the variance of the jth principle component and the sum of all the eigenvalues is the total variance explained. The proportion of variance explained by each component is the eigenvalue for the component divided by the total variance explained, while the loadings are the eigenvectors. Dimensionality reduction is the same as first rotating the data with the eigenvalues to be aligned with the principle components, then using only the components with the greatest eigenvalues.</p>
+</div>
+<div id="exercise-pca-on-the-iris-data" class="section level3" number="6.3.2">
+<h3><span class="header-section-number">6.3.2</span> Exercise: PCA on the iris data</h3>
+<p>Let’s try an example. We’re going to use a sample dataset in R and the base R version of PCA to start exploring this data analysis technique. Get the iris dataset into memory by typing “data(“iris”). Take a look at this dataset using the <strong>head()</strong>, <strong>str()</strong> or <strong>summary()</strong> functions. For a multivariate data set, you would like to take a look at the pairwise correlations. Remember that PCA can’t help us if the variables are not correlated. Let’s use the <strong>pairs()</strong> function to do this</p>
+<div class="sourceCode" id="cb51"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb51-1"><a href="introduction-to-multivariate-analysis.html#cb51-1" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(<span class="st">&quot;iris&quot;</span>)</span>
+<span id="cb51-2"><a href="introduction-to-multivariate-analysis.html#cb51-2" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(iris); <span class="fu">summary</span>(iris[<span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>])</span></code></pre></div>
+<pre><code>&#39;data.frame&#39;:   150 obs. of  5 variables:
+ $ Sepal.Length: num  5.1 4.9 4.7 4.6 5 5.4 4.6 5 4.4 4.9 ...
+ $ Sepal.Width : num  3.5 3 3.2 3.1 3.6 3.9 3.4 3.4 2.9 3.1 ...
+ $ Petal.Length: num  1.4 1.4 1.3 1.5 1.4 1.7 1.4 1.5 1.4 1.5 ...
+ $ Petal.Width : num  0.2 0.2 0.2 0.2 0.2 0.4 0.3 0.2 0.2 0.1 ...
+ $ Species     : Factor w/ 3 levels &quot;setosa&quot;,&quot;versicolor&quot;,..: 1 1 1 1 1 1 1 1 1 1 ...</code></pre>
+<pre><code>  Sepal.Length    Sepal.Width     Petal.Length    Petal.Width   
+ Min.   :4.300   Min.   :2.000   Min.   :1.000   Min.   :0.100  
+ 1st Qu.:5.100   1st Qu.:2.800   1st Qu.:1.600   1st Qu.:0.300  
+ Median :5.800   Median :3.000   Median :4.350   Median :1.300  
+ Mean   :5.843   Mean   :3.057   Mean   :3.758   Mean   :1.199  
+ 3rd Qu.:6.400   3rd Qu.:3.300   3rd Qu.:5.100   3rd Qu.:1.800  
+ Max.   :7.900   Max.   :4.400   Max.   :6.900   Max.   :2.500  </code></pre>
+<div class="sourceCode" id="cb54"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb54-1"><a href="introduction-to-multivariate-analysis.html#cb54-1" aria-hidden="true" tabindex="-1"></a><span class="fu">pairs</span>(iris[<span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>],<span class="at">main=</span><span class="st">&quot;Iris Data&quot;</span>, <span class="at">pch=</span><span class="dv">19</span>, <span class="at">col=</span><span class="fu">as.numeric</span>(iris<span class="sc">$</span>Species)<span class="sc">+</span><span class="dv">1</span>)</span></code></pre></div>
+<div class="figure"><span id="fig:coriris"></span>
+<img src="_main_files/figure-html/coriris-1.png" alt="" width="672" />
+<p class="caption">
+Figure 6.14: correlation atrix for the iris data
+</p>
+</div>
+<p>The colours let us see the data for each species, the plots are the pairwise plotting of each pair of the 4 variables (Fig. <a href="introduction-to-multivariate-analysis.html#fig:coriris">6.14</a>). Do you see any correlations?</p>
+<p>If there seem to be some correlations we might use PCA to visualize the 4 dimensional variable space. Let’s rush right in and use the <strong>prcomp()</strong> function to run a PCA on the numerical data in the iris dataframe. Save the output from the function to a new variable name so you can look at it when you type that name. The <strong>str()</strong> function will show you what the output object includes. If you use the <strong>summary()</strong> function, R will tell you what proportion of the total variance is explained by each axis.</p>
+<p>There is a problem though, let’s examine the variance in the raw data. Use the <strong>apply()</strong> function to quickly calculate the variance in each of the numeric columns of the data as apply(iris[,1:3], 1, var). What do you see? Are the variances of each the columns comparable?</p>
+<div class="sourceCode" id="cb55"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb55-1"><a href="introduction-to-multivariate-analysis.html#cb55-1" aria-hidden="true" tabindex="-1"></a>pca <span class="ot">&lt;-</span> <span class="fu">prcomp</span>(iris[,<span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>])</span>
+<span id="cb55-2"><a href="introduction-to-multivariate-analysis.html#cb55-2" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(pca)</span></code></pre></div>
+<pre><code>Importance of components:
+                          PC1     PC2    PC3     PC4
+Standard deviation     2.0563 0.49262 0.2797 0.15439
+Proportion of Variance 0.9246 0.05307 0.0171 0.00521
+Cumulative Proportion  0.9246 0.97769 0.9948 1.00000</code></pre>
+<div class="sourceCode" id="cb57"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb57-1"><a href="introduction-to-multivariate-analysis.html#cb57-1" aria-hidden="true" tabindex="-1"></a><span class="fu">apply</span>(iris[,<span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>], <span class="dv">2</span>, var)</span></code></pre></div>
+<pre><code>Sepal.Length  Sepal.Width Petal.Length  Petal.Width 
+   0.6856935    0.1899794    3.1162779    0.5810063 </code></pre>
+<p>Using covariances among variables only makes sense if they are measured in the same units, and even then, variables with high variances will dominate the principal components. These problems are generally avoided by standardizing each variable to unit variance and zero mean as <span class="math inline">\(X_{im}^{&#39;}=\frac{x_{im}-\bar{X_i}}{sd_i}\)</span> where sd is the standard deviation of variable <em>i</em>. After standardizaton, the variance of each variable is 1 and the covariances of the standardized variables are correlations.</p>
+<p>If you look at the help menu, the notes for the use of prcomp() STRONGLY recommend standardizing the data. To do this there is a built in option. We just need to set scale=TRUE. Let’s try again with data standardization. Save your new PCA output to a different name. We’ll compare to the unstandardized data in a moment. Take a look at the summary.</p>
+<div class="sourceCode" id="cb59"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb59-1"><a href="introduction-to-multivariate-analysis.html#cb59-1" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span> <span class="fu">prcomp</span>(iris[,<span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>], <span class="at">scale=</span><span class="cn">TRUE</span>)</span>
+<span id="cb59-2"><a href="introduction-to-multivariate-analysis.html#cb59-2" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(p)</span></code></pre></div>
+<pre><code>Importance of components:
+                          PC1    PC2     PC3     PC4
+Standard deviation     1.7084 0.9560 0.38309 0.14393
+Proportion of Variance 0.7296 0.2285 0.03669 0.00518
+Cumulative Proportion  0.7296 0.9581 0.99482 1.00000</code></pre>
+<p>Now we need to determine how many axes to use to interpret our analysis. For 4 variables it is easy enough to just look that the amount of variance. For larger numbers of variables a plot can be useful. The screeplot() function will output the variance explained by each of the principle component axes, and you can make a decision based on that (e.g., screeplot(pca2, type=“lines”)).</p>
+<p>An ideal curve should be steep, then bend at an “elbow” — this is your cutting-off point — and after that flattens out. To deal with a not-so-ideal scree plot curve you can apply the Kaiser rule: pick PCs with eigenvalues of at least 1. Or you can select using the proportion of variance where the PCs should be able to describe at least 80% of the variance.</p>
+<p><img src="_main_files/figure-html/scree-1.png" width="672" /></p>
+<p>It looks like synthetic axes 1 &amp; 2 explain most of the variation. So let’s plot those out. A PCA plot displays our samples in terms of their position (or <strong>scores</strong>) on the new axes. We can add information about how much variation each axis explains, and colour our points to match species identity. In this 2D representation of 4 dimensional space, it looks like species versicolor and viriginica group together (Fig. <a href="introduction-to-multivariate-analysis.html#fig:pacfirst">6.15</a>).</p>
+<div class="figure"><span id="fig:pacfirst"></span>
+<img src="_main_files/figure-html/pacfirst-1.png" alt="" width="672" />
+<p class="caption">
+Figure 6.15: PCA plot for the iris data
+</p>
+</div>
+We can also plot information about influence the various characterisitics are having on each of the axes. The eigenvectors used for the rotation give us this information. So let’s just print that out
+<table style="width:50%;">
+<caption>
+<span id="tab:barload">Table 6.7: </span>Eigenvectors (or ‘loadings’) for each variable and synthetic axis
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;">
+</th>
+<th style="text-align:center;">
+PC1
+</th>
+<th style="text-align:center;">
+PC2
+</th>
+<th style="text-align:center;">
+PC3
+</th>
+<th style="text-align:center;">
+PC4
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+Sepal.Length
+</td>
+<td style="text-align:center;">
+0.52
+</td>
+<td style="text-align:center;">
+-0.38
+</td>
+<td style="text-align:center;">
+0.72
+</td>
+<td style="text-align:center;">
+0.26
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Sepal.Width
+</td>
+<td style="text-align:center;">
+-0.27
+</td>
+<td style="text-align:center;">
+-0.92
+</td>
+<td style="text-align:center;">
+-0.24
+</td>
+<td style="text-align:center;">
+-0.12
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Petal.Length
+</td>
+<td style="text-align:center;">
+0.58
+</td>
+<td style="text-align:center;">
+-0.02
+</td>
+<td style="text-align:center;">
+-0.14
+</td>
+<td style="text-align:center;">
+-0.80
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Petal.Width
+</td>
+<td style="text-align:center;">
+0.56
+</td>
+<td style="text-align:center;">
+-0.07
+</td>
+<td style="text-align:center;">
+-0.63
+</td>
+<td style="text-align:center;">
+0.52
+</td>
+</tr>
+</tbody>
+</table>
+<p>We can see that a lot of information is coming from the petal variables for PC1, but less from the sepal variables (Table <a href="#Tab:barload"><strong>??</strong></a>).</p>
+<p>We can plot this out to show how strongly each variable affects each principle component (or synthetic axis). We can see that petal width and length are aligned along the PC1 axis, while PC2 explains more variation in sepal width (Fig @ref(fig: loadplot)).</p>
+<p><img src="_main_files/figure-html/loadplot-1.png" width="672" /></p>
+<p>To interpret the variable plot remember that positively correlated variables are grouped close together (e.g., petal length and width). Variables with about a 90 angle are probably not correlated, while negatively correlated variables are positioned on opposite sides of the plot origin (~180 angle; opposed quadrants). However, the direction of the axes is arbitrary! The distance between variables and the origin measures the contribution of the variables to the ordination. A shorter arrow indicates its less importance for the ordination. Variables that are away from the origin are well represented. Avoid the mistake of interpreting the relationships among variables based on the proximities of the apices (tips) of the vector arrows instead of their angles in biplots.</p>
+<p>Another way to portray this imformation is to create a <strong>biplot</strong> which, in addition to the coordinates of our samples on the synthetic axes PC1 and PC2, also provides information about how the variables align along the synthetic axes. (Fig (fig:pactwo).</p>
+<p>I should note that I have used an arbitrary scaling to display the variable loadings on each axis. Some of the R packages will use a specific scaling that will emphasize particular parts of the plot, either preserving the Euclidean distances between samples or the correlations/covariances between variables (e.g., vegan).</p>
+<div class="figure"><span id="fig:pactwo"></span>
+<img src="_main_files/figure-html/pactwo-1.png" alt="" width="672" />
+<p class="caption">
+Figure 6.16: PCA plot for the iris data
+</p>
+</div>
+<p>Principal components analysis assumes the relationships among variables are <em>linear</em>, so that the cloud of points in p-dimensional space has linear dimensions that can be effectively summarized by the principal axes. If the structure in the data is nonlinear (i.e., the cloud of points twists and curves its way through p-dimensional space), the principal axes will not be an efficient and informative summary of the data.</p>
+<p>For example, in community ecology, we might use PCA to summarize variables whose relationships are approximately linear or at least monotonic (e..g, soil properties might be used to extract a few components that summarize main dimensions of soil variation). However, in general PCA is generally not useful for ordinating community data because relationships among species are highly nonlinear.</p>
+<p>This nonlinearity can leaad to characterisitc artifacts, where, for example, community trends along environmental gradients appear as “horseshoes” in PCA ordinations because low species density at opposite extremes of an environmental gradiant appear relatively close together.</p>
+</div>
+<div id="principle-coordinates-analysis-pcoa" class="section level3" number="6.3.3">
+<h3><span class="header-section-number">6.3.3</span> Principle Coordinates Analysis (PCoA)</h3>
+<p>The PCoA method may be used with all types of distance descriptors, and so might be able to avoid sum problems of PCA. Although, a PCoA computed on a Euclidean distance matrix gives the same results as a PCA conducted on the original data</p>
+<div id="r-functions-for-pcoa" class="section level4" number="6.3.3.1">
+<h4><span class="header-section-number">6.3.3.1</span> R functions for PCoA</h4>
+<ul>
+<li><strong>cmdscale()</strong>(stats)
+-base R, no package needed</li>
+<li><strong>smacofSym()</strong> (library smacof)</li>
+<li><strong>wcmdscale()</strong>(vegan)</li>
+<li><strong>pco()</strong>(ecodist)</li>
+<li><strong>pco()</strong>(labdsv)</li>
+<li><strong>pcoa()</strong>(ape)</li>
+<li><strong>dudi.pco()</strong>(ade4)</li>
+</ul>
+</div>
+</div>
+<div id="nonmetric-multidimensional-scaling-nmds" class="section level3" number="6.3.4">
+<h3><span class="header-section-number">6.3.4</span> Nonmetric Multidimensional Scaling (NMDS)</h3>
+<p>Like PCoA, the method of nonmetric multidimensional scaling (nMDS), produces ordinations of objects from any resemblance matrix. However, nMDS compresses the distances in a non-linear way and its algorithm is computer-intensive, requiring more computing time than PCoA. PCoA is faster for large distance matrices.</p>
+<p>This ordinaton method does not to preserve the exact dissimilarities among objects in an ordination plot, instead it represent as well as possible the ordering relationships among objects in a small and specified number of axes. Like PCoA, nMDS can produce ordinations of objects from any dissimilarity matrix.The method can also cope with missing values, as long as there are enough measures left to position each object with respect to a few others. nMDS is not an eigenvalue technique, and it does not maximise the variability associated with individual axes of the ordination.</p>
+<p>In this computational method the steps are:</p>
+<ul>
+<li><p>Specify the desired number m of axes (dimensions) of the ordination.</p></li>
+<li><p>Construct an initial configuration of the objects in the m dimensions, to be used as a starting point of an iterative adjustment process. (tricky: end result may depend on this. A PCoA ordination may be a good start. Otherwise, try many independent runs with random initial configurations)</p></li>
+<li><p>Try to position the objects in the requested number of dimensions in such a way as to minimize how far the dissimilarities in the reduced-space configuration are from being monotonic to the original dissimilarities in the association matrix</p></li>
+<li><p>The adjustment goes on until the stress value cannot be lowered, or until it reaches a predetermined low value (tolerated lack-of-fit).</p></li>
+<li><p>Most NMDS programs rotate the final solution using PCA, for easier interpretation.</p></li>
+</ul>
+<p>NMDS often achieves a less deformed representation of the dissimilarity relationships among objects than a PCoA in the same number of dimensions. We can use a Shephard plot to get information about the distortion of representation. A Shepard diagram compares how far apart your data points are before and after you transform them (ie: goodness-of-fit) as a scatter plot. On the x-axis, we plot the original distances. On the y-axis, we plot the distances output by a dimension reduction algorithm. A really accurate dimension reduction will produce a straight line. However since information is almost always lost during data reduction, at least on real, high-dimension data, so Shepard diagrams rarely look this straight.</p>
+<p>Let’s try this for the iris data. We can evaluate the quality of the NMDS solution by checking the Shephard plot as : stressplot(nMDS, main = “Shepard plot”). In addition to the original dissimilarity and ordination distance, the plot displays two correlation-like statistics on the goodness of fit. The nonmetric fit is given by <span class="math inline">\(R^2\)</span>, while he “linear fit” is the squared correlation between fitted values and ordination distances (Fig. <a href="#fig:shep"><strong>??</strong></a>). There is some deformation here, but in general the representation is not so bad.</p>
+<pre><code>Loading required package: permute</code></pre>
+<pre><code>Loading required package: lattice</code></pre>
+<pre><code>This is vegan 2.5-7</code></pre>
+<pre><code>Run 0 stress 0.03775523 
+Run 1 stress 0.0553735 
+Run 2 stress 0.04367521 
+Run 3 stress 0.04804007 
+Run 4 stress 0.03775525 
+... Procrustes: rmse 1.133709e-05  max resid 3.616212e-05 
+... Similar to previous best
+Run 5 stress 0.03775522 
+... New best solution
+... Procrustes: rmse 7.621845e-06  max resid 7.564749e-05 
+... Similar to previous best
+Run 6 stress 0.05918357 
+Run 7 stress 0.06031974 
+Run 8 stress 0.03775524 
+... Procrustes: rmse 6.321677e-06  max resid 2.684336e-05 
+... Similar to previous best
+Run 9 stress 0.04355784 
+Run 10 stress 0.04367522 
+Run 11 stress 0.05059727 
+Run 12 stress 0.03775521 
+... New best solution
+... Procrustes: rmse 3.167733e-06  max resid 1.37392e-05 
+... Similar to previous best
+Run 13 stress 0.05361269 
+Run 14 stress 0.05317214 
+Run 15 stress 0.04804014 
+Run 16 stress 0.03775526 
+... Procrustes: rmse 1.217405e-05  max resid 5.425564e-05 
+... Similar to previous best
+Run 17 stress 0.03775524 
+... Procrustes: rmse 8.064894e-06  max resid 3.494195e-05 
+... Similar to previous best
+Run 18 stress 0.04804008 
+Run 19 stress 0.03775522 
+... Procrustes: rmse 3.889243e-05  max resid 0.0001678761 
+... Similar to previous best
+Run 20 stress 0.06144867 
+*** Solution reached</code></pre>
+<p><img src="_main_files/figure-html/shep-1.png" width="672" /></p>
+<p>nMDS often achieves a less deformed representation of the dissimilarity relationships among objects than a PCoA in the same number of dimensions. But nMDS is a computer-intensive iterative technique exposed to the risk of suboptimum solutions. In comparison, PCoA finds the optimal solution by eigenvalue decomposition.</p>
+<div id="r-functions-for-nmds" class="section level4" number="6.3.4.1">
+<h4><span class="header-section-number">6.3.4.1</span> R functions for NMDS</h4>
+<ul>
+<li><p><strong>metaMDS()</strong> (vegan)</p></li>
+<li><p><strong>isoMDS( )</strong> (MASS)</p></li>
+</ul>
+</div>
+</div>
+<div id="exercise-ordination" class="section level3" number="6.3.5">
+<h3><span class="header-section-number">6.3.5</span> Exercise: Ordination</h3>
+<p>We are going to use the vegan package, and some built in data with it to run the nMDS. varespec is a data frame of observations of 44 species at 24 sites. We’ll calculate both an NMDS and a PCoA using the (cmdscale() function) on the bray-curtis distance matrix of these data. In each case, we will specify that we want 2 dimensions as our output.</p>
+<div class="sourceCode" id="cb65"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb65-1"><a href="introduction-to-multivariate-analysis.html#cb65-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(vegan)</span>
+<span id="cb65-2"><a href="introduction-to-multivariate-analysis.html#cb65-2" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(varespec)</span>
+<span id="cb65-3"><a href="introduction-to-multivariate-analysis.html#cb65-3" aria-hidden="true" tabindex="-1"></a>disimvar<span class="ot">=</span><span class="fu">vegdist</span>(varespec, <span class="at">method =</span> <span class="st">&quot;bray&quot;</span>)</span>
+<span id="cb65-4"><a href="introduction-to-multivariate-analysis.html#cb65-4" aria-hidden="true" tabindex="-1"></a>nMDS <span class="ot">&lt;-</span> <span class="fu">metaMDS</span>(varespec, <span class="at">distance=</span><span class="st">&quot;bray&quot;</span>, <span class="at">k=</span><span class="dv">2</span>)</span></code></pre></div>
+<pre><code>Square root transformation
+Wisconsin double standardization
+Run 0 stress 0.1843196 
+Run 1 stress 0.2212141 
+Run 2 stress 0.2209227 
+Run 3 stress 0.2085515 
+Run 4 stress 0.1825658 
+... New best solution
+... Procrustes: rmse 0.0416743  max resid 0.1520615 
+Run 5 stress 0.195049 
+Run 6 stress 0.2398057 
+Run 7 stress 0.1955836 
+Run 8 stress 0.2114447 
+Run 9 stress 0.1967393 
+Run 10 stress 0.2419376 
+Run 11 stress 0.1825658 
+... New best solution
+... Procrustes: rmse 6.745298e-05  max resid 0.0002312025 
+... Similar to previous best
+Run 12 stress 0.1845801 
+Run 13 stress 0.2141967 
+Run 14 stress 0.2166093 
+Run 15 stress 0.1843196 
+Run 16 stress 0.1948413 
+Run 17 stress 0.2048307 
+Run 18 stress 0.2234893 
+Run 19 stress 0.1985582 
+Run 20 stress 0.1825658 
+... Procrustes: rmse 1.255124e-05  max resid 3.837387e-05 
+... Similar to previous best
+*** Solution reached</code></pre>
+<div class="sourceCode" id="cb67"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb67-1"><a href="introduction-to-multivariate-analysis.html#cb67-1" aria-hidden="true" tabindex="-1"></a>PCoA <span class="ot">&lt;-</span> <span class="fu">cmdscale</span>(disimvar, <span class="at">k =</span> <span class="dv">2</span>, <span class="at">eig =</span> T, <span class="at">add =</span> T )</span></code></pre></div>
+<p>If we look at the object PCoA we see eigenvalues, one for each of the 20 sites, and the new 2-D coordinates for each site. We can plot the results as plot(PCoA$points). In fact, let’s plot the PCoA and the NMDS side by side to see if they differ, using the par(mfrow()) functions. In this case, our species are the variables and our sites/samples are the objects of our attention. There’s a lot of species, so we won’t draw the arrows, we’ll just show their position on the biplot.</p>
+<p><img src="_main_files/figure-html/unnamed-chunk-19-1.png" width="672" /></p>
+
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="introduction-to-r-markdown.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="optimization.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

@@ -1,0 +1,1411 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>4 Introduction to Git and GitHub | Further Git and GitHub</title>
+  <meta name="description" content="This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook." />
+  <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="4 Introduction to Git and GitHub | Further Git and GitHub" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook." />
+  <meta name="github-repo" content="rstudio/bookdown-demo" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="4 Introduction to Git and GitHub | Further Git and GitHub" />
+  
+  <meta name="twitter:description" content="This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook." />
+  
+
+<meta name="author" content="Andrew Edwards" />
+
+
+<meta name="date" content="2021-05-07" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="literature.html"/>
+<link rel="next" href="introduction-to-r-markdown.html"/>
+<script src="libs/header-attrs-2.7/header-attrs.js"></script>
+<script src="libs/jquery-3.5.1/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+<script src="libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
+<link href="libs/bsTable-3.3.7/bootstrapTable.min.css" rel="stylesheet" />
+<script src="libs/bsTable-3.3.7/bootstrapTable.js"></script>
+<script src="libs/htmlwidgets-1.5.3/htmlwidgets.js"></script>
+<script src="libs/plotly-binding-4.9.4/plotly.js"></script>
+<script src="libs/typedarray-0.1/typedarray.min.js"></script>
+<link href="libs/crosstalk-1.1.1/css/crosstalk.css" rel="stylesheet" />
+<script src="libs/crosstalk-1.1.1/js/crosstalk.min.js"></script>
+<link href="libs/plotly-htmlwidgets-css-1.57.1/plotly-htmlwidgets.css" rel="stylesheet" />
+<script src="libs/plotly-main-1.57.1/plotly-latest.min.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Prerequisites</a></li>
+<li class="chapter" data-level="2" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>2</b> Introduction</a></li>
+<li class="chapter" data-level="3" data-path="literature.html"><a href="literature.html"><i class="fa fa-check"></i><b>3</b> Literature</a></li>
+<li class="chapter" data-level="4" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html"><i class="fa fa-check"></i><b>4</b> Introduction to Git and GitHub</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#motivation"><i class="fa fa-check"></i><b>4.1</b> Motivation</a></li>
+<li class="chapter" data-level="4.2" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#getting-set-up-for-the-first-time"><i class="fa fa-check"></i><b>4.2</b> Getting set up for the first time</a>
+<ul>
+<li class="chapter" data-level="4.2.1" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#what-you-will-end-up-having-installed"><i class="fa fa-check"></i><b>4.2.1</b> What you will end up having installed</a></li>
+<li class="chapter" data-level="4.2.2" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#get-a-github-account"><i class="fa fa-check"></i><b>4.2.2</b> Get a GitHub account</a></li>
+<li class="chapter" data-level="4.2.3" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#text-editor"><i class="fa fa-check"></i><b>4.2.3</b> Text Editor</a></li>
+<li class="chapter" data-level="4.2.4" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#install-the-git-application-on-your-machine"><i class="fa fa-check"></i><b>4.2.4</b> Install the Git application on your machine</a></li>
+<li class="chapter" data-level="4.2.5" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#git-shell"><i class="fa fa-check"></i><b>4.2.5</b> Git shell</a></li>
+<li class="chapter" data-level="4.2.6" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#git-shell-rstudio"><i class="fa fa-check"></i><b>4.2.6</b> Git shell, RStudio</a></li>
+<li class="chapter" data-level="4.2.7" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#powershell-and-posh-git"><i class="fa fa-check"></i><b>4.2.7</b> Powershell and posh-git</a></li>
+<li class="chapter" data-level="4.2.8" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#one-time-authentication"><i class="fa fa-check"></i><b>4.2.8</b> One-time authentication</a></li>
+<li class="chapter" data-level="4.2.9" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#configure-the-git-application"><i class="fa fa-check"></i><b>4.2.9</b> Configure the Git application</a></li>
+<li class="chapter" data-level="4.2.10" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#install-the-difftool"><i class="fa fa-check"></i><b>4.2.10</b> Install the difftool</a></li>
+<li class="chapter" data-level="4.2.11" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#cloning-the-git-course-repository"><i class="fa fa-check"></i><b>4.2.11</b> “Cloning” the git-course repository</a></li>
+<li class="chapter" data-level="4.2.12" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#copy-the-.gitignore-file"><i class="fa fa-check"></i><b>4.2.12</b> Copy the <em>.gitignore</em> file</a></li>
+<li class="chapter" data-level="4.2.13" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#edit-the-.gitconfig-file"><i class="fa fa-check"></i><b>4.2.13</b> Edit the <em>.gitconfig</em> file</a></li>
+<li class="chapter" data-level="4.2.14" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#mac-only-make-your-output-pretty"><i class="fa fa-check"></i><b>4.2.14</b> MAC only: make your output pretty</a></li>
+<li class="chapter" data-level="4.2.15" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#markdown-pad"><i class="fa fa-check"></i><b>4.2.15</b> Markdown Pad</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#using-git-and-github"><i class="fa fa-check"></i><b>4.3</b> Using Git and GitHub</a>
+<ul>
+<li class="chapter" data-level="4.3.1" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#definitions"><i class="fa fa-check"></i><b>4.3.1</b> Definitions</a></li>
+<li class="chapter" data-level="4.3.2" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#creating-a-new-repository"><i class="fa fa-check"></i><b>4.3.2</b> Creating a new repository</a></li>
+<li class="chapter" data-level="4.3.3" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#cloning-your-new-repository"><i class="fa fa-check"></i><b>4.3.3</b> Cloning your new repository</a></li>
+<li class="chapter" data-level="4.3.4" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#committing"><i class="fa fa-check"></i><b>4.3.4</b> Committing</a></li>
+<li class="chapter" data-level="4.3.5" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#exercise-1-create-edit-and-commit-simpletext.txt"><i class="fa fa-check"></i><b>4.3.5</b> Exercise 1: create, edit and commit <em>simpleText.txt</em></a></li>
+<li class="chapter" data-level="4.3.6" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#exercise-2-multiple-files"><i class="fa fa-check"></i><b>4.3.6</b> Exercise 2: multiple files</a></li>
+<li class="chapter" data-level="4.3.7" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#collaborating"><i class="fa fa-check"></i><b>4.3.7</b> Collaborating</a></li>
+<li class="chapter" data-level="4.3.8" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#exercise-3-collaborating-on-a-single-repository"><i class="fa fa-check"></i><b>4.3.8</b> Exercise 3: collaborating on a single repository</a></li>
+</ul></li>
+<li class="chapter" data-level="4.4" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#beyond-the-basics"><i class="fa fa-check"></i><b>4.4</b> Beyond the basics</a>
+<ul>
+<li class="chapter" data-level="4.4.1" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#workflow-tips"><i class="fa fa-check"></i><b>4.4.1</b> Workflow tips</a></li>
+<li class="chapter" data-level="4.4.2" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#so-ive-made-some-changes-but-dont-really-want-to-keep-them-git-stash"><i class="fa fa-check"></i><b>4.4.2</b> So I’ve made some changes but don’t really want to keep them – git stash</a></li>
+<li class="chapter" data-level="4.4.3" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#pull-requests"><i class="fa fa-check"></i><b>4.4.3</b> Pull requests</a></li>
+<li class="chapter" data-level="4.4.4" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#the-power-to-go-back"><i class="fa fa-check"></i><b>4.4.4</b> The power to go back</a></li>
+<li class="chapter" data-level="4.4.5" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#so-how-does-git-do-all-this"><i class="fa fa-check"></i><b>4.4.5</b> So how does Git do all this?</a></li>
+<li class="chapter" data-level="4.4.6" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#git-terminology"><i class="fa fa-check"></i><b>4.4.6</b> Git terminology</a></li>
+<li class="chapter" data-level="4.4.7" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#branching"><i class="fa fa-check"></i><b>4.4.7</b> Branching</a></li>
+<li class="chapter" data-level="4.4.8" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#undoing-stuff"><i class="fa fa-check"></i><b>4.4.8</b> Undoing stuff</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="introduction-to-r-markdown.html"><a href="introduction-to-r-markdown.html"><i class="fa fa-check"></i><b>5</b> Introduction to R Markdown</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="introduction-to-r-markdown.html"><a href="introduction-to-r-markdown.html#motivation-1"><i class="fa fa-check"></i><b>5.1</b> Motivation</a></li>
+<li class="chapter" data-level="5.2" data-path="introduction-to-r-markdown.html"><a href="introduction-to-r-markdown.html#basic-idea"><i class="fa fa-check"></i><b>5.2</b> Basic idea</a></li>
+<li class="chapter" data-level="5.3" data-path="introduction-to-r-markdown.html"><a href="introduction-to-r-markdown.html#simple-example"><i class="fa fa-check"></i><b>5.3</b> Simple example</a>
+<ul>
+<li class="chapter" data-level="5.3.1" data-path="introduction-to-r-markdown.html"><a href="introduction-to-r-markdown.html#exercise"><i class="fa fa-check"></i><b>5.3.1</b> Exercise</a></li>
+</ul></li>
+<li class="chapter" data-level="5.4" data-path="introduction-to-r-markdown.html"><a href="introduction-to-r-markdown.html#output-format"><i class="fa fa-check"></i><b>5.4</b> Output format</a></li>
+<li class="chapter" data-level="5.5" data-path="introduction-to-r-markdown.html"><a href="introduction-to-r-markdown.html#further-reading"><i class="fa fa-check"></i><b>5.5</b> Further reading</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="introduction-to-multivariate-analysis.html"><a href="introduction-to-multivariate-analysis.html"><i class="fa fa-check"></i><b>6</b> Introduction to multivariate analysis</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="introduction-to-multivariate-analysis.html"><a href="introduction-to-multivariate-analysis.html#multivariate-resemblance"><i class="fa fa-check"></i><b>6.1</b> Multivariate resemblance</a>
+<ul>
+<li class="chapter" data-level="6.1.1" data-path="introduction-to-multivariate-analysis.html"><a href="introduction-to-multivariate-analysis.html#binary-similarity-metrics"><i class="fa fa-check"></i><b>6.1.1</b> Binary Similarity metrics</a></li>
+<li class="chapter" data-level="6.1.2" data-path="introduction-to-multivariate-analysis.html"><a href="introduction-to-multivariate-analysis.html#quantitative-similarity-dissimilarity-metrics"><i class="fa fa-check"></i><b>6.1.2</b> Quantitative similarity &amp; dissimilarity metrics</a></li>
+<li class="chapter" data-level="6.1.3" data-path="introduction-to-multivariate-analysis.html"><a href="introduction-to-multivariate-analysis.html#comparing-more-than-two-communitiessamplessitesgenesspecies"><i class="fa fa-check"></i><b>6.1.3</b> Comparing more than two communities/samples/sites/genes/species</a></li>
+<li class="chapter" data-level="6.1.4" data-path="introduction-to-multivariate-analysis.html"><a href="introduction-to-multivariate-analysis.html#r-functions"><i class="fa fa-check"></i><b>6.1.4</b> R functions</a></li>
+</ul></li>
+<li class="chapter" data-level="6.2" data-path="introduction-to-multivariate-analysis.html"><a href="introduction-to-multivariate-analysis.html#cluster-analysis"><i class="fa fa-check"></i><b>6.2</b> Cluster Analysis</a>
+<ul>
+<li class="chapter" data-level="6.2.1" data-path="introduction-to-multivariate-analysis.html"><a href="introduction-to-multivariate-analysis.html#hierarchical-clustering-groups-are-nested-within-other-groups."><i class="fa fa-check"></i><b>6.2.1</b> Hierarchical clustering: groups are nested within other groups.</a></li>
+<li class="chapter" data-level="6.2.2" data-path="introduction-to-multivariate-analysis.html"><a href="introduction-to-multivariate-analysis.html#r-functions-1"><i class="fa fa-check"></i><b>6.2.2</b> R functions</a></li>
+<li class="chapter" data-level="6.2.3" data-path="introduction-to-multivariate-analysis.html"><a href="introduction-to-multivariate-analysis.html#how-many-clusters"><i class="fa fa-check"></i><b>6.2.3</b> How many clusters?</a></li>
+<li class="chapter" data-level="6.2.4" data-path="introduction-to-multivariate-analysis.html"><a href="introduction-to-multivariate-analysis.html#other-clustering-methods"><i class="fa fa-check"></i><b>6.2.4</b> Other clustering methods</a></li>
+<li class="chapter" data-level="6.2.5" data-path="introduction-to-multivariate-analysis.html"><a href="introduction-to-multivariate-analysis.html#exercise-cluster-analysis-of-isotope-data"><i class="fa fa-check"></i><b>6.2.5</b> Exercise: Cluster analysis of isotope data</a></li>
+</ul></li>
+<li class="chapter" data-level="6.3" data-path="introduction-to-multivariate-analysis.html"><a href="introduction-to-multivariate-analysis.html#ordination"><i class="fa fa-check"></i><b>6.3</b> Ordination</a>
+<ul>
+<li class="chapter" data-level="6.3.1" data-path="introduction-to-multivariate-analysis.html"><a href="introduction-to-multivariate-analysis.html#principal-components-analysis-pca"><i class="fa fa-check"></i><b>6.3.1</b> Principal Components Analysis (PCA)</a></li>
+<li class="chapter" data-level="6.3.2" data-path="introduction-to-multivariate-analysis.html"><a href="introduction-to-multivariate-analysis.html#exercise-pca-on-the-iris-data"><i class="fa fa-check"></i><b>6.3.2</b> Exercise: PCA on the iris data</a></li>
+<li class="chapter" data-level="6.3.3" data-path="introduction-to-multivariate-analysis.html"><a href="introduction-to-multivariate-analysis.html#principle-coordinates-analysis-pcoa"><i class="fa fa-check"></i><b>6.3.3</b> Principle Coordinates Analysis (PCoA)</a></li>
+<li class="chapter" data-level="6.3.4" data-path="introduction-to-multivariate-analysis.html"><a href="introduction-to-multivariate-analysis.html#nonmetric-multidimensional-scaling-nmds"><i class="fa fa-check"></i><b>6.3.4</b> Nonmetric Multidimensional Scaling (NMDS)</a></li>
+<li class="chapter" data-level="6.3.5" data-path="introduction-to-multivariate-analysis.html"><a href="introduction-to-multivariate-analysis.html#exercise-ordination"><i class="fa fa-check"></i><b>6.3.5</b> Exercise: Ordination</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="optimization.html"><a href="optimization.html"><i class="fa fa-check"></i><b>7</b> Optimization</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="optimization.html"><a href="optimization.html#introduction"><i class="fa fa-check"></i><b>7.1</b> Introduction</a></li>
+<li class="chapter" data-level="7.2" data-path="optimization.html"><a href="optimization.html#fundamentals-of-optimization"><i class="fa fa-check"></i><b>7.2</b> Fundamentals of Optimization</a>
+<ul>
+<li class="chapter" data-level="7.2.1" data-path="optimization.html"><a href="optimization.html#fermats-theorem"><i class="fa fa-check"></i><b>7.2.1</b> Fermat’s Theorem</a></li>
+</ul></li>
+<li class="chapter" data-level="7.3" data-path="optimization.html"><a href="optimization.html#regression"><i class="fa fa-check"></i><b>7.3</b> Regression</a>
+<ul>
+<li class="chapter" data-level="7.3.1" data-path="optimization.html"><a href="optimization.html#linear-regression"><i class="fa fa-check"></i><b>7.3.1</b> Linear Regression</a></li>
+<li class="chapter" data-level="7.3.2" data-path="optimization.html"><a href="optimization.html#nonlinear-regression"><i class="fa fa-check"></i><b>7.3.2</b> Nonlinear Regression</a></li>
+</ul></li>
+<li class="chapter" data-level="7.4" data-path="optimization.html"><a href="optimization.html#iterative-optimization-algorithms"><i class="fa fa-check"></i><b>7.4</b> Iterative Optimization Algorithms</a>
+<ul>
+<li class="chapter" data-level="7.4.1" data-path="optimization.html"><a href="optimization.html#gradient-descent"><i class="fa fa-check"></i><b>7.4.1</b> Gradient Descent</a></li>
+</ul></li>
+<li class="chapter" data-level="7.5" data-path="optimization.html"><a href="optimization.html#calibration-of-dynamic-models"><i class="fa fa-check"></i><b>7.5</b> Calibration of Dynamic Models</a></li>
+<li class="chapter" data-level="7.6" data-path="optimization.html"><a href="optimization.html#uncertainty-analysis-and-bayesian-calibration"><i class="fa fa-check"></i><b>7.6</b> Uncertainty Analysis and Bayesian Calibration</a></li>
+<li class="chapter" data-level="7.7" data-path="optimization.html"><a href="optimization.html#references"><i class="fa fa-check"></i><b>7.7</b> References</a></li>
+</ul></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Further Git and GitHub</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="introduction-to-git-and-github" class="section level1" number="4">
+<h1><span class="header-section-number">4</span> Introduction to Git and GitHub</h1>
+<div id="motivation" class="section level2" number="4.1">
+<h2><span class="header-section-number">4.1</span> Motivation</h2>
+<p>As a biology graduate student or a professional biologist in a university or
+government setting, why might you want to use Git and GitHub? And what are Git
+and GitHub anyway?</p>
+<ul>
+<li>Scientists (including students) are working far more collaboratively than in the past</li>
+<li>This involves both sharing code and writing up results</li>
+<li>There is a push towards open science – including your code as part of a scientific paper</li>
+<li>We have called this a TTT approach:
+<ul>
+<li>Transparent – a clear and open way to show data, code, and results, enabling reproducibility</li>
+<li>Traceable – a clear link from database queries and code to final results (numbers, tables, and graphs in a document)</li>
+<li>Transferable – it should be feasible for another person to reproduce work and build upon it with a minimal learning curve</li>
+</ul></li>
+</ul>
+<p>Using Git and GitHub in your workflow greatly enables this, both when working alone and in a team.</p>
+<ul>
+<li><span style="color: red;">Git</span> keeps track of the latest versions of your files,
+such as computer code or write up for results as you work on them.</li>
+<li>It also allows you to go back to <span style="color: red;">any previous version</span> of your
+files (this is ‘version control’). (It also does much more).</li>
+<li><span style="color: red;">GitHub</span> is a website that hosts a ‘repository’ of your work code and enables
+users to easily collaborate.</li>
+<li>Your repositories can be either public or private.</li>
+</ul>
+<p>We use Git and GitHub extensively:</p>
+<ul>
+<li>to collaborate on writing code and producing documents (such as this entire document!).</li>
+<li>to easily share code publically for scientific papers, and update it if necessary.</li>
+<li>when working alone to retain a methodical workflow.</li>
+</ul>
+<p><strong>Example application – Pacific Hake stock assessment</strong></p>
+<p>Under a formal Agreement between the Canadian and US governments, a team of four
+of us (two from each country) conduct an
+annual stock assessment for Pacific Hake (<em>Merluccius productus</em>) off the west
+coast of Canada and the US. The assessment is used to manage the stock, which is of important
+ecological and economic value ($100 million export value in Canada).</p>
+<p><img src="../module-1-git/images/hake-picture.png" style="width:50.0%" /></p>
+<p>We fit complex population models to data to make projections about future
+health of the stock under different levels of catch. There is a very short
+turnaround (five weeks) between getting the final data, doing the analyses
+(model runs can take many hours of computer time) and submitting the
+assessment document, which is typically &gt;200 pages and contains numerous figures
+and tables <a href="https://media.fisheries.noaa.gov/2021-03/hake-assessment-post-srg-final_20210303.pdf?null">available
+here</a>.</p>
+<p>Prior to 2016, the document was assembled in Word, requiring lots of editing
+and amaglamating of files, often late at night. Now we share our code via
+GitHub, automate a lot of the document production using knitr (similar to
+Rmarkdown, covered in Module 2).</p>
+<p>So with four people constantly working on the same large document, we need to
+ensure we are keeping up-to-date with each other, can all produce the latest
+version, and have <span style="color: red;">identical</span> folder structures on each other’s
+computers. The alternative of emailing files back and forth is:</p>
+<ul>
+<li>very inefficient,</li>
+<li>prone to errors,</li>
+<li>just painful.</li>
+</ul>
+<p><strong>What we can avoid</strong></p>
+<p>Using GitHub it is easy to see what text/code collaborators have changed, avoiding
+things like the following, for which it hard to see where to get started:</p>
+<p><img src="../module-1-git/images/interim.png" style="width:100.0%" /></p>
+<p>We may want to keep old versions of files (and email them back and forth), but
+without GitHub we can end up with a veritable gong show:</p>
+<p><img src="../module-1-git/images/EAversions.png" style="width:100.0%" /></p>
+<p>We can avoid having to co-ordinate having only one person working on the latest
+version of a document, so we don’t get things like:</p>
+<p><img src="../module-1-git/images/proposalEmail.png" style="width:100.0%" /></p>
+<p>Can avoid multiple versions of a file that then have to be carefully merged:</p>
+<p><img src="../module-1-git/images/dogsBreakfast.png" style="width:100.0%" /></p>
+<p>While GoogleDocs, for example, is fine for collaborating on a short document, it
+isn’t suitable for sharing complex code, or complex documents that are somewhat
+automatically updated.</p>
+<p><strong>GitHub advantages</strong></p>
+<ol style="list-style-type: decimal">
+<li>Say you’ve off on a two-week hike while your collaborators
+have been diligently working away and they have edited 15 new files of code in
+five folders, added four data sets, and created five new pages of text towards
+a manuscript. You can easily
+catch up with them (get all their changes onto your computer) with a few
+simple commands. You don’t even have to pester them to ask what they’ve done,
+as you can check it yourself.</li>
+</ol>
+<p>So rather than this conversation:</p>
+<ul>
+<li><p>You: “Hey, I’m back from my awesome trip and saw some bears. What have you
+been doing with the project?”</p></li>
+<li><p>Likely reply: “Glad you had fun. I’m busy on something else right now. Er,
+where were we at when you left?”</p></li>
+</ul>
+<p>You can have this one:</p>
+<ul>
+<li><p>You: “Hey, I’m back from my awesome trip and saw some bears. I went through your
+commits on GitHub and everything looks great. Shall I get on those Methods
+Issues you assigned me?”</p></li>
+<li><p>Likely reply: “Glad you had fun, looking forward to hearing about it. I’m busy
+on something else right now so, yes, resolving those issues will be great,
+thanks.”</p></li>
+</ul>
+<p>And the project keeps moving in an efficient way.</p>
+<ol start="2" style="list-style-type: decimal">
+<li>By having code shared publically, it is easy to answer questions, such as
+this one I received:</li>
+</ol>
+<p><img src="../module-1-git/images/MEEcodeQuest.png" style="width:100.0%" /></p>
+<p>Rather than go searching on my laptop for the code that I hadn’t looked at for
+six months, I could click on the link the questioner sent and answer very
+quickly, with a simple link to the file I am referring to (there is no ambiguity):</p>
+<p><img src="../module-1-git/images/MEEcodeAnswer.png" style="width:100.0%" /></p>
+<ol start="3" style="list-style-type: decimal">
+<li>You can even ask who last edited a particular line of code/text (GitHub
+amusingly calls it ‘Blame’):</li>
+</ol>
+<p><img src="../module-1-git/images/blame.png" style="width:100.0%" /></p>
+<ol start="4" style="list-style-type: decimal">
+<li>You can properly keep track of (and discuss) ‘Issues’ to be thought about or
+fixed, rather than having things in emails that get forgotten:</li>
+</ol>
+<p><img src="../module-1-git/images/hakeIssues21.png" style="width:100.0%" /></p>
+<ol start="5" style="list-style-type: decimal">
+<li><strong>Important:</strong> You still have all your work locally on your computer. So if
+your internet access goes down or GitHub is unavailable (which of course will only happen
+when you have a deadline) you can still carry on with your work.</li>
+</ol>
+<p><strong>Why this course?</strong></p>
+<p>Delving into the Git and GitHub world online it can feel like you need a
+computer science degree to get started. This may not be surprising as Git
+was writting by the guy who wrote the operating system Linux, to help people
+collaborate on writing the operating system Linux. But it means that, for
+example, the second paragraph of the Wikipedia Git page says:</p>
+<p>“As with most other distributed version control systems, and unlike most
+client–server systems, every Git directory on every computer is a full-fledged
+repository with complete history and full version-tracking abilities,
+independent of network access or a central server.”</p>
+<p>Say what??? That is fairly incomprehensible to those without strong computer science
+backgrounds. The aim of this module is to introduce biologists to the world of
+Git and GitHub, while avoiding a lot of the technical details. However, once you
+have mastered the basics then it should be easier to delve deeper.</p>
+<p>Our target audience is:</p>
+<ul>
+<li>graduate level biology students</li>
+<li>biology faculty</li>
+<li>government scientists</li>
+<li>scientists in non-governmental organisations</li>
+<li>in fact anyone wanting to learn these tools</li>
+</ul>
+<p>This work is extended from lectures and exercises developed by Chris Grandin and
+myself as part of a
+<a href="https://github.com/pbs-assess/TTTworkshop">Fisheries and Oceans Canada workshop</a>. (Luckily Chris
+<em>does</em> have a computer science degree, and so was able to get some of us going
+with Git and GitHub several years ago). These tools are now widely used within
+our organisation.</p>
+<p><strong>Computer language</strong></p>
+<p>For sharing code, it doesn’t matter what language your code is in (R, Matlab, Python, C,
+…), as we will just be sharing text files. There is a learning curve, but once
+you get going you only really need a few main commands. Unfortunately the hardest bit is
+actually getting everything set up….</p>
+</div>
+<div id="getting-set-up-for-the-first-time" class="section level2" number="4.2">
+<h2><span class="header-section-number">4.2</span> Getting set up for the first time</h2>
+<p>Before you start using Git you need to set up your computer to use it, and install a few other programs that are useful.</p>
+<p>This is a <span style="color: red;">one-time setup</span>
+and once it is done, you
+will be able to easily create new projects or join others in collaboration.</p>
+<p>We have tested the installations as much as feasible. If you have an issue then search the internet, as it may be due to some configuration on your particular computer.</p>
+<p>This module is for any operating system: Windows, MacOS, Linux or Unix.</p>
+<div id="what-you-will-end-up-having-installed" class="section level3" number="4.2.1">
+<h3><span class="header-section-number">4.2.1</span> What you will end up having installed</h3>
+<p>These are programs/things you will need (instructions are on the next slides). Obviously skip any that you already have working.</p>
+<ul>
+<li>A GitHub account</li>
+<li>A text editor that isn’t Notepad</li>
+<li>Git on your computer</li>
+<li>Diffmerge or something similar for comparing changes to files (not completely necessary)</li>
+<li>Markdown Pad 2 or Chrome extension or something similar for viewing Markdown files (not completely necessary)</li>
+</ul>
+</div>
+<div id="get-a-github-account" class="section level3" number="4.2.2">
+<h3><span class="header-section-number">4.2.2</span> Get a GitHub account</h3>
+<ul>
+<li>Sign up for GitHub: <a href="http://github.com" class="uri">http://github.com</a></li>
+<li>If possible, choose a user name that will make sense to colleagues, e.g. <strong>andrew-edwards</strong> or <strong>cgrandin</strong>, not <strong>pink-unicorn</strong>.</li>
+<li>Desirable: attach a photo (headshot) to your profile. This makes it easy for collaborators to identify you.</li>
+</ul>
+</div>
+<div id="text-editor" class="section level3" number="4.2.3">
+<h3><span class="header-section-number">4.2.3</span> Text Editor</h3>
+<p>You must have a text editor that is aware of outside changes in a file. This is necessary because if you have a file open in the editor and you download an updated version of the file, you want the editor to ask you if you want to use the updated version.</p>
+<p>We know that <strong>Emacs</strong>, <strong>Xemacs</strong> and maybe <strong>Vim</strong> are okay, as is <strong>RStudiofor.R</strong> (and other) files.</p>
+<p><strong>Notepad</strong> is not okay. But you can download and install <strong>Notepad++</strong> which is fine:</p>
+<p><a href="https://notepad-plus-plus.org/download/v7.3.3.html" class="uri">https://notepad-plus-plus.org/download/v7.3.3.html</a></p>
+</div>
+<div id="install-the-git-application-on-your-machine" class="section level3" number="4.2.4">
+<h3><span class="header-section-number">4.2.4</span> Install the Git application on your machine</h3>
+<p>See <a href="https://git-scm.com/downloads" class="uri">https://git-scm.com/downloads</a> for downloading instructions for Windows, MAC and Linux/Unix</p>
+<p>It seems best to accept the default options, except NOT Notepad or Vim (unless
+you use Vim) as the default editor.</p>
+</div>
+<div id="git-shell" class="section level3" number="4.2.5">
+<h3><span class="header-section-number">4.2.5</span> Git shell</h3>
+<p>For this course we will use a simple git shell to type commands (rather than a point-and-click Graphical User Interface). This is for several reasons:</p>
+<ol style="list-style-type: decimal">
+<li>Commands are the same across operating systems.</li>
+<li>It is easier to demonstrate (and remember) a few simple commands, rather than follow a cursor moving across a screen.</li>
+<li>Learning the text commands will give you a good understanding of how Git and GitHub work.</li>
+<li>It is easier to Google for help when you get stuck or want to learn about more advanced options.</li>
+<li>Commands are quick, and you can usually the up arrow (or ctrl-up-arrow) to
+retrieve recent commands, or auto-complete commands using <TAB>.</li>
+</ol>
+</div>
+<div id="git-shell-rstudio" class="section level3" number="4.2.6">
+<h3><span class="header-section-number">4.2.6</span> Git shell, RStudio</h3>
+<p>There are many Graphical User Interfaces that are available, as described at <a href="https://git-scm.com/downloads/guis" class="uri">https://git-scm.com/downloads/guis</a>.</p>
+<p>Many (but not all) biologists use R in RStudio for their analyses. There is Git functionality built in to RStudio that we (TODO: SOMEONE?) will demonstrate later.</p>
+<p>I use magit which works in the text editor emacs (which for years I have used
+for pretty much everything, such as editing files, running R, Matlab, etc.). But
+I would not have been able to learn magit without first knowing the Git commands
+from using the shell.</p>
+<p>For now we will stick with the Git shell for the aforementioned reasons. It will
+also give you a better understanding of Git and GitHub, and emphasise that you
+can use Git for any files, not just R code.</p>
+</div>
+<div id="powershell-and-posh-git" class="section level3" number="4.2.7">
+<h3><span class="header-section-number">4.2.7</span> Powershell and posh-git</h3>
+<p>Download a Powershell (a shell window in which you can type commands, presumably
+the ‘power’ part means it’s more powerful than a basic version) and then
+posh-git following the instructions at <a href="https://github.com/dahlbyk/posh-git" class="uri">https://github.com/dahlbyk/posh-git</a></p>
+<p>Do the ‘Installation’ and ‘Using posh-git’ sections. If you don’t understand
+some options (I don’t!) just pick the simplest, usually the first.</p>
+<p>The next slides are from our course about three years ago (and were for
+Windows). So they may be out of date (though first one is recent tips from a colleague).</p>
+<p>[Maybe we should see <a href="https://upg-dh.newtfire.org/explainGitShell.html" class="uri">https://upg-dh.newtfire.org/explainGitShell.html</a>]</p>
+</div>
+<div id="one-time-authentication" class="section level3" number="4.2.8">
+<h3><span class="header-section-number">4.2.8</span> One-time authentication</h3>
+<p>The first time you get set up or start using Git, there will be some one-timeauthentication to connect to your GitHub account. Follow any instructions.</p>
+</div>
+<div id="configure-the-git-application" class="section level3" number="4.2.9">
+<h3><span class="header-section-number">4.2.9</span> Configure the Git application</h3>
+<ul>
+<li>Windows
+<ol style="list-style-type: decimal">
+<li>Create a github directory, such as C:. It is fine to put it in a differentpath, but make sure there are no spaces or special charactersanywherein the fullpath. This is where you want to be saving your work that you are tracking with Git.</li>
+<li>TODO: Andy has to reinstall anyway and will write something here. Think it’s just following instructions.
+<br></li>
+</ol></li>
+<li>MAC
+<ol style="list-style-type: decimal">
+<li>Create the directory ~/github</li>
+<li>Enjoy a beverage</li>
+<li>TODO: Check with Luwen if it is that simple</li>
+</ol></li>
+</ul>
+</div>
+<div id="install-the-difftool" class="section level3" number="4.2.10">
+<h3><span class="header-section-number">4.2.10</span> Install the difftool</h3>
+<p>The difftool will be used to examine differences between different versions of
+files and also to simplify merging of branches and collaborator’s code. There are
+many programs that can be used but for consistency we will use Diffmerge.</p>
+<p>It is nice to have but not essential if you have trouble installing it.</p>
+<p>Install Diffmerge: <a href="https://sourcegear.com/diffmerge/downloads.php" class="uri">https://sourcegear.com/diffmerge/downloads.php</a></p>
+<p>The configuration for directing git to use Diffmerge will be done below.</p>
+</div>
+<div id="cloning-the-git-course-repository" class="section level3" number="4.2.11">
+<h3><span class="header-section-number">4.2.11</span> “Cloning” the git-course repository</h3>
+<ul>
+<li>On the GitHub webpage, sign into your account and navigate to: <a href="https://github.com/quantitative-biology/module-1-git" class="uri">https://github.com/quantitative-biology/module-1-git</a></li>
+<li>Windows: Open the Git shell and run the following command to clone the
+repository (‘clone’ means copy all files in the repository to your computer):</li>
+</ul>
+<pre><code>git clone https://github.com/quantitative-biology/module-1-git</code></pre>
+<ul>
+<li>MAC: Open terminal and change to the GitHub directory: cd ~/github then run
+the clone command:</li>
+</ul>
+<pre><code>git clone https://github.com/quantitative-biology/module-1-git</code></pre>
+<ul>
+<li>You now have the files for the GitHub course on your computer</li>
+</ul>
+</div>
+<div id="copy-the-.gitignore-file" class="section level3" number="4.2.12">
+<h3><span class="header-section-number">4.2.12</span> Copy the <em>.gitignore</em> file</h3>
+<ul>
+<li>Git uses a configuration file for your account info, name to use when committing, aliases for commands, and other things.</li>
+<li>Open up the <em>misc</em> sub-directory in the git-module-1 directory and copy the file <em>.gitconfig</em>.</li>
+<li>For Windows, copy this file (overwrite the existing file) to: <code>C:\Users\YOUR-COMPUTER-USER-NAME\.gitconfig</code>, where YOUR-COMPUTER-USER-NAME is your username on your computer, not your GitHub account name.</li>
+<li>For MAC, copy this file (overwrite the existing file) to: ~/.gitconfig</li>
+</ul>
+</div>
+<div id="edit-the-.gitconfig-file" class="section level3" number="4.2.13">
+<h3><span class="header-section-number">4.2.13</span> Edit the <em>.gitconfig</em> file</h3>
+<ul>
+<li>Use your favourite editor to edit the new file (not the one ingit-course/misc).</li>
+<li>Change the [user] settings to reflect your information.</li>
+<li>Change the [difftool] and [diffmerge] directories so they point to the
+location where you have DiffMerge (if it installed okay)..</li>
+<li>For Windows the location should be: <code>C:\Program Files\SourceGear\Common\DiffMerge\sgdm.exe</code></li>
+<li>For MAC the location should be: /usr/local/bin/diffmerge</li>
+<li>If you could not install [difftool] or [diffmerge] then delete those lines in your <em>.gitconfig</em> file.</li>
+</ul>
+</div>
+<div id="mac-only-make-your-output-pretty" class="section level3" number="4.2.14">
+<h3><span class="header-section-number">4.2.14</span> MAC only: make your output pretty</h3>
+<p>On the MAC, change the ~/github directory and run the following command:</p>
+<p>git config –global color.ui.auto</p>
+<p>This will make your git output colored in a similar way to the Windows powershell version.</p>
+</div>
+<div id="markdown-pad" class="section level3" number="4.2.15">
+<h3><span class="header-section-number">4.2.15</span> Markdown Pad</h3>
+<p>Each project has an associated README.md file that appears on its GitHub
+homepage.The extension .md stands for Markdown and is just an ASCii text file
+that contains simple formatting (such as bold or italics). There are two options
+we have used to readmarkdown files, choose one:</p>
+<ul>
+<li>The Markdown Pad 2 editor/viewer which is easy to use: <a href="http://markdownpad.com" class="uri">http://markdownpad.com</a>. Just get the free version.</li>
+<li>The Chrome extension for markdown viewing: <a href="https://chrome.google.com/webstore/detail/markdown-viewer/ckkdlimhmcjmikdlpkmbgfkaikojcbjk?hl=en" class="uri">https://chrome.google.com/webstore/detail/markdown-viewer/ckkdlimhmcjmikdlpkmbgfkaikojcbjk?hl=en</a>.</li>
+</ul>
+
+</div>
+</div>
+<div id="using-git-and-github" class="section level2" number="4.3">
+<h2><span class="header-section-number">4.3</span> Using Git and GitHub</h2>
+<p>This section also has a recorded lecture to
+demonstrate the main concepts and ideas. The video is available <a href="TODO">here TODO</a>
+and the slides from the talk are <a href="TODO">here TODO</a>, though the notes below mostly
+replicate the slides.</p>
+<div id="definitions" class="section level3" number="4.3.1">
+<h3><span class="header-section-number">4.3.1</span> Definitions</h3>
+<p>Let’s start with some definitions:</p>
+<ul>
+<li>Repository – essentially a directory containing all your files for a
+project (plus some files that Git uses).</li>
+<li>Git – a program that allows you to efficiently save ongoing versions of
+your files (`version control’).</li>
+<li>GitHub – a website that hosts your repositories so that you can easily
+share code and collaborate with colleagues.</li>
+</ul>
+<p>Basically, the idea is that you work on your files in a repository on your computer, use Git on
+your computer when you are happy to keep your changes, and use GitHub to easily
+share the files.</p>
+<p>Here you will learn the important steps:</p>
+<ul>
+<li>Creating – create a new repository on GitHub</li>
+<li>Cloning – copying it to your local computer</li>
+<li>Committing – the crux of working with Git</li>
+<li>Collaborating – efficiently work with colleagues</li>
+<li>Conflicts – fixing conflict changes (happens rarely)</li>
+</ul>
+</div>
+<div id="creating-a-new-repository" class="section level3" number="4.3.2">
+<h3><span class="header-section-number">4.3.2</span> Creating a new repository</h3>
+<ul>
+<li>Sign into your GitHub account, click on the <em>Repositories</em> tab, and press the <em>New</em> button.</li>
+<li>Give your repository a name. Let’s call it test.</li>
+<li>Check <em>Initialize</em> this <em>repository</em> with a <em>README</em>.</li>
+<li>Leave <em>Add .gitignore</em> and <em>Add a license</em> set to <em>None</em></li>
+<li>Click <em>Create repository</em>.</li>
+</ul>
+<p>You now have a new repository on the GitHub website. Next we will clone it onto your computer.</p>
+</div>
+<div id="cloning-your-new-repository" class="section level3" number="4.3.3">
+<h3><span class="header-section-number">4.3.3</span> Cloning your new repository</h3>
+<ul>
+<li>Copy the full URL (web address) of your test repository.</li>
+<li>Open the Git shell and navigate to your <em>C://github</em> directory (or whatever you called it when you created it in the setup instructions – it’s the place you are going to save all your Git repositories).</li>
+<li>Run the following command to <em>clone</em> your repository:</li>
+</ul>
+<p><code>git clone URL</code></p>
+<p>where URL is the url of your newly created repository (paste should work).</p>
+<p>You should now have a subdirectory called <em>github/test</em> on your computer.
+In Git shell, change to that directory (with <code>cd test</code>).</p>
+<p>So ‘clone’ is Git speak for copying something from GitHub onto your local
+computer. This example has just one file (<em>README.md</em>). But the process is the
+same for a repository with multiple files and multiple directories, and the
+complate file sturcture is fully preserved.</p>
+<p><strong>Windows only: Storing your credentials</strong></p>
+<p>When you are using the Git shell for the very first time on Windows, issue the following command:</p>
+<p><code>git config --global credential.helper wincred</code></p>
+<p>This means that you don’t have to repeatedly enter you GitHub password (just do it when you are first prompted).</p>
+</div>
+<div id="committing" class="section level3" number="4.3.4">
+<h3><span class="header-section-number">4.3.4</span> Committing</h3>
+<ul>
+<li>Create a new file, <em>newFile.txt</em>, in the <em>github/test</em> directory.</li>
+<li>Add a line of text at the start of the file and save it.</li>
+<li>Check the status of your (test) repository:</li>
+</ul>
+<p><code>git status</code></p>
+<ul>
+<li>It should say that you have an ‘Untracked file’ called <em>newFile.txt</em>. You want
+to tell Git to start tracking it, by using:</li>
+</ul>
+<p><code>git add. gitignore</code></p>
+<ul>
+<li>Type <code>git status</code> again.</li>
+<li>You should see that the file is listed as a ‘new file’ under ‘Changes to be commited.’</li>
+<li>Let’s now ‘commit’ it:</li>
+</ul>
+<p><code>git commit -a -m "Add newFile.txt."</code></p>
+<p>The commit message (in the quotes) should be a useful message saying what the
+commit encapsulates (more on that later).</p>
+<ul>
+<li>Push the commit to GitHub:</li>
+</ul>
+<p><code>git push</code></p>
+<ul>
+<li>Check (refresh) the GitHub webpage and see your commit and the uploaded file.</li>
+</ul>
+<p><strong>What just happened?</strong></p>
+<p>We just used three of the main Git commands:</p>
+<ul>
+<li><code>git add &lt;filename&gt;</code> – tell Git to start keeping track of changes to this file. You only need to tell Git this once.</li>
+<li><code>git commit -a -m "Message."</code> – committing your changes, which means tell Git you are happy with your edits and want to save them.</li>
+<li><code>git push</code> – this sends your commit to the GitHub website.</li>
+</ul>
+<p>You always have your files stored locally on your computer (as usual), even if you don’t add them or commit changes.</p>
+<p>When you push to GitHub then your colleagues can easily fetch (retrieve) them.</p>
+<p><strong>Keyboard aliases (shortcuts)</strong></p>
+<p>Now,</p>
+<p><code>git commit -a -m "Message."</code></p>
+<p>is a bit much to type, so we have an alias for it:</p>
+<p><code>git com "Message."</code></p>
+<p>This is defined in the <em>.gitconfig</em> file you installed in the <code>git-setup</code>
+instructions into <code>C:\Users\YOUR-USER-NAME\.gitconfig</code> (for Windows). YOu can
+also add your own commands to that file.</p>
+<p>The <code>-a</code> means ‘commit all changes of files that Git is tracking,’ and <code>-m</code> is
+to include a message. Since we usually want to do both of these,
+<code>git com "Message."</code> is a useful shortcut. But it is important to realise it is an alias if searching online for help.</p>
+<p>Similarly:</p>
+<p><code>git s</code> – for <code>git status</code></p>
+<p><code>git p</code> – for <code>git push</code></p>
+<p><code>git d</code> – for <code>git diff</code></p>
+<p><code>git f</code> – for <code>git fetch</code></p>
+<p>From now on we will mostly use the aliases. Use the full commands if the
+<em>.gitconfig</em> file didn’t work for you.</p>
+<p><strong>Edit <em>Readme.md</em></strong></p>
+<p>Edit the <em>Readme.md</em> file. Add some simple comments describing the project such as: “A test repository for learning Git.”</p>
+<p>Look over the changes, commit them, and push them to your GitHub repository:</p>
+<p><code>git s</code></p>
+<p><code>git d</code> (or <code>git diff</code>) – this gives a simple look at the differences between the last committed version and your current version (of all files; only one in this case)</p>
+<p><code>git com</code> “Initial edit of Readme.md”</p>
+<p><code>git p</code> (or <code>git push</code>)</p>
+<p>Refresh your GitHub web page and you should see your text (the <em>Readme.md</em> file is what is shown on the main page of your repo).</p>
+<p>If you got Diffmerge installed okay, instead of <code>git diff</code> you can do <code>git difftool</code>. This opens up, in turn, each file that changed since your last commit
+and shows you the differences. This is useful for changes that are more complex
+than can be easily see in the quick <code>git d</code>.</p>
+</div>
+<div id="exercise-1-create-edit-and-commit-simpletext.txt" class="section level3" number="4.3.5">
+<h3><span class="header-section-number">4.3.5</span> Exercise 1: create, edit and commit <em>simpleText.txt</em></h3>
+<ol style="list-style-type: decimal">
+<li>Create a text file <em>simpleText.txt</em> in your local <code>test</code> repository. Add a
+line of text at the start and save it.</li>
+<li>Predict what <code>git s</code> will tell you, then type it in the Git shell to check.</li>
+<li>Add the file to the repository using the git commands:</li>
+</ol>
+<p><code>git add simpleText.txt</code></p>
+<p><code>git s</code> – not necessary but useful to check you understand what is changing before you commit</p>
+<p><code>git com "Adding simpleText.txt"</code></p>
+<p><code>git p</code></p>
+<ol start="4" style="list-style-type: decimal">
+<li>Add some more test to <em>simpleText.txt</em> then <code>git com "Message."</code> and <code>git p</code>.</li>
+<li>Repeat this a few times to get the hang of it. <code>git com</code> frequently and <code>git    p</code> occasionally (you do not have to push every commit), while intermittently doing <code>git s</code> and <code>git d</code> to understand what’s changing.</li>
+<li>Keep and eye on your commits by refreshing the GitHub page.</li>
+</ol>
+<p>In reality when writing code/text you won’t be committing quite so frequently,
+as your focus will be on the writing.</p>
+<p><strong>Adding multiple files at once</strong></p>
+<p>Often you add multiple files in a new directory. When you run <code>git s</code>, you will
+see a large list of <em>Untracked files</em>. They can be all added at once by simply
+adding the whole directory.</p>
+</div>
+<div id="exercise-2-multiple-files" class="section level3" number="4.3.6">
+<h3><span class="header-section-number">4.3.6</span> Exercise 2: multiple files</h3>
+<p>Do the following, to get the idea of creating multiple files in a folder and
+committing that folder.</p>
+<ul>
+<li>Create a new directory in your <code>test</code> repository, using your normal method. Call it <em>new-stuff</em>.</li>
+<li>Add a few new test files to that directory called <em>test1.txt</em>, <em>test2.txt</em>,
+etc. Put some example text in one or more of them if you want.</li>
+<li>On the command line, check the status:</li>
+</ul>
+<p><code>git s</code></p>
+<ul>
+<li><p>You will see a listing showing the <em>new-stuff/</em> directory in <em>Untracked files</em>.</p></li>
+<li><p>To add all the new files in preparation for a commit, issue the command:
+<code>git add new-stuff/</code></p></li>
+<li><p>Check the status of the repository again with <code>git s</code></p></li>
+<li><p>It will now show all files in <em>Changes to be committed</em></p></li>
+<li><p>Commit the changes:</p></li>
+</ul>
+<p><code>git com "Added new-stuff directory."</code></p>
+<ul>
+<li>Push the changes to GitHub:</li>
+</ul>
+<p><code>git p</code></p>
+<ul>
+<li>Check your GitHub webpage and see your commit and that the files have been uploaded.</li>
+<li>That works no matter how many files are in your new-stuff directory. There
+could be a hundred and it’s the same command.</li>
+</ul>
+<p><strong>Wildcard symbol <code>*</code></strong></p>
+<p>This is useful to know (no need to do it as part of the exercise):</p>
+<ul>
+<li>To add multiple files with similar names you can use the wildcard <code>*</code> symbol.</li>
+<li>You just added (told Git to keep track of) the new files in your <em>new-stuff/</em> directory.</li>
+<li>If you add more new files to that directory, you will have to tell Git to
+track those also. This is because they are new – you haven’t told Git about them yet.</li>
+<li>Say you have 10 new files called <em>idea1.txt</em>, <em>idea2.txt</em>, …, <em>idea 10.txt</em>.</li>
+<li>Instead of typing</li>
+</ul>
+<p><code>git add new-stuff/idea1.txt</code></p>
+<p><code>git add new-stuff/idea2.txt</code></p>
+<p>etc. you can just use the wildcard <code>*</code>:</p>
+<p><code>git add new-stuff/idea*.txt</code></p>
+<p>or even just</p>
+<p><code>git add new-stuff/*.txt</code></p>
+<p>or</p>
+<p><code>git add new-stuff/*.*</code>.</p>
+<p><strong>The <em>.gitignore</em> file</strong></p>
+<p>But what if you don’t want to add all the files that you create?</p>
+<p>Each repository can have a <em>.gitignore</em> file, in the root directory of the repository.
+Such a file has names of files (such as <em>my-secret-notes.txt</em>) or wildcard names
+(such as _*.pdf_ or _*.doc_ ) that will be completely ignored by Git.</p>
+<p>For an example, see
+<a href="https://github.com/pacific-hake/hake-assessment/blob/master/.gitignore">https://github.com/pacific-hake/hake-assessment/blob/master/.gitignore</a>,
+noting that the <code>#</code> can be used for comments.</p>
+<p>When sharing a repository with others, you want to share your <em>code</em> (for
+example, R, Python or Matlab code) and maybe data, but generally <em>not</em> share the
+output (such as figures that the code generates; more on this later). For
+reproducible research your colleague (or anyone) should be able to run your code
+to generate the results.</p>
+<p>Some programs you run may make temporary files that don’t need to be tracked by
+Git, the names of which should also be included in your <em>.gitignore</em>.</p>
+<p>When sharing code or collaborating you want to keep your repository as clean as
+possible and not clutter it up with files that other people don’t need.</p>
+<p>So when you run <code>git s</code> and see untracked files that you don’t want to be
+tracked, add them (or a suitable wildcard expression) to your <em>.gitignore</em> file
+so that they are not added inadvertently.</p>
+<p>This will also simplify your workflow (you don’t need to keep being reminded
+that you have untracked files).</p>
+<p>If you are on MacOS and you find that folders have a <em>.DS_Store</em> file in them,
+then create (and <code>add</code> and <code>commit</code>) a <em>.gitignore</em> file with <em>.DS_Store</em> as a
+line.</p>
+<p><strong>Git Workflow</strong></p>
+<p>You have now learnt the basics of using Git. By creating a public repository on
+GitHub you can now release your code to the world!</p>
+<p>You can also choose the <em>private repository</em> option when creating a repository,
+so that you can control who can see it. Go into <code>Settings--Manage Access</code> to add
+collaborators.</p>
+</div>
+<div id="collaborating" class="section level3" number="4.3.7">
+<h3><span class="header-section-number">4.3.7</span> Collaborating</h3>
+<p>Now we will show how to collaborate with colleagues, which is where the
+usefulness of Git will become more apparent.</p>
+<p>There are a few different ways to collaborate using Git and GitHub. We will
+focus on the following one since it is the simplest, and is what you need to
+collaborate with colleagues.</p>
+<p>Concept: there is a project where people contribute to a main repository that is
+considered the ‘master copy.’</p>
+<ul>
+<li>Everyone clones directly from the creator’s repository.</li>
+<li>All collaborators push their commits to the main repository (the creator has
+to add them as collaborators once on GitHub).</li>
+</ul>
+<p>Since the creator has to grant permission, you won’t have just anyone
+contributing to (and maybe messing up your work), just your trusted collaborators.</p>
+<p>But you have to trust your team to not mess things up (more on that later!).</p>
+<p>Okay, so in the video we demonstrated the following:</p>
+<ul>
+<li><p>Kim creates new repo called <code>collaborate</code> (and clones it to her computer).</p></li>
+<li><p>Andy clones it also.</p></li>
+<li><p>On GitHub, Kim gives Andy ‘push access’ to her <code>collaborate</code> repo.</p></li>
+<li><p>Both do some edits (create some new simple text files).</p></li>
+<li><p>For Andy to get Kim’s updates (and vice versa), it was just:</p>
+<ul>
+<li><code>git fetch</code> (or just <code>git f</code>) – fetches the latest version of the repository from GitHub onto your computer. Your local files have <em>not</em> yet changed (check them), but Git has the changes stored on your computer (?!?).</li>
+<li><code>git rebase</code> – updates your local repository (the committed files on your computer) with the changes you have just fetched, merging both people’s work together.</li>
+<li><code>git p</code> – pushes the merged changes back up to GitHub so that the other person can get them.</li>
+</ul></li>
+</ul>
+<p>That is the basic workflow.</p>
+<p>We also showed an example of <code>git p</code> <em>not</em> being allowed for Person A because
+there are recent commits on GitHub (by Person B) that Person A has not yet
+merged into their local version of the repository.</p>
+<p>Here is an example of the error message you get:
+<img src="../module-1-git/images/unable-to-pull.png" style="width:100.0%" /></p>
+<p>While a bit lengthy, the error message is useful. It forces you to get the other
+person’s work before you push yours. You do this by:</p>
+<p><code>git f</code>
+<code>git rebase</code>.</p>
+<p>So to be allowed to push, just <code>fetch</code> to get the new commits onto your computer,
+and then <code>rebase</code> to combine the commits into your local version. Then you can</p>
+<p><code>git push</code>.</p>
+<p>Here is a full screenshot (‘g’ is just a shortcut for ‘git’). The green up arrow
+number 8 tells me I have 8 commits to push to GitHub. The yellow arrows I think
+of as just implying I need to do a rebase (before doing that I might browse
+through the other person’s commits on GitHub):
+<img src="../module-1-git/images/fix-the-pull.png" style="width:100.0%" /></p>
+<p>After the <code>rebase</code> I was allowed to <code>push</code> and then everything is up to date.</p>
+<p><strong>A bit more about git rebase</strong></p>
+<ul>
+<li>Andy commits local changes, tries to <code>git push</code> but is told to first <code>git fetch</code> (to get Kim’s changes from GitHub).</li>
+<li>Andy does <code>git fetch</code> and then <code>git rebase</code>.</li>
+<li>What <code>git rebase</code> does is basically rewind to the last common commit that both
+people had, and then add one person’s commits and the others.</li>
+<li>Andy then does <code>git push</code> to push his commits to GitHub (from where Kim will fetch them when she’s ready).</li>
+<li>Providing there are no conflicts, this will work fine.</li>
+</ul>
+<p>Another option is to do a <code>git merge</code>, which basically creates a new commit that merges both people’s work together.
+Our groups used to use <code>git merge</code> and now use <code>git rebase</code>; some people don’t
+like <code>git merge</code> because it adds extra commits.</p>
+<p>For a more in-depth understanding see <a href="https://reflectoring.io/git-rebase-merge/" class="uri">https://reflectoring.io/git-rebase-merge/</a> for one of the clearer explanations out there concerning rebase v merge.</p>
+<p>Note that the error in the above screenshot (when I could not <code>git push</code>) told
+me that I might want to do <code>git pull</code>. This is basically</p>
+<p><code>git fetch</code></p>
+<p><code>git merge</code></p>
+<p>in one command, but it seems preferable to do</p>
+<p><code>git fetch</code></p>
+<p><code>git rebase</code>.</p>
+<p><strong>Fixing a conflict</strong></p>
+<ul>
+<li>A <span style="color: red;">conflict</span> happens when two people have edited the <span style="color: red;">same line(s) of the same
+file</span>.</li>
+<li>Conflicts happen relatively rarely and can be generally avoided by
+co-ordinating with collaborators so that you are working on different
+files. But, they will happen and you need to know how to resolve them.</li>
+<li>Git <em>forces</em> you to explicitly decide whose changes to keep – this is a <span style="color: red;">good</span>
+thing, since you want a human to make such a decision.</li>
+</ul>
+<p>In the video we demonstrated a conflict.</p>
+<p><strong>Fixing a conflict</strong></p>
+<p>The best approach I have found to fixing a conflict is the following:</p>
+<ul>
+<li>Trying <code>git rebase</code> will tell you there is a conflict.</li>
+<li><code>git rebase --abort</code> – do this to abort the rebase attempt.</li>
+<li><code>git merge</code> – this will tell you there is a conflict.</li>
+<li>Open the file(s) with the conflict and edit the text (see below).</li>
+<li><code>git add &lt;filename(s)&gt;</code> – you have to then add the files that had the conflict (I am not sure why this is necessary, I just do it).</li>
+<li><code>git com "&lt;message&gt;"</code> – in your commit message you can explain how you fixed
+the conflict. This is useful so that your collaborators know you have resolved
+a conflict (they can look at the commit to see if they are happy with it).</li>
+</ul>
+<p>The merge message will tell you which files are conflicting. Open those files
+one by one, and you will see the conflicted section bracketed like the
+following:</p>
+<pre><code>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD
+Line(s) of text/code which are currently in your file.
+ =======
+Line(s) of text/code which are trying to merge in, but conflict.
+&gt;&gt;&gt;&gt;&gt;&gt; origin/main</code></pre>
+<p>where <code>origin/main</code> refers to the version you have fetched from GitHub.
+All you do is remove the line(s) of text that you do not want to keep (or edit
+the line(s) to be something else entirely), and remove the bracketing lines
+<code>&lt;&lt;&lt;...</code> and <code>&gt;&gt;&gt;...</code>, and the <code>======</code> line.</p>
+<p>Save each conflicted file and then (as mentioned previously):</p>
+<pre><code>git add &lt;filename(s)&gt;
+git com &quot;Kept Kim&#39;s edits as more consistent with remaining text.&quot;
+git p</code></pre>
+</div>
+<div id="exercise-3-collaborating-on-a-single-repository" class="section level3" number="4.3.8">
+<h3><span class="header-section-number">4.3.8</span> Exercise 3: collaborating on a single repository</h3>
+<p>If you have a colleague available, try what we just did:</p>
+<ul>
+<li>Person 1 creates a new repository on GitHub and clone to their computer.</li>
+<li>Give the Person 2 ‘push access’ to the repository (on the repo page on GitHub: Settings – Manage access – Invite a collaborator)</li>
+<li>Person 2 clones to their computer</li>
+<li>Both create a simple text file (use different filenames), add some text and, as usual, <code>add</code>, <code>commit</code>, and <code>push</code>.</li>
+<li><code>git fetch</code> and <code>git rebase</code> to get the other person’s file.</li>
+<li>Continue editing either file, committing, and pushing.</li>
+<li>If you get the push error (shown earlier), refresh GitHub repository site to
+see recent commits (click on the XX commits link). You can easily spot the
+other person’s recent commits. Click on one (the bold message) to see
+details.</li>
+<li>Purposefully create a conflict (both edit the same line of the same
+file). Resolve it as described earlier.</li>
+<li>In practice you won’t commit so frequently when working, but this is good to get the hang of it.</li>
+</ul>
+<p><strong>Congratulations</strong></p>
+<p>Congratulations, you now know the few basic commands and functionality needed to collaborate with Git and GitHub.
+It takes a bit of practice, but it is very powerful.</p>
+<p><span style="color: red;">95% of the time, this is all you are doing:</span></p>
+<ul>
+<li>Change some code.</li>
+</ul>
+<pre><code>git s
+git d
+git  com &quot;My commit message&quot;`
+git p</code></pre>
+<p>(the <code>git s</code> and <code>git d</code> are useful to check you have changed only what you think you have changed).</p>
+<p>If GitHub does not allow you to push:</p>
+<pre><code>git fetch
+git rebase</code></pre>
+<p>If conflicts, then</p>
+<pre><code>git rebase --abort
+git merge</code></pre>
+<p>fix the conflicts manually and then</p>
+<pre><code>git add &lt;conflicted file(s)&gt;
+git com &quot;Message to explain what you did&quot;
+git p</code></pre>
+<p>Change some code and repeat!</p>
+<p>The next section gives slightly more advanced background that should further improve
+your understanding (including why Git is useful even when not collaborating or
+sharing your code), plus tips for improving your workflow.</p>
+
+</div>
+</div>
+<div id="beyond-the-basics" class="section level2" number="4.4">
+<h2><span class="header-section-number">4.4</span> Beyond the basics</h2>
+<p>Here are some Git and GitHub concepts and tips that go beyond the basics that we
+just covered.</p>
+<div id="workflow-tips" class="section level3" number="4.4.1">
+<h3><span class="header-section-number">4.4.1</span> Workflow tips</h3>
+<p>Realise that you still edit and save your files in the usual way on your
+computer. If you don’t do Git commits you will still have the latest versions
+of your files on your computer (as you would if you weren’t using Git). So if
+you do get stuck with Git you can carry on working as normal (though you
+probably do want to try and fix it at some point).</p>
+<p>When collaborating:</p>
+<ul>
+<li>If working closely with others, when you start each day (or after a break)
+then make sure you are up to date and have all their commits. Refresh the
+GitHub page for you repository, and <code>git fetch</code> (or just <code>git f</code>)and <code>git clone</code> if needed. (To
+be safe you can <code>git f</code> and <code>git s</code> to check).</li>
+<li>We find it helpful to co-ordinate our work (Slack is useful for this, or use
+GitHub Issues for complex discussion – see below), so that if multiple people
+are working at the same time, you are at least not working on exactly the same
+parts, just to reduce conflicts.</li>
+<li>Commit fairly frequently and write helpful commit messages (so your colleagues
+get an idea of what you’ve done in each commit). Push less frequently, and
+<em>don’t push code that doesn’t work</em> – that will annoy your colleagues. And
+then they (and probably you) may both spend time fixing it.</li>
+<li>To see who last edited a particular piece of code, when viewing the file on
+GitHub click <span style="color: red;">Blame</span> (you can even click on the square icon to
+go to the previous commit that changed that line):</li>
+</ul>
+<p><img src="../module-1-git/images/blame.png" style="width:100.0%" /></p>
+<p><strong>GitHub Issues</strong></p>
+<p>GitHub <em>Issues</em> are very useful for discussing issues with your repo. For our
+annual Pacific Hake assessment we have used them extensively over the years:</p>
+<p><img src="../module-1-git/images/hakeIssues21.png" style="width:100.0%" /></p>
+<p>The Issues tab lists our current ‘Open’ issues – we have 20, of which five (the
+most recently posted) are
+shown here. We are currently in-between assessments (and not working on it), so
+we have created Issues that we want to think about or deal with for next
+year. This avoids forgetting about ideas or losing them in old emails.</p>
+<p>Issues are intuitive to use. There is a bright green ‘New Issues’ button to
+create new ones, you give a title and then write some details, people can reply,
+you can assign people to look at them, and you can close them. In the above
+screenshot you can see that we have closed 815 issues (this was over several years).</p>
+<p>Useful tip: when doing a commit that refers to an Issue, if you refer to the
+Issue number (with <code>#&lt;number&gt;</code>) in your commit message, then after pushing that commit the Issue on
+GitHub will automatically mention and link to the commit:</p>
+<p><code>git com "Add more options to fancy_function(), #21."</code></p>
+<p>will mention the commit when you look at the issue. You can even automatically
+close the issue by saying <code>closes #21</code> in your commit message:</p>
+<p><code>git com "Add more options to fancy_function(), closes #21."</code></p>
+<p>Issues are particularly useful to avoid cluttering up code with commented notes
+or ideas that you may easily not come back to, or avoiding endless emails that
+end up getting overlooked. You don’t have to fix an Issue to close it, you can
+decide not to pursue, but at least you have made a decision.</p>
+<p>(We also use Slack a lot to communicate, but moreso for quick questions or
+bouncing ideas around – Issues are better for stuff that you want to come back
+to at some point).</p>
+<p>You may receive emails regarding Issues, but if you use GitHub a lot you will
+see Notifications (the blue dot on the bell in the top-right corner when signed
+in on GitHub) and that
+will show you new Issues of repositories you are involved with, or if anyone has
+updated an Issue.</p>
+<p><strong>GitHub organizations</strong></p>
+<p>If you will frequently collaborate with colleagues, you can create an
+Organization on GitHub and invite collaborators to it (click on your GitHub
+photo in the top-right corner, Settings, Organizations). Then they will
+automatically have access to all repositories created under the
+Organization. You can choose the security settings.</p>
+</div>
+<div id="so-ive-made-some-changes-but-dont-really-want-to-keep-them-git-stash" class="section level3" number="4.4.2">
+<h3><span class="header-section-number">4.4.2</span> So I’ve made some changes but don’t really want to keep them – git stash</h3>
+<p>If you’ve changed some code but <em>have not committed it</em>, and then maybe got in a
+mess and just want to go back to your last commit, you can <em>stash</em> your changes</p>
+<pre><code>git stash</code></pre>
+<p>and to include a message (for your future self):</p>
+<pre><code>git stash save &quot;Message&quot;</code></pre>
+<p>This stashes them away such that they can be retrieved later
+This is handy. You may <em>think</em> you don’t want to keep those changes, but
+sometimes you may later wish you had kept them somehwere.
+Note this only for files that Git is tracking (i.e. files that have been added
+at some point).</p>
+<p>You can have multiple stashes, seen by doing:</p>
+<pre><code>git stash list</code></pre>
+<p>To retrieve the last stash:</p>
+<p><code>git stash pop</code></p>
+<p>TODO: check rules for other stashed things.</p>
+<p>TODO: Often you’re working on something but it’s not finished, but you want to
+push it. Stash, then make branch then copy files in. Tricky to do all with git,
+so do manually.</p>
+<p>TODO: see my README for details, and test what to do</p>
+</div>
+<div id="pull-requests" class="section level3" number="4.4.3">
+<h3><span class="header-section-number">4.4.3</span> Pull requests</h3>
+<p>TODO</p>
+</div>
+<div id="the-power-to-go-back" class="section level3" number="4.4.4">
+<h3><span class="header-section-number">4.4.4</span> The power to go back</h3>
+<p>With Git you can revert back to any previous state of your repository.
+This is <span style="color: red;">very powerful</span>, though slightly
+<span style="color: red;">scary</span> at first.</p>
+<p>Do this with your test repository, that should have some files in it from the
+earlier excercise:</p>
+<ul>
+<li><code>git s</code> to make sure you are all up-to-date
+(<code>commit</code> and/or <code>push</code> if necessary).</li>
+<li>In File Explorer (or whatever you use) look at your repository, you should see
+all your files, including the <code>new-stuff\</code> directory.</li>
+<li>Look at the commit tab on GitHub for your test repo and click on the clipboard
+icon to copy the HASH number thingy to the clipboard .</li>
+<li>In Git shell: <code>git checkout HASH</code> (where <code>HASH</code> is the pasted HASH, or <code>git co   HASH</code> using our Alias)</li>
+<li>Look at File Explorer again – your <code>new-stuff</code> directory should
+have … disappeared!!</li>
+<li>(If it hasn’t disappeared then open it – the test files, i.e. <code>test1.r</code>,
+<code>test2.r</code>, etc. should be gone, but your text editor may
+have saved backup versions; manually delete them plus the
+<code>new-stuff/</code> directory.)</li>
+<li>You are now back to the very first version of your repo!</li>
+</ul>
+<p>Powerful and scary.</p>
+<p>Now, to get your files back to the most recent version you had committed:</p>
+<ul>
+<li><code>git checkout main</code> (it used to be <code>git checkout master</code>, the names have recently changed).</li>
+</ul>
+<p>That’s it! Check that your files are back. All this means that you can
+<span style="color: red;">revert to any previous commit in your repository</span>.</p>
+<p>This is very reassuring. For example you have some complex code that you realise
+is now a complete mess and you want to go back to yesterday’s version of everything.</p>
+<p>In practice you rarely actually do this, but it’s very comforting to know
+that you can.</p>
+<p>Consequently, your workflow is less cluttered and more tractable than having
+to save multiple versions of the same files with dates in the filename, such
+as this nightmare:</p>
+<p><img src="../module-1-git/images/EAversions.png" style="width:100.0%" /></p>
+<p><strong>Retrieving older work in practice</strong></p>
+<p>I think there are fancy ways that Git can replace a current file with a version
+from an earlier commit. But, in practice (especially since you rarely want to do
+this) it is a bit safer to do the following:</p>
+<ul>
+<li>Say you are up-to-date (<code>git s</code> says all is good), but your program
+<code>my_code.R</code> just isn’t working and you want to go back to the version you had
+yesterday at commit number <code>abc123</code>.</li>
+<li><code>git co abc123</code> (or <code>git checkout abc123</code>) to checkout the earlier commit,
+which includes the old version of <code>my_code.R</code> that you want get.</li>
+<li>Copy <code>my_code.R</code> to a new file <code>my_code_old.R</code>. In the shell you can just do
+this with <code>cp my_code.R my_code_old.R</code>.</li>
+<li>Do NOT edit <code>my_code.R</code> or make any changes, as you may end up with a scary
+<code>DETACHED HEAD</code> warning.</li>
+<li><code>git co main</code> to checkout the latest version again.</li>
+<li>Since you have NOT done <code>git add my_code_old.R</code>, Git is not tracking
+<code>my_code_old.R</code> and so it is just sitting in your folder as normal.</li>
+<li>Now you can manually copy what you want from <code>my_code_old.R</code> into <code>my_code.R</code>
+to fix your problem. It could be the full file, or just some part of it.</li>
+<li>Then commit as normal.</li>
+<li>At some point you can delete <code>my_code_old.R</code> so it is not hanging around, but
+you don’t have to. (Though maybe make a note in it as to which commit it was
+from, in case you do need it again).</li>
+</ul>
+</div>
+<div id="so-how-does-git-do-all-this" class="section level3" number="4.4.5">
+<h3><span class="header-section-number">4.4.5</span> So how does Git do all this?</h3>
+<p>By now you’re probably wondering how Git keeps track of everything.
+Git does not keep versions of code, it keeps <em>commits</em>. The commits
+are kept track of using a HASH key which is a generated 40-digit key in
+hexadecimal (base 16). The hashes are
+what you see on GitHub and in various places when you use Git shell.</p>
+<p>By stitching all the commits back together again, Git can recreate all your code.</p>
+<p>There is a hidden <code>.git/</code> directory in each repository.
+Look at the <code>.git/objects/</code> subdirectory. Each subdirectory name is the
+first two digits of a HASH. The rest of the digits of the HASH are the filenames in the
+subdirectory.</p>
+<p>You can basically think of the hashes as representing <code>commits</code> (apparently they can also
+be <code>blobs</code> and <code>trees</code>, whatever they might be).
+I think of the files in the subdirectories containing the <span style="color: red;">differences</span> between each commit.</p>
+<p>Because of these structures, Git can go back and <span style="color: red;">rebuild</span> any or
+all files at any <code>commit</code>, and even have different directory
+structures at each commit.</p>
+<p>Since Git is keeping track of differences between files, this all works best for
+plain ASCii (text) files, such as <code>.R</code>, <code>.txt</code>, <code>.Rmd</code>, etc.</p>
+<p>Git does work for binary files, such as <code>.xls</code>, <code>.docx</code>, <code>.RData</code>, but since
+changes to the files are not easily saved (Git essentially has to resave
+the whole file at each commit), this is not very efficient and may make
+your repository large. Such files will be fully resaved every time they
+are changed. Think of a binary file as something that you cannot open in a
+text editor and read (it does not contain simple ASCii letters and numbers).</p>
+<p>Exceptions: often you may have an image or photo or other type file that you need to share for a
+document, but it isn’t going to keep changing. So that’s fine to commit.</p>
+<p>An example of why you should not commit binary files:</p>
+<ul>
+<li>A collaborator was running some R code (and correctly committed the <code>.R</code> files
+so that I could run it), but also committed the results, which included
+<code>.pdf</code>, <code>.png</code> and <code>.RData</code> files, which can get quite large.</li>
+<li>But, these latter files got updated every time the code was run. So changing
+one line of the <code>.R</code> code (which Git deals with very efficiently), and running
+that code and committing, resulted in the new <code>.pdf</code> etc. files being fully
+saved (since Git cannot just save the difference from the last commit because
+they are binary files). Even
+if, say, one point changes on a figure in a graph in a <code>.pdf</code> file, Git has to
+save the whole new version.</li>
+<li>This ended up with <code>.git/objects/pack</code> (whatever that might be!) being 2.8Gb.</li>
+<li>I needed space quickly on my computer so just deleted four files in
+<code>.git/objects/pack</code>, which freed up 1.6Gb.</li>
+<li>Note that I still had the actual final versions of files (as you would
+if not using Git), but just not the full repository history.</li>
+<li>However, when I tried to later do some work and then <code>commit</code> I got lots of
+‘fatal’ errors with scary messages like <code>bad object HEAD</code> and the awesomely titled <code>You are on a branch yet to be born</code>:</li>
+</ul>
+<p><img src="../module-1-git/images/notGood.png" style="width:100.0%" /></p>
+<p>I just had to start again from scratch (reclone I think). Take-home message:</p>
+<p><strong>Don’t mess with the .git directory!!</strong></p>
+</div>
+<div id="git-terminology" class="section level3" number="4.4.6">
+<h3><span class="header-section-number">4.4.6</span> Git terminology</h3>
+<p>At some point you will likely need to search online for some help (often
+questions are posted and answered on the excellent ‘stackoverflow’ website).
+A bit more understanding of terminology will help you.</p>
+<p>Remember that Git keeps <em>commits</em>.
+Several of these commits have pointers to them that have special names:</p>
+<ul>
+<li><strong>HEAD</strong> points to the commit you are currently on in the Git shell.</li>
+<li><strong>main</strong> or <strong>master</strong> is the default branch when you set up a repository on
+GitHub (there are two names because of recent changes on GitHub).</li>
+</ul>
+</div>
+<div id="branching" class="section level3" number="4.4.7">
+<h3><span class="header-section-number">4.4.7</span> Branching</h3>
+<p>So far we have only worked on the <strong>main</strong> branch. Sometimes you want to create
+a new branch that branches off from the <strong>main</strong> branch. It’s bit like a tree
+branching, except that at some point you want your new branch to be merged back
+into <strong>main</strong>.</p>
+<p>For example, you may want to try adding some new code to your project, but don’t
+want to break what is already there. You may do this even if working alone, but
+it’s especially useful if you are collaborating, or if, say, you have an R
+packages hosted on GitHub that anyone may be downloading – you don’t want to
+annoy them by pushing experimental code that doesn’t work.</p>
+<p>So you would create a new branch, work on that new branch (i.e. commit
+changes to the new branch), and when you are happy with your new changes you can
+easily merge it all back into <strong>main</strong>.</p>
+<p><strong>Working on a new branch</strong></p>
+<p>When creating a new branch, your starting point is identical to the branch you
+were when you created the new one.</p>
+<p>In the Git shell navigate into your test repository:</p>
+<p><code>cd test</code></p>
+<p>Depending on your set up, you should see <code>main</code> indicated somewhere (if not do
+<code>git s</code> and it should say <code>On branch main</code>.</p>
+<p>Make sure you are up-to-date and have committed all changes (<code>git s</code>, and
+<code>commit</code> if necessary).</p>
+<p>Create a new branch called <em>temp</em>, this will be based off the latest commit of the <em>main</em>
+branch you are currently on:</p>
+<p><code>git checkout -b temp</code></p>
+<p>(We have an alias for that: <code></code>git cb temp`).</p>
+<p>You will be automatically placed in the new branch called <em>temp</em>, and commits
+you make will now occur in that branch only.</p>
+<p>Make and <code>commit</code> some changes (e.g. add a new file) – these will now be on
+your <em>temp</em> branch.</p>
+<p>You can push to GitHub. The first time you try <code>git p</code>, the Git shell will
+tell you that you need to type the following so that future pushes go to the
+new branch:</p>
+<p><code>git --set-upstream origin BRANCH-NAME</code></p>
+<p>Check the GitHub webpage to see that your branch was pushed. You repository
+page (that will still be looking at your <em>main</em> branch) may tell you that
+there is a <em>temp</em> branch with more recent commits than <em>main</em>. If not then if
+you click on the <em>main</em> drop-down menu:</p>
+<p><img src="../module-1-git/images/main-branch.png" style="width:100.0%" /></p>
+<p>it should give you the option to look at your new <em>temp</em> branch. (The ‘1 branch’
+in the above image should also say ‘2 branches’).</p>
+<p>You can now view your new file in your new <em>temp</em> branch on GitHub.</p>
+<p>A graphical way to see and understand branching is to click on
+Insights–Network to see the Network graph.</p>
+<p>The Network Graph is a useful visualization tool, where each commit is shown as
+a point on the graph (the numbers along the top are the dates). You can hover
+your mouse over a commit to see who committed it and the commit message. You can
+click to see full details of the commit. The Network Graph is particularly
+useful if you or others are working on multiple branches, or to check details
+about merges.</p>
+<p>Okay, back in your Git shell you can easily switch back to your original <em>main</em>
+branch:</p>
+<p><code>git checkout main</code> (or the alias <code>git co main</code>).</p>
+<p>You will see that the file you just added is gone, because it
+<span style="color: red;">only exists in the <em>temp</em> branch</span>
+at this moment.</p>
+<p>Imagine that in your <em>temp</em> branch you did several commits to create a new
+function in your code, or have added some new text to a report. Now you are
+happy with what you’ve done you want to merge it back into the <em>main</em> branch.</p>
+<p>To view all local branches:</p>
+<p><code>git branch</code></p>
+<p>There is an asterisk next to the branch you are currently in.</p>
+<p>To switch to another branch (<em>main</em> in our case):</p>
+<p><code>git checkout main</code></p>
+<p>To combine the changes from the <em>temp</em> branch:</p>
+<p><code>git rebase temp</code></p>
+<p>or</p>
+<p><code>git merge temp</code></p>
+<p>Now the file you created in the <em>temp</em> branch now appears in the <em>main</em>
+branch. All commits done in the <em>temp</em> branch will now be in the <em>main</em> branch
+as well.</p>
+<p>If there was a merge conflict, you must fix it at this point (see earleir).</p>
+<p>Once you’ve merged your <em>temp</em> branch into <em>main</em>, you don’t really need <em>temp</em>
+any more and so it is good protocol to delete to keep things tidy:</p>
+<p><code>git branch -d temp</code></p>
+<p>If you have unmerged changes in a branch, you will not be allowed to delete it,
+but Git shell will tell you the command to forcibly delete it:</p>
+<p><code>git branch -D temp</code></p>
+<p>Warning – you won’t be able to get any of those changes back once you do this.</p>
+<p>To remove a branch entirely from GitHub:</p>
+<p><code>git p origin --delete BRANCH-NAME</code></p>
+</div>
+<div id="undoing-stuff" class="section level3" number="4.4.8">
+<h3><span class="header-section-number">4.4.8</span> Undoing stuff</h3>
+<p>If you make a commit followed by other commits, then realize you want to undo the earlier commit, you use <em>revert</em>:</p>
+<p><code>git revert HASH</code></p>
+<p>where <code>HASH</code> is the hash for the commit you want to undo. Remember that Git shell is smart enough that you only need the first five digits:</p>
+<p><code>git revert 1ef1d</code></p>
+<p>This actually creates a new commit with the automatic message</p>
+<p><code>Revert "&lt;previous commit message&gt;"</code>.</p>
+<p>Obviously, you have to be careful with this if you’re changing something that
+was a few commits back, as you might mess up your code.</p>
+<p><strong>Undoing changes not yet committed</strong></p>
+<p>If you’ve made a mess in your working directory and you want to change
+everything back to the way it was on the last commit:</p>
+<p><code>git reset --hard HEAD</code></p>
+<p>If you’ve messed up a single file and just want that one file to go back to the way it was on the last commit:</p>
+<p><code>git checkout HEAD &lt;filename_to_restore&gt;</code></p>
+<p>Warning – running these commands will delete the changes you have made. Since
+you have not committed any changes, they will be lost. Make sure you are certain
+you don’t need the changes before running these commands. If you aren’t sure if
+you need the changes again in the future, use <code>git stash</code> instead.</p>
+<p><strong>Changing the commit message in the last commit</strong></p>
+<p>If you make a commit then realize you want to change it (add more information,
+fix something that will confuse your colleagues, fix something that will confuse
+you tomorrow), you can change the commit message:</p>
+<p><code>git commit --amend -m "Correct message."</code></p>
+<p>This only works on the last commit.</p>
+<p>If you already pushed the commit before realizing that the message needs modification, do this:</p>
+<p><code>git p --force</code></p>
+<p>after making the amendment to the commit message.</p>
+
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="literature.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="introduction-to-r-markdown.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

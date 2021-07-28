@@ -1,0 +1,768 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>5 Introduction to R Markdown | Further Git and GitHub</title>
+  <meta name="description" content="This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook." />
+  <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="5 Introduction to R Markdown | Further Git and GitHub" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook." />
+  <meta name="github-repo" content="rstudio/bookdown-demo" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="5 Introduction to R Markdown | Further Git and GitHub" />
+  
+  <meta name="twitter:description" content="This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook." />
+  
+
+<meta name="author" content="Andrew Edwards" />
+
+
+<meta name="date" content="2021-05-07" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="introduction-to-git-and-github.html"/>
+<link rel="next" href="introduction-to-multivariate-analysis.html"/>
+<script src="libs/header-attrs-2.7/header-attrs.js"></script>
+<script src="libs/jquery-3.5.1/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+<script src="libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
+<link href="libs/bsTable-3.3.7/bootstrapTable.min.css" rel="stylesheet" />
+<script src="libs/bsTable-3.3.7/bootstrapTable.js"></script>
+<script src="libs/htmlwidgets-1.5.3/htmlwidgets.js"></script>
+<script src="libs/plotly-binding-4.9.4/plotly.js"></script>
+<script src="libs/typedarray-0.1/typedarray.min.js"></script>
+<link href="libs/crosstalk-1.1.1/css/crosstalk.css" rel="stylesheet" />
+<script src="libs/crosstalk-1.1.1/js/crosstalk.min.js"></script>
+<link href="libs/plotly-htmlwidgets-css-1.57.1/plotly-htmlwidgets.css" rel="stylesheet" />
+<script src="libs/plotly-main-1.57.1/plotly-latest.min.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Prerequisites</a></li>
+<li class="chapter" data-level="2" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>2</b> Introduction</a></li>
+<li class="chapter" data-level="3" data-path="literature.html"><a href="literature.html"><i class="fa fa-check"></i><b>3</b> Literature</a></li>
+<li class="chapter" data-level="4" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html"><i class="fa fa-check"></i><b>4</b> Introduction to Git and GitHub</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#motivation"><i class="fa fa-check"></i><b>4.1</b> Motivation</a></li>
+<li class="chapter" data-level="4.2" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#getting-set-up-for-the-first-time"><i class="fa fa-check"></i><b>4.2</b> Getting set up for the first time</a>
+<ul>
+<li class="chapter" data-level="4.2.1" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#what-you-will-end-up-having-installed"><i class="fa fa-check"></i><b>4.2.1</b> What you will end up having installed</a></li>
+<li class="chapter" data-level="4.2.2" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#get-a-github-account"><i class="fa fa-check"></i><b>4.2.2</b> Get a GitHub account</a></li>
+<li class="chapter" data-level="4.2.3" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#text-editor"><i class="fa fa-check"></i><b>4.2.3</b> Text Editor</a></li>
+<li class="chapter" data-level="4.2.4" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#install-the-git-application-on-your-machine"><i class="fa fa-check"></i><b>4.2.4</b> Install the Git application on your machine</a></li>
+<li class="chapter" data-level="4.2.5" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#git-shell"><i class="fa fa-check"></i><b>4.2.5</b> Git shell</a></li>
+<li class="chapter" data-level="4.2.6" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#git-shell-rstudio"><i class="fa fa-check"></i><b>4.2.6</b> Git shell, RStudio</a></li>
+<li class="chapter" data-level="4.2.7" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#powershell-and-posh-git"><i class="fa fa-check"></i><b>4.2.7</b> Powershell and posh-git</a></li>
+<li class="chapter" data-level="4.2.8" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#one-time-authentication"><i class="fa fa-check"></i><b>4.2.8</b> One-time authentication</a></li>
+<li class="chapter" data-level="4.2.9" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#configure-the-git-application"><i class="fa fa-check"></i><b>4.2.9</b> Configure the Git application</a></li>
+<li class="chapter" data-level="4.2.10" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#install-the-difftool"><i class="fa fa-check"></i><b>4.2.10</b> Install the difftool</a></li>
+<li class="chapter" data-level="4.2.11" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#cloning-the-git-course-repository"><i class="fa fa-check"></i><b>4.2.11</b> “Cloning” the git-course repository</a></li>
+<li class="chapter" data-level="4.2.12" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#copy-the-.gitignore-file"><i class="fa fa-check"></i><b>4.2.12</b> Copy the <em>.gitignore</em> file</a></li>
+<li class="chapter" data-level="4.2.13" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#edit-the-.gitconfig-file"><i class="fa fa-check"></i><b>4.2.13</b> Edit the <em>.gitconfig</em> file</a></li>
+<li class="chapter" data-level="4.2.14" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#mac-only-make-your-output-pretty"><i class="fa fa-check"></i><b>4.2.14</b> MAC only: make your output pretty</a></li>
+<li class="chapter" data-level="4.2.15" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#markdown-pad"><i class="fa fa-check"></i><b>4.2.15</b> Markdown Pad</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#using-git-and-github"><i class="fa fa-check"></i><b>4.3</b> Using Git and GitHub</a>
+<ul>
+<li class="chapter" data-level="4.3.1" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#definitions"><i class="fa fa-check"></i><b>4.3.1</b> Definitions</a></li>
+<li class="chapter" data-level="4.3.2" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#creating-a-new-repository"><i class="fa fa-check"></i><b>4.3.2</b> Creating a new repository</a></li>
+<li class="chapter" data-level="4.3.3" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#cloning-your-new-repository"><i class="fa fa-check"></i><b>4.3.3</b> Cloning your new repository</a></li>
+<li class="chapter" data-level="4.3.4" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#committing"><i class="fa fa-check"></i><b>4.3.4</b> Committing</a></li>
+<li class="chapter" data-level="4.3.5" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#exercise-1-create-edit-and-commit-simpletext.txt"><i class="fa fa-check"></i><b>4.3.5</b> Exercise 1: create, edit and commit <em>simpleText.txt</em></a></li>
+<li class="chapter" data-level="4.3.6" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#exercise-2-multiple-files"><i class="fa fa-check"></i><b>4.3.6</b> Exercise 2: multiple files</a></li>
+<li class="chapter" data-level="4.3.7" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#collaborating"><i class="fa fa-check"></i><b>4.3.7</b> Collaborating</a></li>
+<li class="chapter" data-level="4.3.8" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#exercise-3-collaborating-on-a-single-repository"><i class="fa fa-check"></i><b>4.3.8</b> Exercise 3: collaborating on a single repository</a></li>
+</ul></li>
+<li class="chapter" data-level="4.4" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#beyond-the-basics"><i class="fa fa-check"></i><b>4.4</b> Beyond the basics</a>
+<ul>
+<li class="chapter" data-level="4.4.1" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#workflow-tips"><i class="fa fa-check"></i><b>4.4.1</b> Workflow tips</a></li>
+<li class="chapter" data-level="4.4.2" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#so-ive-made-some-changes-but-dont-really-want-to-keep-them-git-stash"><i class="fa fa-check"></i><b>4.4.2</b> So I’ve made some changes but don’t really want to keep them – git stash</a></li>
+<li class="chapter" data-level="4.4.3" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#pull-requests"><i class="fa fa-check"></i><b>4.4.3</b> Pull requests</a></li>
+<li class="chapter" data-level="4.4.4" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#the-power-to-go-back"><i class="fa fa-check"></i><b>4.4.4</b> The power to go back</a></li>
+<li class="chapter" data-level="4.4.5" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#so-how-does-git-do-all-this"><i class="fa fa-check"></i><b>4.4.5</b> So how does Git do all this?</a></li>
+<li class="chapter" data-level="4.4.6" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#git-terminology"><i class="fa fa-check"></i><b>4.4.6</b> Git terminology</a></li>
+<li class="chapter" data-level="4.4.7" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#branching"><i class="fa fa-check"></i><b>4.4.7</b> Branching</a></li>
+<li class="chapter" data-level="4.4.8" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#undoing-stuff"><i class="fa fa-check"></i><b>4.4.8</b> Undoing stuff</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="introduction-to-r-markdown.html"><a href="introduction-to-r-markdown.html"><i class="fa fa-check"></i><b>5</b> Introduction to R Markdown</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="introduction-to-r-markdown.html"><a href="introduction-to-r-markdown.html#motivation-1"><i class="fa fa-check"></i><b>5.1</b> Motivation</a></li>
+<li class="chapter" data-level="5.2" data-path="introduction-to-r-markdown.html"><a href="introduction-to-r-markdown.html#basic-idea"><i class="fa fa-check"></i><b>5.2</b> Basic idea</a></li>
+<li class="chapter" data-level="5.3" data-path="introduction-to-r-markdown.html"><a href="introduction-to-r-markdown.html#simple-example"><i class="fa fa-check"></i><b>5.3</b> Simple example</a>
+<ul>
+<li class="chapter" data-level="5.3.1" data-path="introduction-to-r-markdown.html"><a href="introduction-to-r-markdown.html#exercise"><i class="fa fa-check"></i><b>5.3.1</b> Exercise</a></li>
+</ul></li>
+<li class="chapter" data-level="5.4" data-path="introduction-to-r-markdown.html"><a href="introduction-to-r-markdown.html#output-format"><i class="fa fa-check"></i><b>5.4</b> Output format</a></li>
+<li class="chapter" data-level="5.5" data-path="introduction-to-r-markdown.html"><a href="introduction-to-r-markdown.html#further-reading"><i class="fa fa-check"></i><b>5.5</b> Further reading</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="introduction-to-multivariate-analysis.html"><a href="introduction-to-multivariate-analysis.html"><i class="fa fa-check"></i><b>6</b> Introduction to multivariate analysis</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="introduction-to-multivariate-analysis.html"><a href="introduction-to-multivariate-analysis.html#multivariate-resemblance"><i class="fa fa-check"></i><b>6.1</b> Multivariate resemblance</a>
+<ul>
+<li class="chapter" data-level="6.1.1" data-path="introduction-to-multivariate-analysis.html"><a href="introduction-to-multivariate-analysis.html#binary-similarity-metrics"><i class="fa fa-check"></i><b>6.1.1</b> Binary Similarity metrics</a></li>
+<li class="chapter" data-level="6.1.2" data-path="introduction-to-multivariate-analysis.html"><a href="introduction-to-multivariate-analysis.html#quantitative-similarity-dissimilarity-metrics"><i class="fa fa-check"></i><b>6.1.2</b> Quantitative similarity &amp; dissimilarity metrics</a></li>
+<li class="chapter" data-level="6.1.3" data-path="introduction-to-multivariate-analysis.html"><a href="introduction-to-multivariate-analysis.html#comparing-more-than-two-communitiessamplessitesgenesspecies"><i class="fa fa-check"></i><b>6.1.3</b> Comparing more than two communities/samples/sites/genes/species</a></li>
+<li class="chapter" data-level="6.1.4" data-path="introduction-to-multivariate-analysis.html"><a href="introduction-to-multivariate-analysis.html#r-functions"><i class="fa fa-check"></i><b>6.1.4</b> R functions</a></li>
+</ul></li>
+<li class="chapter" data-level="6.2" data-path="introduction-to-multivariate-analysis.html"><a href="introduction-to-multivariate-analysis.html#cluster-analysis"><i class="fa fa-check"></i><b>6.2</b> Cluster Analysis</a>
+<ul>
+<li class="chapter" data-level="6.2.1" data-path="introduction-to-multivariate-analysis.html"><a href="introduction-to-multivariate-analysis.html#hierarchical-clustering-groups-are-nested-within-other-groups."><i class="fa fa-check"></i><b>6.2.1</b> Hierarchical clustering: groups are nested within other groups.</a></li>
+<li class="chapter" data-level="6.2.2" data-path="introduction-to-multivariate-analysis.html"><a href="introduction-to-multivariate-analysis.html#r-functions-1"><i class="fa fa-check"></i><b>6.2.2</b> R functions</a></li>
+<li class="chapter" data-level="6.2.3" data-path="introduction-to-multivariate-analysis.html"><a href="introduction-to-multivariate-analysis.html#how-many-clusters"><i class="fa fa-check"></i><b>6.2.3</b> How many clusters?</a></li>
+<li class="chapter" data-level="6.2.4" data-path="introduction-to-multivariate-analysis.html"><a href="introduction-to-multivariate-analysis.html#other-clustering-methods"><i class="fa fa-check"></i><b>6.2.4</b> Other clustering methods</a></li>
+<li class="chapter" data-level="6.2.5" data-path="introduction-to-multivariate-analysis.html"><a href="introduction-to-multivariate-analysis.html#exercise-cluster-analysis-of-isotope-data"><i class="fa fa-check"></i><b>6.2.5</b> Exercise: Cluster analysis of isotope data</a></li>
+</ul></li>
+<li class="chapter" data-level="6.3" data-path="introduction-to-multivariate-analysis.html"><a href="introduction-to-multivariate-analysis.html#ordination"><i class="fa fa-check"></i><b>6.3</b> Ordination</a>
+<ul>
+<li class="chapter" data-level="6.3.1" data-path="introduction-to-multivariate-analysis.html"><a href="introduction-to-multivariate-analysis.html#principal-components-analysis-pca"><i class="fa fa-check"></i><b>6.3.1</b> Principal Components Analysis (PCA)</a></li>
+<li class="chapter" data-level="6.3.2" data-path="introduction-to-multivariate-analysis.html"><a href="introduction-to-multivariate-analysis.html#exercise-pca-on-the-iris-data"><i class="fa fa-check"></i><b>6.3.2</b> Exercise: PCA on the iris data</a></li>
+<li class="chapter" data-level="6.3.3" data-path="introduction-to-multivariate-analysis.html"><a href="introduction-to-multivariate-analysis.html#principle-coordinates-analysis-pcoa"><i class="fa fa-check"></i><b>6.3.3</b> Principle Coordinates Analysis (PCoA)</a></li>
+<li class="chapter" data-level="6.3.4" data-path="introduction-to-multivariate-analysis.html"><a href="introduction-to-multivariate-analysis.html#nonmetric-multidimensional-scaling-nmds"><i class="fa fa-check"></i><b>6.3.4</b> Nonmetric Multidimensional Scaling (NMDS)</a></li>
+<li class="chapter" data-level="6.3.5" data-path="introduction-to-multivariate-analysis.html"><a href="introduction-to-multivariate-analysis.html#exercise-ordination"><i class="fa fa-check"></i><b>6.3.5</b> Exercise: Ordination</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="optimization.html"><a href="optimization.html"><i class="fa fa-check"></i><b>7</b> Optimization</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="optimization.html"><a href="optimization.html#introduction"><i class="fa fa-check"></i><b>7.1</b> Introduction</a></li>
+<li class="chapter" data-level="7.2" data-path="optimization.html"><a href="optimization.html#fundamentals-of-optimization"><i class="fa fa-check"></i><b>7.2</b> Fundamentals of Optimization</a>
+<ul>
+<li class="chapter" data-level="7.2.1" data-path="optimization.html"><a href="optimization.html#fermats-theorem"><i class="fa fa-check"></i><b>7.2.1</b> Fermat’s Theorem</a></li>
+</ul></li>
+<li class="chapter" data-level="7.3" data-path="optimization.html"><a href="optimization.html#regression"><i class="fa fa-check"></i><b>7.3</b> Regression</a>
+<ul>
+<li class="chapter" data-level="7.3.1" data-path="optimization.html"><a href="optimization.html#linear-regression"><i class="fa fa-check"></i><b>7.3.1</b> Linear Regression</a></li>
+<li class="chapter" data-level="7.3.2" data-path="optimization.html"><a href="optimization.html#nonlinear-regression"><i class="fa fa-check"></i><b>7.3.2</b> Nonlinear Regression</a></li>
+</ul></li>
+<li class="chapter" data-level="7.4" data-path="optimization.html"><a href="optimization.html#iterative-optimization-algorithms"><i class="fa fa-check"></i><b>7.4</b> Iterative Optimization Algorithms</a>
+<ul>
+<li class="chapter" data-level="7.4.1" data-path="optimization.html"><a href="optimization.html#gradient-descent"><i class="fa fa-check"></i><b>7.4.1</b> Gradient Descent</a></li>
+</ul></li>
+<li class="chapter" data-level="7.5" data-path="optimization.html"><a href="optimization.html#calibration-of-dynamic-models"><i class="fa fa-check"></i><b>7.5</b> Calibration of Dynamic Models</a></li>
+<li class="chapter" data-level="7.6" data-path="optimization.html"><a href="optimization.html#uncertainty-analysis-and-bayesian-calibration"><i class="fa fa-check"></i><b>7.6</b> Uncertainty Analysis and Bayesian Calibration</a></li>
+<li class="chapter" data-level="7.7" data-path="optimization.html"><a href="optimization.html#references"><i class="fa fa-check"></i><b>7.7</b> References</a></li>
+</ul></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Further Git and GitHub</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="introduction-to-r-markdown" class="section level1" number="5">
+<h1><span class="header-section-number">5</span> Introduction to R Markdown</h1>
+<div id="motivation-1" class="section level2" number="5.1">
+<h2><span class="header-section-number">5.1</span> Motivation</h2>
+<p>Say you get some tree data from a colleague, and spend a month writing lots of
+R code to analyse the data. Your code also produces beautiful figures and tables,
+that you then manually copy into a Word document. You have also written lots of
+text, and include specific calculated numbers in the text, such as the simple</p>
+<p><code>The average tree height was 10.1 m.</code></p>
+<p>Then your colleague sheepishly tells you that someone found an error in some of
+the data, and so you need to redo everything. Your heart sinks with the prospect
+of re-running all your code and making sure you manually copy the correct new
+figures into your document. Oh, and you need to redo the tables and check all
+the numbers in your text.</p>
+<p>The alternative modern approach is to use R Markdown. The idea is that you can
+generate a ‘dynamic report.’ You write code that contains a
+mixture of your R code <em>and</em> your write up. You can use this for short analyses,
+scientific manuscripts, or even a complete thesis.</p>
+<p>This introduction, aimed at biologists, will get you started with the
+basics. You will then be in a good position to learn more details from the
+<a href="https://rmarkdown.rstudio.com/lesson-1.html">RStudio introduction</a> and the
+online <a href="https://bookdown.org/yihui/rmarkdown">Definitive Guide to R Markdown</a>.</p>
+<p>A key concept is that everything is written as code. You do not have to manually
+point and click anything, or copy and paste figures between directories. So once
+you understand how something works or have figured out some formatting that you
+like, you can just copy that code and use it elsewhere.</p>
+<p><strong>Example application</strong></p>
+<p>A recent 328-page document we wrote in R Markdown is <a href="https://www.dfo-mpo.gc.ca/csas-sccs/Publications/ResDocs-DocRech/2019/2019_041-eng.html">A reproducible data synopsis
+for over 100 species of British Columbia
+groundfish</a>.
+For each of 113 species, we produced two pages of figures:</p>
+<p><img src="../module-2-rmarkdown/images/silvergray.jpg" style="width:120.0%" /></p>
+<p>For each species, the layout of the figures is identical (even to show no data
+when none are available). Producing each figure and manually inserting them into
+a Word document would be extremely tedious. Instead, the production of the
+document is automated using R Markdown.</p>
+<p>Furthermore, the work is transparent and traceable. Because the code produces
+the figures (they are not pasted in from somewhere), we can trace back from
+the R Markdown code to see the R code that:</p>
+<ul>
+<li>pulled the data from databases</li>
+<li>fit models</li>
+<li>generated plots.</li>
+</ul>
+<p>In particular, we intend to periodically update the document as new data become
+available. While still a lot of work, it is less daunting knowing that the
+code is already available.</p>
+<p>On a practical level, the report has allowed anyone to see the data available,
+and has consequently increased data transparency between Fisheries and Oceans Canada, the
+fishing industry, non-governmental organizations, and the public.</p>
+<p>This is admittedly a <em>very</em> advanced example with a ton of code (several new R
+packages) and work behind it, but the idea is to show you what is possible.</p>
+</div>
+<div id="basic-idea" class="section level2" number="5.2">
+<h2><span class="header-section-number">5.2</span> Basic idea</h2>
+<p>In the above tree example, if using Word, for example, you would have a sentence
+that says</p>
+<p><code>The average tree height was 10.1 m</code></p>
+<p>The “10.1” is hard-wired into your text, and you typed it on from the value
+“10.1” that your R code calculated (in a variable you calculated, let’s say you
+called it <code>avge_height</code>).</p>
+<p>In your R Markdown document you have your R code <em>and</em> your text write up. You
+would equivalently have:</p>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="introduction-to-r-markdown.html#cb15-1" aria-hidden="true" tabindex="-1"></a>The average tree height was <span class="st">`</span><span class="at">r avge_height</span><span class="st">`</span> m</span></code></pre></div>
+<p>Instead of “10.1” you refer <em>directly</em> to the variable <code>avge_height</code> that you
+have already calculated. When you ‘render’ your R Markdown document (convert it
+from code into .pdf, .html or other formats), it
+automatically fills in the <code>avge_height</code> value as “10.1.” The</p>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="introduction-to-r-markdown.html#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="st">`</span><span class="at">r</span></span></code></pre></div>
+<p>means that the next bit of code (until the next backtick) should be evaluated
+using R, and the result inserted.</p>
+<p>This is the basic idea. Then, when your colleague mentions the error (or, say,
+provides you with extra data) you can just re-run your
+code and the “10.1” will be automatically updated in your document. This concept
+extends to your tables and figures – they can all be automatically updated.</p>
+</div>
+<div id="simple-example" class="section level2" number="5.3">
+<h2><span class="header-section-number">5.3</span> Simple example</h2>
+<p>Here we will generate some data, show some of it in a table, plot it, and show
+the results of fitting a simple linear regression. Read through this and then
+you will download and run the code in the exercise.</p>
+<p><strong>Generate data</strong></p>
+<p>First we’ll need some libraries:</p>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="introduction-to-r-markdown.html#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(kableExtra)</span>
+<span id="cb17-2"><a href="introduction-to-r-markdown.html#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb17-3"><a href="introduction-to-r-markdown.html#cb17-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(xtable)</span></code></pre></div>
+<p>Now generate some data:</p>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="introduction-to-r-markdown.html#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">42</span>)</span>
+<span id="cb18-2"><a href="introduction-to-r-markdown.html#cb18-2" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="dv">50</span>                      <span class="co"># sample size</span></span>
+<span id="cb18-3"><a href="introduction-to-r-markdown.html#cb18-3" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">:</span>n</span>
+<span id="cb18-4"><a href="introduction-to-r-markdown.html#cb18-4" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="dv">10</span><span class="sc">*</span>x <span class="sc">+</span> <span class="fu">rnorm</span>(n, <span class="dv">0</span>, <span class="dv">10</span>)</span>
+<span id="cb18-5"><a href="introduction-to-r-markdown.html#cb18-5" aria-hidden="true" tabindex="-1"></a>n</span></code></pre></div>
+<pre><code>[1] 50</code></pre>
+<p>So we are showing our R code here (we can choose to
+hide it if we like), and it has been executed, yielding the printed output of
+the value of <code>n</code> (because of the final line of the code).</p>
+<p>We can also embed results from R within sentences, for example:</p>
+<p>We have a sample size of 50.</p>
+<p>This is done (as mentioned above) by the code:</p>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="introduction-to-r-markdown.html#cb20-1" aria-hidden="true" tabindex="-1"></a>We have a sample size of <span class="st">`</span><span class="at">r n</span><span class="st">`</span></span></code></pre></div>
+<p>Note that you need the space straight after the <code>r</code>.</p>
+<p>We can also automatically say that the maximum value of the data is 506.5564788, or round it to a
+whole number: the maximum value of the data is 507. These were done by:</p>
+<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="introduction-to-r-markdown.html#cb21-1" aria-hidden="true" tabindex="-1"></a>the maximum value of the data is <span class="st">`</span><span class="at">r max(y)</span><span class="st">`</span></span>
+<span id="cb21-2"><a href="introduction-to-r-markdown.html#cb21-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-3"><a href="introduction-to-r-markdown.html#cb21-3" aria-hidden="true" tabindex="-1"></a>the maximum value of the data is <span class="st">`</span><span class="at">r round(max(y))</span><span class="st">`</span></span></code></pre></div>
+<p><strong>Show some of the data</strong></p>
+<p>Let’s combine the data in a tibble (think of it as a data frame if you don’t
+know what that is):</p>
+<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="introduction-to-r-markdown.html#cb22-1" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">tibble</span>(x, y)</span>
+<span id="cb22-2"><a href="introduction-to-r-markdown.html#cb22-2" aria-hidden="true" tabindex="-1"></a>data</span></code></pre></div>
+<pre><code># A tibble: 50 x 2
+       x     y
+   &lt;int&gt; &lt;dbl&gt;
+ 1     1  23.7
+ 2     2  14.4
+ 3     3  33.6
+ 4     4  46.3
+ 5     5  54.0
+ 6     6  58.9
+ 7     7  85.1
+ 8     8  79.1
+ 9     9 110. 
+10    10  99.4
+# … with 40 more rows</code></pre>
+<p>(only the first 10 rows get printed here thanks to dplyr).</p>
+<p>To have a proper table, we can do</p>
+<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="introduction-to-r-markdown.html#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="fu">kable</span>(data[<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>,],</span>
+<span id="cb24-2"><a href="introduction-to-r-markdown.html#cb24-2" aria-hidden="true" tabindex="-1"></a>      <span class="at">caption =</span> <span class="st">&quot;The first rows of my data.&quot;</span>)</span></code></pre></div>
+<table>
+<caption>
+<span id="tab:kable">Table 5.1: </span>The first rows of my data.
+</caption>
+<thead>
+<tr>
+<th style="text-align:right;">
+x
+</th>
+<th style="text-align:right;">
+y
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+23.70958
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:right;">
+14.35302
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+3
+</td>
+<td style="text-align:right;">
+33.63128
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+4
+</td>
+<td style="text-align:right;">
+46.32863
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+5
+</td>
+<td style="text-align:right;">
+54.04268
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+6
+</td>
+<td style="text-align:right;">
+58.93875
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+7
+</td>
+<td style="text-align:right;">
+85.11522
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+8
+</td>
+<td style="text-align:right;">
+79.05341
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+9
+</td>
+<td style="text-align:right;">
+110.18424
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+10
+</td>
+<td style="text-align:right;">
+99.37286
+</td>
+</tr>
+</tbody>
+</table>
+<p>(If you’re running the code separately the exact style may look different
+because of settings we have, but pretty much everything is tweakable with the
+<code>kable</code> and <code>kableExtra</code> packages).</p>
+<p><strong>Plot then fit a regression data</strong></p>
+<p>Now to plot the data:</p>
+<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="introduction-to-r-markdown.html#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(x, y)</span></code></pre></div>
+<p><img src="_main_files/figure-html/plot-1.png" width="672" /></p>
+<p>To fit and then print the summary regression output from R:</p>
+<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="introduction-to-r-markdown.html#cb26-1" aria-hidden="true" tabindex="-1"></a>fit <span class="ot">&lt;-</span> <span class="fu">lm</span>(y <span class="sc">~</span> x)</span>
+<span id="cb26-2"><a href="introduction-to-r-markdown.html#cb26-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">summary</span>(fit))</span></code></pre></div>
+<pre><code>
+Call:
+lm(formula = y ~ x)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-27.403  -4.366  -1.193   8.319  21.072 
+
+Coefficients:
+            Estimate Std. Error t value Pr(&gt;|t|)    
+(Intercept)   3.7071     3.2719   1.133    0.263    
+x             9.8406     0.1117  88.124   &lt;2e-16 ***
+---
+Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+
+Residual standard error: 11.39 on 48 degrees of freedom
+Multiple R-squared:  0.9939,    Adjusted R-squared:  0.9937 
+F-statistic:  7766 on 1 and 48 DF,  p-value: &lt; 2.2e-16</code></pre>
+<p>And for a report we can produce a simple table (including a caption) of output and the regression fit:</p>
+<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="introduction-to-r-markdown.html#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="fu">kable</span>(<span class="fu">coefficients</span>(<span class="fu">summary</span>(fit)),</span>
+<span id="cb28-2"><a href="introduction-to-r-markdown.html#cb28-2" aria-hidden="true" tabindex="-1"></a>      <span class="at">caption =</span> <span class="st">&quot;Linear regression fit.&quot;</span>)</span></code></pre></div>
+<table>
+<caption>
+<span id="tab:fit">Table 5.2: </span>Linear regression fit.
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;">
+</th>
+<th style="text-align:right;">
+Estimate
+</th>
+<th style="text-align:right;">
+Std. Error
+</th>
+<th style="text-align:right;">
+t value
+</th>
+<th style="text-align:right;">
+Pr(&gt;|t|)
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+(Intercept)
+</td>
+<td style="text-align:right;">
+3.707115
+</td>
+<td style="text-align:right;">
+3.2719100
+</td>
+<td style="text-align:right;">
+1.133012
+</td>
+<td style="text-align:right;">
+0.2628368
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+x
+</td>
+<td style="text-align:right;">
+9.840634
+</td>
+<td style="text-align:right;">
+0.1116686
+</td>
+<td style="text-align:right;">
+88.123530
+</td>
+<td style="text-align:right;">
+0.0000000
+</td>
+</tr>
+</tbody>
+</table>
+<p>And create a plot:</p>
+<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="introduction-to-r-markdown.html#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(x, y)</span>
+<span id="cb29-2"><a href="introduction-to-r-markdown.html#cb29-2" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(fit, <span class="at">col=</span><span class="st">&quot;red&quot;</span>)</span></code></pre></div>
+<p><img src="_main_files/figure-html/plotfit-1.png" width="672" /></p>
+<p><strong>Now, let’s go back and change the data</strong></p>
+<p>The <em>big</em> feature of dynamically generating reports is when you go back and
+change or update the input data. For example, changing the data in the above
+example and then re-running it to redo the report. The best way to demonstrate
+this is for you to do it in the following Exercise.</p>
+<div id="exercise" class="section level3" number="5.3.1">
+<h3><span class="header-section-number">5.3.1</span> Exercise</h3>
+<ol style="list-style-type: decimal">
+<li><p>In R do <code>library(rmarkdown)</code> to make sure you have the <code>rmarkdown</code>
+package. If not then install it.</p></li>
+<li><p>Download <a href="https://raw.githubusercontent.com/quantitative-biology/module-2-rmarkdown/main/rmark-exercise.Rmd">this file</a>
+onto your computer and put it where you want to work on this exercise.</p></li>
+<li><p>The file is an R Markdown (<code>.Rmd</code>) file that you can run by either clicking
+the <code>knitr</code> button in RStudio or doing <code>rmarkdown::render("rmark-exercise.Rmd")</code>
+in R.</p></li>
+<li><p>Check that this has produced (‘rendered’) an <code>.html</code> file document that looks
+similar to what you
+see above (don’t worry if the styling is not identical, but the important
+content should be). Note that the <code>.Rmd</code> file is <em>not</em> repeating all the
+explanations that we gave above.</p></li>
+<li><p>Carefully read through the <code>.Rmd</code> file and compare it with what you see in the
+resulting <code>.html</code>. There are some comments in there, denoted by
+<code>&lt;!-- comment --&gt;</code> to help you, but you should be able to get the idea of how
+commands in the <code>.Rmd</code> file translate into output in the <code>.html</code> file.</p></li>
+<li><p>Copy the resulting <code>rmark-exercise.html</code> to <code>rmark-exercise-orig.html</code>, change <code>n</code> to 30 in <code>rmark-exercise.Rmd</code>,
+and re-render it.</p></li>
+<li><p>Compare the two <code>.html</code> files. You have done the same analyses but on
+different data. You changed one value, <code>n</code>, and consequently all the
+resulting calculations changed, and these are all updated in your new <code>.html</code>
+document! You have performed exactly the same analysis on your ‘new’ data,
+including creating tables and figures. No copy-and-pasteing of tables, or
+manually keeping track of which figure corresponds to which analysis.</p></li>
+</ol>
+<p>That last bit is the crux of R Markdown. Once you understand that then you
+should incorporate it into your workflow. You can easily run identical analyses
+on two data sets, or do 10 runs of a model with different parameters, and easily
+compare the output.</p>
+<p>You can even get a bit clever with your writing by including an R <code>ifelse</code>
+statement to somewhat automate the text. Here is the results of some code (that
+will be included in the file):</p>
+<p>So the maximum value of <span class="math inline">\(y\)</span> is 507, which is
+greater than
+the special value of 400. The “greater than” or “less than” part is given by</p>
+<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb30-1"><a href="introduction-to-r-markdown.html#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="st">`</span><span class="at">r ifelse(max(y)&gt;400, paste(&quot;greater than&quot;), paste(&quot;less than&quot;))</span><span class="st">`</span></span></code></pre></div>
+<p>But you have to be careful and think about all possibilities – what if
+<span class="math inline">\(y=399.9\)</span>?</p>
+</div>
+</div>
+<div id="output-format" class="section level2" number="5.4">
+<h2><span class="header-section-number">5.4</span> Output format</h2>
+<p>To keep it simple, in the Exercise we have set the output to be <code>.html</code>. For
+scientific documents, <code>.pdf</code> are preferable. For this you will need LaTeX
+installed.</p>
+<p>For decades, LaTeX has been the standard typesetting system for writing
+mathematical papers. In 2002, Friedrich Leisch created ‘Sweave,’ to
+weave together R code for calculations and LaTeX code for writing up results
+into a .pdf file. (It was called Sweave because S was the precursor language to
+R, plus I expect Sweave sounded better than
+Rweave). Sweave motivated knitr (to knit together R code with text write ups)
+by Yihui Xie, which also allows html and other output formats. R Markdown was
+then created to allow simpler use of knitr, without learning lots of LaTeX
+commands.</p>
+<p>To create <code>.pdf</code> output, and use LaTeX for writing equations and
+customising your output, if you don’t have LaTeX installed it then see
+the simple instructions another book by Yhiui Xie et al., the <a href="https://bookdown.org/yihui/rmarkdown-cookbook/install-latex.html">R Markdown
+cookbook</a>.</p>
+</div>
+<div id="further-reading" class="section level2" number="5.5">
+<h2><span class="header-section-number">5.5</span> Further reading</h2>
+<p>As we said, the idea of this module was to give you a simple introduction to
+using R Markdown. The <a href="https://bookdown.org/yihui/rmarkdown">Definitive Guide to
+R Markdown</a> is highly recommended (and
+often where you end up when Googling for how to do something), but you do not
+need to understand all of it (I know that Pandoc is doing stuff behind the
+scenes, but have managed to not need much more than that). <a href="https://bookdown.org/yihui/rmarkdown/basics.html">Chapter
+2</a> goes through the basics,
+including many things that we glossed over above, such as the code between the
+<code>---</code> at the top of <code>rmark-exercise.Rmd</code>. For me to explain it properly, I would
+have to refer to the guidebook anyway.</p>
+<p>In practice, once you have something working in the style you like, you can just
+copy those settings for each new project. It can be handy to keep a readme file
+of containing commands/options/tips that you use a lot.</p>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="introduction-to-git-and-github.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="introduction-to-multivariate-analysis.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
