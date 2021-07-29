@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>7 Classification | Further Git and GitHub</title>
+  <meta name="description" content="This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook." />
+  <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="7 Classification | Further Git and GitHub" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook." />
+  <meta name="github-repo" content="rstudio/bookdown-demo" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="7 Classification | Further Git and GitHub" />
+  
+  <meta name="twitter:description" content="This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook." />
+  
+
+<meta name="author" content="Andrew Edwards" />
+
+
+<meta name="date" content="2021-05-07" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="introduction-to-multivariate-analysis.html"/>
+<link rel="next" href="optimization.html"/>
+<script src="libs/header-attrs-2.9/header-attrs.js"></script>
+<script src="libs/jquery-3.5.1/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+<script src="libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
+<link href="libs/bsTable-3.3.7/bootstrapTable.min.css" rel="stylesheet" />
+<script src="libs/bsTable-3.3.7/bootstrapTable.js"></script>
+<script src="libs/htmlwidgets-1.5.3/htmlwidgets.js"></script>
+<script src="libs/plotly-binding-4.9.4.1/plotly.js"></script>
+<script src="libs/typedarray-0.1/typedarray.min.js"></script>
+<link href="libs/crosstalk-1.1.1/css/crosstalk.css" rel="stylesheet" />
+<script src="libs/crosstalk-1.1.1/js/crosstalk.min.js"></script>
+<link href="libs/plotly-htmlwidgets-css-1.57.1/plotly-htmlwidgets.css" rel="stylesheet" />
+<script src="libs/plotly-main-1.57.1/plotly-latest.min.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Prerequisites</a></li>
+<li class="chapter" data-level="2" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>2</b> Introduction</a></li>
+<li class="chapter" data-level="3" data-path="literature.html"><a href="literature.html"><i class="fa fa-check"></i><b>3</b> Literature</a></li>
+<li class="chapter" data-level="4" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html"><i class="fa fa-check"></i><b>4</b> Introduction to Git and GitHub</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#motivation"><i class="fa fa-check"></i><b>4.1</b> Motivation</a></li>
+<li class="chapter" data-level="4.2" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#getting-set-up-for-the-first-time"><i class="fa fa-check"></i><b>4.2</b> Getting set up for the first time</a>
+<ul>
+<li class="chapter" data-level="4.2.1" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#what-you-will-end-up-having-installed"><i class="fa fa-check"></i><b>4.2.1</b> What you will end up having installed</a></li>
+<li class="chapter" data-level="4.2.2" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#get-a-github-account"><i class="fa fa-check"></i><b>4.2.2</b> Get a GitHub account</a></li>
+<li class="chapter" data-level="4.2.3" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#text-editor"><i class="fa fa-check"></i><b>4.2.3</b> Text Editor</a></li>
+<li class="chapter" data-level="4.2.4" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#install-the-git-application-on-your-machine"><i class="fa fa-check"></i><b>4.2.4</b> Install the Git application on your machine</a></li>
+<li class="chapter" data-level="4.2.5" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#git-shell"><i class="fa fa-check"></i><b>4.2.5</b> Git shell</a></li>
+<li class="chapter" data-level="4.2.6" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#git-shell-rstudio"><i class="fa fa-check"></i><b>4.2.6</b> Git shell, RStudio</a></li>
+<li class="chapter" data-level="4.2.7" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#powershell-and-posh-git"><i class="fa fa-check"></i><b>4.2.7</b> Powershell and posh-git</a></li>
+<li class="chapter" data-level="4.2.8" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#one-time-authentication"><i class="fa fa-check"></i><b>4.2.8</b> One-time authentication</a></li>
+<li class="chapter" data-level="4.2.9" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#configure-the-git-application"><i class="fa fa-check"></i><b>4.2.9</b> Configure the Git application</a></li>
+<li class="chapter" data-level="4.2.10" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#install-the-difftool"><i class="fa fa-check"></i><b>4.2.10</b> Install the difftool</a></li>
+<li class="chapter" data-level="4.2.11" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#cloning-the-git-course-repository"><i class="fa fa-check"></i><b>4.2.11</b> “Cloning” the git-course repository</a></li>
+<li class="chapter" data-level="4.2.12" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#copy-the-.gitignore-file"><i class="fa fa-check"></i><b>4.2.12</b> Copy the <em>.gitignore</em> file</a></li>
+<li class="chapter" data-level="4.2.13" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#edit-the-.gitconfig-file"><i class="fa fa-check"></i><b>4.2.13</b> Edit the <em>.gitconfig</em> file</a></li>
+<li class="chapter" data-level="4.2.14" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#mac-only-make-your-output-pretty"><i class="fa fa-check"></i><b>4.2.14</b> MAC only: make your output pretty</a></li>
+<li class="chapter" data-level="4.2.15" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#markdown-pad"><i class="fa fa-check"></i><b>4.2.15</b> Markdown Pad</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#using-git-and-github"><i class="fa fa-check"></i><b>4.3</b> Using Git and GitHub</a>
+<ul>
+<li class="chapter" data-level="4.3.1" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#definitions"><i class="fa fa-check"></i><b>4.3.1</b> Definitions</a></li>
+<li class="chapter" data-level="4.3.2" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#creating-a-new-repository"><i class="fa fa-check"></i><b>4.3.2</b> Creating a new repository</a></li>
+<li class="chapter" data-level="4.3.3" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#cloning-your-new-repository"><i class="fa fa-check"></i><b>4.3.3</b> Cloning your new repository</a></li>
+<li class="chapter" data-level="4.3.4" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#committing"><i class="fa fa-check"></i><b>4.3.4</b> Committing</a></li>
+<li class="chapter" data-level="4.3.5" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#exercise-1-create-edit-and-commit-simpletext.txt"><i class="fa fa-check"></i><b>4.3.5</b> Exercise 1: create, edit and commit <em>simpleText.txt</em></a></li>
+<li class="chapter" data-level="4.3.6" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#exercise-2-multiple-files"><i class="fa fa-check"></i><b>4.3.6</b> Exercise 2: multiple files</a></li>
+<li class="chapter" data-level="4.3.7" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#collaborating"><i class="fa fa-check"></i><b>4.3.7</b> Collaborating</a></li>
+<li class="chapter" data-level="4.3.8" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#exercise-3-collaborating-on-a-single-repository"><i class="fa fa-check"></i><b>4.3.8</b> Exercise 3: collaborating on a single repository</a></li>
+</ul></li>
+<li class="chapter" data-level="4.4" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#beyond-the-basics"><i class="fa fa-check"></i><b>4.4</b> Beyond the basics</a>
+<ul>
+<li class="chapter" data-level="4.4.1" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#workflow-tips"><i class="fa fa-check"></i><b>4.4.1</b> Workflow tips</a></li>
+<li class="chapter" data-level="4.4.2" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#so-ive-made-some-changes-but-dont-really-want-to-keep-them-git-stash"><i class="fa fa-check"></i><b>4.4.2</b> So I’ve made some changes but don’t really want to keep them – git stash</a></li>
+<li class="chapter" data-level="4.4.3" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#pull-requests"><i class="fa fa-check"></i><b>4.4.3</b> Pull requests</a></li>
+<li class="chapter" data-level="4.4.4" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#the-power-to-go-back"><i class="fa fa-check"></i><b>4.4.4</b> The power to go back</a></li>
+<li class="chapter" data-level="4.4.5" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#so-how-does-git-do-all-this"><i class="fa fa-check"></i><b>4.4.5</b> So how does Git do all this?</a></li>
+<li class="chapter" data-level="4.4.6" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#git-terminology"><i class="fa fa-check"></i><b>4.4.6</b> Git terminology</a></li>
+<li class="chapter" data-level="4.4.7" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#branching"><i class="fa fa-check"></i><b>4.4.7</b> Branching</a></li>
+<li class="chapter" data-level="4.4.8" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#undoing-stuff"><i class="fa fa-check"></i><b>4.4.8</b> Undoing stuff</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="introduction-to-r-markdown.html"><a href="introduction-to-r-markdown.html"><i class="fa fa-check"></i><b>5</b> Introduction to R Markdown</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="introduction-to-r-markdown.html"><a href="introduction-to-r-markdown.html#motivation-1"><i class="fa fa-check"></i><b>5.1</b> Motivation</a></li>
+<li class="chapter" data-level="5.2" data-path="introduction-to-r-markdown.html"><a href="introduction-to-r-markdown.html#basic-idea"><i class="fa fa-check"></i><b>5.2</b> Basic idea</a></li>
+<li class="chapter" data-level="5.3" data-path="introduction-to-r-markdown.html"><a href="introduction-to-r-markdown.html#simple-example"><i class="fa fa-check"></i><b>5.3</b> Simple example</a>
+<ul>
+<li class="chapter" data-level="5.3.1" data-path="introduction-to-r-markdown.html"><a href="introduction-to-r-markdown.html#exercise"><i class="fa fa-check"></i><b>5.3.1</b> Exercise</a></li>
+</ul></li>
+<li class="chapter" data-level="5.4" data-path="introduction-to-r-markdown.html"><a href="introduction-to-r-markdown.html#output-format"><i class="fa fa-check"></i><b>5.4</b> Output format</a></li>
+<li class="chapter" data-level="5.5" data-path="introduction-to-r-markdown.html"><a href="introduction-to-r-markdown.html#further-reading"><i class="fa fa-check"></i><b>5.5</b> Further reading</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="introduction-to-multivariate-analysis.html"><a href="introduction-to-multivariate-analysis.html"><i class="fa fa-check"></i><b>6</b> Introduction to multivariate analysis</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="introduction-to-multivariate-analysis.html"><a href="introduction-to-multivariate-analysis.html#multivariate-resemblance"><i class="fa fa-check"></i><b>6.1</b> Multivariate resemblance</a>
+<ul>
+<li class="chapter" data-level="6.1.1" data-path="introduction-to-multivariate-analysis.html"><a href="introduction-to-multivariate-analysis.html#binary-similarity-metrics"><i class="fa fa-check"></i><b>6.1.1</b> Binary Similarity metrics</a></li>
+<li class="chapter" data-level="6.1.2" data-path="introduction-to-multivariate-analysis.html"><a href="introduction-to-multivariate-analysis.html#quantitative-similarity-dissimilarity-metrics"><i class="fa fa-check"></i><b>6.1.2</b> Quantitative similarity &amp; dissimilarity metrics</a></li>
+<li class="chapter" data-level="6.1.3" data-path="introduction-to-multivariate-analysis.html"><a href="introduction-to-multivariate-analysis.html#comparing-more-than-two-communitiessamplessitesgenesspecies"><i class="fa fa-check"></i><b>6.1.3</b> Comparing more than two communities/samples/sites/genes/species</a></li>
+<li class="chapter" data-level="6.1.4" data-path="introduction-to-multivariate-analysis.html"><a href="introduction-to-multivariate-analysis.html#r-functions"><i class="fa fa-check"></i><b>6.1.4</b> R functions</a></li>
+</ul></li>
+<li class="chapter" data-level="6.2" data-path="introduction-to-multivariate-analysis.html"><a href="introduction-to-multivariate-analysis.html#cluster-analysis"><i class="fa fa-check"></i><b>6.2</b> Cluster Analysis</a>
+<ul>
+<li class="chapter" data-level="6.2.1" data-path="introduction-to-multivariate-analysis.html"><a href="introduction-to-multivariate-analysis.html#hierarchical-clustering-groups-are-nested-within-other-groups."><i class="fa fa-check"></i><b>6.2.1</b> Hierarchical clustering: groups are nested within other groups.</a></li>
+<li class="chapter" data-level="6.2.2" data-path="introduction-to-multivariate-analysis.html"><a href="introduction-to-multivariate-analysis.html#r-functions-1"><i class="fa fa-check"></i><b>6.2.2</b> R functions</a></li>
+<li class="chapter" data-level="6.2.3" data-path="introduction-to-multivariate-analysis.html"><a href="introduction-to-multivariate-analysis.html#how-many-clusters"><i class="fa fa-check"></i><b>6.2.3</b> How many clusters?</a></li>
+<li class="chapter" data-level="6.2.4" data-path="introduction-to-multivariate-analysis.html"><a href="introduction-to-multivariate-analysis.html#other-clustering-methods"><i class="fa fa-check"></i><b>6.2.4</b> Other clustering methods</a></li>
+<li class="chapter" data-level="6.2.5" data-path="introduction-to-multivariate-analysis.html"><a href="introduction-to-multivariate-analysis.html#exercise-cluster-analysis-of-isotope-data"><i class="fa fa-check"></i><b>6.2.5</b> Exercise: Cluster analysis of isotope data</a></li>
+</ul></li>
+<li class="chapter" data-level="6.3" data-path="introduction-to-multivariate-analysis.html"><a href="introduction-to-multivariate-analysis.html#ordination"><i class="fa fa-check"></i><b>6.3</b> Ordination</a>
+<ul>
+<li class="chapter" data-level="6.3.1" data-path="introduction-to-multivariate-analysis.html"><a href="introduction-to-multivariate-analysis.html#principal-components-analysis-pca"><i class="fa fa-check"></i><b>6.3.1</b> Principal Components Analysis (PCA)</a></li>
+<li class="chapter" data-level="6.3.2" data-path="introduction-to-multivariate-analysis.html"><a href="introduction-to-multivariate-analysis.html#exercise-pca-on-the-iris-data"><i class="fa fa-check"></i><b>6.3.2</b> Exercise: PCA on the iris data</a></li>
+<li class="chapter" data-level="6.3.3" data-path="introduction-to-multivariate-analysis.html"><a href="introduction-to-multivariate-analysis.html#principle-coordinates-analysis-pcoa"><i class="fa fa-check"></i><b>6.3.3</b> Principle Coordinates Analysis (PCoA)</a></li>
+<li class="chapter" data-level="6.3.4" data-path="introduction-to-multivariate-analysis.html"><a href="introduction-to-multivariate-analysis.html#nonmetric-multidimensional-scaling-nmds"><i class="fa fa-check"></i><b>6.3.4</b> Nonmetric Multidimensional Scaling (NMDS)</a></li>
+<li class="chapter" data-level="6.3.5" data-path="introduction-to-multivariate-analysis.html"><a href="introduction-to-multivariate-analysis.html#exercise-ordination"><i class="fa fa-check"></i><b>6.3.5</b> Exercise: Ordination</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="classification.html"><a href="classification.html"><i class="fa fa-check"></i><b>7</b> Classification</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="classification.html"><a href="classification.html#multivariate-logistic-regression"><i class="fa fa-check"></i><b>7.1</b> Multivariate logistic regression</a></li>
+<li class="chapter" data-level="7.2" data-path="classification.html"><a href="classification.html#exercise-logistic-regression-as-a-classifier"><i class="fa fa-check"></i><b>7.2</b> Exercise: Logistic regression as a classifier</a>
+<ul>
+<li class="chapter" data-level="7.2.1" data-path="classification.html"><a href="classification.html#classification-trees"><i class="fa fa-check"></i><b>7.2.1</b> Classification trees</a></li>
+<li class="chapter" data-level="7.2.2" data-path="classification.html"><a href="classification.html#random-forests"><i class="fa fa-check"></i><b>7.2.2</b> Random Forests</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="optimization.html"><a href="optimization.html"><i class="fa fa-check"></i><b>8</b> Optimization</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="optimization.html"><a href="optimization.html#introduction"><i class="fa fa-check"></i><b>8.1</b> Introduction</a></li>
+<li class="chapter" data-level="8.2" data-path="optimization.html"><a href="optimization.html#fundamentals-of-optimization"><i class="fa fa-check"></i><b>8.2</b> Fundamentals of Optimization</a>
+<ul>
+<li class="chapter" data-level="8.2.1" data-path="optimization.html"><a href="optimization.html#fermats-theorem"><i class="fa fa-check"></i><b>8.2.1</b> Fermat’s Theorem</a></li>
+</ul></li>
+<li class="chapter" data-level="8.3" data-path="optimization.html"><a href="optimization.html#regression"><i class="fa fa-check"></i><b>8.3</b> Regression</a>
+<ul>
+<li class="chapter" data-level="8.3.1" data-path="optimization.html"><a href="optimization.html#linear-regression"><i class="fa fa-check"></i><b>8.3.1</b> Linear Regression</a></li>
+<li class="chapter" data-level="8.3.2" data-path="optimization.html"><a href="optimization.html#nonlinear-regression"><i class="fa fa-check"></i><b>8.3.2</b> Nonlinear Regression</a></li>
+</ul></li>
+<li class="chapter" data-level="8.4" data-path="optimization.html"><a href="optimization.html#iterative-optimization-algorithms"><i class="fa fa-check"></i><b>8.4</b> Iterative Optimization Algorithms</a>
+<ul>
+<li class="chapter" data-level="8.4.1" data-path="optimization.html"><a href="optimization.html#gradient-descent"><i class="fa fa-check"></i><b>8.4.1</b> Gradient Descent</a></li>
+</ul></li>
+<li class="chapter" data-level="8.5" data-path="optimization.html"><a href="optimization.html#calibration-of-dynamic-models"><i class="fa fa-check"></i><b>8.5</b> Calibration of Dynamic Models</a></li>
+<li class="chapter" data-level="8.6" data-path="optimization.html"><a href="optimization.html#uncertainty-analysis-and-bayesian-calibration"><i class="fa fa-check"></i><b>8.6</b> Uncertainty Analysis and Bayesian Calibration</a></li>
+<li class="chapter" data-level="8.7" data-path="optimization.html"><a href="optimization.html#references"><i class="fa fa-check"></i><b>8.7</b> References</a></li>
+</ul></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Further Git and GitHub</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="classification" class="section level1" number="7">
+<h1><span class="header-section-number">7</span> Classification</h1>
+<p>Classification is the task of assigning data objects, such as sites, species or images to predetermined classes. Determining what class of data object you have is a question that usually turns on multiple predictors. For example, to classify leaf images to different species predictors such as size, shape and colour may be used. you have sattelite data, you may need to classify the differnt pixels of the image as agricultural, forest, or urban. So for classifcation tasks our response variabel, y, is qualitative or categorical (e.g. gender).</p>
+<p>There are many methods that can be employed for this task ranging from logistic regression to random forest techqniques. While some of these methods are classic multivariate methods, others, like random forest classifiers, are machine learning tasks. Machine learning is an application of artificial intelligence. The computer algorithm finds a solution to the classifcation problem without being explicitly programmed to do so.</p>
+<div id="multivariate-logistic-regression" class="section level2" number="7.1">
+<h2><span class="header-section-number">7.1</span> Multivariate logistic regression</h2>
+<p>On of the simplest classification methods is to use logistic regression. Let’s take a simple, but common example. A non-native species has been introduced to a region, and we would like to know what percentage of the region would be suitable habitat, in order to get an idea of risks of impact. We’ll start with a univariate version of the problem. Let’s assume we think that average temperature controls habitat suitability, and we have presencce absence data for the species accross a range of different sites. Could we use simple regression to answer the question of whether a given area is suitable habitat?</p>
+<div class="figure"><span id="fig:log"></span>
+<img src="_main_files/figure-html/log-1.png" alt="" width="672" />
+<p class="caption">
+Figure 7.1: Species presence absence and rainfall
+</p>
+</div>
+<p>As we can see in Fig. @ref{fig:log}, the linear regression does not make a lot of sense for a response variable that is restricted to the values of 0 and 1. The regression line <span class="math inline">\(\beta_0+\beta_1x\)</span> can take on any value between negative and positive infinity, but we don’t know how to interpret values greater than 1 or less than zero. The regression line almost always predicts wrong value for y in classification problems.</p>
+<p>Instead of trying to predict y, we can try to predict p(y = 1), i.e., the probability that a species is in an area. We need a function that gives outputs between 0 and 1: logistic regression is one solution. In this model, probability of y for a given value of x, p(x) is given as: <span class="math display">\[\frac{e^{\beta_0+\beta_1x}}{1+e^{\beta_0+\beta_1x}}\]</span>. Rearranging, we have: <span class="math display">\[\frac{p(x)}{1-p(x)}=e^{\beta_0+\beta_1x},\]</span> where the lefthand side is called the log-odds or logit. We can see that the logistic regression model has a logit that is linear in x: <span class="math display">\[\log{\frac{p(x)}{1-p(x)}}=e^{\beta_0+\beta_1x}\]</span>. The logistic function will always produce an S-shaped curve, so regardless of the value of x, we will obtain a sensible prediction.</p>
+<p>Let’s apply this model to our non native species data.</p>
+<pre><code>         1          2          3          4          5          6 
+0.04112748 0.04458053 0.04533242 0.05951435 0.20909427 0.67290516 </code></pre>
+<p><img src="_main_files/figure-html/unnamed-chunk-36-1.png" width="672" /></p>
+</div>
+<div id="exercise-logistic-regression-as-a-classifier" class="section level2" number="7.2">
+<h2><span class="header-section-number">7.2</span> Exercise: Logistic regression as a classifier</h2>
+<p>We’ll start by installing the MASS package, and then the the Pima.tr data in the MASS package, since there is a binary response. Install the MASS package, load the library and load the data. Type help(Pima.tr) or ?Pima.tr to get a description of these data. You’ll notice that the “type” variable is our classifier and determines whether the patient has diabetes or not.</p>
+<p>Next construct a logistic regression, to use as a classifier. Examine your output, to determine if the regression is significant</p>
+<pre><code>&#39;data.frame&#39;:   200 obs. of  8 variables:
+ $ npreg: int  5 7 5 0 0 5 3 1 3 2 ...
+ $ glu  : int  86 195 77 165 107 97 83 193 142 128 ...
+ $ bp   : int  68 70 82 76 60 76 58 50 80 78 ...
+ $ skin : int  28 33 41 43 25 27 31 16 15 37 ...
+ $ bmi  : num  30.2 25.1 35.8 47.9 26.4 35.6 34.3 25.9 32.4 43.3 ...
+ $ ped  : num  0.364 0.163 0.156 0.259 0.133 ...
+ $ age  : int  24 55 35 26 23 52 25 24 63 31 ...
+ $ type : Factor w/ 2 levels &quot;No&quot;,&quot;Yes&quot;: 1 2 1 1 1 2 1 1 1 2 ...</code></pre>
+<pre><code>
+Call:
+glm(formula = type ~ ., family = binomial, data = Pima.tr)
+
+Deviance Residuals: 
+    Min       1Q   Median       3Q      Max  
+-1.9830  -0.6773  -0.3681   0.6439   2.3154  
+
+Coefficients:
+             Estimate Std. Error z value Pr(&gt;|z|)    
+(Intercept) -9.773062   1.770386  -5.520 3.38e-08 ***
+npreg        0.103183   0.064694   1.595  0.11073    
+glu          0.032117   0.006787   4.732 2.22e-06 ***
+bp          -0.004768   0.018541  -0.257  0.79707    
+skin        -0.001917   0.022500  -0.085  0.93211    
+bmi          0.083624   0.042827   1.953  0.05087 .  
+ped          1.820410   0.665514   2.735  0.00623 ** 
+age          0.041184   0.022091   1.864  0.06228 .  
+---
+Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+
+(Dispersion parameter for binomial family taken to be 1)
+
+    Null deviance: 256.41  on 199  degrees of freedom
+Residual deviance: 178.39  on 192  degrees of freedom
+AIC: 194.39
+
+Number of Fisher Scoring iterations: 5</code></pre>
+<p>The . in the formula argument means that we use all the remaining variables in data as covariates. Note: we used the glm() function to perform logistic regression by passing in the family=“binomial” argument. But if we use glm() to fit a model without passing in the family argument, then it performs linear regression, just like the lm() function.</p>
+<p>Next, we’ll use some testing data, to test our classifier. The Prima.te has already been created for you in the MASS package. We’ll use the predict function to get a classification of the data.</p>
+<p>Note that the output is a probability. To complete the classification we need to make a decision about where to divide up the classes. Let’s just use a 50% probability, and then construct a confusion matrix to determine how well our predictor did.</p>
+<pre><code>      Predicted
+Actual  No Yes
+   No  200  23
+   Yes  43  66</code></pre>
+<pre><code>[1] 0.8012048</code></pre>
+<p>Notice there there have been some missclassifications at 50%, and that the accuracy is only about 80%. See if another decision boundary (e.g., 75%) does any better.</p>
+<p>There is a nice package in R, caret, that is a great wrapper for machine learning tasks. We can use it to generate both our confusion matrix, and other statistical info about our classifier</p>
+<pre><code>Confusion Matrix and Statistics
+
+          Reference
+Prediction  No Yes
+       No  200  23
+       Yes  43  66
+                                          
+               Accuracy : 0.8012          
+                 95% CI : (0.7542, 0.8428)
+    No Information Rate : 0.7319          
+    P-Value [Acc &gt; NIR] : 0.002095        
+                                          
+                  Kappa : 0.5271          
+                                          
+ Mcnemar&#39;s Test P-Value : 0.019349        
+                                          
+            Sensitivity : 0.8230          
+            Specificity : 0.7416          
+         Pos Pred Value : 0.8969          
+         Neg Pred Value : 0.6055          
+             Prevalence : 0.7319          
+         Detection Rate : 0.6024          
+   Detection Prevalence : 0.6717          
+      Balanced Accuracy : 0.7823          
+                                          
+       &#39;Positive&#39; Class : No              
+                                          </code></pre>
+<p>Perhaps the most informative of these stats is the No Information Rate which tests whether our classifier does better than random assignment. Also the balanced accuracy stat, gives an accuracy value that weights both majority and minority classes evenly, if you have unbalanced membership.</p>
+<p>Finally, you may want to visualize your classfier results. A simple way is to code the colours and symbols. Let’s use the ggplot() system since it has a nice method for dealing with two different categorical objects (although in other respects is has a cryptic interface!).</p>
+<p><img src="_main_files/figure-html/unnamed-chunk-40-1.png" width="672" /></p>
+<p>##LDA</p>
+<div id="classification-trees" class="section level3" number="7.2.1">
+<h3><span class="header-section-number">7.2.1</span> Classification trees</h3>
+<p>Classification trees also output the predicted class for a given sample. Let’s try this on the iris data. We’ll first split the data into a training and testing set, using a built in function in the caret library. And then run our tree algorithm in the rpart package.</p>
+<pre><code>n= 105 
+
+node), split, n, loss, yval, (yprob)
+      * denotes terminal node
+
+1) root 105 68 versicolor (0.3238095 0.3523810 0.3238095)  
+  2) Petal.Length&lt; 2.35 34  0 setosa (1.0000000 0.0000000 0.0000000) *
+  3) Petal.Length&gt;=2.35 71 34 versicolor (0.0000000 0.5211268 0.4788732)  
+    6) Petal.Length&lt; 4.95 40  3 versicolor (0.0000000 0.9250000 0.0750000) *
+    7) Petal.Length&gt;=4.95 31  0 virginica (0.0000000 0.0000000 1.0000000) *</code></pre>
+<p>Examine the output, and then try to plot it</p>
+<p><img src="_main_files/figure-html/unnamed-chunk-42-1.png" width="672" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-43-1.png" width="672" /></p>
+<p>Finally, using this tree classifer, we can make predictions for our testing data, and get a confusion matrix</p>
+<pre><code>Confusion Matrix and Statistics
+
+            Reference
+Prediction   setosa versicolor virginica
+  setosa         16          0         0
+  versicolor      0         11         3
+  virginica       0          2        13
+
+Overall Statistics
+                                          
+               Accuracy : 0.8889          
+                 95% CI : (0.7595, 0.9629)
+    No Information Rate : 0.3556          
+    P-Value [Acc &gt; NIR] : 1.581e-13       
+                                          
+                  Kappa : 0.833           
+                                          
+ Mcnemar&#39;s Test P-Value : NA              
+
+Statistics by Class:
+
+                     Class: setosa Class: versicolor Class: virginica
+Sensitivity                 1.0000            0.8462           0.8125
+Specificity                 1.0000            0.9062           0.9310
+Pos Pred Value              1.0000            0.7857           0.8667
+Neg Pred Value              1.0000            0.9355           0.9000
+Prevalence                  0.3556            0.2889           0.3556
+Detection Rate              0.3556            0.2444           0.2889
+Detection Prevalence        0.3556            0.3111           0.3333
+Balanced Accuracy           1.0000            0.8762           0.8718</code></pre>
+</div>
+<div id="random-forests" class="section level3" number="7.2.2">
+<h3><span class="header-section-number">7.2.2</span> Random Forests</h3>
+<p>Let’s try an ensemble decision tree on the iris data. We use the randomForest package on the training data. Note that we do not have to split our data into training and testing now, random Forest is already doing this sort of thing for us.</p>
+<pre><code>
+Call:
+ randomForest(formula = Species ~ ., data = iris) 
+               Type of random forest: classification
+                     Number of trees: 500
+No. of variables tried at each split: 2
+
+        OOB estimate of  error rate: 4.67%
+Confusion matrix:
+           setosa versicolor virginica class.error
+setosa         50          0         0        0.00
+versicolor      0         47         3        0.06
+virginica       0          4        46        0.08</code></pre>
+<p>Our classification is pretty good with a misclassification rate of only 4%. We might like to looks at what the model is doing but unlike a single CART, random forests do not produce a single visual, since of course the predictions are averaged across many hundreds or thousands of trees.</p>
+<p><img src="_main_files/figure-html/unnamed-chunk-46-1.png" width="672" /></p>
+<p>The plot shows how the Out Of Bag error rate (proportion of misclassifications) for each of the three species changes with the size of the forest (the number of trees). Obviously with few trees the error rate is high, but as more trees are added you can see the error rate decrease and eventually flatten out.</p>
+<p>When building random forests, there are three tuning parameters of interest: node size, number of trees, and number of predictors sampled at each split. Careful tuning of these parameters can prevent extended computations with little gain in error reduction. For example, in the above plot, we could easily reduce the number of trees down to 300 and experience relatively little loss in predictive ability:</p>
+<pre><code>
+Call:
+ randomForest(formula = Species ~ ., data = iris, ntree = 300) 
+               Type of random forest: classification
+                     Number of trees: 300
+No. of variables tried at each split: 2
+
+        OOB estimate of  error rate: 4.67%
+Confusion matrix:
+           setosa versicolor virginica class.error
+setosa         50          0         0        0.00
+versicolor      0         47         3        0.06
+virginica       0          4        46        0.08</code></pre>
+<p>So we see an increase in our error rate, but not much.</p>
+<p>Despite not yielding a single visualizable tree, one of the major advantages of random forests is that they can provide a measure of relative importance. By ranking predictors based on how much they influence the response, RFs may be a useful tool for whittling down predictors before trying another framework, such as CART of linear models. Importance can be obtained using the importance function, and plotted using the varImpPlotfunction:</p>
+<p><img src="_main_files/figure-html/unnamed-chunk-48-1.png" width="672" /></p>
+<p>The table reports the mean decrease in the Gini Index, which if you recall, is a measure of impurity for categorical data. For each tree, each predictor in the OOB sample is randomly permuted (aka, shuffled around) and passed to the tree to obtain the error rate (again, Gini index for categorical data, MSE for continuous). The error rate from the unpermuted OOB is then subtracted from the error rate on the permuted OOB data, and averaged across all trees. When this value is large, it implies that a variable had a strong relationship with the response (aka, the model got much worse at predicting the data when that variable was permuted). The plot communicates the same data as in the table, with points farther along the x-axis deemed more important. As we already knew, Petal.Length and Petal.Width are the two most important variables.</p>
+<p>One other useful aspect of random forests is getting a sense of the partial effect of each predictor given the other predictors in the model. (This has analogues to partial correlation plots in linear models.) This is done by holding each value of the predictor of interest constant (while allowing all other predictors to vary at their original values), passing it through the RF, and predicting the responses. The average of the predicted responses are plotted against each value of the predictor of interest (the ones that were held constant) to see how the effect of that predictor changes based on its value. This exercise can be repeated for all other predictors to gain a sense of their partial effects.</p>
+<p>The function to calculate partial effects is partialPlot. Let’s look at the effect of Petal.Length:
+<img src="_main_files/figure-html/unnamed-chunk-49-1.png" width="672" /></p>
+<p>The y-axis is a bit tricky to interpret. Since we are dealing with classification trees, its on the logit scale, so its the probability of success. In this case, the partial plot has defaulted to the first class, which represents I. setosa. This plot says that there is a high chance of successfully predicting this species from Petal.Length when Petal.Length is less than around 2.5 cm, after which point the chance of successful prediction drops off precipitously. This is actually quite reassuring as this is the first split identified way back in the very first CART (where the split was &lt; 2.45 cm).</p>
+<p>Missing data
+Its worth noting that the default behavior of randomForest is to refuse to fit trees with missing predictors. You can, however, specify a few alternative arguments: the first is na.action = na.omit, which removes the ros with missing values outright. Another option is to use na.action = na.roughfix, which replaces missing values with the median (for continuous variables) or the most frequent level (for categorical variables). Missing responses are harder: you can either remove that row, or use the function rfImpute to impute values. The imputed values are the average of the non-missing observations, weighted by their proximity to non-missing observations (based on how often they fall in terminal nodes with those observations). rfImpute tends to give optimistic estimates of the OOB error.</p>
+
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="introduction-to-multivariate-analysis.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="optimization.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
