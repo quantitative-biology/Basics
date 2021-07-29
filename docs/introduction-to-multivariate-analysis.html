@@ -1166,8 +1166,8 @@ b 33
 c 60 71      
 d 76 76 36   
 e 51 62 48 66</code></pre>
-<div class="figure"><span id="fig:unnamed-chunk-14"></span>
-<img src="_main_files/figure-html/unnamed-chunk-14-1.png" alt="" width="672" />
+<div class="figure"><span id="fig:unnamed-chunk-23"></span>
+<img src="_main_files/figure-html/unnamed-chunk-23-1.png" alt="" width="672" />
 <p class="caption">
 Figure 6.4: Example of using a dissimilarity matrix to construct a single-linkage cluster diagra
 </p>
@@ -1685,7 +1685,7 @@ Run 20 stress 0.1825658
 *** Solution reached</code></pre>
 <div class="sourceCode" id="cb67"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb67-1"><a href="introduction-to-multivariate-analysis.html#cb67-1" aria-hidden="true" tabindex="-1"></a>PCoA <span class="ot">&lt;-</span> <span class="fu">cmdscale</span>(disimvar, <span class="at">k =</span> <span class="dv">2</span>, <span class="at">eig =</span> T, <span class="at">add =</span> T )</span></code></pre></div>
 <p>If we look at the object PCoA we see eigenvalues, one for each of the 20 sites, and the new 2-D coordinates for each site. We can plot the results as plot(PCoA$points). In fact, let’s plot the PCoA and the NMDS side by side to see if they differ, using the par(mfrow()) functions. In this case, our species are the variables and our sites/samples are the objects of our attention. There’s a lot of species, so we won’t draw the arrows, we’ll just show their position on the biplot.</p>
-<p><img src="_main_files/figure-html/unnamed-chunk-19-1.png" width="672" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-28-1.png" width="672" /></p>
 
 </div>
 </div>
