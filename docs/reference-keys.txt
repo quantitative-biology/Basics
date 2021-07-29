@@ -25,6 +25,7 @@ fig:coriris
 fig:pacfirst
 tab:barload
 fig:pactwo
+fig:log
 prerequisites
 intro
 literature
@@ -93,6 +94,11 @@ r-functions-for-pcoa
 nonmetric-multidimensional-scaling-nmds
 r-functions-for-nmds
 exercise-ordination
+classification
+multivariate-logistic-regression
+exercise-logistic-regression-as-a-classifier
+classification-trees
+random-forests
 optimization
 introduction
 fundamentals-of-optimization
