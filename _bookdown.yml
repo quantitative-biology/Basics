@@ -1,8 +1,6 @@
 rmd_files: [
   "index.Rmd",
   "preamble.Rmd",
-  "01-intro.Rmd",
-  "02-literature.Rmd",
   "../module-1-git/module-1-git.Rmd",
   "../module-1-git/module-1-git-intro.Rmd",
   "../module-1-git/module-1-git-advanced.Rmd",

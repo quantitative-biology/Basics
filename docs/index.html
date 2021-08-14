@@ -32,7 +32,7 @@
   
   
 
-<link rel="next" href="intro.html"/>
+<link rel="next" href="introduction-to-git-and-github.html"/>
 <script src="libs/header-attrs-2.9/header-attrs.js"></script>
 <script src="libs/jquery-3.5.1/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -131,28 +131,6 @@ code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
-<style type="text/css">
-/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
-div.csl-bib-body { }
-div.csl-entry {
-  clear: both;
-}
-.hanging div.csl-entry {
-  margin-left:2em;
-  text-indent:-2em;
-}
-div.csl-left-margin {
-  min-width:2em;
-  float:left;
-}
-div.csl-right-inline {
-  margin-left:2em;
-  padding-left:1em;
-}
-div.csl-indent {
-  margin-left: 2em;
-}
-</style>
 
 </head>
 
@@ -167,117 +145,128 @@ div.csl-indent {
 
 <ul class="summary">
 <li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Prerequisites</a></li>
-<li class="chapter" data-level="2" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>2</b> Introduction</a></li>
-<li class="chapter" data-level="3" data-path="literature.html"><a href="literature.html"><i class="fa fa-check"></i><b>3</b> Literature</a></li>
-<li class="chapter" data-level="4" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html"><i class="fa fa-check"></i><b>4</b> Introduction to Git and GitHub</a>
+<li class="chapter" data-level="2" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html"><i class="fa fa-check"></i><b>2</b> Introduction to Git and GitHub</a>
 <ul>
-<li class="chapter" data-level="4.1" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#motivation"><i class="fa fa-check"></i><b>4.1</b> Motivation</a></li>
-<li class="chapter" data-level="4.2" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#getting-set-up-for-the-first-time"><i class="fa fa-check"></i><b>4.2</b> Getting set up for the first time</a>
+<li class="chapter" data-level="2.1" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#motivation"><i class="fa fa-check"></i><b>2.1</b> Motivation</a></li>
+<li class="chapter" data-level="2.2" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#getting-set-up-for-the-first-time"><i class="fa fa-check"></i><b>2.2</b> Getting set up for the first time</a>
 <ul>
-<li class="chapter" data-level="4.2.1" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#what-you-will-end-up-having-installed"><i class="fa fa-check"></i><b>4.2.1</b> What you will end up having installed</a></li>
-<li class="chapter" data-level="4.2.2" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#get-a-github-account"><i class="fa fa-check"></i><b>4.2.2</b> Get a GitHub account</a></li>
-<li class="chapter" data-level="4.2.3" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#text-editor"><i class="fa fa-check"></i><b>4.2.3</b> Text Editor</a></li>
-<li class="chapter" data-level="4.2.4" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#install-the-git-application-on-your-machine"><i class="fa fa-check"></i><b>4.2.4</b> Install the Git application on your machine</a></li>
-<li class="chapter" data-level="4.2.5" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#git-shell"><i class="fa fa-check"></i><b>4.2.5</b> Git shell</a></li>
-<li class="chapter" data-level="4.2.6" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#git-shell-rstudio"><i class="fa fa-check"></i><b>4.2.6</b> Git shell, RStudio</a></li>
-<li class="chapter" data-level="4.2.7" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#powershell-and-posh-git"><i class="fa fa-check"></i><b>4.2.7</b> Powershell and posh-git</a></li>
-<li class="chapter" data-level="4.2.8" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#one-time-authentication"><i class="fa fa-check"></i><b>4.2.8</b> One-time authentication</a></li>
-<li class="chapter" data-level="4.2.9" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#configure-the-git-application"><i class="fa fa-check"></i><b>4.2.9</b> Configure the Git application</a></li>
-<li class="chapter" data-level="4.2.10" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#install-the-difftool"><i class="fa fa-check"></i><b>4.2.10</b> Install the difftool</a></li>
-<li class="chapter" data-level="4.2.11" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#cloning-the-git-course-repository"><i class="fa fa-check"></i><b>4.2.11</b> “Cloning” the git-course repository</a></li>
-<li class="chapter" data-level="4.2.12" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#copy-the-.gitignore-file"><i class="fa fa-check"></i><b>4.2.12</b> Copy the <em>.gitignore</em> file</a></li>
-<li class="chapter" data-level="4.2.13" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#edit-the-.gitconfig-file"><i class="fa fa-check"></i><b>4.2.13</b> Edit the <em>.gitconfig</em> file</a></li>
-<li class="chapter" data-level="4.2.14" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#mac-only-make-your-output-pretty"><i class="fa fa-check"></i><b>4.2.14</b> MAC only: make your output pretty</a></li>
-<li class="chapter" data-level="4.2.15" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#markdown-pad"><i class="fa fa-check"></i><b>4.2.15</b> Markdown Pad</a></li>
+<li class="chapter" data-level="2.2.1" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#what-you-will-end-up-having-installed"><i class="fa fa-check"></i><b>2.2.1</b> What you will end up having installed</a></li>
+<li class="chapter" data-level="2.2.2" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#get-a-github-account"><i class="fa fa-check"></i><b>2.2.2</b> Get a GitHub account</a></li>
+<li class="chapter" data-level="2.2.3" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#text-editor"><i class="fa fa-check"></i><b>2.2.3</b> Text Editor</a></li>
+<li class="chapter" data-level="2.2.4" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#install-the-git-application-on-your-machine"><i class="fa fa-check"></i><b>2.2.4</b> Install the Git application on your machine</a></li>
+<li class="chapter" data-level="2.2.5" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#git-shell"><i class="fa fa-check"></i><b>2.2.5</b> Git shell</a></li>
+<li class="chapter" data-level="2.2.6" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#git-shell-rstudio"><i class="fa fa-check"></i><b>2.2.6</b> Git shell, RStudio</a></li>
+<li class="chapter" data-level="2.2.7" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#powershell-and-posh-git"><i class="fa fa-check"></i><b>2.2.7</b> Powershell and posh-git</a></li>
+<li class="chapter" data-level="2.2.8" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#one-time-authentication"><i class="fa fa-check"></i><b>2.2.8</b> One-time authentication</a></li>
+<li class="chapter" data-level="2.2.9" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#configure-the-git-application"><i class="fa fa-check"></i><b>2.2.9</b> Configure the Git application</a></li>
+<li class="chapter" data-level="2.2.10" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#install-the-difftool"><i class="fa fa-check"></i><b>2.2.10</b> Install the difftool</a></li>
+<li class="chapter" data-level="2.2.11" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#cloning-the-git-course-repository"><i class="fa fa-check"></i><b>2.2.11</b> “Cloning” the git-course repository</a></li>
+<li class="chapter" data-level="2.2.12" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#copy-the-.gitignore-file"><i class="fa fa-check"></i><b>2.2.12</b> Copy the <em>.gitignore</em> file</a></li>
+<li class="chapter" data-level="2.2.13" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#edit-the-.gitconfig-file"><i class="fa fa-check"></i><b>2.2.13</b> Edit the <em>.gitconfig</em> file</a></li>
+<li class="chapter" data-level="2.2.14" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#mac-only-make-your-output-pretty"><i class="fa fa-check"></i><b>2.2.14</b> MAC only: make your output pretty</a></li>
+<li class="chapter" data-level="2.2.15" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#markdown-pad"><i class="fa fa-check"></i><b>2.2.15</b> Markdown Pad</a></li>
 </ul></li>
-<li class="chapter" data-level="4.3" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#using-git-and-github"><i class="fa fa-check"></i><b>4.3</b> Using Git and GitHub</a>
+<li class="chapter" data-level="2.3" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#using-git-and-github"><i class="fa fa-check"></i><b>2.3</b> Using Git and GitHub</a>
 <ul>
-<li class="chapter" data-level="4.3.1" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#definitions"><i class="fa fa-check"></i><b>4.3.1</b> Definitions</a></li>
-<li class="chapter" data-level="4.3.2" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#creating-a-new-repository"><i class="fa fa-check"></i><b>4.3.2</b> Creating a new repository</a></li>
-<li class="chapter" data-level="4.3.3" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#cloning-your-new-repository"><i class="fa fa-check"></i><b>4.3.3</b> Cloning your new repository</a></li>
-<li class="chapter" data-level="4.3.4" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#committing"><i class="fa fa-check"></i><b>4.3.4</b> Committing</a></li>
-<li class="chapter" data-level="4.3.5" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#exercise-1-create-edit-and-commit-simpletext.txt"><i class="fa fa-check"></i><b>4.3.5</b> Exercise 1: create, edit and commit <em>simpleText.txt</em></a></li>
-<li class="chapter" data-level="4.3.6" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#exercise-2-multiple-files"><i class="fa fa-check"></i><b>4.3.6</b> Exercise 2: multiple files</a></li>
-<li class="chapter" data-level="4.3.7" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#collaborating"><i class="fa fa-check"></i><b>4.3.7</b> Collaborating</a></li>
-<li class="chapter" data-level="4.3.8" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#exercise-3-collaborating-on-a-single-repository"><i class="fa fa-check"></i><b>4.3.8</b> Exercise 3: collaborating on a single repository</a></li>
+<li class="chapter" data-level="2.3.1" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#definitions"><i class="fa fa-check"></i><b>2.3.1</b> Definitions</a></li>
+<li class="chapter" data-level="2.3.2" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#creating-a-new-repository"><i class="fa fa-check"></i><b>2.3.2</b> Creating a new repository</a></li>
+<li class="chapter" data-level="2.3.3" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#cloning-your-new-repository"><i class="fa fa-check"></i><b>2.3.3</b> Cloning your new repository</a></li>
+<li class="chapter" data-level="2.3.4" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#committing"><i class="fa fa-check"></i><b>2.3.4</b> Committing</a></li>
+<li class="chapter" data-level="2.3.5" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#exercise-1-create-edit-and-commit-simpletext.txt"><i class="fa fa-check"></i><b>2.3.5</b> Exercise 1: create, edit and commit <em>simpleText.txt</em></a></li>
+<li class="chapter" data-level="2.3.6" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#exercise-2-multiple-files"><i class="fa fa-check"></i><b>2.3.6</b> Exercise 2: multiple files</a></li>
+<li class="chapter" data-level="2.3.7" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#collaborating"><i class="fa fa-check"></i><b>2.3.7</b> Collaborating</a></li>
+<li class="chapter" data-level="2.3.8" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#exercise-3-collaborating-on-a-single-repository"><i class="fa fa-check"></i><b>2.3.8</b> Exercise 3: collaborating on a single repository</a></li>
 </ul></li>
-<li class="chapter" data-level="4.4" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#beyond-the-basics"><i class="fa fa-check"></i><b>4.4</b> Beyond the basics</a>
+<li class="chapter" data-level="2.4" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#beyond-the-basics"><i class="fa fa-check"></i><b>2.4</b> Beyond the basics</a>
 <ul>
-<li class="chapter" data-level="4.4.1" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#workflow-tips"><i class="fa fa-check"></i><b>4.4.1</b> Workflow tips</a></li>
-<li class="chapter" data-level="4.4.2" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#so-ive-made-some-changes-but-dont-really-want-to-keep-them-git-stash"><i class="fa fa-check"></i><b>4.4.2</b> So I’ve made some changes but don’t really want to keep them – git stash</a></li>
-<li class="chapter" data-level="4.4.3" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#pull-requests"><i class="fa fa-check"></i><b>4.4.3</b> Pull requests</a></li>
-<li class="chapter" data-level="4.4.4" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#the-power-to-go-back"><i class="fa fa-check"></i><b>4.4.4</b> The power to go back</a></li>
-<li class="chapter" data-level="4.4.5" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#so-how-does-git-do-all-this"><i class="fa fa-check"></i><b>4.4.5</b> So how does Git do all this?</a></li>
-<li class="chapter" data-level="4.4.6" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#git-terminology"><i class="fa fa-check"></i><b>4.4.6</b> Git terminology</a></li>
-<li class="chapter" data-level="4.4.7" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#branching"><i class="fa fa-check"></i><b>4.4.7</b> Branching</a></li>
-<li class="chapter" data-level="4.4.8" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#undoing-stuff"><i class="fa fa-check"></i><b>4.4.8</b> Undoing stuff</a></li>
+<li class="chapter" data-level="2.4.1" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#workflow-tips"><i class="fa fa-check"></i><b>2.4.1</b> Workflow tips</a></li>
+<li class="chapter" data-level="2.4.2" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#so-ive-made-some-changes-but-dont-really-want-to-keep-them-git-stash"><i class="fa fa-check"></i><b>2.4.2</b> So I’ve made some changes but don’t really want to keep them – git stash</a></li>
+<li class="chapter" data-level="2.4.3" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#pull-requests"><i class="fa fa-check"></i><b>2.4.3</b> Pull requests</a></li>
+<li class="chapter" data-level="2.4.4" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#the-power-to-go-back"><i class="fa fa-check"></i><b>2.4.4</b> The power to go back</a></li>
+<li class="chapter" data-level="2.4.5" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#so-how-does-git-do-all-this"><i class="fa fa-check"></i><b>2.4.5</b> So how does Git do all this?</a></li>
+<li class="chapter" data-level="2.4.6" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#git-terminology"><i class="fa fa-check"></i><b>2.4.6</b> Git terminology</a></li>
+<li class="chapter" data-level="2.4.7" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#branching"><i class="fa fa-check"></i><b>2.4.7</b> Branching</a></li>
+<li class="chapter" data-level="2.4.8" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#undoing-stuff"><i class="fa fa-check"></i><b>2.4.8</b> Undoing stuff</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="5" data-path="introduction-to-r-markdown.html"><a href="introduction-to-r-markdown.html"><i class="fa fa-check"></i><b>5</b> Introduction to R Markdown</a>
+<li class="chapter" data-level="3" data-path="introduction-to-r-markdown.html"><a href="introduction-to-r-markdown.html"><i class="fa fa-check"></i><b>3</b> Introduction to R Markdown</a>
 <ul>
-<li class="chapter" data-level="5.1" data-path="introduction-to-r-markdown.html"><a href="introduction-to-r-markdown.html#motivation-1"><i class="fa fa-check"></i><b>5.1</b> Motivation</a></li>
-<li class="chapter" data-level="5.2" data-path="introduction-to-r-markdown.html"><a href="introduction-to-r-markdown.html#basic-idea"><i class="fa fa-check"></i><b>5.2</b> Basic idea</a></li>
-<li class="chapter" data-level="5.3" data-path="introduction-to-r-markdown.html"><a href="introduction-to-r-markdown.html#simple-example"><i class="fa fa-check"></i><b>5.3</b> Simple example</a>
+<li class="chapter" data-level="3.1" data-path="introduction-to-r-markdown.html"><a href="introduction-to-r-markdown.html#motivation-1"><i class="fa fa-check"></i><b>3.1</b> Motivation</a></li>
+<li class="chapter" data-level="3.2" data-path="introduction-to-r-markdown.html"><a href="introduction-to-r-markdown.html#basic-idea"><i class="fa fa-check"></i><b>3.2</b> Basic idea</a></li>
+<li class="chapter" data-level="3.3" data-path="introduction-to-r-markdown.html"><a href="introduction-to-r-markdown.html#simple-example"><i class="fa fa-check"></i><b>3.3</b> Simple example</a>
 <ul>
-<li class="chapter" data-level="5.3.1" data-path="introduction-to-r-markdown.html"><a href="introduction-to-r-markdown.html#exercise"><i class="fa fa-check"></i><b>5.3.1</b> Exercise</a></li>
+<li class="chapter" data-level="3.3.1" data-path="introduction-to-r-markdown.html"><a href="introduction-to-r-markdown.html#exercise"><i class="fa fa-check"></i><b>3.3.1</b> Exercise</a></li>
 </ul></li>
-<li class="chapter" data-level="5.4" data-path="introduction-to-r-markdown.html"><a href="introduction-to-r-markdown.html#output-format"><i class="fa fa-check"></i><b>5.4</b> Output format</a></li>
-<li class="chapter" data-level="5.5" data-path="introduction-to-r-markdown.html"><a href="introduction-to-r-markdown.html#further-reading"><i class="fa fa-check"></i><b>5.5</b> Further reading</a></li>
+<li class="chapter" data-level="3.4" data-path="introduction-to-r-markdown.html"><a href="introduction-to-r-markdown.html#output-format"><i class="fa fa-check"></i><b>3.4</b> Output format</a></li>
+<li class="chapter" data-level="3.5" data-path="introduction-to-r-markdown.html"><a href="introduction-to-r-markdown.html#further-reading"><i class="fa fa-check"></i><b>3.5</b> Further reading</a></li>
 </ul></li>
-<li class="chapter" data-level="6" data-path="introduction-to-multivariate-analysis.html"><a href="introduction-to-multivariate-analysis.html"><i class="fa fa-check"></i><b>6</b> Introduction to multivariate analysis</a>
+<li class="chapter" data-level="4" data-path="introduction-to-multivariate-analysis.html"><a href="introduction-to-multivariate-analysis.html"><i class="fa fa-check"></i><b>4</b> Introduction to multivariate analysis</a>
 <ul>
-<li class="chapter" data-level="6.1" data-path="introduction-to-multivariate-analysis.html"><a href="introduction-to-multivariate-analysis.html#multivariate-resemblance"><i class="fa fa-check"></i><b>6.1</b> Multivariate resemblance</a>
+<li class="chapter" data-level="4.1" data-path="introduction-to-multivariate-analysis.html"><a href="introduction-to-multivariate-analysis.html#multivariate-resemblance"><i class="fa fa-check"></i><b>4.1</b> Multivariate resemblance</a>
 <ul>
-<li class="chapter" data-level="6.1.1" data-path="introduction-to-multivariate-analysis.html"><a href="introduction-to-multivariate-analysis.html#binary-similarity-metrics"><i class="fa fa-check"></i><b>6.1.1</b> Binary Similarity metrics</a></li>
-<li class="chapter" data-level="6.1.2" data-path="introduction-to-multivariate-analysis.html"><a href="introduction-to-multivariate-analysis.html#quantitative-similarity-dissimilarity-metrics"><i class="fa fa-check"></i><b>6.1.2</b> Quantitative similarity &amp; dissimilarity metrics</a></li>
-<li class="chapter" data-level="6.1.3" data-path="introduction-to-multivariate-analysis.html"><a href="introduction-to-multivariate-analysis.html#comparing-more-than-two-communitiessamplessitesgenesspecies"><i class="fa fa-check"></i><b>6.1.3</b> Comparing more than two communities/samples/sites/genes/species</a></li>
-<li class="chapter" data-level="6.1.4" data-path="introduction-to-multivariate-analysis.html"><a href="introduction-to-multivariate-analysis.html#r-functions"><i class="fa fa-check"></i><b>6.1.4</b> R functions</a></li>
+<li class="chapter" data-level="4.1.1" data-path="introduction-to-multivariate-analysis.html"><a href="introduction-to-multivariate-analysis.html#binary-similarity-metrics"><i class="fa fa-check"></i><b>4.1.1</b> Binary Similarity metrics</a></li>
+<li class="chapter" data-level="4.1.2" data-path="introduction-to-multivariate-analysis.html"><a href="introduction-to-multivariate-analysis.html#quantitative-similarity-dissimilarity-metrics"><i class="fa fa-check"></i><b>4.1.2</b> Quantitative similarity &amp; dissimilarity metrics</a></li>
+<li class="chapter" data-level="4.1.3" data-path="introduction-to-multivariate-analysis.html"><a href="introduction-to-multivariate-analysis.html#comparing-more-than-two-communitiessamplessitesgenesspecies"><i class="fa fa-check"></i><b>4.1.3</b> Comparing more than two communities/samples/sites/genes/species</a></li>
+<li class="chapter" data-level="4.1.4" data-path="introduction-to-multivariate-analysis.html"><a href="introduction-to-multivariate-analysis.html#r-functions"><i class="fa fa-check"></i><b>4.1.4</b> R functions</a></li>
 </ul></li>
-<li class="chapter" data-level="6.2" data-path="introduction-to-multivariate-analysis.html"><a href="introduction-to-multivariate-analysis.html#cluster-analysis"><i class="fa fa-check"></i><b>6.2</b> Cluster Analysis</a>
+<li class="chapter" data-level="4.2" data-path="introduction-to-multivariate-analysis.html"><a href="introduction-to-multivariate-analysis.html#cluster-analysis"><i class="fa fa-check"></i><b>4.2</b> Cluster Analysis</a>
 <ul>
-<li class="chapter" data-level="6.2.1" data-path="introduction-to-multivariate-analysis.html"><a href="introduction-to-multivariate-analysis.html#hierarchical-clustering-groups-are-nested-within-other-groups."><i class="fa fa-check"></i><b>6.2.1</b> Hierarchical clustering: groups are nested within other groups.</a></li>
-<li class="chapter" data-level="6.2.2" data-path="introduction-to-multivariate-analysis.html"><a href="introduction-to-multivariate-analysis.html#r-functions-1"><i class="fa fa-check"></i><b>6.2.2</b> R functions</a></li>
-<li class="chapter" data-level="6.2.3" data-path="introduction-to-multivariate-analysis.html"><a href="introduction-to-multivariate-analysis.html#how-many-clusters"><i class="fa fa-check"></i><b>6.2.3</b> How many clusters?</a></li>
-<li class="chapter" data-level="6.2.4" data-path="introduction-to-multivariate-analysis.html"><a href="introduction-to-multivariate-analysis.html#other-clustering-methods"><i class="fa fa-check"></i><b>6.2.4</b> Other clustering methods</a></li>
-<li class="chapter" data-level="6.2.5" data-path="introduction-to-multivariate-analysis.html"><a href="introduction-to-multivariate-analysis.html#exercise-cluster-analysis-of-isotope-data"><i class="fa fa-check"></i><b>6.2.5</b> Exercise: Cluster analysis of isotope data</a></li>
+<li class="chapter" data-level="4.2.1" data-path="introduction-to-multivariate-analysis.html"><a href="introduction-to-multivariate-analysis.html#hierarchical-clustering-groups-are-nested-within-other-groups."><i class="fa fa-check"></i><b>4.2.1</b> Hierarchical clustering: groups are nested within other groups.</a></li>
+<li class="chapter" data-level="4.2.2" data-path="introduction-to-multivariate-analysis.html"><a href="introduction-to-multivariate-analysis.html#r-functions-1"><i class="fa fa-check"></i><b>4.2.2</b> R functions</a></li>
+<li class="chapter" data-level="4.2.3" data-path="introduction-to-multivariate-analysis.html"><a href="introduction-to-multivariate-analysis.html#how-many-clusters"><i class="fa fa-check"></i><b>4.2.3</b> How many clusters?</a></li>
+<li class="chapter" data-level="4.2.4" data-path="introduction-to-multivariate-analysis.html"><a href="introduction-to-multivariate-analysis.html#other-clustering-methods"><i class="fa fa-check"></i><b>4.2.4</b> Other clustering methods</a></li>
+<li class="chapter" data-level="4.2.5" data-path="introduction-to-multivariate-analysis.html"><a href="introduction-to-multivariate-analysis.html#exercise-cluster-analysis-of-isotope-data"><i class="fa fa-check"></i><b>4.2.5</b> Exercise: Cluster analysis of isotope data</a></li>
 </ul></li>
-<li class="chapter" data-level="6.3" data-path="introduction-to-multivariate-analysis.html"><a href="introduction-to-multivariate-analysis.html#ordination"><i class="fa fa-check"></i><b>6.3</b> Ordination</a>
+<li class="chapter" data-level="4.3" data-path="introduction-to-multivariate-analysis.html"><a href="introduction-to-multivariate-analysis.html#ordination"><i class="fa fa-check"></i><b>4.3</b> Ordination</a>
 <ul>
-<li class="chapter" data-level="6.3.1" data-path="introduction-to-multivariate-analysis.html"><a href="introduction-to-multivariate-analysis.html#principal-components-analysis-pca"><i class="fa fa-check"></i><b>6.3.1</b> Principal Components Analysis (PCA)</a></li>
-<li class="chapter" data-level="6.3.2" data-path="introduction-to-multivariate-analysis.html"><a href="introduction-to-multivariate-analysis.html#exercise-pca-on-the-iris-data"><i class="fa fa-check"></i><b>6.3.2</b> Exercise: PCA on the iris data</a></li>
-<li class="chapter" data-level="6.3.3" data-path="introduction-to-multivariate-analysis.html"><a href="introduction-to-multivariate-analysis.html#principle-coordinates-analysis-pcoa"><i class="fa fa-check"></i><b>6.3.3</b> Principle Coordinates Analysis (PCoA)</a></li>
-<li class="chapter" data-level="6.3.4" data-path="introduction-to-multivariate-analysis.html"><a href="introduction-to-multivariate-analysis.html#nonmetric-multidimensional-scaling-nmds"><i class="fa fa-check"></i><b>6.3.4</b> Nonmetric Multidimensional Scaling (NMDS)</a></li>
-<li class="chapter" data-level="6.3.5" data-path="introduction-to-multivariate-analysis.html"><a href="introduction-to-multivariate-analysis.html#exercise-ordination"><i class="fa fa-check"></i><b>6.3.5</b> Exercise: Ordination</a></li>
-</ul></li>
-</ul></li>
-<li class="chapter" data-level="7" data-path="classification.html"><a href="classification.html"><i class="fa fa-check"></i><b>7</b> Classification</a>
-<ul>
-<li class="chapter" data-level="7.1" data-path="classification.html"><a href="classification.html#multivariate-logistic-regression"><i class="fa fa-check"></i><b>7.1</b> Multivariate logistic regression</a></li>
-<li class="chapter" data-level="7.2" data-path="classification.html"><a href="classification.html#exercise-logistic-regression-as-a-classifier"><i class="fa fa-check"></i><b>7.2</b> Exercise: Logistic regression as a classifier</a>
-<ul>
-<li class="chapter" data-level="7.2.1" data-path="classification.html"><a href="classification.html#classification-trees"><i class="fa fa-check"></i><b>7.2.1</b> Classification trees</a></li>
-<li class="chapter" data-level="7.2.2" data-path="classification.html"><a href="classification.html#random-forests"><i class="fa fa-check"></i><b>7.2.2</b> Random Forests</a></li>
+<li class="chapter" data-level="4.3.1" data-path="introduction-to-multivariate-analysis.html"><a href="introduction-to-multivariate-analysis.html#principal-components-analysis-pca"><i class="fa fa-check"></i><b>4.3.1</b> Principal Components Analysis (PCA)</a></li>
+<li class="chapter" data-level="4.3.2" data-path="introduction-to-multivariate-analysis.html"><a href="introduction-to-multivariate-analysis.html#exercise-pca-on-the-iris-data"><i class="fa fa-check"></i><b>4.3.2</b> Exercise: PCA on the iris data</a></li>
+<li class="chapter" data-level="4.3.3" data-path="introduction-to-multivariate-analysis.html"><a href="introduction-to-multivariate-analysis.html#principle-coordinates-analysis-pcoa"><i class="fa fa-check"></i><b>4.3.3</b> Principle Coordinates Analysis (PCoA)</a></li>
+<li class="chapter" data-level="4.3.4" data-path="introduction-to-multivariate-analysis.html"><a href="introduction-to-multivariate-analysis.html#nonmetric-multidimensional-scaling-nmds"><i class="fa fa-check"></i><b>4.3.4</b> Nonmetric Multidimensional Scaling (NMDS)</a></li>
+<li class="chapter" data-level="4.3.5" data-path="introduction-to-multivariate-analysis.html"><a href="introduction-to-multivariate-analysis.html#exercise-ordination"><i class="fa fa-check"></i><b>4.3.5</b> Exercise: Ordination</a></li>
+<li class="chapter" data-level="4.3.6" data-path="introduction-to-multivariate-analysis.html"><a href="introduction-to-multivariate-analysis.html#constrained-ordination"><i class="fa fa-check"></i><b>4.3.6</b> Constrained Ordination</a></li>
+<li class="chapter" data-level="4.3.7" data-path="introduction-to-multivariate-analysis.html"><a href="introduction-to-multivariate-analysis.html#redundancy-analysis"><i class="fa fa-check"></i><b>4.3.7</b> Redundancy Analysis</a></li>
+<li class="chapter" data-level="4.3.8" data-path="introduction-to-multivariate-analysis.html"><a href="introduction-to-multivariate-analysis.html#exercise-constrained-ordination"><i class="fa fa-check"></i><b>4.3.8</b> Exercise: constrained ordination</a></li>
+<li class="chapter" data-level="4.3.9" data-path="introduction-to-multivariate-analysis.html"><a href="introduction-to-multivariate-analysis.html#signficance-tests-for-constrained-ordination"><i class="fa fa-check"></i><b>4.3.9</b> Signficance tests for constrained ordination</a></li>
+<li class="chapter" data-level="4.3.10" data-path="introduction-to-multivariate-analysis.html"><a href="introduction-to-multivariate-analysis.html#forward-selection-of-explanatory-variables"><i class="fa fa-check"></i><b>4.3.10</b> Forward Selection of explanatory variables</a></li>
+<li class="chapter" data-level="4.3.11" data-path="introduction-to-multivariate-analysis.html"><a href="introduction-to-multivariate-analysis.html#triplots-graphing-a-constrained-ordination"><i class="fa fa-check"></i><b>4.3.11</b> Triplots: Graphing a constrained ordination</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="8" data-path="optimization.html"><a href="optimization.html"><i class="fa fa-check"></i><b>8</b> Optimization</a>
+<li class="chapter" data-level="5" data-path="classification.html"><a href="classification.html"><i class="fa fa-check"></i><b>5</b> Classification</a>
 <ul>
-<li class="chapter" data-level="8.1" data-path="optimization.html"><a href="optimization.html#introduction"><i class="fa fa-check"></i><b>8.1</b> Introduction</a></li>
-<li class="chapter" data-level="8.2" data-path="optimization.html"><a href="optimization.html#fundamentals-of-optimization"><i class="fa fa-check"></i><b>8.2</b> Fundamentals of Optimization</a>
+<li class="chapter" data-level="5.1" data-path="classification.html"><a href="classification.html#logistic-regression-as-a-binary-classifier"><i class="fa fa-check"></i><b>5.1</b> Logistic regression as a binary classifier</a>
 <ul>
-<li class="chapter" data-level="8.2.1" data-path="optimization.html"><a href="optimization.html#fermats-theorem"><i class="fa fa-check"></i><b>8.2.1</b> Fermat’s Theorem</a></li>
+<li class="chapter" data-level="5.1.1" data-path="classification.html"><a href="classification.html#interpreting-the-logistic-regression"><i class="fa fa-check"></i><b>5.1.1</b> Interpreting the logistic regression</a></li>
+<li class="chapter" data-level="5.1.2" data-path="classification.html"><a href="classification.html#cross-validation"><i class="fa fa-check"></i><b>5.1.2</b> Cross-validation</a></li>
+<li class="chapter" data-level="5.1.3" data-path="classification.html"><a href="classification.html#multiple-logistic-regression"><i class="fa fa-check"></i><b>5.1.3</b> Multiple logistic regression</a></li>
+<li class="chapter" data-level="5.1.4" data-path="classification.html"><a href="classification.html#exercise-logistic-regression-as-a-binary-classifier"><i class="fa fa-check"></i><b>5.1.4</b> Exercise: Logistic regression as a binary classifier</a></li>
 </ul></li>
-<li class="chapter" data-level="8.3" data-path="optimization.html"><a href="optimization.html#regression"><i class="fa fa-check"></i><b>8.3</b> Regression</a>
+<li class="chapter" data-level="5.2" data-path="classification.html"><a href="classification.html#tree-based-methods-for-classification"><i class="fa fa-check"></i><b>5.2</b> Tree-based methods for classification</a>
 <ul>
-<li class="chapter" data-level="8.3.1" data-path="optimization.html"><a href="optimization.html#linear-regression"><i class="fa fa-check"></i><b>8.3.1</b> Linear Regression</a></li>
-<li class="chapter" data-level="8.3.2" data-path="optimization.html"><a href="optimization.html#nonlinear-regression"><i class="fa fa-check"></i><b>8.3.2</b> Nonlinear Regression</a></li>
+<li class="chapter" data-level="5.2.1" data-path="classification.html"><a href="classification.html#tree-pruning"><i class="fa fa-check"></i><b>5.2.1</b> Tree pruning</a></li>
+<li class="chapter" data-level="5.2.2" data-path="classification.html"><a href="classification.html#random-forests"><i class="fa fa-check"></i><b>5.2.2</b> Random Forests</a></li>
 </ul></li>
-<li class="chapter" data-level="8.4" data-path="optimization.html"><a href="optimization.html#iterative-optimization-algorithms"><i class="fa fa-check"></i><b>8.4</b> Iterative Optimization Algorithms</a>
+</ul></li>
+<li class="chapter" data-level="6" data-path="optimization.html"><a href="optimization.html"><i class="fa fa-check"></i><b>6</b> Optimization</a>
 <ul>
-<li class="chapter" data-level="8.4.1" data-path="optimization.html"><a href="optimization.html#gradient-descent"><i class="fa fa-check"></i><b>8.4.1</b> Gradient Descent</a></li>
+<li class="chapter" data-level="6.1" data-path="optimization.html"><a href="optimization.html#introduction"><i class="fa fa-check"></i><b>6.1</b> Introduction</a></li>
+<li class="chapter" data-level="6.2" data-path="optimization.html"><a href="optimization.html#fundamentals-of-optimization"><i class="fa fa-check"></i><b>6.2</b> Fundamentals of Optimization</a>
+<ul>
+<li class="chapter" data-level="6.2.1" data-path="optimization.html"><a href="optimization.html#fermats-theorem"><i class="fa fa-check"></i><b>6.2.1</b> Fermat’s Theorem</a></li>
 </ul></li>
-<li class="chapter" data-level="8.5" data-path="optimization.html"><a href="optimization.html#calibration-of-dynamic-models"><i class="fa fa-check"></i><b>8.5</b> Calibration of Dynamic Models</a></li>
-<li class="chapter" data-level="8.6" data-path="optimization.html"><a href="optimization.html#uncertainty-analysis-and-bayesian-calibration"><i class="fa fa-check"></i><b>8.6</b> Uncertainty Analysis and Bayesian Calibration</a></li>
-<li class="chapter" data-level="8.7" data-path="optimization.html"><a href="optimization.html#references"><i class="fa fa-check"></i><b>8.7</b> References</a></li>
+<li class="chapter" data-level="6.3" data-path="optimization.html"><a href="optimization.html#regression"><i class="fa fa-check"></i><b>6.3</b> Regression</a>
+<ul>
+<li class="chapter" data-level="6.3.1" data-path="optimization.html"><a href="optimization.html#linear-regression"><i class="fa fa-check"></i><b>6.3.1</b> Linear Regression</a></li>
+<li class="chapter" data-level="6.3.2" data-path="optimization.html"><a href="optimization.html#nonlinear-regression"><i class="fa fa-check"></i><b>6.3.2</b> Nonlinear Regression</a></li>
+</ul></li>
+<li class="chapter" data-level="6.4" data-path="optimization.html"><a href="optimization.html#iterative-optimization-algorithms"><i class="fa fa-check"></i><b>6.4</b> Iterative Optimization Algorithms</a>
+<ul>
+<li class="chapter" data-level="6.4.1" data-path="optimization.html"><a href="optimization.html#gradient-descent"><i class="fa fa-check"></i><b>6.4.1</b> Gradient Descent</a></li>
+<li class="chapter" data-level="6.4.2" data-path="optimization.html"><a href="optimization.html#global-optimization"><i class="fa fa-check"></i><b>6.4.2</b> Global Optimization</a></li>
+</ul></li>
+<li class="chapter" data-level="6.5" data-path="optimization.html"><a href="optimization.html#calibration-of-dynamic-models"><i class="fa fa-check"></i><b>6.5</b> Calibration of Dynamic Models</a></li>
+<li class="chapter" data-level="6.6" data-path="optimization.html"><a href="optimization.html#uncertainty-analysis-and-bayesian-calibration"><i class="fa fa-check"></i><b>6.6</b> Uncertainty Analysis and Bayesian Calibration</a></li>
+<li class="chapter" data-level="6.7" data-path="optimization.html"><a href="optimization.html#references"><i class="fa fa-check"></i><b>6.7</b> References</a></li>
 </ul></li>
 </ul>
 
@@ -305,6 +294,9 @@ div.csl-indent {
 <h1><span class="header-section-number">1</span> Prerequisites</h1>
 <p>This is a <em>sample</em> book written in <strong>Markdown</strong>. You can use anything that Pandoc’s Markdown supports, e.g., a math equation <span class="math inline">\(a^2 + b^2 = c^2\)</span>.</p>
 <p>The <strong>bookdown</strong> package can be installed from CRAN or Github:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="index.html#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;bookdown&quot;</span>)</span>
+<span id="cb1-2"><a href="index.html#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co"># or the development version</span></span>
+<span id="cb1-3"><a href="index.html#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co"># devtools::install_github(&quot;rstudio/bookdown&quot;)</span></span></code></pre></div>
 <p>Remember each Rmd file contains one and only one chapter, and a chapter is defined by the first-level heading <code>#</code>.</p>
 <p>To compile this example to PDF, you need XeLaTeX. You are recommended to install TinyTeX (which includes XeLaTeX): <a href="https://yihui.name/tinytex/" class="uri">https://yihui.name/tinytex/</a>.</p>
 
@@ -316,7 +308,7 @@ div.csl-indent {
         </div>
       </div>
 
-<a href="intro.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="introduction-to-git-and-github.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
