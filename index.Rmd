@@ -12,7 +12,7 @@ github-repo: rstudio/bookdown-demo
 description: "A set of modules on quantitaitve topics for biology graduates"
 ---
 
-# Prerquisties
+#  Prerequisites
 
 The book presupposes the user is familar with R. All chapters are stored as .Rmd files on github. The whole book can be compiled to various formats using the **bookdown** package which can be installed from CRAN or Github.
 
