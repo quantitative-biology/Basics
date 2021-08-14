@@ -42,7 +42,7 @@ fig:unnamed-chunk-60
 fig:unnamed-chunk-61
 fig:unnamed-chunk-62
 fig:unnamed-chunk-63
-prerequisites
+prerquisties
 introduction-to-git-and-github
 motivation
 getting-set-up-for-the-first-time
