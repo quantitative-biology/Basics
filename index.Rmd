@@ -1,6 +1,6 @@
 --- 
 title: "Quant Bio Modules"
-author: "Kim Cuddington"
+author: "Kim Cuddington, Andrew Edwards, Brian Ingalls"
 date: "`r Sys.Date()`"
 site: bookdown::bookdown_site
 output: bookdown::gitbook
@@ -14,7 +14,7 @@ description: "A set of modules on quantitaitve topics for biology graduates"
 
 #  Prerequisites
 
-The book presupposes the user is familiar with R. All chapters are stored as .Rmd files on github. The whole book can be compiled to various formats using the **bookdown** package which can be installed from CRAN or Github.
+All chapters of this book are stored as .Rmd files on github. The whole book can be compiled to various formats using the **bookdown** package which can be installed from CRAN or Github.
 
 
 ```{r eval=FALSE}
@@ -25,7 +25,7 @@ install.packages("bookdown")
 
 Remember each Rmd file contains one and only one chapter, and a chapter is defined by the first-level heading `#`.
 
-To compile this example to PDF, you need XeLaTeX. You are recommended to install TinyTeX (which includes XeLaTeX): <https://yihui.name/tinytex/>.
+To compile to PDF, you need XeLaTeX. You are recommended to install TinyTeX (which includes XeLaTeX): <https://yihui.name/tinytex/>.
 
 ```{r include=FALSE}
 # automatically create a bib database for R packages
