@@ -42,12 +42,12 @@ fig:fancytree
 fig:rfoob
 fig:vipp
 fig:PEplot
-fig:unnamed-chunk-60
-fig:unnamed-chunk-61
-fig:unnamed-chunk-62
-fig:unnamed-chunk-63
 fig:unnamed-chunk-64
 fig:unnamed-chunk-65
+fig:unnamed-chunk-66
+fig:unnamed-chunk-67
+fig:unnamed-chunk-68
+fig:unnamed-chunk-69
 prerequisites
 introduction-to-git-and-github
 what-are-git-and-github-and-how-might-they-be-useful

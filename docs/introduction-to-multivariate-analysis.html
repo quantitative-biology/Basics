@@ -24,7 +24,7 @@
 <meta name="author" content="Kim Cuddington, Andrew Edwards, Brian Ingalls" />
 
 
-<meta name="date" content="2021-10-29" />
+<meta name="date" content="2021-11-02" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -202,7 +202,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="2.8.5" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#branching"><i class="fa fa-check"></i><b>2.8.5</b> Branching</a></li>
 <li class="chapter" data-level="2.8.6" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#pull-requests"><i class="fa fa-check"></i><b>2.8.6</b> Pull requests</a></li>
 <li class="chapter" data-level="2.8.7" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#undoing-stuff"><i class="fa fa-check"></i><b>2.8.7</b> Undoing stuff</a></li>
-<li class="chapter" data-level="2.8.8" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#using-r-and-github-within-rstudio"><i class="fa fa-check"></i><b>2.8.8</b> Using R and GitHub within Rstudio</a></li>
+<li class="chapter" data-level="2.8.8" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#using-r-and-github-within-rstudio"><i class="fa fa-check"></i><b>2.8.8</b> Using R and GitHub within RStudio</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="introduction-to-r-markdown.html"><a href="introduction-to-r-markdown.html"><i class="fa fa-check"></i><b>3</b> Introduction to R Markdown</a>
@@ -1760,8 +1760,8 @@ Figure 4.21: Correlations between environmental variables
 <span id="cb63-2"><a href="introduction-to-multivariate-analysis.html#cb63-2" aria-hidden="true" tabindex="-1"></a>scvarechem <span class="ot">=</span> <span class="fu">as.data.frame</span>(<span class="fu">scale</span>(varechem))</span>
 <span id="cb63-3"><a href="introduction-to-multivariate-analysis.html#cb63-3" aria-hidden="true" tabindex="-1"></a>constr <span class="ot">&lt;-</span> <span class="fu">rda</span>(stvarespec <span class="sc">~</span> ., <span class="at">data =</span> scvarechem)</span>
 <span id="cb63-4"><a href="introduction-to-multivariate-analysis.html#cb63-4" aria-hidden="true" tabindex="-1"></a>constr</span></code></pre></div>
-<pre><code>Call: rda(formula = stvarespec ~ N + P + K + Ca + Mg + S + Al + Fe + Mn +
-Zn + Mo + Baresoil + Humdepth + pH, data = scvarechem)
+<pre><code>Call: rda(formula = stvarespec ~ N + P + K + Ca + Mg + S + Al + Fe + Mn + Zn + Mo + Baresoil + Humdepth + pH, data =
+scvarechem)
 
               Inertia Proportion Rank
 Total         0.05084    1.00000     
@@ -1770,10 +1770,8 @@ Unconstrained 0.01471    0.28943    9
 Inertia is variance 
 
 Eigenvalues for constrained axes:
-    RDA1     RDA2     RDA3     RDA4     RDA5     RDA6     RDA7     RDA8     RDA9 
-0.008120 0.005642 0.004808 0.003525 0.002956 0.002592 0.001953 0.001665 0.001265 
-   RDA10    RDA11    RDA12    RDA13    RDA14 
-0.001129 0.000964 0.000627 0.000507 0.000373 
+    RDA1     RDA2     RDA3     RDA4     RDA5     RDA6     RDA7     RDA8     RDA9    RDA10    RDA11    RDA12    RDA13    RDA14 
+0.008120 0.005642 0.004808 0.003525 0.002956 0.002592 0.001953 0.001665 0.001265 0.001129 0.000964 0.000627 0.000507 0.000373 
 
 Eigenvalues for unconstrained axes:
      PC1      PC2      PC3      PC4      PC5      PC6      PC7      PC8      PC9 
@@ -1868,10 +1866,10 @@ Eigenvalues for unconstrained axes:
 <p>Contrary to what one sometimes reads, variables with high VIFs should generally not be manually removed before the application of a procedure of selection of variables. Indeed, two highly correlated variables that are both strong predictors of one or several of the response variables Y may both contribute significantly, in complementary manners, to the linear model of these response variables. A variable selection procedure is the appropriate way of determining if that is the case.</p>
 <p>However, let’s see what happened with collinearity. VIFs can be computed in vegan after RDA or CCA. The algorithm in the vif.cca() function allows users to include factors in the RDA; the function will compute VIF after breaking down each factor into dummy variables. If X contains quantitative variables only, the vif.cca() function produces the same result as the normal calculation for quantitative variables.</p>
 <div class="sourceCode" id="cb74"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb74-1"><a href="introduction-to-multivariate-analysis.html#cb74-1" aria-hidden="true" tabindex="-1"></a><span class="fu">vif.cca</span>(mfull)</span></code></pre></div>
-<pre><code>        N         P         K        Ca        Mg         S        Al        Fe 
- 1.884049  6.184742 11.746873  9.825650  9.595203 18.460717 20.331905  8.849137 
-       Mn        Zn        Mo  Baresoil  Humdepth        pH 
- 5.168278  7.755110  4.575108  2.213443  5.638807  6.910118 </code></pre>
+<pre><code>        N         P         K        Ca        Mg         S        Al        Fe        Mn        Zn        Mo  Baresoil  Humdepth 
+ 1.884049  6.184742 11.746873  9.825650  9.595203 18.460717 20.331905  8.849137  5.168278  7.755110  4.575108  2.213443  5.638807 
+       pH 
+ 6.910118 </code></pre>
 <div class="sourceCode" id="cb76"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb76-1"><a href="introduction-to-multivariate-analysis.html#cb76-1" aria-hidden="true" tabindex="-1"></a><span class="fu">vif.cca</span>(optm)</span></code></pre></div>
 <pre><code>      Fe        P       Mn 
 1.259334 1.431022 1.738208 </code></pre>
