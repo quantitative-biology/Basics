@@ -861,22 +861,7 @@ Figure 5.6: Histogram of the synthetic axis cooredinates for each species
 </p>
 </div>
 <p>The basic <strong>lda()</strong> function assumes that the predictors have linear relationships relationships with the classification. However, it is also possible to assume nonlinear relationships. We can see the difference this makes using another way to visualize the action of the classifier. We will plot out the decision boundary lines in the variable space. The <strong>drawparti()</strong> function in the klaR package can display the results of a linear or quadratic classifications 2 variables at a time.</p>
-<p>#```{r ldabound, fig.cap=“Pairwise plots showing the classification regions based on Sepal.length and th other variables in the #iris dataset, for either linear or quadratic relationships. The large symbol indicates the mean values for a given species, #while the small symbols are individual observations,” fig.alt=“Plots have shaded regions that indicate the combination of #parameter values which correspond to classification as a particular species,” echo=TRUE, comment=““}
-#library(klaR)
-#pout=partimat(x=iris[,1:4], groupi=iris[,”Species”], Species ~ ., data = iris, method =”lda”, #main=““)
-# # plot.control = list(gs=c(”x”,“y,”“z”)))</p>
-<p>#par(mfrow = c(2,3))
-#for(i in 2:4) drawparti(iris[,5], iris[,1], iris[,i], main=““,print.err=FALSE,method =”lda”, gs=c(15,17,1), col.mean=“black,” #col.correct=“blue,”col.wrong=“red,” xlab=colnames(iris)[1], ylab=colnames(iris)[i],
-# pch.mean=c(15,17,16), cex.mean=2)
-#legend(“bottomright,”pch=c(15,17,1), c(“setosa,” “versicolor,” “virginia”) )</p>
-<p>#for(i in 2:4) drawparti(iris[,5], iris[,1], iris[,i], main=““,print.err=FALSE,method =”qda”, gs=c(15,17,1), col.mean=“black,” #col.correct=“blue,” col.wrong=“red,” xlab=colnames(iris)[1], ylab=colnames(iris)[i],
-# pch.mean=c(15,17,16), cex.mean=2, cex=1.4)</p>
-<p>#```
-#We can see the curving boundaries in parameter space for the quadratic model in the bottom row (<a href="#fig:ldabound"><strong>??</strong></a>).</p>
-<div id="unbalanced-classes" class="section level4" number="5.3.1.1">
-<h4><span class="header-section-number">5.3.1.1</span> Unbalanced classes</h4>
-<p>We should note that most if not all classification methods will perform poorly when the training data has a large number of observations in some classes and very few in others. There are several methods to try and cope with this problem, which we don’t have space to describe here. The simplest approach is, of course, to just subsample your data so that there are close to equal numbers of observations in each class (called <strong>undersampling</strong>). However, this method will waste some data, and you may not even have enough data for this method to be feasible. With <strong>oversampling</strong>, we randomly duplicate samples from the class with fewer instances, or we generate additional data, based on the data that we do have, so as to match the number of samples in each class. We avoid losing information with this approach, but we run the risk of overfitting our model, as some methods of oversampling will lead to having the same samples in both the training and test data. There are also hybrid methods that combine undersampling with the generation of additional data. Two of the most popular are ROSE (Lunardon et al. 2014) and SMOTE (Chawla et al. 2002). Both of which can be implemented direct in the caret package. You can read more about unbalanced data here (Fernández et al 2018: <a href="https://link.springer.com/content/pdf/10.1007/978-3-319-98074-4.pdf" class="uri">https://link.springer.com/content/pdf/10.1007/978-3-319-98074-4.pdf</a>)</p>
-</div>
+
 </div>
 <div id="examples-of-discriminant-analysis-used-for-classification" class="section level3" number="5.3.2">
 <h3><span class="header-section-number">5.3.2</span> Examples of discriminant analysis used for classification</h3>
