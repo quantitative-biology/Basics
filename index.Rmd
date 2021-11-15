@@ -1,5 +1,5 @@
 --- 
-title: "Quant Bio Modules"
+title: "Quantitative biology: a quick introduction"
 author: "Kim Cuddington, Andrew Edwards, Brian Ingalls"
 date: "`r Sys.Date()`"
 site: bookdown::bookdown_site
@@ -12,9 +12,17 @@ github-repo: rstudio/bookdown-demo
 description: "A set of modules on quantitaitve topics for biology graduates"
 ---
 
-#  Prerequisites
+#  Welcome!
 
-All chapters of this book are stored as .Rmd files on github. The whole book can be compiled to various formats using the **bookdown** package which can be installed from CRAN or Github.
+This set of independent learning modules covering some important concepts in open science and quantitative biology has been funded by an ecampus grant from the province of Ontario. This is a living document and so revisions to current chapters, and the addition of new chapters, should be anticipated.
+
+The chapters can be used independently (i.e., you don't have read the whole ebook!). Pick and choose want you need. Each chapter is designed to quickly get you up and running on the topic of interest in 3-5 hours. As such, these materials should be thought of a basic introductions. We'll provide some pointers to more advanced materials, but our aim is to "jump-start" your research progress with these materials.
+
+On the other hand, the materials are not designed for absolute beginners. Our target audience is graduate students and early professionals in biology. For the open science chapters, we assume you can navigate around your computer and the internet. For the R-based chapters, we assume prior familiarity with R. For material on statistical analyses we assume the standard background in univariate statistics. 
+
+## Open Science
+
+In the spirit of open science, all chapters of this book are stored as .Rmd files on github. The whole book can be compiled to various formats using the **bookdown** package which can be installed from CRAN or Github.
 
 
 ```{r eval=FALSE}
@@ -33,3 +41,6 @@ knitr::write_bib(c(
   .packages(), 'bookdown', 'knitr', 'rmarkdown'
 ), 'packages.bib')
 ```
+## Feedback
+
+If you use these materials please take some time to let us know how we might improve [Survey](https://forms.gle/vLkcZq7NxPb2ajTQ6).

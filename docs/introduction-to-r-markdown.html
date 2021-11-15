@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>3 Introduction to R Markdown | Quant Bio Modules</title>
+  <title>3 Introduction to R Markdown | Quantitative biology: a quick introduction</title>
   <meta name="description" content="A set of modules on quantitaitve topics for biology graduates" />
   <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="3 Introduction to R Markdown | Quant Bio Modules" />
+  <meta property="og:title" content="3 Introduction to R Markdown | Quantitative biology: a quick introduction" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="rstudio/bookdown-demo" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="3 Introduction to R Markdown | Quant Bio Modules" />
+  <meta name="twitter:title" content="3 Introduction to R Markdown | Quantitative biology: a quick introduction" />
   
   <meta name="twitter:description" content="A set of modules on quantitaitve topics for biology graduates" />
   
@@ -24,7 +24,7 @@
 <meta name="author" content="Kim Cuddington, Andrew Edwards, Brian Ingalls" />
 
 
-<meta name="date" content="2021-11-04" />
+<meta name="date" content="2021-11-15" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -32,7 +32,7 @@
   
   
 <link rel="prev" href="introduction-to-git-and-github.html"/>
-<link rel="next" href="introduction-to-multivariate-analysis.html"/>
+<link rel="next" href="introduction-to-multivariate-analysis-clustering-and-ordination.html"/>
 <script src="libs/header-attrs-2.9/header-attrs.js"></script>
 <script src="libs/jquery-3.5.1/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -144,7 +144,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <nav role="navigation">
 
 <ul class="summary">
-<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Prerequisites</a></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Welcome!</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#open-science"><i class="fa fa-check"></i><b>1.1</b> Open Science</a></li>
+<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#feedback"><i class="fa fa-check"></i><b>1.2</b> Feedback</a></li>
+</ul></li>
 <li class="chapter" data-level="2" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html"><i class="fa fa-check"></i><b>2</b> Introduction to Git and GitHub</a>
 <ul>
 <li class="chapter" data-level="2.1" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#what-are-git-and-github-and-how-might-they-be-useful"><i class="fa fa-check"></i><b>2.1</b> What are Git and GitHub and how might they be useful?</a></li>
@@ -204,6 +208,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="2.8.6" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#pull-requests"><i class="fa fa-check"></i><b>2.8.6</b> Pull requests</a></li>
 <li class="chapter" data-level="2.8.7" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#undoing-stuff"><i class="fa fa-check"></i><b>2.8.7</b> Undoing stuff</a></li>
 <li class="chapter" data-level="2.8.8" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#using-r-and-github-within-rstudio"><i class="fa fa-check"></i><b>2.8.8</b> Using R and GitHub within RStudio</a></li>
+<li class="chapter" data-level="2.8.9" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#feedback-1"><i class="fa fa-check"></i><b>2.8.9</b> Feedback</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="introduction-to-r-markdown.html"><a href="introduction-to-r-markdown.html"><i class="fa fa-check"></i><b>3</b> Introduction to R Markdown</a>
@@ -215,59 +220,82 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="3.3.1" data-path="introduction-to-r-markdown.html"><a href="introduction-to-r-markdown.html#exercise"><i class="fa fa-check"></i><b>3.3.1</b> Exercise</a></li>
 </ul></li>
 <li class="chapter" data-level="3.4" data-path="introduction-to-r-markdown.html"><a href="introduction-to-r-markdown.html#output-format"><i class="fa fa-check"></i><b>3.4</b> Output format</a></li>
-<li class="chapter" data-level="3.5" data-path="introduction-to-r-markdown.html"><a href="introduction-to-r-markdown.html#further-reading"><i class="fa fa-check"></i><b>3.5</b> Further reading</a></li>
-</ul></li>
-<li class="chapter" data-level="4" data-path="introduction-to-multivariate-analysis.html"><a href="introduction-to-multivariate-analysis.html"><i class="fa fa-check"></i><b>4</b> Introduction to multivariate analysis</a>
+<li class="chapter" data-level="3.5" data-path="introduction-to-r-markdown.html"><a href="introduction-to-r-markdown.html#further-reading"><i class="fa fa-check"></i><b>3.5</b> Further reading</a>
 <ul>
-<li class="chapter" data-level="4.1" data-path="introduction-to-multivariate-analysis.html"><a href="introduction-to-multivariate-analysis.html#multivariate-resemblance"><i class="fa fa-check"></i><b>4.1</b> Multivariate resemblance</a>
-<ul>
-<li class="chapter" data-level="4.1.1" data-path="introduction-to-multivariate-analysis.html"><a href="introduction-to-multivariate-analysis.html#binary-similarity-metrics"><i class="fa fa-check"></i><b>4.1.1</b> Binary Similarity metrics</a></li>
-<li class="chapter" data-level="4.1.2" data-path="introduction-to-multivariate-analysis.html"><a href="introduction-to-multivariate-analysis.html#quantitative-similarity-dissimilarity-metrics"><i class="fa fa-check"></i><b>4.1.2</b> Quantitative similarity &amp; dissimilarity metrics</a></li>
-<li class="chapter" data-level="4.1.3" data-path="introduction-to-multivariate-analysis.html"><a href="introduction-to-multivariate-analysis.html#comparing-more-than-two-communitiessamplessitesgenesspecies"><i class="fa fa-check"></i><b>4.1.3</b> Comparing more than two communities/samples/sites/genes/species</a></li>
-<li class="chapter" data-level="4.1.4" data-path="introduction-to-multivariate-analysis.html"><a href="introduction-to-multivariate-analysis.html#r-functions"><i class="fa fa-check"></i><b>4.1.4</b> R functions</a></li>
-</ul></li>
-<li class="chapter" data-level="4.2" data-path="introduction-to-multivariate-analysis.html"><a href="introduction-to-multivariate-analysis.html#cluster-analysis"><i class="fa fa-check"></i><b>4.2</b> Cluster Analysis</a>
-<ul>
-<li class="chapter" data-level="4.2.1" data-path="introduction-to-multivariate-analysis.html"><a href="introduction-to-multivariate-analysis.html#hierarchical-clustering-groups-are-nested-within-other-groups."><i class="fa fa-check"></i><b>4.2.1</b> Hierarchical clustering: groups are nested within other groups.</a></li>
-<li class="chapter" data-level="4.2.2" data-path="introduction-to-multivariate-analysis.html"><a href="introduction-to-multivariate-analysis.html#how-many-clusters"><i class="fa fa-check"></i><b>4.2.2</b> How many clusters?</a></li>
-<li class="chapter" data-level="4.2.3" data-path="introduction-to-multivariate-analysis.html"><a href="introduction-to-multivariate-analysis.html#partitional-clustering-and-fuzzy-clustering"><i class="fa fa-check"></i><b>4.2.3</b> Partitional clustering and Fuzzy clustering</a></li>
-<li class="chapter" data-level="4.2.4" data-path="introduction-to-multivariate-analysis.html"><a href="introduction-to-multivariate-analysis.html#r-functions-for-clustering"><i class="fa fa-check"></i><b>4.2.4</b> R functions for clustering</a></li>
-<li class="chapter" data-level="4.2.5" data-path="introduction-to-multivariate-analysis.html"><a href="introduction-to-multivariate-analysis.html#exercise-cluster-analysis-of-isotope-data"><i class="fa fa-check"></i><b>4.2.5</b> Exercise: Cluster analysis of isotope data</a></li>
-</ul></li>
-<li class="chapter" data-level="4.3" data-path="introduction-to-multivariate-analysis.html"><a href="introduction-to-multivariate-analysis.html#Ord"><i class="fa fa-check"></i><b>4.3</b> Ordination</a>
-<ul>
-<li class="chapter" data-level="4.3.1" data-path="introduction-to-multivariate-analysis.html"><a href="introduction-to-multivariate-analysis.html#principal-components-analysis-pca"><i class="fa fa-check"></i><b>4.3.1</b> Principal Components Analysis (PCA)</a></li>
-<li class="chapter" data-level="4.3.2" data-path="introduction-to-multivariate-analysis.html"><a href="introduction-to-multivariate-analysis.html#exercise-pca-on-the-iris-data"><i class="fa fa-check"></i><b>4.3.2</b> Exercise: PCA on the iris data</a></li>
-<li class="chapter" data-level="4.3.3" data-path="introduction-to-multivariate-analysis.html"><a href="introduction-to-multivariate-analysis.html#principle-coordinates-analysis-pcoa"><i class="fa fa-check"></i><b>4.3.3</b> Principle Coordinates Analysis (PCoA)</a></li>
-<li class="chapter" data-level="4.3.4" data-path="introduction-to-multivariate-analysis.html"><a href="introduction-to-multivariate-analysis.html#nonmetric-multidimensional-scaling-nmds"><i class="fa fa-check"></i><b>4.3.4</b> Nonmetric Multidimensional Scaling (nMDS)</a></li>
-<li class="chapter" data-level="4.3.5" data-path="introduction-to-multivariate-analysis.html"><a href="introduction-to-multivariate-analysis.html#exercise-nmds-and-pcoa"><i class="fa fa-check"></i><b>4.3.5</b> Exercise: nMDS and PCoA</a></li>
-<li class="chapter" data-level="4.3.6" data-path="introduction-to-multivariate-analysis.html"><a href="introduction-to-multivariate-analysis.html#constrained-ordination"><i class="fa fa-check"></i><b>4.3.6</b> Constrained Ordination</a></li>
-<li class="chapter" data-level="4.3.7" data-path="introduction-to-multivariate-analysis.html"><a href="introduction-to-multivariate-analysis.html#redundancy-analysis"><i class="fa fa-check"></i><b>4.3.7</b> Redundancy Analysis</a></li>
-<li class="chapter" data-level="4.3.8" data-path="introduction-to-multivariate-analysis.html"><a href="introduction-to-multivariate-analysis.html#exercise-constrained-ordination"><i class="fa fa-check"></i><b>4.3.8</b> Exercise: Constrained ordination</a></li>
-<li class="chapter" data-level="4.3.9" data-path="introduction-to-multivariate-analysis.html"><a href="introduction-to-multivariate-analysis.html#signficance-tests-for-constrained-ordination"><i class="fa fa-check"></i><b>4.3.9</b> Signficance tests for constrained ordination</a></li>
-<li class="chapter" data-level="4.3.10" data-path="introduction-to-multivariate-analysis.html"><a href="introduction-to-multivariate-analysis.html#forward-selection-of-explanatory-variables"><i class="fa fa-check"></i><b>4.3.10</b> Forward Selection of explanatory variables</a></li>
-<li class="chapter" data-level="4.3.11" data-path="introduction-to-multivariate-analysis.html"><a href="introduction-to-multivariate-analysis.html#tri"><i class="fa fa-check"></i><b>4.3.11</b> Triplots: Graphing a constrained ordination</a></li>
+<li class="chapter" data-level="3.5.1" data-path="introduction-to-r-markdown.html"><a href="introduction-to-r-markdown.html#feedback-2"><i class="fa fa-check"></i><b>3.5.1</b> Feedback</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="5" data-path="machine-learning.html"><a href="machine-learning.html"><i class="fa fa-check"></i><b>5</b> Machine learning</a>
+<li class="chapter" data-level="4" data-path="introduction-to-multivariate-analysis-clustering-and-ordination.html"><a href="introduction-to-multivariate-analysis-clustering-and-ordination.html"><i class="fa fa-check"></i><b>4</b> Introduction to multivariate analysis: Clustering and Ordination</a>
 <ul>
-<li class="chapter" data-level="5.1" data-path="machine-learning.html"><a href="machine-learning.html#classification"><i class="fa fa-check"></i><b>5.1</b> Classification</a>
+<li class="chapter" data-level="4.1" data-path="introduction-to-multivariate-analysis-clustering-and-ordination.html"><a href="introduction-to-multivariate-analysis-clustering-and-ordination.html#multivariate-resemblance"><i class="fa fa-check"></i><b>4.1</b> Multivariate resemblance</a>
 <ul>
-<li class="chapter" data-level="5.1.1" data-path="machine-learning.html"><a href="machine-learning.html#logistic-regression-as-a-binary-classifier"><i class="fa fa-check"></i><b>5.1.1</b> Logistic regression as a binary classifier</a></li>
-<li class="chapter" data-level="5.1.2" data-path="machine-learning.html"><a href="machine-learning.html#interpreting-the-logistic-regression"><i class="fa fa-check"></i><b>5.1.2</b> Interpreting the logistic regression</a></li>
-<li class="chapter" data-level="5.1.3" data-path="machine-learning.html"><a href="machine-learning.html#measuring-the-performance-of-a-binary-classifier"><i class="fa fa-check"></i><b>5.1.3</b> Measuring the performance of a binary classifier</a></li>
-<li class="chapter" data-level="5.1.4" data-path="machine-learning.html"><a href="machine-learning.html#multiple-logistic-regression"><i class="fa fa-check"></i><b>5.1.4</b> Multiple logistic regression</a></li>
+<li class="chapter" data-level="4.1.1" data-path="introduction-to-multivariate-analysis-clustering-and-ordination.html"><a href="introduction-to-multivariate-analysis-clustering-and-ordination.html#binary-similarity-metrics"><i class="fa fa-check"></i><b>4.1.1</b> Binary Similarity metrics</a></li>
+<li class="chapter" data-level="4.1.2" data-path="introduction-to-multivariate-analysis-clustering-and-ordination.html"><a href="introduction-to-multivariate-analysis-clustering-and-ordination.html#quantitative-similarity-dissimilarity-metrics"><i class="fa fa-check"></i><b>4.1.2</b> Quantitative similarity &amp; dissimilarity metrics</a></li>
+<li class="chapter" data-level="4.1.3" data-path="introduction-to-multivariate-analysis-clustering-and-ordination.html"><a href="introduction-to-multivariate-analysis-clustering-and-ordination.html#comparing-more-than-two-communitiessamplessitesgenesspecies"><i class="fa fa-check"></i><b>4.1.3</b> Comparing more than two communities/samples/sites/genes/species</a></li>
+<li class="chapter" data-level="4.1.4" data-path="introduction-to-multivariate-analysis-clustering-and-ordination.html"><a href="introduction-to-multivariate-analysis-clustering-and-ordination.html#r-functions"><i class="fa fa-check"></i><b>4.1.4</b> R functions</a></li>
 </ul></li>
-<li class="chapter" data-level="5.2" data-path="machine-learning.html"><a href="machine-learning.html#cross-validation"><i class="fa fa-check"></i><b>5.2</b> Cross-validation</a>
+<li class="chapter" data-level="4.2" data-path="introduction-to-multivariate-analysis-clustering-and-ordination.html"><a href="introduction-to-multivariate-analysis-clustering-and-ordination.html#cluster-analysis"><i class="fa fa-check"></i><b>4.2</b> Cluster Analysis</a>
 <ul>
-<li class="chapter" data-level="5.2.1" data-path="machine-learning.html"><a href="machine-learning.html#k-fold-cross-validation"><i class="fa fa-check"></i><b>5.2.1</b> k-Fold Cross-Validation</a></li>
+<li class="chapter" data-level="4.2.1" data-path="introduction-to-multivariate-analysis-clustering-and-ordination.html"><a href="introduction-to-multivariate-analysis-clustering-and-ordination.html#hierarchical-clustering-groups-are-nested-within-other-groups."><i class="fa fa-check"></i><b>4.2.1</b> Hierarchical clustering: groups are nested within other groups.</a></li>
+<li class="chapter" data-level="4.2.2" data-path="introduction-to-multivariate-analysis-clustering-and-ordination.html"><a href="introduction-to-multivariate-analysis-clustering-and-ordination.html#partitional-clustering-and-fuzzy-clustering"><i class="fa fa-check"></i><b>4.2.2</b> Partitional clustering and Fuzzy clustering</a></li>
+<li class="chapter" data-level="4.2.3" data-path="introduction-to-multivariate-analysis-clustering-and-ordination.html"><a href="introduction-to-multivariate-analysis-clustering-and-ordination.html#r-functions-for-clustering"><i class="fa fa-check"></i><b>4.2.3</b> R functions for clustering</a></li>
+<li class="chapter" data-level="4.2.4" data-path="introduction-to-multivariate-analysis-clustering-and-ordination.html"><a href="introduction-to-multivariate-analysis-clustering-and-ordination.html#example-cluster-analysis-of-isotope-data"><i class="fa fa-check"></i><b>4.2.4</b> Example: Cluster analysis of isotope data</a></li>
 </ul></li>
-<li class="chapter" data-level="5.3" data-path="machine-learning.html"><a href="machine-learning.html#tree-based-methods-for-classification"><i class="fa fa-check"></i><b>5.3</b> Tree-based methods for classification</a>
+<li class="chapter" data-level="4.3" data-path="introduction-to-multivariate-analysis-clustering-and-ordination.html"><a href="introduction-to-multivariate-analysis-clustering-and-ordination.html#Ord"><i class="fa fa-check"></i><b>4.3</b> Ordination</a>
 <ul>
-<li class="chapter" data-level="5.3.1" data-path="machine-learning.html"><a href="machine-learning.html#classification-and-regression-trees-carts"><i class="fa fa-check"></i><b>5.3.1</b> Classification and regression trees (CARTs)</a></li>
-<li class="chapter" data-level="5.3.2" data-path="machine-learning.html"><a href="machine-learning.html#tree-pruning"><i class="fa fa-check"></i><b>5.3.2</b> Tree pruning</a></li>
-<li class="chapter" data-level="5.3.3" data-path="machine-learning.html"><a href="machine-learning.html#random-forests"><i class="fa fa-check"></i><b>5.3.3</b> Random Forests</a></li>
+<li class="chapter" data-level="4.3.1" data-path="introduction-to-multivariate-analysis-clustering-and-ordination.html"><a href="introduction-to-multivariate-analysis-clustering-and-ordination.html#principal-components-analysis-pca"><i class="fa fa-check"></i><b>4.3.1</b> Principal Components Analysis (PCA)</a></li>
+<li class="chapter" data-level="4.3.2" data-path="introduction-to-multivariate-analysis-clustering-and-ordination.html"><a href="introduction-to-multivariate-analysis-clustering-and-ordination.html#principle-coordinates-analysis-pcoa"><i class="fa fa-check"></i><b>4.3.2</b> Principle Coordinates Analysis (PCoA)</a></li>
+<li class="chapter" data-level="4.3.3" data-path="introduction-to-multivariate-analysis-clustering-and-ordination.html"><a href="introduction-to-multivariate-analysis-clustering-and-ordination.html#nonmetric-multidimensional-scaling-nmds"><i class="fa fa-check"></i><b>4.3.3</b> Nonmetric Multidimensional Scaling (nMDS)</a></li>
+<li class="chapter" data-level="4.3.4" data-path="introduction-to-multivariate-analysis-clustering-and-ordination.html"><a href="introduction-to-multivariate-analysis-clustering-and-ordination.html#example-nmds-and-pcoa"><i class="fa fa-check"></i><b>4.3.4</b> Example: nMDS and PCoA</a></li>
 </ul></li>
+<li class="chapter" data-level="4.4" data-path="introduction-to-multivariate-analysis-clustering-and-ordination.html"><a href="introduction-to-multivariate-analysis-clustering-and-ordination.html#constrained-ordination"><i class="fa fa-check"></i><b>4.4</b> Constrained Ordination</a>
+<ul>
+<li class="chapter" data-level="4.4.1" data-path="introduction-to-multivariate-analysis-clustering-and-ordination.html"><a href="introduction-to-multivariate-analysis-clustering-and-ordination.html#redundancy-analysis"><i class="fa fa-check"></i><b>4.4.1</b> Redundancy Analysis</a></li>
+<li class="chapter" data-level="4.4.2" data-path="introduction-to-multivariate-analysis-clustering-and-ordination.html"><a href="introduction-to-multivariate-analysis-clustering-and-ordination.html#example-constrained-ordination"><i class="fa fa-check"></i><b>4.4.2</b> Example: Constrained ordination</a></li>
+<li class="chapter" data-level="4.4.3" data-path="introduction-to-multivariate-analysis-clustering-and-ordination.html"><a href="introduction-to-multivariate-analysis-clustering-and-ordination.html#signficance-tests-for-constrained-ordination"><i class="fa fa-check"></i><b>4.4.3</b> Signficance tests for constrained ordination</a></li>
+<li class="chapter" data-level="4.4.4" data-path="introduction-to-multivariate-analysis-clustering-and-ordination.html"><a href="introduction-to-multivariate-analysis-clustering-and-ordination.html#forward-selection-of-explanatory-variables"><i class="fa fa-check"></i><b>4.4.4</b> Forward Selection of explanatory variables</a></li>
+<li class="chapter" data-level="4.4.5" data-path="introduction-to-multivariate-analysis-clustering-and-ordination.html"><a href="introduction-to-multivariate-analysis-clustering-and-ordination.html#tri"><i class="fa fa-check"></i><b>4.4.5</b> Triplots: Graphing a constrained ordination</a></li>
+<li class="chapter" data-level="4.4.6" data-path="introduction-to-multivariate-analysis-clustering-and-ordination.html"><a href="introduction-to-multivariate-analysis-clustering-and-ordination.html#feedback-3"><i class="fa fa-check"></i><b>4.4.6</b> Feedback</a></li>
+</ul></li>
+<li class="chapter" data-level="4.5" data-path="introduction-to-multivariate-analysis-clustering-and-ordination.html"><a href="introduction-to-multivariate-analysis-clustering-and-ordination.html#references"><i class="fa fa-check"></i><b>4.5</b> References</a></li>
+<li class="chapter" data-level="4.6" data-path="introduction-to-multivariate-analysis-clustering-and-ordination.html"><a href="introduction-to-multivariate-analysis-clustering-and-ordination.html#answer-key"><i class="fa fa-check"></i><b>4.6</b> Answer Key</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="introduction-to-classification-and-machine-learning.html"><a href="introduction-to-classification-and-machine-learning.html"><i class="fa fa-check"></i><b>5</b> Introduction to classification and machine learning</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="introduction-to-classification-and-machine-learning.html"><a href="introduction-to-classification-and-machine-learning.html#logistic-regression-as-a-binary-classifier"><i class="fa fa-check"></i><b>5.1</b> Logistic regression as a binary classifier</a>
+<ul>
+<li class="chapter" data-level="5.1.1" data-path="introduction-to-classification-and-machine-learning.html"><a href="introduction-to-classification-and-machine-learning.html#interpreting-the-logistic-regression"><i class="fa fa-check"></i><b>5.1.1</b> Interpreting the logistic regression</a></li>
+<li class="chapter" data-level="5.1.2" data-path="introduction-to-classification-and-machine-learning.html"><a href="introduction-to-classification-and-machine-learning.html#measuring-the-performance-of-a-binary-classifier"><i class="fa fa-check"></i><b>5.1.2</b> Measuring the performance of a binary classifier</a></li>
+<li class="chapter" data-level="5.1.3" data-path="introduction-to-classification-and-machine-learning.html"><a href="introduction-to-classification-and-machine-learning.html#multiple-logistic-regression"><i class="fa fa-check"></i><b>5.1.3</b> Multiple logistic regression</a></li>
+</ul></li>
+<li class="chapter" data-level="5.2" data-path="introduction-to-classification-and-machine-learning.html"><a href="introduction-to-classification-and-machine-learning.html#cross-validation"><i class="fa fa-check"></i><b>5.2</b> Cross-validation</a>
+<ul>
+<li class="chapter" data-level="5.2.1" data-path="introduction-to-classification-and-machine-learning.html"><a href="introduction-to-classification-and-machine-learning.html#k-fold-cross-validation"><i class="fa fa-check"></i><b>5.2.1</b> k-Fold Cross-Validation</a></li>
+<li class="chapter" data-level="5.2.2" data-path="introduction-to-classification-and-machine-learning.html"><a href="introduction-to-classification-and-machine-learning.html#examples-of-logistic-regression-used-for-classification"><i class="fa fa-check"></i><b>5.2.2</b> Examples of logistic regression used for classification</a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="introduction-to-classification-and-machine-learning.html"><a href="introduction-to-classification-and-machine-learning.html#linear-discriminant-analysis-lda"><i class="fa fa-check"></i><b>5.3</b> <strong>L</strong>inear <strong>D</strong>iscriminant <strong>A</strong>nalysis (<strong>LDA</strong>)</a>
+<ul>
+<li class="chapter" data-level="5.3.1" data-path="introduction-to-classification-and-machine-learning.html"><a href="introduction-to-classification-and-machine-learning.html#pca-and-lda-whats-the-difference"><i class="fa fa-check"></i><b>5.3.1</b> PCA and LDA what’s the difference?</a></li>
+<li class="chapter" data-level="5.3.2" data-path="introduction-to-classification-and-machine-learning.html"><a href="introduction-to-classification-and-machine-learning.html#examples-of-discriminant-analysis-used-for-classification"><i class="fa fa-check"></i><b>5.3.2</b> Examples of discriminant analysis used for classification</a></li>
+</ul></li>
+<li class="chapter" data-level="5.4" data-path="introduction-to-classification-and-machine-learning.html"><a href="introduction-to-classification-and-machine-learning.html#tree-based-methods-for-classification"><i class="fa fa-check"></i><b>5.4</b> Tree-based methods for classification</a>
+<ul>
+<li class="chapter" data-level="5.4.1" data-path="introduction-to-classification-and-machine-learning.html"><a href="introduction-to-classification-and-machine-learning.html#classification-and-regression-trees-carts"><i class="fa fa-check"></i><b>5.4.1</b> Classification and regression trees (CARTs)</a></li>
+<li class="chapter" data-level="5.4.2" data-path="introduction-to-classification-and-machine-learning.html"><a href="introduction-to-classification-and-machine-learning.html#random-forests"><i class="fa fa-check"></i><b>5.4.2</b> Random Forests</a></li>
+<li class="chapter" data-level="5.4.3" data-path="introduction-to-classification-and-machine-learning.html"><a href="introduction-to-classification-and-machine-learning.html#examples-of-tree-based-methods-used-for-classification"><i class="fa fa-check"></i><b>5.4.3</b> Examples of tree-based methods used for classification</a></li>
+<li class="chapter" data-level="5.4.4" data-path="introduction-to-classification-and-machine-learning.html"><a href="introduction-to-classification-and-machine-learning.html#r-functions-1"><i class="fa fa-check"></i><b>5.4.4</b> R functions</a></li>
+</ul></li>
+<li class="chapter" data-level="5.5" data-path="introduction-to-classification-and-machine-learning.html"><a href="introduction-to-classification-and-machine-learning.html#artificial-neural-networks-ann"><i class="fa fa-check"></i><b>5.5</b> <strong>A</strong>rtificial <strong>N</strong>eural <strong>N</strong>etworks (ANN)</a>
+<ul>
+<li class="chapter" data-level="5.5.1" data-path="introduction-to-classification-and-machine-learning.html"><a href="introduction-to-classification-and-machine-learning.html#ann-learning"><i class="fa fa-check"></i><b>5.5.1</b> ANN learning</a></li>
+<li class="chapter" data-level="5.5.2" data-path="introduction-to-classification-and-machine-learning.html"><a href="introduction-to-classification-and-machine-learning.html#our-first-ann"><i class="fa fa-check"></i><b>5.5.2</b> Our first ANN</a></li>
+<li class="chapter" data-level="5.5.3" data-path="introduction-to-classification-and-machine-learning.html"><a href="introduction-to-classification-and-machine-learning.html#examples-of-anns-used-for-classification"><i class="fa fa-check"></i><b>5.5.3</b> Examples of ANNs used for classification</a></li>
+<li class="chapter" data-level="5.5.4" data-path="introduction-to-classification-and-machine-learning.html"><a href="introduction-to-classification-and-machine-learning.html#r-functions-2"><i class="fa fa-check"></i><b>5.5.4</b> R functions</a></li>
+<li class="chapter" data-level="5.5.5" data-path="introduction-to-classification-and-machine-learning.html"><a href="introduction-to-classification-and-machine-learning.html#what-else"><i class="fa fa-check"></i><b>5.5.5</b> What else?</a></li>
+<li class="chapter" data-level="5.5.6" data-path="introduction-to-classification-and-machine-learning.html"><a href="introduction-to-classification-and-machine-learning.html#feedback-4"><i class="fa fa-check"></i><b>5.5.6</b> Feedback</a></li>
+</ul></li>
+<li class="chapter" data-level="5.6" data-path="introduction-to-classification-and-machine-learning.html"><a href="introduction-to-classification-and-machine-learning.html#references-1"><i class="fa fa-check"></i><b>5.6</b> References</a></li>
+<li class="chapter" data-level="5.7" data-path="introduction-to-classification-and-machine-learning.html"><a href="introduction-to-classification-and-machine-learning.html#answer-key-1"><i class="fa fa-check"></i><b>5.7</b> Answer Key</a></li>
 </ul></li>
 <li class="chapter" data-level="6" data-path="optimization.html"><a href="optimization.html"><i class="fa fa-check"></i><b>6</b> Optimization</a>
 <ul>
@@ -287,8 +315,24 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="6.4.2" data-path="optimization.html"><a href="optimization.html#global-optimization"><i class="fa fa-check"></i><b>6.4.2</b> Global Optimization</a></li>
 </ul></li>
 <li class="chapter" data-level="6.5" data-path="optimization.html"><a href="optimization.html#calibration-of-dynamic-models"><i class="fa fa-check"></i><b>6.5</b> Calibration of Dynamic Models</a></li>
-<li class="chapter" data-level="6.6" data-path="optimization.html"><a href="optimization.html#uncertainty-analysis-and-bayesian-calibration"><i class="fa fa-check"></i><b>6.6</b> Uncertainty Analysis and Bayesian Calibration</a></li>
-<li class="chapter" data-level="6.7" data-path="optimization.html"><a href="optimization.html#references"><i class="fa fa-check"></i><b>6.7</b> References</a></li>
+<li class="chapter" data-level="6.6" data-path="optimization.html"><a href="optimization.html#uncertainty-analysis-and-bayesian-calibration"><i class="fa fa-check"></i><b>6.6</b> Uncertainty Analysis and Bayesian Calibration</a>
+<ul>
+<li class="chapter" data-level="6.6.1" data-path="optimization.html"><a href="optimization.html#feedback-5"><i class="fa fa-check"></i><b>6.6.1</b> Feedback</a></li>
+</ul></li>
+<li class="chapter" data-level="6.7" data-path="optimization.html"><a href="optimization.html#references-2"><i class="fa fa-check"></i><b>6.7</b> References</a></li>
+<li class="chapter" data-level="6.8" data-path="optimization.html"><a href="optimization.html#answer-key-2"><i class="fa fa-check"></i><b>6.8</b> Answer Key</a>
+<ul>
+<li class="chapter" data-level="6.8.1" data-path="optimization.html"><a href="optimization.html#exercise-1-1"><i class="fa fa-check"></i><b>6.8.1</b> Exercise 1</a></li>
+<li class="chapter" data-level="6.8.2" data-path="optimization.html"><a href="optimization.html#solution"><i class="fa fa-check"></i><b>6.8.2</b> Solution</a></li>
+<li class="chapter" data-level="6.8.3" data-path="optimization.html"><a href="optimization.html#exercise-2-1"><i class="fa fa-check"></i><b>6.8.3</b> Exercise 2</a></li>
+<li class="chapter" data-level="6.8.4" data-path="optimization.html"><a href="optimization.html#solution-1"><i class="fa fa-check"></i><b>6.8.4</b> Solution</a></li>
+<li class="chapter" data-level="6.8.5" data-path="optimization.html"><a href="optimization.html#exercise-3-1"><i class="fa fa-check"></i><b>6.8.5</b> Exercise 3</a></li>
+<li class="chapter" data-level="6.8.6" data-path="optimization.html"><a href="optimization.html#solution-2"><i class="fa fa-check"></i><b>6.8.6</b> Solution</a></li>
+<li class="chapter" data-level="6.8.7" data-path="optimization.html"><a href="optimization.html#exercise-4-1"><i class="fa fa-check"></i><b>6.8.7</b> Exercise 4</a></li>
+<li class="chapter" data-level="6.8.8" data-path="optimization.html"><a href="optimization.html#solution-3"><i class="fa fa-check"></i><b>6.8.8</b> Solution</a></li>
+<li class="chapter" data-level="6.8.9" data-path="optimization.html"><a href="optimization.html#exercise-5-1"><i class="fa fa-check"></i><b>6.8.9</b> Exercise 5</a></li>
+<li class="chapter" data-level="6.8.10" data-path="optimization.html"><a href="optimization.html#solution-4"><i class="fa fa-check"></i><b>6.8.10</b> Solution</a></li>
+</ul></li>
 </ul></li>
 </ul>
 
@@ -299,7 +343,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <div class="body-inner">
         <div class="book-header" role="navigation">
           <h1>
-            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Quant Bio Modules</a>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Quantitative biology: a quick introduction</a>
           </h1>
         </div>
 
@@ -370,12 +414,12 @@ that says</p>
 called it <code>avge_height</code>).</p>
 <p>In your R Markdown document you have your R code <em>and</em> your text write up. You
 would equivalently have:</p>
-<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="introduction-to-r-markdown.html#cb12-1" aria-hidden="true" tabindex="-1"></a>The average tree height was <span class="st">`</span><span class="at">r avge_height</span><span class="st">`</span> m</span></code></pre></div>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="introduction-to-r-markdown.html#cb11-1" aria-hidden="true" tabindex="-1"></a>The average tree height was <span class="st">`</span><span class="at">r avge_height</span><span class="st">`</span> m</span></code></pre></div>
 <p>Instead of “10.1” you refer <em>directly</em> to the variable <code>avge_height</code> that you
 have already calculated. When you ‘render’ your R Markdown document (convert it
 from code into .pdf, .html or other formats), it
 automatically fills in the <code>avge_height</code> value as “10.1.” The</p>
-<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="introduction-to-r-markdown.html#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="st">`</span><span class="at">r</span></span></code></pre></div>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="introduction-to-r-markdown.html#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="st">`</span><span class="at">r</span></span></code></pre></div>
 <p>means that the next bit of code (until the next backtick) should be evaluated
 using R, and the result inserted.</p>
 <p>This is the basic idea. Then, when your colleague mentions the error (or, say,
@@ -390,15 +434,15 @@ the results of fitting a simple linear regression. Read through this and then
 you will download and run the code in the exercise.</p>
 <p><strong>Generate data</strong></p>
 <p>First we’ll need some libraries:</p>
-<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="introduction-to-r-markdown.html#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(kableExtra)</span>
-<span id="cb14-2"><a href="introduction-to-r-markdown.html#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
-<span id="cb14-3"><a href="introduction-to-r-markdown.html#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(xtable)</span></code></pre></div>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="introduction-to-r-markdown.html#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(kableExtra)</span>
+<span id="cb13-2"><a href="introduction-to-r-markdown.html#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb13-3"><a href="introduction-to-r-markdown.html#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(xtable)</span></code></pre></div>
 <p>Now generate some data:</p>
-<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="introduction-to-r-markdown.html#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">42</span>)</span>
-<span id="cb15-2"><a href="introduction-to-r-markdown.html#cb15-2" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="dv">50</span>                      <span class="co"># sample size</span></span>
-<span id="cb15-3"><a href="introduction-to-r-markdown.html#cb15-3" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">:</span>n</span>
-<span id="cb15-4"><a href="introduction-to-r-markdown.html#cb15-4" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="dv">10</span><span class="sc">*</span>x <span class="sc">+</span> <span class="fu">rnorm</span>(n, <span class="dv">0</span>, <span class="dv">10</span>)</span>
-<span id="cb15-5"><a href="introduction-to-r-markdown.html#cb15-5" aria-hidden="true" tabindex="-1"></a>n</span></code></pre></div>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="introduction-to-r-markdown.html#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">42</span>)</span>
+<span id="cb14-2"><a href="introduction-to-r-markdown.html#cb14-2" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="dv">50</span>                      <span class="co"># sample size</span></span>
+<span id="cb14-3"><a href="introduction-to-r-markdown.html#cb14-3" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">:</span>n</span>
+<span id="cb14-4"><a href="introduction-to-r-markdown.html#cb14-4" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="dv">10</span><span class="sc">*</span>x <span class="sc">+</span> <span class="fu">rnorm</span>(n, <span class="dv">0</span>, <span class="dv">10</span>)</span>
+<span id="cb14-5"><a href="introduction-to-r-markdown.html#cb14-5" aria-hidden="true" tabindex="-1"></a>n</span></code></pre></div>
 <pre><code>[1] 50</code></pre>
 <p>So we are showing our R code here (we can choose to
 hide it if we like), and it has been executed, yielding the printed output of
@@ -406,18 +450,18 @@ the value of <code>n</code> (because of the final line of the code).</p>
 <p>We can also embed results from R within sentences, for example:</p>
 <p>We have a sample size of 50.</p>
 <p>This is done (as mentioned above) by the code:</p>
-<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="introduction-to-r-markdown.html#cb17-1" aria-hidden="true" tabindex="-1"></a>We have a sample size of <span class="st">`</span><span class="at">r n</span><span class="st">`</span></span></code></pre></div>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="introduction-to-r-markdown.html#cb16-1" aria-hidden="true" tabindex="-1"></a>We have a sample size of <span class="st">`</span><span class="at">r n</span><span class="st">`</span></span></code></pre></div>
 <p>Note that you need the space straight after the <code>r</code>.</p>
 <p>We can also automatically say that the maximum value of the data is 506.5564788, or round it to a
 whole number: the maximum value of the data is 507. These were done by:</p>
-<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="introduction-to-r-markdown.html#cb18-1" aria-hidden="true" tabindex="-1"></a>the maximum value of the data is <span class="st">`</span><span class="at">r max(y)</span><span class="st">`</span></span>
-<span id="cb18-2"><a href="introduction-to-r-markdown.html#cb18-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-3"><a href="introduction-to-r-markdown.html#cb18-3" aria-hidden="true" tabindex="-1"></a>the maximum value of the data is <span class="st">`</span><span class="at">r round(max(y))</span><span class="st">`</span></span></code></pre></div>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="introduction-to-r-markdown.html#cb17-1" aria-hidden="true" tabindex="-1"></a>the maximum value of the data is <span class="st">`</span><span class="at">r max(y)</span><span class="st">`</span></span>
+<span id="cb17-2"><a href="introduction-to-r-markdown.html#cb17-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-3"><a href="introduction-to-r-markdown.html#cb17-3" aria-hidden="true" tabindex="-1"></a>the maximum value of the data is <span class="st">`</span><span class="at">r round(max(y))</span><span class="st">`</span></span></code></pre></div>
 <p><strong>Show some of the data</strong></p>
 <p>Let’s combine the data in a tibble (think of it as a data frame if you don’t
 know what that is):</p>
-<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="introduction-to-r-markdown.html#cb19-1" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">tibble</span>(x, y)</span>
-<span id="cb19-2"><a href="introduction-to-r-markdown.html#cb19-2" aria-hidden="true" tabindex="-1"></a>data</span></code></pre></div>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="introduction-to-r-markdown.html#cb18-1" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">tibble</span>(x, y)</span>
+<span id="cb18-2"><a href="introduction-to-r-markdown.html#cb18-2" aria-hidden="true" tabindex="-1"></a>data</span></code></pre></div>
 <pre><code># A tibble: 50 x 2
        x     y
    &lt;int&gt; &lt;dbl&gt;
@@ -434,8 +478,8 @@ know what that is):</p>
 # ... with 40 more rows</code></pre>
 <p>(only the first 10 rows get printed here thanks to dplyr).</p>
 <p>To have a proper table, we can do</p>
-<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="introduction-to-r-markdown.html#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">kable</span>(data[<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>,],</span>
-<span id="cb21-2"><a href="introduction-to-r-markdown.html#cb21-2" aria-hidden="true" tabindex="-1"></a>      <span class="at">caption =</span> <span class="st">&quot;The first rows of my data.&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="introduction-to-r-markdown.html#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">kable</span>(data[<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>,],</span>
+<span id="cb20-2"><a href="introduction-to-r-markdown.html#cb20-2" aria-hidden="true" tabindex="-1"></a>      <span class="at">caption =</span> <span class="st">&quot;The first rows of my data.&quot;</span>)</span></code></pre></div>
 <table>
 <caption>
 <span id="tab:kable">Table 3.1: </span>The first rows of my data.
@@ -538,11 +582,11 @@ because of settings we have, but pretty much everything is tweakable with the
 <code>kable</code> and <code>kableExtra</code> packages).</p>
 <p><strong>Plot then fit a regression data</strong></p>
 <p>Now to plot the data:</p>
-<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="introduction-to-r-markdown.html#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(x, y)</span></code></pre></div>
+<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="introduction-to-r-markdown.html#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(x, y)</span></code></pre></div>
 <p><img src="_main_files/figure-html/plot-1.png" width="672" /></p>
 <p>To fit and then print the summary regression output from R:</p>
-<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="introduction-to-r-markdown.html#cb23-1" aria-hidden="true" tabindex="-1"></a>fit <span class="ot">&lt;-</span> <span class="fu">lm</span>(y <span class="sc">~</span> x)</span>
-<span id="cb23-2"><a href="introduction-to-r-markdown.html#cb23-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">summary</span>(fit))</span></code></pre></div>
+<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="introduction-to-r-markdown.html#cb22-1" aria-hidden="true" tabindex="-1"></a>fit <span class="ot">&lt;-</span> <span class="fu">lm</span>(y <span class="sc">~</span> x)</span>
+<span id="cb22-2"><a href="introduction-to-r-markdown.html#cb22-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">summary</span>(fit))</span></code></pre></div>
 <pre><code>
 Call:
 lm(formula = y ~ x)
@@ -562,8 +606,8 @@ Residual standard error: 11.39 on 48 degrees of freedom
 Multiple R-squared:  0.9939,    Adjusted R-squared:  0.9937 
 F-statistic:  7766 on 1 and 48 DF,  p-value: &lt; 2.2e-16</code></pre>
 <p>And for a report we can produce a simple table (including a caption) of output and the regression fit:</p>
-<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="introduction-to-r-markdown.html#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="fu">kable</span>(<span class="fu">coefficients</span>(<span class="fu">summary</span>(fit)),</span>
-<span id="cb25-2"><a href="introduction-to-r-markdown.html#cb25-2" aria-hidden="true" tabindex="-1"></a>      <span class="at">caption =</span> <span class="st">&quot;Linear regression fit.&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="introduction-to-r-markdown.html#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="fu">kable</span>(<span class="fu">coefficients</span>(<span class="fu">summary</span>(fit)),</span>
+<span id="cb24-2"><a href="introduction-to-r-markdown.html#cb24-2" aria-hidden="true" tabindex="-1"></a>      <span class="at">caption =</span> <span class="st">&quot;Linear regression fit.&quot;</span>)</span></code></pre></div>
 <table>
 <caption>
 <span id="tab:fit">Table 3.2: </span>Linear regression fit.
@@ -624,8 +668,8 @@ x
 </tbody>
 </table>
 <p>And create a plot:</p>
-<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="introduction-to-r-markdown.html#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(x, y)</span>
-<span id="cb26-2"><a href="introduction-to-r-markdown.html#cb26-2" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(fit, <span class="at">col=</span><span class="st">&quot;red&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="introduction-to-r-markdown.html#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(x, y)</span>
+<span id="cb25-2"><a href="introduction-to-r-markdown.html#cb25-2" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(fit, <span class="at">col=</span><span class="st">&quot;red&quot;</span>)</span></code></pre></div>
 <p><img src="_main_files/figure-html/plotfit-1.png" width="672" /></p>
 <p><strong>Now, let’s go back and change the data</strong></p>
 <p>The <em>big</em> feature of dynamically generating reports is when you go back and
@@ -670,7 +714,7 @@ will be included in the file):</p>
 <p>So the maximum value of <span class="math inline">\(y\)</span> is 507, which is
 greater than
 the special value of 400. The “greater than” or “less than” part is given by</p>
-<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="introduction-to-r-markdown.html#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="st">`</span><span class="at">r ifelse(max(y)&gt;400, paste(&quot;greater than&quot;), paste(&quot;less than&quot;))</span><span class="st">`</span></span></code></pre></div>
+<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="introduction-to-r-markdown.html#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="st">`</span><span class="at">r ifelse(max(y)&gt;400, paste(&quot;greater than&quot;), paste(&quot;less than&quot;))</span><span class="st">`</span></span></code></pre></div>
 <p>But you have to be careful and think about all possibilities – what if
 <span class="math inline">\(y=399.9\)</span>?</p>
 </div>
@@ -709,7 +753,11 @@ have to refer to the guidebook anyway.</p>
 <p>In practice, once you have something working in the style you like, you can just
 copy those settings for each new project. It can be handy to keep a readme file
 of containing commands/options/tips that you use a lot.</p>
+<div id="feedback-2" class="section level3" number="3.5.1">
+<h3><span class="header-section-number">3.5.1</span> Feedback</h3>
+<p>We value your input! Please take the time to let us know how we might improve these materials. <a href="https://forms.gle/vLkcZq7NxPb2ajTQ6">Survey</a></p>
 
+</div>
 </div>
 </div>
             </section>
@@ -718,7 +766,7 @@ of containing commands/options/tips that you use a lot.</p>
         </div>
       </div>
 <a href="introduction-to-git-and-github.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="introduction-to-multivariate-analysis.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="introduction-to-multivariate-analysis-clustering-and-ordination.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

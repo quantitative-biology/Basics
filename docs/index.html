@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Quant Bio Modules</title>
+  <title>Quantitative biology: a quick introduction</title>
   <meta name="description" content="A set of modules on quantitaitve topics for biology graduates" />
   <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Quant Bio Modules" />
+  <meta property="og:title" content="Quantitative biology: a quick introduction" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="rstudio/bookdown-demo" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Quant Bio Modules" />
+  <meta name="twitter:title" content="Quantitative biology: a quick introduction" />
   
   <meta name="twitter:description" content="A set of modules on quantitaitve topics for biology graduates" />
   
@@ -24,7 +24,7 @@
 <meta name="author" content="Kim Cuddington, Andrew Edwards, Brian Ingalls" />
 
 
-<meta name="date" content="2021-11-04" />
+<meta name="date" content="2021-11-15" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -144,7 +144,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <nav role="navigation">
 
 <ul class="summary">
-<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Prerequisites</a></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Welcome!</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#open-science"><i class="fa fa-check"></i><b>1.1</b> Open Science</a></li>
+<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#feedback"><i class="fa fa-check"></i><b>1.2</b> Feedback</a></li>
+</ul></li>
 <li class="chapter" data-level="2" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html"><i class="fa fa-check"></i><b>2</b> Introduction to Git and GitHub</a>
 <ul>
 <li class="chapter" data-level="2.1" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#what-are-git-and-github-and-how-might-they-be-useful"><i class="fa fa-check"></i><b>2.1</b> What are Git and GitHub and how might they be useful?</a></li>
@@ -204,6 +208,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="2.8.6" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#pull-requests"><i class="fa fa-check"></i><b>2.8.6</b> Pull requests</a></li>
 <li class="chapter" data-level="2.8.7" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#undoing-stuff"><i class="fa fa-check"></i><b>2.8.7</b> Undoing stuff</a></li>
 <li class="chapter" data-level="2.8.8" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#using-r-and-github-within-rstudio"><i class="fa fa-check"></i><b>2.8.8</b> Using R and GitHub within RStudio</a></li>
+<li class="chapter" data-level="2.8.9" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#feedback-1"><i class="fa fa-check"></i><b>2.8.9</b> Feedback</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="introduction-to-r-markdown.html"><a href="introduction-to-r-markdown.html"><i class="fa fa-check"></i><b>3</b> Introduction to R Markdown</a>
@@ -215,59 +220,82 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="3.3.1" data-path="introduction-to-r-markdown.html"><a href="introduction-to-r-markdown.html#exercise"><i class="fa fa-check"></i><b>3.3.1</b> Exercise</a></li>
 </ul></li>
 <li class="chapter" data-level="3.4" data-path="introduction-to-r-markdown.html"><a href="introduction-to-r-markdown.html#output-format"><i class="fa fa-check"></i><b>3.4</b> Output format</a></li>
-<li class="chapter" data-level="3.5" data-path="introduction-to-r-markdown.html"><a href="introduction-to-r-markdown.html#further-reading"><i class="fa fa-check"></i><b>3.5</b> Further reading</a></li>
-</ul></li>
-<li class="chapter" data-level="4" data-path="introduction-to-multivariate-analysis.html"><a href="introduction-to-multivariate-analysis.html"><i class="fa fa-check"></i><b>4</b> Introduction to multivariate analysis</a>
+<li class="chapter" data-level="3.5" data-path="introduction-to-r-markdown.html"><a href="introduction-to-r-markdown.html#further-reading"><i class="fa fa-check"></i><b>3.5</b> Further reading</a>
 <ul>
-<li class="chapter" data-level="4.1" data-path="introduction-to-multivariate-analysis.html"><a href="introduction-to-multivariate-analysis.html#multivariate-resemblance"><i class="fa fa-check"></i><b>4.1</b> Multivariate resemblance</a>
-<ul>
-<li class="chapter" data-level="4.1.1" data-path="introduction-to-multivariate-analysis.html"><a href="introduction-to-multivariate-analysis.html#binary-similarity-metrics"><i class="fa fa-check"></i><b>4.1.1</b> Binary Similarity metrics</a></li>
-<li class="chapter" data-level="4.1.2" data-path="introduction-to-multivariate-analysis.html"><a href="introduction-to-multivariate-analysis.html#quantitative-similarity-dissimilarity-metrics"><i class="fa fa-check"></i><b>4.1.2</b> Quantitative similarity &amp; dissimilarity metrics</a></li>
-<li class="chapter" data-level="4.1.3" data-path="introduction-to-multivariate-analysis.html"><a href="introduction-to-multivariate-analysis.html#comparing-more-than-two-communitiessamplessitesgenesspecies"><i class="fa fa-check"></i><b>4.1.3</b> Comparing more than two communities/samples/sites/genes/species</a></li>
-<li class="chapter" data-level="4.1.4" data-path="introduction-to-multivariate-analysis.html"><a href="introduction-to-multivariate-analysis.html#r-functions"><i class="fa fa-check"></i><b>4.1.4</b> R functions</a></li>
-</ul></li>
-<li class="chapter" data-level="4.2" data-path="introduction-to-multivariate-analysis.html"><a href="introduction-to-multivariate-analysis.html#cluster-analysis"><i class="fa fa-check"></i><b>4.2</b> Cluster Analysis</a>
-<ul>
-<li class="chapter" data-level="4.2.1" data-path="introduction-to-multivariate-analysis.html"><a href="introduction-to-multivariate-analysis.html#hierarchical-clustering-groups-are-nested-within-other-groups."><i class="fa fa-check"></i><b>4.2.1</b> Hierarchical clustering: groups are nested within other groups.</a></li>
-<li class="chapter" data-level="4.2.2" data-path="introduction-to-multivariate-analysis.html"><a href="introduction-to-multivariate-analysis.html#how-many-clusters"><i class="fa fa-check"></i><b>4.2.2</b> How many clusters?</a></li>
-<li class="chapter" data-level="4.2.3" data-path="introduction-to-multivariate-analysis.html"><a href="introduction-to-multivariate-analysis.html#partitional-clustering-and-fuzzy-clustering"><i class="fa fa-check"></i><b>4.2.3</b> Partitional clustering and Fuzzy clustering</a></li>
-<li class="chapter" data-level="4.2.4" data-path="introduction-to-multivariate-analysis.html"><a href="introduction-to-multivariate-analysis.html#r-functions-for-clustering"><i class="fa fa-check"></i><b>4.2.4</b> R functions for clustering</a></li>
-<li class="chapter" data-level="4.2.5" data-path="introduction-to-multivariate-analysis.html"><a href="introduction-to-multivariate-analysis.html#exercise-cluster-analysis-of-isotope-data"><i class="fa fa-check"></i><b>4.2.5</b> Exercise: Cluster analysis of isotope data</a></li>
-</ul></li>
-<li class="chapter" data-level="4.3" data-path="introduction-to-multivariate-analysis.html"><a href="introduction-to-multivariate-analysis.html#Ord"><i class="fa fa-check"></i><b>4.3</b> Ordination</a>
-<ul>
-<li class="chapter" data-level="4.3.1" data-path="introduction-to-multivariate-analysis.html"><a href="introduction-to-multivariate-analysis.html#principal-components-analysis-pca"><i class="fa fa-check"></i><b>4.3.1</b> Principal Components Analysis (PCA)</a></li>
-<li class="chapter" data-level="4.3.2" data-path="introduction-to-multivariate-analysis.html"><a href="introduction-to-multivariate-analysis.html#exercise-pca-on-the-iris-data"><i class="fa fa-check"></i><b>4.3.2</b> Exercise: PCA on the iris data</a></li>
-<li class="chapter" data-level="4.3.3" data-path="introduction-to-multivariate-analysis.html"><a href="introduction-to-multivariate-analysis.html#principle-coordinates-analysis-pcoa"><i class="fa fa-check"></i><b>4.3.3</b> Principle Coordinates Analysis (PCoA)</a></li>
-<li class="chapter" data-level="4.3.4" data-path="introduction-to-multivariate-analysis.html"><a href="introduction-to-multivariate-analysis.html#nonmetric-multidimensional-scaling-nmds"><i class="fa fa-check"></i><b>4.3.4</b> Nonmetric Multidimensional Scaling (nMDS)</a></li>
-<li class="chapter" data-level="4.3.5" data-path="introduction-to-multivariate-analysis.html"><a href="introduction-to-multivariate-analysis.html#exercise-nmds-and-pcoa"><i class="fa fa-check"></i><b>4.3.5</b> Exercise: nMDS and PCoA</a></li>
-<li class="chapter" data-level="4.3.6" data-path="introduction-to-multivariate-analysis.html"><a href="introduction-to-multivariate-analysis.html#constrained-ordination"><i class="fa fa-check"></i><b>4.3.6</b> Constrained Ordination</a></li>
-<li class="chapter" data-level="4.3.7" data-path="introduction-to-multivariate-analysis.html"><a href="introduction-to-multivariate-analysis.html#redundancy-analysis"><i class="fa fa-check"></i><b>4.3.7</b> Redundancy Analysis</a></li>
-<li class="chapter" data-level="4.3.8" data-path="introduction-to-multivariate-analysis.html"><a href="introduction-to-multivariate-analysis.html#exercise-constrained-ordination"><i class="fa fa-check"></i><b>4.3.8</b> Exercise: Constrained ordination</a></li>
-<li class="chapter" data-level="4.3.9" data-path="introduction-to-multivariate-analysis.html"><a href="introduction-to-multivariate-analysis.html#signficance-tests-for-constrained-ordination"><i class="fa fa-check"></i><b>4.3.9</b> Signficance tests for constrained ordination</a></li>
-<li class="chapter" data-level="4.3.10" data-path="introduction-to-multivariate-analysis.html"><a href="introduction-to-multivariate-analysis.html#forward-selection-of-explanatory-variables"><i class="fa fa-check"></i><b>4.3.10</b> Forward Selection of explanatory variables</a></li>
-<li class="chapter" data-level="4.3.11" data-path="introduction-to-multivariate-analysis.html"><a href="introduction-to-multivariate-analysis.html#tri"><i class="fa fa-check"></i><b>4.3.11</b> Triplots: Graphing a constrained ordination</a></li>
+<li class="chapter" data-level="3.5.1" data-path="introduction-to-r-markdown.html"><a href="introduction-to-r-markdown.html#feedback-2"><i class="fa fa-check"></i><b>3.5.1</b> Feedback</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="5" data-path="machine-learning.html"><a href="machine-learning.html"><i class="fa fa-check"></i><b>5</b> Machine learning</a>
+<li class="chapter" data-level="4" data-path="introduction-to-multivariate-analysis-clustering-and-ordination.html"><a href="introduction-to-multivariate-analysis-clustering-and-ordination.html"><i class="fa fa-check"></i><b>4</b> Introduction to multivariate analysis: Clustering and Ordination</a>
 <ul>
-<li class="chapter" data-level="5.1" data-path="machine-learning.html"><a href="machine-learning.html#classification"><i class="fa fa-check"></i><b>5.1</b> Classification</a>
+<li class="chapter" data-level="4.1" data-path="introduction-to-multivariate-analysis-clustering-and-ordination.html"><a href="introduction-to-multivariate-analysis-clustering-and-ordination.html#multivariate-resemblance"><i class="fa fa-check"></i><b>4.1</b> Multivariate resemblance</a>
 <ul>
-<li class="chapter" data-level="5.1.1" data-path="machine-learning.html"><a href="machine-learning.html#logistic-regression-as-a-binary-classifier"><i class="fa fa-check"></i><b>5.1.1</b> Logistic regression as a binary classifier</a></li>
-<li class="chapter" data-level="5.1.2" data-path="machine-learning.html"><a href="machine-learning.html#interpreting-the-logistic-regression"><i class="fa fa-check"></i><b>5.1.2</b> Interpreting the logistic regression</a></li>
-<li class="chapter" data-level="5.1.3" data-path="machine-learning.html"><a href="machine-learning.html#measuring-the-performance-of-a-binary-classifier"><i class="fa fa-check"></i><b>5.1.3</b> Measuring the performance of a binary classifier</a></li>
-<li class="chapter" data-level="5.1.4" data-path="machine-learning.html"><a href="machine-learning.html#multiple-logistic-regression"><i class="fa fa-check"></i><b>5.1.4</b> Multiple logistic regression</a></li>
+<li class="chapter" data-level="4.1.1" data-path="introduction-to-multivariate-analysis-clustering-and-ordination.html"><a href="introduction-to-multivariate-analysis-clustering-and-ordination.html#binary-similarity-metrics"><i class="fa fa-check"></i><b>4.1.1</b> Binary Similarity metrics</a></li>
+<li class="chapter" data-level="4.1.2" data-path="introduction-to-multivariate-analysis-clustering-and-ordination.html"><a href="introduction-to-multivariate-analysis-clustering-and-ordination.html#quantitative-similarity-dissimilarity-metrics"><i class="fa fa-check"></i><b>4.1.2</b> Quantitative similarity &amp; dissimilarity metrics</a></li>
+<li class="chapter" data-level="4.1.3" data-path="introduction-to-multivariate-analysis-clustering-and-ordination.html"><a href="introduction-to-multivariate-analysis-clustering-and-ordination.html#comparing-more-than-two-communitiessamplessitesgenesspecies"><i class="fa fa-check"></i><b>4.1.3</b> Comparing more than two communities/samples/sites/genes/species</a></li>
+<li class="chapter" data-level="4.1.4" data-path="introduction-to-multivariate-analysis-clustering-and-ordination.html"><a href="introduction-to-multivariate-analysis-clustering-and-ordination.html#r-functions"><i class="fa fa-check"></i><b>4.1.4</b> R functions</a></li>
 </ul></li>
-<li class="chapter" data-level="5.2" data-path="machine-learning.html"><a href="machine-learning.html#cross-validation"><i class="fa fa-check"></i><b>5.2</b> Cross-validation</a>
+<li class="chapter" data-level="4.2" data-path="introduction-to-multivariate-analysis-clustering-and-ordination.html"><a href="introduction-to-multivariate-analysis-clustering-and-ordination.html#cluster-analysis"><i class="fa fa-check"></i><b>4.2</b> Cluster Analysis</a>
 <ul>
-<li class="chapter" data-level="5.2.1" data-path="machine-learning.html"><a href="machine-learning.html#k-fold-cross-validation"><i class="fa fa-check"></i><b>5.2.1</b> k-Fold Cross-Validation</a></li>
+<li class="chapter" data-level="4.2.1" data-path="introduction-to-multivariate-analysis-clustering-and-ordination.html"><a href="introduction-to-multivariate-analysis-clustering-and-ordination.html#hierarchical-clustering-groups-are-nested-within-other-groups."><i class="fa fa-check"></i><b>4.2.1</b> Hierarchical clustering: groups are nested within other groups.</a></li>
+<li class="chapter" data-level="4.2.2" data-path="introduction-to-multivariate-analysis-clustering-and-ordination.html"><a href="introduction-to-multivariate-analysis-clustering-and-ordination.html#partitional-clustering-and-fuzzy-clustering"><i class="fa fa-check"></i><b>4.2.2</b> Partitional clustering and Fuzzy clustering</a></li>
+<li class="chapter" data-level="4.2.3" data-path="introduction-to-multivariate-analysis-clustering-and-ordination.html"><a href="introduction-to-multivariate-analysis-clustering-and-ordination.html#r-functions-for-clustering"><i class="fa fa-check"></i><b>4.2.3</b> R functions for clustering</a></li>
+<li class="chapter" data-level="4.2.4" data-path="introduction-to-multivariate-analysis-clustering-and-ordination.html"><a href="introduction-to-multivariate-analysis-clustering-and-ordination.html#example-cluster-analysis-of-isotope-data"><i class="fa fa-check"></i><b>4.2.4</b> Example: Cluster analysis of isotope data</a></li>
 </ul></li>
-<li class="chapter" data-level="5.3" data-path="machine-learning.html"><a href="machine-learning.html#tree-based-methods-for-classification"><i class="fa fa-check"></i><b>5.3</b> Tree-based methods for classification</a>
+<li class="chapter" data-level="4.3" data-path="introduction-to-multivariate-analysis-clustering-and-ordination.html"><a href="introduction-to-multivariate-analysis-clustering-and-ordination.html#Ord"><i class="fa fa-check"></i><b>4.3</b> Ordination</a>
 <ul>
-<li class="chapter" data-level="5.3.1" data-path="machine-learning.html"><a href="machine-learning.html#classification-and-regression-trees-carts"><i class="fa fa-check"></i><b>5.3.1</b> Classification and regression trees (CARTs)</a></li>
-<li class="chapter" data-level="5.3.2" data-path="machine-learning.html"><a href="machine-learning.html#tree-pruning"><i class="fa fa-check"></i><b>5.3.2</b> Tree pruning</a></li>
-<li class="chapter" data-level="5.3.3" data-path="machine-learning.html"><a href="machine-learning.html#random-forests"><i class="fa fa-check"></i><b>5.3.3</b> Random Forests</a></li>
+<li class="chapter" data-level="4.3.1" data-path="introduction-to-multivariate-analysis-clustering-and-ordination.html"><a href="introduction-to-multivariate-analysis-clustering-and-ordination.html#principal-components-analysis-pca"><i class="fa fa-check"></i><b>4.3.1</b> Principal Components Analysis (PCA)</a></li>
+<li class="chapter" data-level="4.3.2" data-path="introduction-to-multivariate-analysis-clustering-and-ordination.html"><a href="introduction-to-multivariate-analysis-clustering-and-ordination.html#principle-coordinates-analysis-pcoa"><i class="fa fa-check"></i><b>4.3.2</b> Principle Coordinates Analysis (PCoA)</a></li>
+<li class="chapter" data-level="4.3.3" data-path="introduction-to-multivariate-analysis-clustering-and-ordination.html"><a href="introduction-to-multivariate-analysis-clustering-and-ordination.html#nonmetric-multidimensional-scaling-nmds"><i class="fa fa-check"></i><b>4.3.3</b> Nonmetric Multidimensional Scaling (nMDS)</a></li>
+<li class="chapter" data-level="4.3.4" data-path="introduction-to-multivariate-analysis-clustering-and-ordination.html"><a href="introduction-to-multivariate-analysis-clustering-and-ordination.html#example-nmds-and-pcoa"><i class="fa fa-check"></i><b>4.3.4</b> Example: nMDS and PCoA</a></li>
 </ul></li>
+<li class="chapter" data-level="4.4" data-path="introduction-to-multivariate-analysis-clustering-and-ordination.html"><a href="introduction-to-multivariate-analysis-clustering-and-ordination.html#constrained-ordination"><i class="fa fa-check"></i><b>4.4</b> Constrained Ordination</a>
+<ul>
+<li class="chapter" data-level="4.4.1" data-path="introduction-to-multivariate-analysis-clustering-and-ordination.html"><a href="introduction-to-multivariate-analysis-clustering-and-ordination.html#redundancy-analysis"><i class="fa fa-check"></i><b>4.4.1</b> Redundancy Analysis</a></li>
+<li class="chapter" data-level="4.4.2" data-path="introduction-to-multivariate-analysis-clustering-and-ordination.html"><a href="introduction-to-multivariate-analysis-clustering-and-ordination.html#example-constrained-ordination"><i class="fa fa-check"></i><b>4.4.2</b> Example: Constrained ordination</a></li>
+<li class="chapter" data-level="4.4.3" data-path="introduction-to-multivariate-analysis-clustering-and-ordination.html"><a href="introduction-to-multivariate-analysis-clustering-and-ordination.html#signficance-tests-for-constrained-ordination"><i class="fa fa-check"></i><b>4.4.3</b> Signficance tests for constrained ordination</a></li>
+<li class="chapter" data-level="4.4.4" data-path="introduction-to-multivariate-analysis-clustering-and-ordination.html"><a href="introduction-to-multivariate-analysis-clustering-and-ordination.html#forward-selection-of-explanatory-variables"><i class="fa fa-check"></i><b>4.4.4</b> Forward Selection of explanatory variables</a></li>
+<li class="chapter" data-level="4.4.5" data-path="introduction-to-multivariate-analysis-clustering-and-ordination.html"><a href="introduction-to-multivariate-analysis-clustering-and-ordination.html#tri"><i class="fa fa-check"></i><b>4.4.5</b> Triplots: Graphing a constrained ordination</a></li>
+<li class="chapter" data-level="4.4.6" data-path="introduction-to-multivariate-analysis-clustering-and-ordination.html"><a href="introduction-to-multivariate-analysis-clustering-and-ordination.html#feedback-3"><i class="fa fa-check"></i><b>4.4.6</b> Feedback</a></li>
+</ul></li>
+<li class="chapter" data-level="4.5" data-path="introduction-to-multivariate-analysis-clustering-and-ordination.html"><a href="introduction-to-multivariate-analysis-clustering-and-ordination.html#references"><i class="fa fa-check"></i><b>4.5</b> References</a></li>
+<li class="chapter" data-level="4.6" data-path="introduction-to-multivariate-analysis-clustering-and-ordination.html"><a href="introduction-to-multivariate-analysis-clustering-and-ordination.html#answer-key"><i class="fa fa-check"></i><b>4.6</b> Answer Key</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="introduction-to-classification-and-machine-learning.html"><a href="introduction-to-classification-and-machine-learning.html"><i class="fa fa-check"></i><b>5</b> Introduction to classification and machine learning</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="introduction-to-classification-and-machine-learning.html"><a href="introduction-to-classification-and-machine-learning.html#logistic-regression-as-a-binary-classifier"><i class="fa fa-check"></i><b>5.1</b> Logistic regression as a binary classifier</a>
+<ul>
+<li class="chapter" data-level="5.1.1" data-path="introduction-to-classification-and-machine-learning.html"><a href="introduction-to-classification-and-machine-learning.html#interpreting-the-logistic-regression"><i class="fa fa-check"></i><b>5.1.1</b> Interpreting the logistic regression</a></li>
+<li class="chapter" data-level="5.1.2" data-path="introduction-to-classification-and-machine-learning.html"><a href="introduction-to-classification-and-machine-learning.html#measuring-the-performance-of-a-binary-classifier"><i class="fa fa-check"></i><b>5.1.2</b> Measuring the performance of a binary classifier</a></li>
+<li class="chapter" data-level="5.1.3" data-path="introduction-to-classification-and-machine-learning.html"><a href="introduction-to-classification-and-machine-learning.html#multiple-logistic-regression"><i class="fa fa-check"></i><b>5.1.3</b> Multiple logistic regression</a></li>
+</ul></li>
+<li class="chapter" data-level="5.2" data-path="introduction-to-classification-and-machine-learning.html"><a href="introduction-to-classification-and-machine-learning.html#cross-validation"><i class="fa fa-check"></i><b>5.2</b> Cross-validation</a>
+<ul>
+<li class="chapter" data-level="5.2.1" data-path="introduction-to-classification-and-machine-learning.html"><a href="introduction-to-classification-and-machine-learning.html#k-fold-cross-validation"><i class="fa fa-check"></i><b>5.2.1</b> k-Fold Cross-Validation</a></li>
+<li class="chapter" data-level="5.2.2" data-path="introduction-to-classification-and-machine-learning.html"><a href="introduction-to-classification-and-machine-learning.html#examples-of-logistic-regression-used-for-classification"><i class="fa fa-check"></i><b>5.2.2</b> Examples of logistic regression used for classification</a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="introduction-to-classification-and-machine-learning.html"><a href="introduction-to-classification-and-machine-learning.html#linear-discriminant-analysis-lda"><i class="fa fa-check"></i><b>5.3</b> <strong>L</strong>inear <strong>D</strong>iscriminant <strong>A</strong>nalysis (<strong>LDA</strong>)</a>
+<ul>
+<li class="chapter" data-level="5.3.1" data-path="introduction-to-classification-and-machine-learning.html"><a href="introduction-to-classification-and-machine-learning.html#pca-and-lda-whats-the-difference"><i class="fa fa-check"></i><b>5.3.1</b> PCA and LDA what’s the difference?</a></li>
+<li class="chapter" data-level="5.3.2" data-path="introduction-to-classification-and-machine-learning.html"><a href="introduction-to-classification-and-machine-learning.html#examples-of-discriminant-analysis-used-for-classification"><i class="fa fa-check"></i><b>5.3.2</b> Examples of discriminant analysis used for classification</a></li>
+</ul></li>
+<li class="chapter" data-level="5.4" data-path="introduction-to-classification-and-machine-learning.html"><a href="introduction-to-classification-and-machine-learning.html#tree-based-methods-for-classification"><i class="fa fa-check"></i><b>5.4</b> Tree-based methods for classification</a>
+<ul>
+<li class="chapter" data-level="5.4.1" data-path="introduction-to-classification-and-machine-learning.html"><a href="introduction-to-classification-and-machine-learning.html#classification-and-regression-trees-carts"><i class="fa fa-check"></i><b>5.4.1</b> Classification and regression trees (CARTs)</a></li>
+<li class="chapter" data-level="5.4.2" data-path="introduction-to-classification-and-machine-learning.html"><a href="introduction-to-classification-and-machine-learning.html#random-forests"><i class="fa fa-check"></i><b>5.4.2</b> Random Forests</a></li>
+<li class="chapter" data-level="5.4.3" data-path="introduction-to-classification-and-machine-learning.html"><a href="introduction-to-classification-and-machine-learning.html#examples-of-tree-based-methods-used-for-classification"><i class="fa fa-check"></i><b>5.4.3</b> Examples of tree-based methods used for classification</a></li>
+<li class="chapter" data-level="5.4.4" data-path="introduction-to-classification-and-machine-learning.html"><a href="introduction-to-classification-and-machine-learning.html#r-functions-1"><i class="fa fa-check"></i><b>5.4.4</b> R functions</a></li>
+</ul></li>
+<li class="chapter" data-level="5.5" data-path="introduction-to-classification-and-machine-learning.html"><a href="introduction-to-classification-and-machine-learning.html#artificial-neural-networks-ann"><i class="fa fa-check"></i><b>5.5</b> <strong>A</strong>rtificial <strong>N</strong>eural <strong>N</strong>etworks (ANN)</a>
+<ul>
+<li class="chapter" data-level="5.5.1" data-path="introduction-to-classification-and-machine-learning.html"><a href="introduction-to-classification-and-machine-learning.html#ann-learning"><i class="fa fa-check"></i><b>5.5.1</b> ANN learning</a></li>
+<li class="chapter" data-level="5.5.2" data-path="introduction-to-classification-and-machine-learning.html"><a href="introduction-to-classification-and-machine-learning.html#our-first-ann"><i class="fa fa-check"></i><b>5.5.2</b> Our first ANN</a></li>
+<li class="chapter" data-level="5.5.3" data-path="introduction-to-classification-and-machine-learning.html"><a href="introduction-to-classification-and-machine-learning.html#examples-of-anns-used-for-classification"><i class="fa fa-check"></i><b>5.5.3</b> Examples of ANNs used for classification</a></li>
+<li class="chapter" data-level="5.5.4" data-path="introduction-to-classification-and-machine-learning.html"><a href="introduction-to-classification-and-machine-learning.html#r-functions-2"><i class="fa fa-check"></i><b>5.5.4</b> R functions</a></li>
+<li class="chapter" data-level="5.5.5" data-path="introduction-to-classification-and-machine-learning.html"><a href="introduction-to-classification-and-machine-learning.html#what-else"><i class="fa fa-check"></i><b>5.5.5</b> What else?</a></li>
+<li class="chapter" data-level="5.5.6" data-path="introduction-to-classification-and-machine-learning.html"><a href="introduction-to-classification-and-machine-learning.html#feedback-4"><i class="fa fa-check"></i><b>5.5.6</b> Feedback</a></li>
+</ul></li>
+<li class="chapter" data-level="5.6" data-path="introduction-to-classification-and-machine-learning.html"><a href="introduction-to-classification-and-machine-learning.html#references-1"><i class="fa fa-check"></i><b>5.6</b> References</a></li>
+<li class="chapter" data-level="5.7" data-path="introduction-to-classification-and-machine-learning.html"><a href="introduction-to-classification-and-machine-learning.html#answer-key-1"><i class="fa fa-check"></i><b>5.7</b> Answer Key</a></li>
 </ul></li>
 <li class="chapter" data-level="6" data-path="optimization.html"><a href="optimization.html"><i class="fa fa-check"></i><b>6</b> Optimization</a>
 <ul>
@@ -287,8 +315,24 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="6.4.2" data-path="optimization.html"><a href="optimization.html#global-optimization"><i class="fa fa-check"></i><b>6.4.2</b> Global Optimization</a></li>
 </ul></li>
 <li class="chapter" data-level="6.5" data-path="optimization.html"><a href="optimization.html#calibration-of-dynamic-models"><i class="fa fa-check"></i><b>6.5</b> Calibration of Dynamic Models</a></li>
-<li class="chapter" data-level="6.6" data-path="optimization.html"><a href="optimization.html#uncertainty-analysis-and-bayesian-calibration"><i class="fa fa-check"></i><b>6.6</b> Uncertainty Analysis and Bayesian Calibration</a></li>
-<li class="chapter" data-level="6.7" data-path="optimization.html"><a href="optimization.html#references"><i class="fa fa-check"></i><b>6.7</b> References</a></li>
+<li class="chapter" data-level="6.6" data-path="optimization.html"><a href="optimization.html#uncertainty-analysis-and-bayesian-calibration"><i class="fa fa-check"></i><b>6.6</b> Uncertainty Analysis and Bayesian Calibration</a>
+<ul>
+<li class="chapter" data-level="6.6.1" data-path="optimization.html"><a href="optimization.html#feedback-5"><i class="fa fa-check"></i><b>6.6.1</b> Feedback</a></li>
+</ul></li>
+<li class="chapter" data-level="6.7" data-path="optimization.html"><a href="optimization.html#references-2"><i class="fa fa-check"></i><b>6.7</b> References</a></li>
+<li class="chapter" data-level="6.8" data-path="optimization.html"><a href="optimization.html#answer-key-2"><i class="fa fa-check"></i><b>6.8</b> Answer Key</a>
+<ul>
+<li class="chapter" data-level="6.8.1" data-path="optimization.html"><a href="optimization.html#exercise-1-1"><i class="fa fa-check"></i><b>6.8.1</b> Exercise 1</a></li>
+<li class="chapter" data-level="6.8.2" data-path="optimization.html"><a href="optimization.html#solution"><i class="fa fa-check"></i><b>6.8.2</b> Solution</a></li>
+<li class="chapter" data-level="6.8.3" data-path="optimization.html"><a href="optimization.html#exercise-2-1"><i class="fa fa-check"></i><b>6.8.3</b> Exercise 2</a></li>
+<li class="chapter" data-level="6.8.4" data-path="optimization.html"><a href="optimization.html#solution-1"><i class="fa fa-check"></i><b>6.8.4</b> Solution</a></li>
+<li class="chapter" data-level="6.8.5" data-path="optimization.html"><a href="optimization.html#exercise-3-1"><i class="fa fa-check"></i><b>6.8.5</b> Exercise 3</a></li>
+<li class="chapter" data-level="6.8.6" data-path="optimization.html"><a href="optimization.html#solution-2"><i class="fa fa-check"></i><b>6.8.6</b> Solution</a></li>
+<li class="chapter" data-level="6.8.7" data-path="optimization.html"><a href="optimization.html#exercise-4-1"><i class="fa fa-check"></i><b>6.8.7</b> Exercise 4</a></li>
+<li class="chapter" data-level="6.8.8" data-path="optimization.html"><a href="optimization.html#solution-3"><i class="fa fa-check"></i><b>6.8.8</b> Solution</a></li>
+<li class="chapter" data-level="6.8.9" data-path="optimization.html"><a href="optimization.html#exercise-5-1"><i class="fa fa-check"></i><b>6.8.9</b> Exercise 5</a></li>
+<li class="chapter" data-level="6.8.10" data-path="optimization.html"><a href="optimization.html#solution-4"><i class="fa fa-check"></i><b>6.8.10</b> Solution</a></li>
+</ul></li>
 </ul></li>
 </ul>
 
@@ -299,7 +343,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <div class="body-inner">
         <div class="book-header" role="navigation">
           <h1>
-            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Quant Bio Modules</a>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Quantitative biology: a quick introduction</a>
           </h1>
         </div>
 
@@ -308,20 +352,30 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
             <section class="normal" id="section-">
 <div id="header">
-<h1 class="title">Quant Bio Modules</h1>
+<h1 class="title">Quantitative biology: a quick introduction</h1>
 <p class="author"><em>Kim Cuddington, Andrew Edwards, Brian Ingalls</em></p>
-<p class="date" style="margin-top: 1.5em;"><em>2021-11-04</em></p>
+<p class="date" style="margin-top: 1.5em;"><em>2021-11-15</em></p>
 </div>
-<div id="prerequisites" class="section level1" number="1">
-<h1><span class="header-section-number">1</span> Prerequisites</h1>
-<p>All chapters of this book are stored as .Rmd files on github. The whole book can be compiled to various formats using the <strong>bookdown</strong> package which can be installed from CRAN or Github.</p>
+<div id="welcome" class="section level1" number="1">
+<h1><span class="header-section-number">1</span> Welcome!</h1>
+<p>This set of independent learning modules covering some important concepts in open science and quantitative biology has been funded by an ecampus grant from the province of Ontario. This is a living document and so revisions to current chapters, and the addition of new chapters, should be anticipated.</p>
+<p>The chapters can be used independently (i.e., you don’t have read the whole ebook!). Pick and choose want you need. Each chapter is designed to quickly get you up and running on the topic of interest in 3-5 hours. As such, these materials should be thought of a basic introductions. We’ll provide some pointers to more advanced materials, but our aim is to “jump-start” your research progress with these materials.</p>
+<p>On the other hand, the materials are not designed for absolute beginners. Our target audience is graduate students and early professionals in biology. For the open science chapters, we assume you can navigate around your computer and the internet. For the R-based chapters, we assume prior familiarity with R. For material on statistical analyses we assume the standard background in univariate statistics.</p>
+<div id="open-science" class="section level2" number="1.1">
+<h2><span class="header-section-number">1.1</span> Open Science</h2>
+<p>In the spirit of open science, all chapters of this book are stored as .Rmd files on github. The whole book can be compiled to various formats using the <strong>bookdown</strong> package which can be installed from CRAN or Github.</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="index.html#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;bookdown&quot;</span>)</span>
 <span id="cb1-2"><a href="index.html#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co"># or the development version</span></span>
 <span id="cb1-3"><a href="index.html#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co"># devtools::install_github(&quot;rstudio/bookdown&quot;)</span></span></code></pre></div>
 <p>Remember each Rmd file contains one and only one chapter, and a chapter is defined by the first-level heading <code>#</code>.</p>
 <p>To compile to PDF, you need XeLaTeX. You are recommended to install TinyTeX (which includes XeLaTeX): <a href="https://yihui.name/tinytex/" class="uri">https://yihui.name/tinytex/</a>.</p>
+</div>
+<div id="feedback" class="section level2" number="1.2">
+<h2><span class="header-section-number">1.2</span> Feedback</h2>
+<p>If you use these materials please take some time to let us know how we might improve <a href="https://forms.gle/vLkcZq7NxPb2ajTQ6">Survey</a>.</p>
 
 
+</div>
 </div>
             </section>
 
