@@ -39,13 +39,12 @@ tab:logcoefs2
 fig:multilog
 fig:classlda
 fig:ldahist
-fig:ldabound
 fig:firstree
 fig:fancytree
 fig:rfoob
 fig:vipp
 fig:PEplot
-fig:neruon
+fig:neuron
 fig:ann
 fig:e4
 fig:unnamed-chunk-72
