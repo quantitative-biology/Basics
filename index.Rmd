@@ -110,25 +110,18 @@ Computational Modelling of Cellular Systems and Mathematical Cell Biology).
 
 We acknowledge support from the Government of Ontario through a grant from
 eCampusOntario, and the support of DFO.
-
-Several students helped with the project and provided valuable feedback. These
-include TODO
+The grant funded several students to help with the project and provide valuable
+feedback. We thank them for their input:  TODO - add names.
 
 The Git and GitHub module builds upon workshop materials that were originally
 developed with Chris Grandin (DFO), who AME also thanks for assistance with the
 module.
 
-
-This is a living document and so revisions to current chapters, and the addition
-of new chapters, should be anticipated. TODO - sure you want to say that??
-
 ## Open Science
 
-TODO - need the links if we're going to say this. Tricky because of the six
-separate repositories. Could just give a link to the README of the main one and
-not scare people off with early talk of tex.
-
-In the spirit of open science, all chapters of this book are stored as .Rmd files on github. The whole book can be compiled to various formats using the **bookdown** package which can be installed from CRAN or Github.
+In the spirit of open science (and utilising the tools introduced in the first
+two modules), this e-book was written collaboratively and
+openly in R Markdown, with files shared via GitHub [here](https://github.com/quantitative-biology/Basics){target="_blank"}.
 
 
 ```{r eval=FALSE}
@@ -149,4 +142,8 @@ knitr::write_bib(c(
 ```
 ## Feedback
 
-If you use these materials please take some time to let us know how we might improve [Survey](https://forms.gle/vLkcZq7NxPb2ajTQ6).
+Despite extensive feedback from our student guinea pigs, we anticipate further
+revisions based on feedback, since we can consider this work as a living
+document. If you use these materials please take some time to
+let us know how they work for you, using this
+[survey](https://forms.gle/vLkcZq7NxPb2ajTQ6){target="_blank"}.
