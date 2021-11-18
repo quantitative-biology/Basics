@@ -1,6 +1,6 @@
---- 
-title: "Quantitative biology: a quick introduction"
-author: "Kim Cuddington, Andrew Edwards, Brian Ingalls"
+---
+title: "An Introduction to Modern Tools for Quantitative Biology"
+author: "Kim Cuddington, Andrew M. Edwards, Brian Ingalls"
 date: "`r Sys.Date()`"
 site: bookdown::bookdown_site
 output: bookdown::gitbook
@@ -18,7 +18,7 @@ This set of independent learning modules covering some important concepts in ope
 
 The chapters can be used independently (i.e., you don't have read the whole ebook!). Pick and choose want you need. Each chapter is designed to quickly get you up and running on the topic of interest in 3-5 hours. As such, these materials should be thought of a basic introductions. We'll provide some pointers to more advanced materials, but our aim is to "jump-start" your research progress with these materials.
 
-On the other hand, the materials are not designed for absolute beginners. Our target audience is graduate students and early professionals in biology. For the open science chapters, we assume you can navigate around your computer and the internet. For the R-based chapters, we assume prior familiarity with R. For material on statistical analyses we assume the standard background in univariate statistics. 
+On the other hand, the materials are not designed for absolute beginners. Our target audience is graduate students and early professionals in biology. For the open science chapters, we assume you can navigate around your computer and the internet. For the R-based chapters, we assume prior familiarity with R. For material on statistical analyses we assume the standard background in univariate statistics.
 
 ## Open Science
 
