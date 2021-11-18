@@ -14,15 +14,16 @@ description: "An Introduction to Modern Tools for Quantitative Biology"
 
 #  Welcome!
 
-Quantitative skills are essential for conducting research in biology. We consider such
-skills to include the mathematical, statistical and computational techniques used to study life and
+Quantitative skills are essential for today's biologists. We consider such
+skills to include the computational, statistical and mathematical techniques used to study life and
 living organisms, including aspects of big data, transparency and reproducibility in science.
 However, the breadth of quantitative techniques now employed in biology make it very likely
 that there may be no suitable local expertise within a student's home
 institution or an applied biologist's workplace.
 
-A recent workshop on quantitative skills in graduate education
-(http://www.nimbios.org/workshops/WS_quantedu) identified short, online training modules as a
+A recent workshop on [Quantitative Education in Life Science Graduate
+Programs](http://www.nimbios.org/workshops/WS_quantedu){target="_blank"}
+identified short online training modules as a
 way graduate students might acquire the relevant skills. This learner-centered approach allows
 students and faculty advisors to select subtopics that are directly relevant to the students’
 program, thus simultaneously providing more targeted training and reducing the time
@@ -32,7 +33,7 @@ the differences in experience of students and advising faculty.
 
 This e-book consists of five independent modules, aimed at biology graduate
 students and at applied biologists working in academia, government
-agencies and private companies. A key theme is that while the techniques presented are
+agencies and private organisations. A key theme is that while the techniques presented are
 from various disciplines (such as computer science, statistics and mathematics)
 we aim to introduce the key elements in a way suitable for a biological
 audience.
@@ -66,6 +67,18 @@ The five modules are:
   (e.g. robust synthetic genetic circuits) and optimal experimental design. This
   module introduces optimization methods in R.
 
+The modules can be used independently (i.e., you don't have read the whole
+e-book!). Pick and choose want you need. Each module is designed to quickly get
+you up and running on the topic of interest in 3-5 hours. As such, these
+materials should be thought of a basic introductions. We provide pointers to
+more advanced materials, but our aim is to "jump-start" your use of these tools.
+
+On the other hand, the materials are not designed for absolute beginners. Our
+target audience is graduate students and professionals in biology. For the open
+science modules, we assume you can navigate around your computer and the
+internet. For the R-based chapters, we assume prior familiarity with R. For
+material on statistical analyses we assume the standard background in univariate
+statistics.
 
 ## About the authors
 
@@ -76,15 +89,16 @@ education for biology students and has training in instructional design
 courses on quantitative analysis in biology and previously converted two courses
 to online delivery.
 
-Andrew Edwards is a Research Scientist with Fisheries and Oceans Canada at the
+Andrew Edwards is a Research Scientist with the Department of Fisheries and Oceans Canada (DFO) at the
 Pacific Biological Station in Nanaimo, British Columbia, and holds an Adjunct Professor position in the
 Department of Biology at the University of Victoria. He has
 previously developed in-person workshops on Git, GitHub and R Markdown (tools
-that are widely used in Fisheries and Oceans Canada), and co-developed a
-quantitative biology course at Dalhousie University. His current work includes
+that are widely used in DFO), and co-developed a
+quantitative biology course at Dalhousie University. Current work includes
 developing methods for fitting size spectra to data, conducting fisheries stock
 assessments (including for Pacific Hake, the largest groundfish stock off the
-west coast of North America), and he co-authored Some guidance on using mathematical notation in ecology.
+west coast of North America), and recent guidelines to [using mathematical notation
+in ecology](https://doi.org/10.1111/2041-210X.13105){target="_blank"}.
 
 Brian Ingalls is an Associate Professor in the Department of Applied Mathematics at the University of Waterloo, cross-
 appointed to the Departments of Biology and Chemical Engineering. He is the author of
@@ -95,10 +109,15 @@ Computational Modelling of Cellular Systems and Mathematical Cell Biology).
 ## Acknowledgments
 
 We acknowledge support from the Government of Ontario through a grant from
-eCampusOntario, and the support of Fisheries and Oceans Canada.
+eCampusOntario, and the support of DFO.
 
 Several students helped with the project and provided valuable feedback. These
 include TODO
+
+The Git and GitHub module builds upon workshop materials that were originally
+developed with Chris Grandin (DFO), who AME also thanks for assistance with the
+module.
+
 
 This is a living document and so revisions to current chapters, and the addition
 of new chapters, should be anticipated. TODO - sure you want to say that??
@@ -106,9 +125,6 @@ of new chapters, should be anticipated. TODO - sure you want to say that??
 
 TODO - Andy got to here. Maybe move some of this earlier?
 
-The modules can be used independently (i.e., you don't have read the whole e-book!). Pick and choose want you need. Each chapter is designed to quickly get you up and running on the topic of interest in 3-5 hours. As such, these materials should be thought of a basic introductions. We'll provide some pointers to more advanced materials, but our aim is to "jump-start" your research progress with these materials.
-
-On the other hand, the materials are not designed for absolute beginners. Our target audience is graduate students and early professionals in biology. For the open science chapters, we assume you can navigate around your computer and the internet. For the R-based chapters, we assume prior familiarity with R. For material on statistical analyses we assume the standard background in univariate statistics.
 
 ## Open Science
 
