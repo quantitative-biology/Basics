@@ -19,11 +19,11 @@ skills to include the computational, statistical and mathematical techniques use
 living organisms, including aspects of big data, transparency and reproducibility in science.
 However, the breadth of quantitative techniques now employed in biology make it very likely
 that there may be no suitable local expertise within a student's home
-institution or a biologist's workplace. 
+institution or a biologist's workplace.
 
 This e-book consists of five independent chapters or "modules" designed to teach different quantitative skills to graduate students and biologists working in academia, government agencies and private organisations. A key theme is that while the techniques presented are from various disciplines (such as computer science, statistics and mathematics), they are presented in a way that is suitable for a biological audience. Our examples and approach reflect our personal use of these tools as researchers in biology.
 
-Each module is designed to quickly get you up and running on the topic of interest in 3-5 hours. As such, these materials should be thought of a basic introductions. We provide pointers to more advanced materials, but our aim is to "jump-start" your use of these tools. On the other hand, these modules are not designed for absolute beginners. With the exception of the module on Git and Github, the materials are written assuming that learners have some basic familiarity with R, and a standard undergraduate background in calculus and univariate statistics. 
+Each module is designed to quickly get you up and running on the topic of interest in 3-5 hours. As such, these materials should be thought of a basic introductions. We provide pointers to more advanced materials, but our aim is to "jump-start" your use of these tools. On the other hand, these modules are not designed for absolute beginners. With the exception of the module on Git and Github, the materials are written assuming that learners have some basic familiarity with R, and a standard undergraduate background in calculus and univariate statistics.
 
 Because the modules are designed to be independent (i.e., you don't have read the whole e-book!), you can select subtopics that are directly relevant to your research. Our hope is that this approach will simultaneously provide more targeted training and reduce the time commitment that would be involved in more generalized formal courses. Pick and choose what you need!
 
@@ -44,19 +44,19 @@ The five modules are:
   the task of assigning data objects, such as sites, species or images, to
   predetermined classes. Machine learning is an application of artificial
   intelligence, which allows algorithms to become more accurate at predicting
-  outcomes without being explicitly programmed to do so. 
-  
+  outcomes without being explicitly programmed to do so.
+
 * **Optimization** (Brian Ingalls) -- optimization is the act of identifying the extreme (cheapest,
   tallest, fastest, ...) over a collection of possibilities. Biological
   applications include optimal manipulation of biological systems (e.g. optimal
   harvesting or optimal drug dosing), optimal design of biological systems
-  (e.g. robust synthetic genetic circuits) and optimal experimental design. T
+  (e.g. robust synthetic genetic circuits) and optimal experimental design.
 
 ## About the authors
 
 [Kim Cuddington](https://uwaterloo.ca/biology/people-profiles/kim-md-cuddington){target="_blank"}
 is an Associate Professor at the University of Waterloo in the Department
-of Biology, with a cross-appointment to Applied Mathematics. Kim has a PhD in biology (yet was once told she was too mathematical for a position in a biology department). She has several projects designed to improve worked on quantitative education for biology students and has training in instructional design (University of Waterloo, Center for Teaching Excellence). She teaches courses that emphasize quantitative methods (such as Quantiative Ecology and Mathematical Modelling in Biology). Her research involves the use of mathematics, statistics, and computational approaches to answer questions regarding population and ecosystem dynamics, invasive species, impacts of climate change [ecotheory.ca](https://ecotheory.ca){target="_blank"}. 
+of Biology, with a cross-appointment to Applied Mathematics. Kim has a PhD in biology (yet was once told she was too mathematical for a position in a biology department). She has several projects designed to improve worked on quantitative education for biology students and has training in instructional design (University of Waterloo, Center for Teaching Excellence). She teaches courses that emphasize quantitative methods (such as Quantiative Ecology and Mathematical Modelling in Biology). Her research involves the use of mathematics, statistics, and computational approaches to answer questions regarding population and ecosystem dynamics, invasive species, impacts of climate change [ecotheory.ca](https://ecotheory.ca){target="_blank"}.
 
 [Andrew Edwards](http://www.chebucto.ns.ca/~english/){target="_blank"} is a
 Research Scientist with the Department of Fisheries and Oceans Canada (DFO) at
@@ -80,7 +80,7 @@ Computational Modelling of Cellular Systems and Mathematical Cell Biology).
 ## Acknowledgments
 
 We acknowledge support from the Government of Ontario through a grant from
-eCampusOntario, and the support of DFO and the Faculty of Science, University of Waterloo. The grant and the Faculty of Science, University of Waterloo each funded a student to help with creating the project. We thank Luwen Chang and Matthew Zhou for their amazing learning curves, and subsequent help coding up the modules. The ecampus grant also funded several students to evaluate an early version of the materials. Lina Aragon Baquero, Lauren Banks, Madison Brook, Jacob Burbank, Nicole Gauvreau, Aranksha Dilip Thakor provided valuable feedback. 
+eCampusOntario, and the support of DFO and the Faculty of Science, University of Waterloo. The grant and the Faculty of Science, University of Waterloo each funded a student to help with creating the project. We thank Luwen Chang and Matthew Zhou for their amazing learning curves, and subsequent help coding up the modules. The ecampus grant also funded several students to evaluate an early version of the materials. Lina Aragon Baquero, Lauren Banks, Madison Brook, Jacob Burbank, Nicole Gauvreau, Aranksha Dilip Thakor provided valuable feedback.
 
 The Git and GitHub module builds upon workshop materials that were originally
 developed with Chris Grandin (DFO), who AME also thanks for assistance with the
