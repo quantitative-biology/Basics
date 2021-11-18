@@ -1,7 +1,7 @@
 ---
 title: "An Introduction to Modern Tools for Quantitative Biology"
 author: "Kim Cuddington, Andrew M. Edwards, Brian Ingalls"
-date: "`r Sys.Date()`"
+date: "`r format(Sys.time(), '%d %B, %Y')`"
 site: bookdown::bookdown_site
 output: bookdown::gitbook
 documentclass: book
@@ -118,5 +118,3 @@ revisions based on feedback, since we can consider this work as a living
 document. If you use these materials please take some time to
 let us know how they work for you, using this
 [survey](https://forms.gle/vLkcZq7NxPb2ajTQ6){target="_blank"}.
-
-This e-book was last compiled on `r format(Sys.time(), '%d %B, %Y')`.
