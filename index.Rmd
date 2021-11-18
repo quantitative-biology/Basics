@@ -9,18 +9,112 @@ bibliography: [book.bib, packages.bib]
 biblio-style: apalike
 link-citations: yes
 github-repo: rstudio/bookdown-demo
-description: "A set of modules on quantitaitve topics for biology graduates"
+description: "An Introduction to Modern Tools for Quantitative Biology"
 ---
 
 #  Welcome!
 
-This set of independent learning modules covering some important concepts in open science and quantitative biology has been funded by an ecampus grant from the province of Ontario. This is a living document and so revisions to current chapters, and the addition of new chapters, should be anticipated.
+Quantitative skills are essential for conducting research in biology. We consider such
+skills to include the mathematical, statistical and computational techniques used to study life and
+living organisms, including aspects of big data, transparency and reproducibility in science.
+However, the breadth of quantitative techniques now employed in biology make it very likely
+that there may be no suitable local expertise within a student's home
+institution or an applied biologist's workplace.
 
-The chapters can be used independently (i.e., you don't have read the whole ebook!). Pick and choose want you need. Each chapter is designed to quickly get you up and running on the topic of interest in 3-5 hours. As such, these materials should be thought of a basic introductions. We'll provide some pointers to more advanced materials, but our aim is to "jump-start" your research progress with these materials.
+A recent workshop on quantitative skills in graduate education
+(http://www.nimbios.org/workshops/WS_quantedu) identified short, online training modules as a
+way graduate students might acquire the relevant skills. This learner-centered approach allows
+students and faculty advisors to select subtopics that are directly relevant to the students’
+program, thus simultaneously providing more targeted training and reducing the time
+commitment that would be involved in more generalized formal courses. This flexibility is
+particularly important given the breadth of quantitative skills used in various research areas and
+the differences in experience of students and advising faculty.
+
+This e-book consists of five independent modules, aimed at biology graduate
+students and at applied biologists working in academia, government
+agencies and private companies. A key theme is that while the techniques presented are
+from various disciplines (such as computer science, statistics and mathematics)
+we aim to introduce the key elements in a way suitable for a biological
+audience.
+
+The five modules are:
+
+* Introduction to Git and GitHub (Andrew Edwards) -- covers the tools widely used to share code,
+  collaborate with colleagues and create a transparent record of research.
+
+* Introduction to R Markdown (Andrew Edwards) -- demonstrates how to create dynamic documents
+  that are fully reproducible, with a clear link between the underlying R code
+  and the resulting figures, tables and results.
+
+* Introduction to multivariate analysis (Kim Cuddington) -- discusses multivariate quantitative
+  methods that are used when there is more than one response (or measurement)
+  which we are trying to understand by using more than one feature or
+  characteristic of the system.
+
+* Introduction to classification and machine learning (Kim Cuddington) -- continues explorations
+  of multivariate data but using machine learning approaches. Classification is
+  the task of assigning data objects, such as sites, species or images, to
+  predetermined classes. Machine learning is an application of artificial
+  intelligence, which allows algorithms to become more accurate at predicting
+  outcomes without being explicitly programmed to do so. The algorithm itself
+  completes the tasks of model specification, evaluation and improvement.
+
+* Optimization (Brian Ingalls) -- optimization is the act of identifying the extreme (cheapest,
+  tallest, fastest, ...) over a collection of possibilities. Biological
+  applications include optimal manipulation of biological systems (e.g. optimal
+  harvesting or optimal drug dosing), optimal design of biological systems
+  (e.g. robust synthetic genetic circuits) and optimal experimental design. This
+  module introduces optimization methods in R.
+
+
+## About the authors
+
+Kim Cuddington is an Associate Professor at the University of Waterloo in the Department
+of Biology, with a cross-appointment to Applied Mathematics. She has worked on quantitative
+education for biology students and has training in instructional design
+(University of Waterloo, Center for Teaching Excellence). She has developed
+courses on quantitative analysis in biology and previously converted two courses
+to online delivery.
+
+Andrew Edwards is a Research Scientist with Fisheries and Oceans Canada at the
+Pacific Biological Station in Nanaimo, British Columbia, and holds an Adjunct Professor position in the
+Department of Biology at the University of Victoria. He has
+previously developed in-person workshops on Git, GitHub and R Markdown (tools
+that are widely used in Fisheries and Oceans Canada), and co-developed a
+quantitative biology course at Dalhousie University. His current work includes
+developing methods for fitting size spectra to data, conducting fisheries stock
+assessments (including for Pacific Hake, the largest groundfish stock off the
+west coast of North America), and he co-authored Some guidance on using mathematical notation in ecology.
+
+Brian Ingalls is an Associate Professor in the Department of Applied Mathematics at the University of Waterloo, cross-
+appointed to the Departments of Biology and Chemical Engineering. He is the author of
+Mathematical Modeling in System Biology: An Introduction (2013), and has previously taught
+undergraduate and graduate courses on quantitative techniques in biology (including
+Computational Modelling of Cellular Systems and Mathematical Cell Biology).
+
+## Acknowledgments
+
+We acknowledge support from the Government of Ontario through a grant from
+eCampusOntario, and the support of Fisheries and Oceans Canada.
+
+Several students helped with the project and provided valuable feedback. These
+include TODO
+
+This is a living document and so revisions to current chapters, and the addition
+of new chapters, should be anticipated. TODO - sure you want to say that??
+
+
+TODO - Andy got to here. Maybe move some of this earlier?
+
+The modules can be used independently (i.e., you don't have read the whole e-book!). Pick and choose want you need. Each chapter is designed to quickly get you up and running on the topic of interest in 3-5 hours. As such, these materials should be thought of a basic introductions. We'll provide some pointers to more advanced materials, but our aim is to "jump-start" your research progress with these materials.
 
 On the other hand, the materials are not designed for absolute beginners. Our target audience is graduate students and early professionals in biology. For the open science chapters, we assume you can navigate around your computer and the internet. For the R-based chapters, we assume prior familiarity with R. For material on statistical analyses we assume the standard background in univariate statistics.
 
 ## Open Science
+
+TODO - need the links if we're going to say this. Tricky because of the six
+separate repositories. Could just give a link to the README of the main one and
+not scare people off with early talk of tex.
 
 In the spirit of open science, all chapters of this book are stored as .Rmd files on github. The whole book can be compiled to various formats using the **bookdown** package which can be installed from CRAN or Github.
 
