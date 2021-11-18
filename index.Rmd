@@ -82,15 +82,17 @@ statistics.
 
 ## About the authors
 
-Kim Cuddington is an Associate Professor at the University of Waterloo in the Department
+[Kim Cuddington](https://uwaterloo.ca/biology/people-profiles/kim-md-cuddington){target="_blank"}
+is an Associate Professor at the University of Waterloo in the Department
 of Biology, with a cross-appointment to Applied Mathematics. She has worked on quantitative
 education for biology students and has training in instructional design
 (University of Waterloo, Center for Teaching Excellence). She has developed
 courses on quantitative analysis in biology and previously converted two courses
 to online delivery.
 
-Andrew Edwards is a Research Scientist with the Department of Fisheries and Oceans Canada (DFO) at the
-Pacific Biological Station in Nanaimo, British Columbia, and holds an Adjunct Professor position in the
+[Andrew Edwards](http://www.chebucto.ns.ca/~english/){target="_blank"} is a
+Research Scientist with the Department of Fisheries and Oceans Canada (DFO) at
+the Pacific Biological Station in Nanaimo, British Columbia, and holds an Adjunct Professor position in the
 Department of Biology at the University of Victoria. He has
 previously developed in-person workshops on Git, GitHub and R Markdown (tools
 that are widely used in DFO), and co-developed a
@@ -100,7 +102,8 @@ assessments (including for Pacific Hake, the largest groundfish stock off the
 west coast of North America), and recent guidelines to [using mathematical notation
 in ecology](https://doi.org/10.1111/2041-210X.13105){target="_blank"}.
 
-Brian Ingalls is an Associate Professor in the Department of Applied Mathematics at the University of Waterloo, cross-
+[Brian Ingalls](https://uwaterloo.ca/applied-mathematics/people-profiles/brian-ingalls){target="_blank"}
+is an Associate Professor in the Department of Applied Mathematics at the University of Waterloo, cross-
 appointed to the Departments of Biology and Chemical Engineering. He is the author of
 Mathematical Modeling in System Biology: An Introduction (2013), and has previously taught
 undergraduate and graduate courses on quantitative techniques in biology (including
