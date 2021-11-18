@@ -74,9 +74,9 @@ materials should be thought of a basic introductions. We provide pointers to
 more advanced materials, but our aim is to "jump-start" your use of these tools.
 
 On the other hand, the materials are not designed for absolute beginners. Our
-target audience is graduate students and professionals in biology. For the open
-science modules, we assume you can navigate around your computer and the
-internet. For the R-based chapters, we assume prior familiarity with R. For
+target audience is graduate students and professionals in biology. All modules
+(except the Git and GitHub one) use the programming language R, for which we
+assume prior familiarity. For
 material on statistical analyses we assume the standard background in univariate
 statistics.
 
@@ -121,10 +121,6 @@ module.
 
 This is a living document and so revisions to current chapters, and the addition
 of new chapters, should be anticipated. TODO - sure you want to say that??
-
-
-TODO - Andy got to here. Maybe move some of this earlier?
-
 
 ## Open Science
 
