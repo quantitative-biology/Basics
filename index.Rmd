@@ -65,7 +65,7 @@ that emphasize quantitative methods (such as Quantiative Ecology and
 Mathematical Modelling in Biology). Her research involves the use of
 mathematics, statistics, and computational approaches to answer questions
 regarding population and ecosystem dynamics, invasive species, and impacts of
-climate change -- [see ecotheory.ca](https://ecotheory.ca){target="_blank"}.
+climate change -- [see ecotheory.ca](https://www.ecotheory.ca){target="_blank"}.
 
 [Andrew Edwards](http://www.chebucto.ns.ca/~english/){target="_blank"} is a
 Research Scientist with the Department of Fisheries and Oceans Canada (DFO) at
