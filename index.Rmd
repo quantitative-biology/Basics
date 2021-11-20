@@ -1,5 +1,5 @@
 ---
-title: "An Introduction to Modern Tools for Quantitative Biology"
+title: "Building Skills in Quantitative Biology"
 author: "Kim Cuddington, Andrew M. Edwards, Brian Ingalls"
 date: "`r format(Sys.time(), '%d %B, %Y')`"
 site: bookdown::bookdown_site
@@ -9,7 +9,7 @@ bibliography: [book.bib, packages.bib]
 biblio-style: apalike
 link-citations: yes
 github-repo: rstudio/bookdown-demo
-description: "An Introduction to Modern Tools for Quantitative Biology"
+description: "Building Skills in Quantitative Biology"
 ---
 
 #  Welcome!
@@ -40,17 +40,28 @@ The five modules are:
   methods that are used to understand data when there is more than one response (or measurement)
 
 * **Introduction to classification and machine learning** (Kim Cuddington) -- continues explorations
-  of multivariate data and in particular the topic of classification but using machine learning approaches. Classification is
-  the task of assigning data objects, such as sites, species or images, to
-  predetermined classes. Machine learning is an application of artificial
-  intelligence, which allows algorithms to become more accurate at predicting
-  outcomes without being explicitly programmed to do so.
+  of multivariate data and in particular the topic of classification but using machine learning approaches. 
 
 * **Optimization** (Brian Ingalls) -- optimization is the act of identifying the extreme (cheapest,
-  tallest, fastest, ...) over a collection of possibilities. Biological
-  applications include optimal manipulation of biological systems (e.g. optimal
-  harvesting or optimal drug dosing), optimal design of biological systems
-  (e.g. robust synthetic genetic circuits) and optimal experimental design.
+  tallest, fastest, ...) over a collection of possibilities. Applications include the manipulation  (e.g. optimal
+  harvesting or optimal drug dosing) and construction (e.g. robust synthetic genetic circuits) of biological systems, and experimental design.
+
+  
+  
+## Open Science
+
+In the spirit of open science (and using the tools introduced in the first
+two modules), this e-book was written collaboratively and
+openly in R Markdown, with files shared via GitHub [here](https://github.com/quantitative-biology/Basics){target="_blank"}.
+
+## Feedback
+
+Despite extensive feedback from our student guinea pigs, we anticipate further
+revisions based on feedback, since we can consider this work as a living
+document. If you use these materials please take some time to
+let us know how they work for you, using this
+[survey](https://forms.gle/vLkcZq7NxPb2ajTQ6){target="_blank"}.
+
 
 ## About the authors
 
@@ -59,11 +70,11 @@ is an Associate Professor at the University of Waterloo in the Department
 of Biology, with a cross-appointment to Applied Mathematics. She has several projects designed to improve worked on quantitative
 education for biology students and has training in instructional design
 (University of Waterloo, Center for Teaching Excellence). She teaches courses
-that emphasize quantitative methods (such as Quantiative Ecology and
+that emphasize quantitative methods (such as Quantitative Ecology and
 Mathematical Modelling in Biology). Her research involves the use of
 mathematics, statistics, and computational approaches to answer questions
 regarding population and ecosystem dynamics, invasive species, and impacts of
-climate change -- [see ecotheory.ca](https://www.ecotheory.ca){target="_blank"}.
+climate change -- [see www.ecotheory.ca](https://www.ecotheory.ca){target="_blank"}.
 Kim has a PhD in biology yet was once told she was too mathematical for a
 position in a biology department.
 
@@ -87,8 +98,8 @@ to the Departments of Biology and Chemical Engineering. He is the author of
 Mathematical Modeling in System Biology: An Introduction (2013), and has previously taught
 undergraduate and graduate courses on quantitative techniques in biology (including
 Computational Modelling of Cellular Systems and Mathematical Cell Biology).
-Brian has a PhD in mathematics (and everyone has always been too in awe of him
-to make remarks about what positions he is qualified for).
+Brian has a PhD in mathematics and everyone has always been too in awe of him
+to make remarks about what positions he is qualified for.
 
 ## Acknowledgments
 
@@ -105,16 +116,3 @@ The Git and GitHub module builds upon workshop materials that were originally
 developed with Chris Grandin (DFO), who AME also thanks for assistance with the
 module.
 
-## Open Science
-
-In the spirit of open science (and utilising the tools introduced in the first
-two modules), this e-book was written collaboratively and
-openly in R Markdown, with files shared via GitHub [here](https://github.com/quantitative-biology/Basics){target="_blank"}.
-
-## Feedback
-
-Despite extensive feedback from our student guinea pigs, we anticipate further
-revisions based on feedback, since we can consider this work as a living
-document. If you use these materials please take some time to
-let us know how they work for you, using this
-[survey](https://forms.gle/vLkcZq7NxPb2ajTQ6){target="_blank"}.

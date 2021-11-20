@@ -2,7 +2,7 @@
 
 A repository for building the document for our five modules. To build it you need the available modules (in our quantitative-biology organisation) cloned to your computer, and then:
 
-In RStudio, click the render button (not the knitr) button. **Luwen - is that correct??????**
+In RStudio, make sure to start with a clean session (Ctrl+Shift+F10)
 
 In R,
  
