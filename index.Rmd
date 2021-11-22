@@ -3,7 +3,10 @@ title: "Building Skills in Quantitative Biology"
 author: "Kim Cuddington, Andrew M. Edwards, Brian Ingalls"
 date: "`r format(Sys.time(), '%d %B, %Y')`"
 site: bookdown::bookdown_site
-output: bookdown::gitbook
+output:
+  bookdown::gitbook:
+    includes:
+      in_header: google_analytics_script.html
 documentclass: book
 bibliography: [book.bib, packages.bib]
 biblio-style: apalike
@@ -40,14 +43,14 @@ The five modules are:
   methods that are used to understand data when there is more than one response (or measurement)
 
 * **Introduction to classification and machine learning** (Kim Cuddington) -- continues explorations
-  of multivariate data and in particular the topic of classification but using machine learning approaches. 
+  of multivariate data and in particular the topic of classification but using machine learning approaches.
 
 * **Optimization** (Brian Ingalls) -- optimization is the act of identifying the extreme (cheapest,
   tallest, fastest, ...) over a collection of possibilities. Applications include the manipulation  (e.g. optimal
   harvesting or optimal drug dosing) and construction (e.g. robust synthetic genetic circuits) of biological systems, and experimental design.
 
-  
-  
+
+
 ## Open Science
 
 In the spirit of open science (and using the tools introduced in the first
@@ -115,4 +118,3 @@ Burbank, Nicole Gauvreau and Aranksha Dilip Thakor provided valuable feedback.
 The Git and GitHub module builds upon workshop materials that were originally
 developed with Chris Grandin (DFO), who AME also thanks for assistance with the
 module.
-
