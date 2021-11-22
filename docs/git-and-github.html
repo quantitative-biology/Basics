@@ -4,21 +4,21 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>2 Introduction to Git and GitHub | Building Skills in Quantitative Biology</title>
-  <meta name="description" content="2 Introduction to Git and GitHub | Building Skills in Quantitative Biology" />
+  <title>2 Git and GitHub | Building Skills in Quantitative Biology</title>
+  <meta name="description" content="2 Git and GitHub | Building Skills in Quantitative Biology" />
   <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="2 Introduction to Git and GitHub | Building Skills in Quantitative Biology" />
+  <meta property="og:title" content="2 Git and GitHub | Building Skills in Quantitative Biology" />
   <meta property="og:type" content="book" />
   
   
-  <meta property="og:description" content="2 Introduction to Git and GitHub | Building Skills in Quantitative Biology" />
+  <meta property="og:description" content="2 Git and GitHub | Building Skills in Quantitative Biology" />
   <meta name="github-repo" content="rstudio/bookdown-demo" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="2 Introduction to Git and GitHub | Building Skills in Quantitative Biology" />
+  <meta name="twitter:title" content="2 Git and GitHub | Building Skills in Quantitative Biology" />
   
-  <meta name="twitter:description" content="2 Introduction to Git and GitHub | Building Skills in Quantitative Biology" />
+  <meta name="twitter:description" content="2 Git and GitHub | Building Skills in Quantitative Biology" />
   
 
 <meta name="author" content="Kim Cuddington, Andrew M. Edwards, Brian Ingalls" />
@@ -31,7 +31,7 @@
   
   
 <link rel="prev" href="index.html"/>
-<link rel="next" href="introduction-to-r-markdown.html"/>
+<link rel="next" href="r-markdown.html"/>
 <script src="libs/header-attrs-2.9/header-attrs.js"></script>
 <script src="libs/jquery-3.5.1/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -54,8 +54,6 @@
 <script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
 <script src="libs/kePrint-0.0.1/kePrint.js"></script>
 <link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
-<link href="libs/bsTable-3.3.7/bootstrapTable.min.css" rel="stylesheet" />
-<script src="libs/bsTable-3.3.7/bootstrapTable.js"></script>
 <script src="libs/htmlwidgets-1.5.3/htmlwidgets.js"></script>
 <script src="libs/plotly-binding-4.9.4.1/plotly.js"></script>
 <script src="libs/typedarray-0.1/typedarray.min.js"></script>
@@ -63,6 +61,16 @@
 <script src="libs/crosstalk-1.1.1/js/crosstalk.min.js"></script>
 <link href="libs/plotly-htmlwidgets-css-1.57.1/plotly-htmlwidgets.css" rel="stylesheet" />
 <script src="libs/plotly-main-1.57.1/plotly-latest.min.js"></script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<!-- Adding to index.Rmd as per https://stackoverflow.com/questions/41376989/how-to-include-google-analytics-in-an-rmarkdown-generated-github-page -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-Y14SQ7MY4S"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-Y14SQ7MY4S');
+</script>
 
 
 <style type="text/css">
@@ -149,87 +157,88 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#feedback"><i class="fa fa-check"></i><b>1.2</b> Feedback</a></li>
 <li class="chapter" data-level="1.3" data-path="index.html"><a href="index.html#about-the-authors"><i class="fa fa-check"></i><b>1.3</b> About the authors</a></li>
 <li class="chapter" data-level="1.4" data-path="index.html"><a href="index.html#acknowledgments"><i class="fa fa-check"></i><b>1.4</b> Acknowledgments</a></li>
+<li class="chapter" data-level="1.5" data-path="index.html"><a href="index.html#citation"><i class="fa fa-check"></i><b>1.5</b> Citation</a></li>
 </ul></li>
-<li class="chapter" data-level="2" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html"><i class="fa fa-check"></i><b>2</b> Introduction to Git and GitHub</a>
+<li class="chapter" data-level="2" data-path="git-and-github.html"><a href="git-and-github.html"><i class="fa fa-check"></i><b>2</b> Git and GitHub</a>
 <ul>
-<li class="chapter" data-level="2.1" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#what-are-git-and-github-and-how-might-they-be-useful"><i class="fa fa-check"></i><b>2.1</b> What are Git and GitHub and how might they be useful?</a></li>
-<li class="chapter" data-level="2.2" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#you-just-want-do-download-someone-elses-code-from-their-github-repository"><i class="fa fa-check"></i><b>2.2</b> You just want do download someone else’s code from their GitHub repository</a></li>
-<li class="chapter" data-level="2.3" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#motivation-for-learning-more"><i class="fa fa-check"></i><b>2.3</b> Motivation for learning more</a>
+<li class="chapter" data-level="2.1" data-path="git-and-github.html"><a href="git-and-github.html#what-are-git-and-github-and-how-might-they-be-useful"><i class="fa fa-check"></i><b>2.1</b> What are Git and GitHub and how might they be useful?</a></li>
+<li class="chapter" data-level="2.2" data-path="git-and-github.html"><a href="git-and-github.html#you-just-want-do-download-someone-elses-code-from-their-github-repository"><i class="fa fa-check"></i><b>2.2</b> You just want do download someone else’s code from their GitHub repository</a></li>
+<li class="chapter" data-level="2.3" data-path="git-and-github.html"><a href="git-and-github.html#motivation-for-learning-more"><i class="fa fa-check"></i><b>2.3</b> Motivation for learning more</a>
 <ul>
-<li class="chapter" data-level="2.3.1" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#example-application-pacific-hake-stock-assessment"><i class="fa fa-check"></i><b>2.3.1</b> Example application – Pacific Hake stock assessment</a></li>
-<li class="chapter" data-level="2.3.2" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#examples-of-what-we-can-avoid"><i class="fa fa-check"></i><b>2.3.2</b> Examples of what we can avoid</a></li>
-<li class="chapter" data-level="2.3.3" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#example-of-advantages-that-arise-from-using-github"><i class="fa fa-check"></i><b>2.3.3</b> Example of advantages that arise from using GitHub</a></li>
-<li class="chapter" data-level="2.3.4" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#why-this-course"><i class="fa fa-check"></i><b>2.3.4</b> Why this course?</a></li>
-<li class="chapter" data-level="2.3.5" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#does-it-matter-which-computer-language-my-code-is-in"><i class="fa fa-check"></i><b>2.3.5</b> Does it matter which computer language my code is in?</a></li>
+<li class="chapter" data-level="2.3.1" data-path="git-and-github.html"><a href="git-and-github.html#example-application-pacific-hake-stock-assessment"><i class="fa fa-check"></i><b>2.3.1</b> Example application – Pacific Hake stock assessment</a></li>
+<li class="chapter" data-level="2.3.2" data-path="git-and-github.html"><a href="git-and-github.html#examples-of-what-we-can-avoid"><i class="fa fa-check"></i><b>2.3.2</b> Examples of what we can avoid</a></li>
+<li class="chapter" data-level="2.3.3" data-path="git-and-github.html"><a href="git-and-github.html#example-of-advantages-that-arise-from-using-github"><i class="fa fa-check"></i><b>2.3.3</b> Example of advantages that arise from using GitHub</a></li>
+<li class="chapter" data-level="2.3.4" data-path="git-and-github.html"><a href="git-and-github.html#why-this-course"><i class="fa fa-check"></i><b>2.3.4</b> Why this course?</a></li>
+<li class="chapter" data-level="2.3.5" data-path="git-and-github.html"><a href="git-and-github.html#does-it-matter-which-computer-language-my-code-is-in"><i class="fa fa-check"></i><b>2.3.5</b> Does it matter which computer language my code is in?</a></li>
 </ul></li>
-<li class="chapter" data-level="2.4" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#getting-set-up-for-the-first-time"><i class="fa fa-check"></i><b>2.4</b> Getting set up for the first time</a>
+<li class="chapter" data-level="2.4" data-path="git-and-github.html"><a href="git-and-github.html#getting-set-up-for-the-first-time"><i class="fa fa-check"></i><b>2.4</b> Getting set up for the first time</a>
 <ul>
-<li class="chapter" data-level="2.4.1" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#what-you-will-end-up-having-installed"><i class="fa fa-check"></i><b>2.4.1</b> What you will end up having installed</a></li>
-<li class="chapter" data-level="2.4.2" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#text-editor"><i class="fa fa-check"></i><b>2.4.2</b> Text Editor</a></li>
-<li class="chapter" data-level="2.4.3" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#install-the-git-application-on-your-machine"><i class="fa fa-check"></i><b>2.4.3</b> Install the Git application on your machine</a></li>
-<li class="chapter" data-level="2.4.4" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#git-shell-guis-and-rstudio"><i class="fa fa-check"></i><b>2.4.4</b> Git shell, GUIs and RStudio</a></li>
-<li class="chapter" data-level="2.4.5" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#powershell-and-posh-git"><i class="fa fa-check"></i><b>2.4.5</b> Powershell and posh-git</a></li>
-<li class="chapter" data-level="2.4.6" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#create-a-directory-to-keep-all-your-git-tracked-work"><i class="fa fa-check"></i><b>2.4.6</b> Create a directory to keep all your Git-tracked work</a></li>
-<li class="chapter" data-level="2.4.7" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#install-diffmerge-optional"><i class="fa fa-check"></i><b>2.4.7</b> Install Diffmerge (optional)</a></li>
-<li class="chapter" data-level="2.4.8" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#save-our-template-.gitconfig-file"><i class="fa fa-check"></i><b>2.4.8</b> Save our template <em>.gitconfig</em> file</a></li>
-<li class="chapter" data-level="2.4.9" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#edit-the-.gitconfig-file"><i class="fa fa-check"></i><b>2.4.9</b> Edit the <em>.gitconfig</em> file</a></li>
-<li class="chapter" data-level="2.4.10" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#github-authorisation"><i class="fa fa-check"></i><b>2.4.10</b> GitHub authorisation</a></li>
-<li class="chapter" data-level="2.4.11" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#navigating-in-a-shell"><i class="fa fa-check"></i><b>2.4.11</b> Navigating in a shell</a></li>
-<li class="chapter" data-level="2.4.12" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#one-time-authentication"><i class="fa fa-check"></i><b>2.4.12</b> One-time authentication</a></li>
-<li class="chapter" data-level="2.4.13" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#mac-only-make-your-output-pretty"><i class="fa fa-check"></i><b>2.4.13</b> MAC only: make your output pretty</a></li>
-<li class="chapter" data-level="2.4.14" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#something-to-view-markdown-files-optional"><i class="fa fa-check"></i><b>2.4.14</b> Something to view Markdown files (optional)</a></li>
-<li class="chapter" data-level="2.4.15" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#bonus-keyboard-shortcut-optional"><i class="fa fa-check"></i><b>2.4.15</b> Bonus keyboard shortcut (optional)</a></li>
+<li class="chapter" data-level="2.4.1" data-path="git-and-github.html"><a href="git-and-github.html#what-you-will-end-up-having-installed"><i class="fa fa-check"></i><b>2.4.1</b> What you will end up having installed</a></li>
+<li class="chapter" data-level="2.4.2" data-path="git-and-github.html"><a href="git-and-github.html#text-editor"><i class="fa fa-check"></i><b>2.4.2</b> Text Editor</a></li>
+<li class="chapter" data-level="2.4.3" data-path="git-and-github.html"><a href="git-and-github.html#install-the-git-application-on-your-machine"><i class="fa fa-check"></i><b>2.4.3</b> Install the Git application on your machine</a></li>
+<li class="chapter" data-level="2.4.4" data-path="git-and-github.html"><a href="git-and-github.html#git-shell-guis-and-rstudio"><i class="fa fa-check"></i><b>2.4.4</b> Git shell, GUIs and RStudio</a></li>
+<li class="chapter" data-level="2.4.5" data-path="git-and-github.html"><a href="git-and-github.html#powershell-and-posh-git"><i class="fa fa-check"></i><b>2.4.5</b> Powershell and posh-git</a></li>
+<li class="chapter" data-level="2.4.6" data-path="git-and-github.html"><a href="git-and-github.html#create-a-directory-to-keep-all-your-git-tracked-work"><i class="fa fa-check"></i><b>2.4.6</b> Create a directory to keep all your Git-tracked work</a></li>
+<li class="chapter" data-level="2.4.7" data-path="git-and-github.html"><a href="git-and-github.html#install-diffmerge-optional"><i class="fa fa-check"></i><b>2.4.7</b> Install Diffmerge (optional)</a></li>
+<li class="chapter" data-level="2.4.8" data-path="git-and-github.html"><a href="git-and-github.html#save-our-template-.gitconfig-file"><i class="fa fa-check"></i><b>2.4.8</b> Save our template <em>.gitconfig</em> file</a></li>
+<li class="chapter" data-level="2.4.9" data-path="git-and-github.html"><a href="git-and-github.html#edit-the-.gitconfig-file"><i class="fa fa-check"></i><b>2.4.9</b> Edit the <em>.gitconfig</em> file</a></li>
+<li class="chapter" data-level="2.4.10" data-path="git-and-github.html"><a href="git-and-github.html#github-authorisation"><i class="fa fa-check"></i><b>2.4.10</b> GitHub authorisation</a></li>
+<li class="chapter" data-level="2.4.11" data-path="git-and-github.html"><a href="git-and-github.html#navigating-in-a-shell"><i class="fa fa-check"></i><b>2.4.11</b> Navigating in a shell</a></li>
+<li class="chapter" data-level="2.4.12" data-path="git-and-github.html"><a href="git-and-github.html#one-time-authentication"><i class="fa fa-check"></i><b>2.4.12</b> One-time authentication</a></li>
+<li class="chapter" data-level="2.4.13" data-path="git-and-github.html"><a href="git-and-github.html#mac-only-make-your-output-pretty"><i class="fa fa-check"></i><b>2.4.13</b> MAC only: make your output pretty</a></li>
+<li class="chapter" data-level="2.4.14" data-path="git-and-github.html"><a href="git-and-github.html#something-to-view-markdown-files-optional"><i class="fa fa-check"></i><b>2.4.14</b> Something to view Markdown files (optional)</a></li>
+<li class="chapter" data-level="2.4.15" data-path="git-and-github.html"><a href="git-and-github.html#bonus-keyboard-shortcut-optional"><i class="fa fa-check"></i><b>2.4.15</b> Bonus keyboard shortcut (optional)</a></li>
 </ul></li>
-<li class="chapter" data-level="2.5" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#using-git-and-github-to-share-your-own-code"><i class="fa fa-check"></i><b>2.5</b> Using Git and GitHub to share your own code</a>
+<li class="chapter" data-level="2.5" data-path="git-and-github.html"><a href="git-and-github.html#using-git-and-github-to-share-your-own-code"><i class="fa fa-check"></i><b>2.5</b> Using Git and GitHub to share your own code</a>
 <ul>
-<li class="chapter" data-level="2.5.1" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#definitions"><i class="fa fa-check"></i><b>2.5.1</b> Definitions</a></li>
-<li class="chapter" data-level="2.5.2" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#creating-a-new-repository"><i class="fa fa-check"></i><b>2.5.2</b> Creating a new repository</a></li>
-<li class="chapter" data-level="2.5.3" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#cloning-your-new-repository"><i class="fa fa-check"></i><b>2.5.3</b> Cloning your new repository</a></li>
-<li class="chapter" data-level="2.5.4" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#committing"><i class="fa fa-check"></i><b>2.5.4</b> Committing</a></li>
-<li class="chapter" data-level="2.5.5" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#exercise-1-create-edit-and-commit-simpletext.txt"><i class="fa fa-check"></i><b>2.5.5</b> Exercise 1: create, edit and commit <em>simpleText.txt</em></a></li>
-<li class="chapter" data-level="2.5.6" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#exercise-2-multiple-files"><i class="fa fa-check"></i><b>2.5.6</b> Exercise 2: multiple files</a></li>
-<li class="chapter" data-level="2.5.7" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#what-to-write-in-commit-messages"><i class="fa fa-check"></i><b>2.5.7</b> What to write in commit messages</a></li>
+<li class="chapter" data-level="2.5.1" data-path="git-and-github.html"><a href="git-and-github.html#definitions"><i class="fa fa-check"></i><b>2.5.1</b> Definitions</a></li>
+<li class="chapter" data-level="2.5.2" data-path="git-and-github.html"><a href="git-and-github.html#creating-a-new-repository"><i class="fa fa-check"></i><b>2.5.2</b> Creating a new repository</a></li>
+<li class="chapter" data-level="2.5.3" data-path="git-and-github.html"><a href="git-and-github.html#cloning-your-new-repository"><i class="fa fa-check"></i><b>2.5.3</b> Cloning your new repository</a></li>
+<li class="chapter" data-level="2.5.4" data-path="git-and-github.html"><a href="git-and-github.html#committing"><i class="fa fa-check"></i><b>2.5.4</b> Committing</a></li>
+<li class="chapter" data-level="2.5.5" data-path="git-and-github.html"><a href="git-and-github.html#exercise-1-create-edit-and-commit-simpletext.txt"><i class="fa fa-check"></i><b>2.5.5</b> Exercise 1: create, edit and commit <em>simpleText.txt</em></a></li>
+<li class="chapter" data-level="2.5.6" data-path="git-and-github.html"><a href="git-and-github.html#exercise-2-multiple-files"><i class="fa fa-check"></i><b>2.5.6</b> Exercise 2: multiple files</a></li>
+<li class="chapter" data-level="2.5.7" data-path="git-and-github.html"><a href="git-and-github.html#what-to-write-in-commit-messages"><i class="fa fa-check"></i><b>2.5.7</b> What to write in commit messages</a></li>
 </ul></li>
-<li class="chapter" data-level="2.6" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#using-git-and-github-to-collaborate-with-colleagues"><i class="fa fa-check"></i><b>2.6</b> Using Git and GitHub to collaborate with colleagues</a>
+<li class="chapter" data-level="2.6" data-path="git-and-github.html"><a href="git-and-github.html#using-git-and-github-to-collaborate-with-colleagues"><i class="fa fa-check"></i><b>2.6</b> Using Git and GitHub to collaborate with colleagues</a>
 <ul>
-<li class="chapter" data-level="2.6.1" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#demonstration-of-collaborating"><i class="fa fa-check"></i><b>2.6.1</b> Demonstration of collaborating</a></li>
-<li class="chapter" data-level="2.6.2" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#a-bit-more-about-git-rebase"><i class="fa fa-check"></i><b>2.6.2</b> A bit more about git rebase</a></li>
-<li class="chapter" data-level="2.6.3" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#fixing-a-conflict"><i class="fa fa-check"></i><b>2.6.3</b> Fixing a conflict</a></li>
-<li class="chapter" data-level="2.6.4" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#exercise-3-collaborating-on-a-single-repository"><i class="fa fa-check"></i><b>2.6.4</b> Exercise 3: collaborating on a single repository</a></li>
-<li class="chapter" data-level="2.6.5" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#collaborating-summary"><i class="fa fa-check"></i><b>2.6.5</b> Collaborating summary</a></li>
+<li class="chapter" data-level="2.6.1" data-path="git-and-github.html"><a href="git-and-github.html#demonstration-of-collaborating"><i class="fa fa-check"></i><b>2.6.1</b> Demonstration of collaborating</a></li>
+<li class="chapter" data-level="2.6.2" data-path="git-and-github.html"><a href="git-and-github.html#a-bit-more-about-git-rebase"><i class="fa fa-check"></i><b>2.6.2</b> A bit more about git rebase</a></li>
+<li class="chapter" data-level="2.6.3" data-path="git-and-github.html"><a href="git-and-github.html#fixing-a-conflict"><i class="fa fa-check"></i><b>2.6.3</b> Fixing a conflict</a></li>
+<li class="chapter" data-level="2.6.4" data-path="git-and-github.html"><a href="git-and-github.html#exercise-3-collaborating-on-a-single-repository"><i class="fa fa-check"></i><b>2.6.4</b> Exercise 3: collaborating on a single repository</a></li>
+<li class="chapter" data-level="2.6.5" data-path="git-and-github.html"><a href="git-and-github.html#collaborating-summary"><i class="fa fa-check"></i><b>2.6.5</b> Collaborating summary</a></li>
 </ul></li>
-<li class="chapter" data-level="2.7" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#workflow-tips-when-collaborating"><i class="fa fa-check"></i><b>2.7</b> Workflow tips when collaborating</a></li>
-<li class="chapter" data-level="2.8" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#beyond-the-basics-of-git-and-github-getting-more-advanced"><i class="fa fa-check"></i><b>2.8</b> Beyond the basics of Git and GitHub – getting more advanced</a>
+<li class="chapter" data-level="2.7" data-path="git-and-github.html"><a href="git-and-github.html#workflow-tips-when-collaborating"><i class="fa fa-check"></i><b>2.7</b> Workflow tips when collaborating</a></li>
+<li class="chapter" data-level="2.8" data-path="git-and-github.html"><a href="git-and-github.html#beyond-the-basics-of-git-and-github-getting-more-advanced"><i class="fa fa-check"></i><b>2.8</b> Beyond the basics of Git and GitHub – getting more advanced</a>
 <ul>
-<li class="chapter" data-level="2.8.1" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#so-ive-made-some-changes-but-dont-really-want-to-keep-them-git-stash"><i class="fa fa-check"></i><b>2.8.1</b> So I’ve made some changes but don’t really want to keep them – git stash</a></li>
-<li class="chapter" data-level="2.8.2" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#the-power-to-go-back"><i class="fa fa-check"></i><b>2.8.2</b> The power to go back</a></li>
-<li class="chapter" data-level="2.8.3" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#so-how-does-git-do-all-this"><i class="fa fa-check"></i><b>2.8.3</b> So how does Git do all this?</a></li>
-<li class="chapter" data-level="2.8.4" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#git-terminology"><i class="fa fa-check"></i><b>2.8.4</b> Git terminology</a></li>
-<li class="chapter" data-level="2.8.5" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#branching"><i class="fa fa-check"></i><b>2.8.5</b> Branching</a></li>
-<li class="chapter" data-level="2.8.6" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#pull-requests"><i class="fa fa-check"></i><b>2.8.6</b> Pull requests</a></li>
-<li class="chapter" data-level="2.8.7" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#undoing-stuff"><i class="fa fa-check"></i><b>2.8.7</b> Undoing stuff</a></li>
-<li class="chapter" data-level="2.8.8" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#using-r-and-github-within-rstudio"><i class="fa fa-check"></i><b>2.8.8</b> Using R and GitHub within RStudio</a></li>
-<li class="chapter" data-level="2.8.9" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#feedback-1"><i class="fa fa-check"></i><b>2.8.9</b> Feedback</a></li>
+<li class="chapter" data-level="2.8.1" data-path="git-and-github.html"><a href="git-and-github.html#so-ive-made-some-changes-but-dont-really-want-to-keep-them-git-stash"><i class="fa fa-check"></i><b>2.8.1</b> So I’ve made some changes but don’t really want to keep them – git stash</a></li>
+<li class="chapter" data-level="2.8.2" data-path="git-and-github.html"><a href="git-and-github.html#the-power-to-go-back"><i class="fa fa-check"></i><b>2.8.2</b> The power to go back</a></li>
+<li class="chapter" data-level="2.8.3" data-path="git-and-github.html"><a href="git-and-github.html#so-how-does-git-do-all-this"><i class="fa fa-check"></i><b>2.8.3</b> So how does Git do all this?</a></li>
+<li class="chapter" data-level="2.8.4" data-path="git-and-github.html"><a href="git-and-github.html#git-terminology"><i class="fa fa-check"></i><b>2.8.4</b> Git terminology</a></li>
+<li class="chapter" data-level="2.8.5" data-path="git-and-github.html"><a href="git-and-github.html#branching"><i class="fa fa-check"></i><b>2.8.5</b> Branching</a></li>
+<li class="chapter" data-level="2.8.6" data-path="git-and-github.html"><a href="git-and-github.html#pull-requests"><i class="fa fa-check"></i><b>2.8.6</b> Pull requests</a></li>
+<li class="chapter" data-level="2.8.7" data-path="git-and-github.html"><a href="git-and-github.html#undoing-stuff"><i class="fa fa-check"></i><b>2.8.7</b> Undoing stuff</a></li>
+<li class="chapter" data-level="2.8.8" data-path="git-and-github.html"><a href="git-and-github.html#using-r-and-github-within-rstudio"><i class="fa fa-check"></i><b>2.8.8</b> Using R and GitHub within RStudio</a></li>
+<li class="chapter" data-level="2.8.9" data-path="git-and-github.html"><a href="git-and-github.html#feedback-1"><i class="fa fa-check"></i><b>2.8.9</b> Feedback</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="3" data-path="introduction-to-r-markdown.html"><a href="introduction-to-r-markdown.html"><i class="fa fa-check"></i><b>3</b> Introduction to R Markdown</a>
+<li class="chapter" data-level="3" data-path="r-markdown.html"><a href="r-markdown.html"><i class="fa fa-check"></i><b>3</b> R Markdown</a>
 <ul>
-<li class="chapter" data-level="3.1" data-path="introduction-to-r-markdown.html"><a href="introduction-to-r-markdown.html#motivation"><i class="fa fa-check"></i><b>3.1</b> Motivation</a></li>
-<li class="chapter" data-level="3.2" data-path="introduction-to-r-markdown.html"><a href="introduction-to-r-markdown.html#basic-idea"><i class="fa fa-check"></i><b>3.2</b> Basic idea</a></li>
-<li class="chapter" data-level="3.3" data-path="introduction-to-r-markdown.html"><a href="introduction-to-r-markdown.html#simple-example"><i class="fa fa-check"></i><b>3.3</b> Simple example</a>
+<li class="chapter" data-level="3.1" data-path="r-markdown.html"><a href="r-markdown.html#motivation"><i class="fa fa-check"></i><b>3.1</b> Motivation</a></li>
+<li class="chapter" data-level="3.2" data-path="r-markdown.html"><a href="r-markdown.html#basic-idea"><i class="fa fa-check"></i><b>3.2</b> Basic idea</a></li>
+<li class="chapter" data-level="3.3" data-path="r-markdown.html"><a href="r-markdown.html#simple-example"><i class="fa fa-check"></i><b>3.3</b> Simple example</a>
 <ul>
-<li class="chapter" data-level="3.3.1" data-path="introduction-to-r-markdown.html"><a href="introduction-to-r-markdown.html#exercise-1"><i class="fa fa-check"></i><b>3.3.1</b> Exercise 1</a></li>
+<li class="chapter" data-level="3.3.1" data-path="r-markdown.html"><a href="r-markdown.html#exercise-1"><i class="fa fa-check"></i><b>3.3.1</b> Exercise 1</a></li>
 </ul></li>
-<li class="chapter" data-level="3.4" data-path="introduction-to-r-markdown.html"><a href="introduction-to-r-markdown.html#output-format"><i class="fa fa-check"></i><b>3.4</b> Output format</a>
+<li class="chapter" data-level="3.4" data-path="r-markdown.html"><a href="r-markdown.html#output-format"><i class="fa fa-check"></i><b>3.4</b> Output format</a>
 <ul>
-<li class="chapter" data-level="3.4.1" data-path="introduction-to-r-markdown.html"><a href="introduction-to-r-markdown.html#exercise-2"><i class="fa fa-check"></i><b>3.4.1</b> Exercise 2</a></li>
+<li class="chapter" data-level="3.4.1" data-path="r-markdown.html"><a href="r-markdown.html#exercise-2"><i class="fa fa-check"></i><b>3.4.1</b> Exercise 2</a></li>
 </ul></li>
-<li class="chapter" data-level="3.5" data-path="introduction-to-r-markdown.html"><a href="introduction-to-r-markdown.html#caching-advanced"><i class="fa fa-check"></i><b>3.5</b> Caching (advanced)</a></li>
-<li class="chapter" data-level="3.6" data-path="introduction-to-r-markdown.html"><a href="introduction-to-r-markdown.html#further-reading"><i class="fa fa-check"></i><b>3.6</b> Further reading</a></li>
-<li class="chapter" data-level="3.7" data-path="introduction-to-r-markdown.html"><a href="introduction-to-r-markdown.html#using-rstudio"><i class="fa fa-check"></i><b>3.7</b> Using RStudio</a></li>
-<li class="chapter" data-level="3.8" data-path="introduction-to-r-markdown.html"><a href="introduction-to-r-markdown.html#feedback-2"><i class="fa fa-check"></i><b>3.8</b> Feedback</a></li>
+<li class="chapter" data-level="3.5" data-path="r-markdown.html"><a href="r-markdown.html#caching-advanced"><i class="fa fa-check"></i><b>3.5</b> Caching (advanced)</a></li>
+<li class="chapter" data-level="3.6" data-path="r-markdown.html"><a href="r-markdown.html#further-reading"><i class="fa fa-check"></i><b>3.6</b> Further reading</a></li>
+<li class="chapter" data-level="3.7" data-path="r-markdown.html"><a href="r-markdown.html#using-rstudio"><i class="fa fa-check"></i><b>3.7</b> Using RStudio</a></li>
+<li class="chapter" data-level="3.8" data-path="r-markdown.html"><a href="r-markdown.html#feedback-2"><i class="fa fa-check"></i><b>3.8</b> Feedback</a></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="multi.html"><a href="multi.html"><i class="fa fa-check"></i><b>4</b> Introduction to multivariate analysis: Clustering and Ordination</a>
+<li class="chapter" data-level="4" data-path="multi.html"><a href="multi.html"><i class="fa fa-check"></i><b>4</b> Multivariate analysis: Clustering and Ordination</a>
 <ul>
 <li class="chapter" data-level="4.1" data-path="multi.html"><a href="multi.html#multivariate-resemblance"><i class="fa fa-check"></i><b>4.1</b> Multivariate resemblance</a>
 <ul>
@@ -264,42 +273,42 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="4.5" data-path="multi.html"><a href="multi.html#references"><i class="fa fa-check"></i><b>4.5</b> References</a></li>
 <li class="chapter" data-level="4.6" data-path="multi.html"><a href="multi.html#answer-key"><i class="fa fa-check"></i><b>4.6</b> Answer Key</a></li>
 </ul></li>
-<li class="chapter" data-level="5" data-path="introduction-to-classification-and-machine-learning.html"><a href="introduction-to-classification-and-machine-learning.html"><i class="fa fa-check"></i><b>5</b> Introduction to classification and machine learning</a>
+<li class="chapter" data-level="5" data-path="machine-learning-and-classification.html"><a href="machine-learning-and-classification.html"><i class="fa fa-check"></i><b>5</b> Machine learning and classification</a>
 <ul>
-<li class="chapter" data-level="5.1" data-path="introduction-to-classification-and-machine-learning.html"><a href="introduction-to-classification-and-machine-learning.html#logistic-regression"><i class="fa fa-check"></i><b>5.1</b> Logistic regression</a>
+<li class="chapter" data-level="5.1" data-path="machine-learning-and-classification.html"><a href="machine-learning-and-classification.html#logistic-regression"><i class="fa fa-check"></i><b>5.1</b> Logistic regression</a>
 <ul>
-<li class="chapter" data-level="5.1.1" data-path="introduction-to-classification-and-machine-learning.html"><a href="introduction-to-classification-and-machine-learning.html#interpreting-the-logistic-regression"><i class="fa fa-check"></i><b>5.1.1</b> Interpreting the logistic regression</a></li>
-<li class="chapter" data-level="5.1.2" data-path="introduction-to-classification-and-machine-learning.html"><a href="introduction-to-classification-and-machine-learning.html#the-confusion-matrix"><i class="fa fa-check"></i><b>5.1.2</b> The confusion matrix</a></li>
-<li class="chapter" data-level="5.1.3" data-path="introduction-to-classification-and-machine-learning.html"><a href="introduction-to-classification-and-machine-learning.html#roc-and-auc"><i class="fa fa-check"></i><b>5.1.3</b> ROC and AUC</a></li>
+<li class="chapter" data-level="5.1.1" data-path="machine-learning-and-classification.html"><a href="machine-learning-and-classification.html#interpreting-the-logistic-regression"><i class="fa fa-check"></i><b>5.1.1</b> Interpreting the logistic regression</a></li>
+<li class="chapter" data-level="5.1.2" data-path="machine-learning-and-classification.html"><a href="machine-learning-and-classification.html#the-confusion-matrix"><i class="fa fa-check"></i><b>5.1.2</b> The confusion matrix</a></li>
+<li class="chapter" data-level="5.1.3" data-path="machine-learning-and-classification.html"><a href="machine-learning-and-classification.html#roc-and-auc"><i class="fa fa-check"></i><b>5.1.3</b> ROC and AUC</a></li>
 </ul></li>
-<li class="chapter" data-level="5.2" data-path="introduction-to-classification-and-machine-learning.html"><a href="introduction-to-classification-and-machine-learning.html#cross-validation"><i class="fa fa-check"></i><b>5.2</b> Cross-validation</a>
+<li class="chapter" data-level="5.2" data-path="machine-learning-and-classification.html"><a href="machine-learning-and-classification.html#cross-validation"><i class="fa fa-check"></i><b>5.2</b> Cross-validation</a>
 <ul>
-<li class="chapter" data-level="5.2.1" data-path="introduction-to-classification-and-machine-learning.html"><a href="introduction-to-classification-and-machine-learning.html#k-fold-cross-validation"><i class="fa fa-check"></i><b>5.2.1</b> k-Fold Cross-Validation</a></li>
-<li class="chapter" data-level="5.2.2" data-path="introduction-to-classification-and-machine-learning.html"><a href="introduction-to-classification-and-machine-learning.html#multiple-logistic-regression"><i class="fa fa-check"></i><b>5.2.2</b> Multiple logistic regression</a></li>
-<li class="chapter" data-level="5.2.3" data-path="introduction-to-classification-and-machine-learning.html"><a href="introduction-to-classification-and-machine-learning.html#examples-of-logistic-regression-used-for-classification"><i class="fa fa-check"></i><b>5.2.3</b> Examples of logistic regression used for classification</a></li>
+<li class="chapter" data-level="5.2.1" data-path="machine-learning-and-classification.html"><a href="machine-learning-and-classification.html#k-fold-cross-validation"><i class="fa fa-check"></i><b>5.2.1</b> k-Fold Cross-Validation</a></li>
+<li class="chapter" data-level="5.2.2" data-path="machine-learning-and-classification.html"><a href="machine-learning-and-classification.html#multiple-logistic-regression"><i class="fa fa-check"></i><b>5.2.2</b> Multiple logistic regression</a></li>
+<li class="chapter" data-level="5.2.3" data-path="machine-learning-and-classification.html"><a href="machine-learning-and-classification.html#examples-of-logistic-regression-used-for-classification"><i class="fa fa-check"></i><b>5.2.3</b> Examples of logistic regression used for classification</a></li>
 </ul></li>
-<li class="chapter" data-level="5.3" data-path="introduction-to-classification-and-machine-learning.html"><a href="introduction-to-classification-and-machine-learning.html#linear-discriminant-analysis-lda"><i class="fa fa-check"></i><b>5.3</b> Linear Discriminant Analysis (LDA)</a>
+<li class="chapter" data-level="5.3" data-path="machine-learning-and-classification.html"><a href="machine-learning-and-classification.html#linear-discriminant-analysis-lda"><i class="fa fa-check"></i><b>5.3</b> Linear Discriminant Analysis (LDA)</a>
 <ul>
-<li class="chapter" data-level="5.3.1" data-path="introduction-to-classification-and-machine-learning.html"><a href="introduction-to-classification-and-machine-learning.html#examples-of-discriminant-analysis-used-for-classification"><i class="fa fa-check"></i><b>5.3.1</b> Examples of discriminant analysis used for classification</a></li>
+<li class="chapter" data-level="5.3.1" data-path="machine-learning-and-classification.html"><a href="machine-learning-and-classification.html#examples-of-discriminant-analysis-used-for-classification"><i class="fa fa-check"></i><b>5.3.1</b> Examples of discriminant analysis used for classification</a></li>
 </ul></li>
-<li class="chapter" data-level="5.4" data-path="introduction-to-classification-and-machine-learning.html"><a href="introduction-to-classification-and-machine-learning.html#tree-based-methods-for-classification"><i class="fa fa-check"></i><b>5.4</b> Tree-based methods for classification</a>
+<li class="chapter" data-level="5.4" data-path="machine-learning-and-classification.html"><a href="machine-learning-and-classification.html#tree-based-methods-for-classification"><i class="fa fa-check"></i><b>5.4</b> Tree-based methods for classification</a>
 <ul>
-<li class="chapter" data-level="5.4.1" data-path="introduction-to-classification-and-machine-learning.html"><a href="introduction-to-classification-and-machine-learning.html#classification-and-regression-trees-carts"><i class="fa fa-check"></i><b>5.4.1</b> Classification and regression trees (CARTs)</a></li>
-<li class="chapter" data-level="5.4.2" data-path="introduction-to-classification-and-machine-learning.html"><a href="introduction-to-classification-and-machine-learning.html#random-forests"><i class="fa fa-check"></i><b>5.4.2</b> Random Forests</a></li>
-<li class="chapter" data-level="5.4.3" data-path="introduction-to-classification-and-machine-learning.html"><a href="introduction-to-classification-and-machine-learning.html#examples-of-tree-based-methods-used-for-classification"><i class="fa fa-check"></i><b>5.4.3</b> Examples of tree-based methods used for classification</a></li>
-<li class="chapter" data-level="5.4.4" data-path="introduction-to-classification-and-machine-learning.html"><a href="introduction-to-classification-and-machine-learning.html#r-functions-1"><i class="fa fa-check"></i><b>5.4.4</b> R functions</a></li>
+<li class="chapter" data-level="5.4.1" data-path="machine-learning-and-classification.html"><a href="machine-learning-and-classification.html#classification-and-regression-trees-carts"><i class="fa fa-check"></i><b>5.4.1</b> Classification and regression trees (CARTs)</a></li>
+<li class="chapter" data-level="5.4.2" data-path="machine-learning-and-classification.html"><a href="machine-learning-and-classification.html#random-forests"><i class="fa fa-check"></i><b>5.4.2</b> Random Forests</a></li>
+<li class="chapter" data-level="5.4.3" data-path="machine-learning-and-classification.html"><a href="machine-learning-and-classification.html#examples-of-tree-based-methods-used-for-classification"><i class="fa fa-check"></i><b>5.4.3</b> Examples of tree-based methods used for classification</a></li>
+<li class="chapter" data-level="5.4.4" data-path="machine-learning-and-classification.html"><a href="machine-learning-and-classification.html#r-functions-1"><i class="fa fa-check"></i><b>5.4.4</b> R functions</a></li>
 </ul></li>
-<li class="chapter" data-level="5.5" data-path="introduction-to-classification-and-machine-learning.html"><a href="introduction-to-classification-and-machine-learning.html#artificial-neural-networks-ann"><i class="fa fa-check"></i><b>5.5</b> Artificial Neural Networks (ANN)</a>
+<li class="chapter" data-level="5.5" data-path="machine-learning-and-classification.html"><a href="machine-learning-and-classification.html#artificial-neural-networks-ann"><i class="fa fa-check"></i><b>5.5</b> Artificial Neural Networks (ANN)</a>
 <ul>
-<li class="chapter" data-level="5.5.1" data-path="introduction-to-classification-and-machine-learning.html"><a href="introduction-to-classification-and-machine-learning.html#ann-learning"><i class="fa fa-check"></i><b>5.5.1</b> ANN learning</a></li>
-<li class="chapter" data-level="5.5.2" data-path="introduction-to-classification-and-machine-learning.html"><a href="introduction-to-classification-and-machine-learning.html#our-first-ann"><i class="fa fa-check"></i><b>5.5.2</b> Our first ANN</a></li>
-<li class="chapter" data-level="5.5.3" data-path="introduction-to-classification-and-machine-learning.html"><a href="introduction-to-classification-and-machine-learning.html#examples-of-anns-used-for-classification"><i class="fa fa-check"></i><b>5.5.3</b> Examples of ANNs used for classification</a></li>
-<li class="chapter" data-level="5.5.4" data-path="introduction-to-classification-and-machine-learning.html"><a href="introduction-to-classification-and-machine-learning.html#r-functions-2"><i class="fa fa-check"></i><b>5.5.4</b> R functions</a></li>
-<li class="chapter" data-level="5.5.5" data-path="introduction-to-classification-and-machine-learning.html"><a href="introduction-to-classification-and-machine-learning.html#what-else"><i class="fa fa-check"></i><b>5.5.5</b> What else?</a></li>
-<li class="chapter" data-level="5.5.6" data-path="introduction-to-classification-and-machine-learning.html"><a href="introduction-to-classification-and-machine-learning.html#feedback-4"><i class="fa fa-check"></i><b>5.5.6</b> Feedback</a></li>
+<li class="chapter" data-level="5.5.1" data-path="machine-learning-and-classification.html"><a href="machine-learning-and-classification.html#ann-learning"><i class="fa fa-check"></i><b>5.5.1</b> ANN learning</a></li>
+<li class="chapter" data-level="5.5.2" data-path="machine-learning-and-classification.html"><a href="machine-learning-and-classification.html#our-first-ann"><i class="fa fa-check"></i><b>5.5.2</b> Our first ANN</a></li>
+<li class="chapter" data-level="5.5.3" data-path="machine-learning-and-classification.html"><a href="machine-learning-and-classification.html#examples-of-anns-used-for-classification"><i class="fa fa-check"></i><b>5.5.3</b> Examples of ANNs used for classification</a></li>
+<li class="chapter" data-level="5.5.4" data-path="machine-learning-and-classification.html"><a href="machine-learning-and-classification.html#r-functions-2"><i class="fa fa-check"></i><b>5.5.4</b> R functions</a></li>
+<li class="chapter" data-level="5.5.5" data-path="machine-learning-and-classification.html"><a href="machine-learning-and-classification.html#what-else"><i class="fa fa-check"></i><b>5.5.5</b> What else?</a></li>
+<li class="chapter" data-level="5.5.6" data-path="machine-learning-and-classification.html"><a href="machine-learning-and-classification.html#feedback-4"><i class="fa fa-check"></i><b>5.5.6</b> Feedback</a></li>
 </ul></li>
-<li class="chapter" data-level="5.6" data-path="introduction-to-classification-and-machine-learning.html"><a href="introduction-to-classification-and-machine-learning.html#references-1"><i class="fa fa-check"></i><b>5.6</b> References</a></li>
-<li class="chapter" data-level="5.7" data-path="introduction-to-classification-and-machine-learning.html"><a href="introduction-to-classification-and-machine-learning.html#answer-key-1"><i class="fa fa-check"></i><b>5.7</b> Answer Key</a></li>
+<li class="chapter" data-level="5.6" data-path="machine-learning-and-classification.html"><a href="machine-learning-and-classification.html#references-1"><i class="fa fa-check"></i><b>5.6</b> References</a></li>
+<li class="chapter" data-level="5.7" data-path="machine-learning-and-classification.html"><a href="machine-learning-and-classification.html#answer-key-1"><i class="fa fa-check"></i><b>5.7</b> Answer Key</a></li>
 </ul></li>
 <li class="chapter" data-level="6" data-path="optimization.html"><a href="optimization.html"><i class="fa fa-check"></i><b>6</b> Optimization</a>
 <ul>
@@ -355,8 +364,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="introduction-to-git-and-github" class="section level1" number="2">
-<h1><span class="header-section-number">2</span> Introduction to Git and GitHub</h1>
+<div id="git-and-github" class="section level1" number="2">
+<h1><span class="header-section-number">2</span> Git and GitHub</h1>
 <p>This module consists of text, graphics, four videos, and three exercises to
 get you started using Git and GitHub. Note that the final exercise requires a
 colleague to practice collaborating with.</p>
@@ -465,7 +474,7 @@ and tables <a href="https://media.fisheries.noaa.gov/2021-03/hake-assessment-pos
 here)</a>.</p>
 <p>Prior to 2016, the document was assembled in Word, requiring lots of editing
 and amaglamating of files, often late at night. Now we share our code via
-GitHub, automate a lot of the document production using knitr (similar to
+GitHub and automate a lot of the document production using knitr (similar to
 Rmarkdown which is covered in Module 2).</p>
 <p>So with four people constantly working on the same large document, we need to
 ensure we are keeping up-to-date with each other, can all produce the latest
@@ -1668,7 +1677,8 @@ for you.</p>
 </div>
 <div id="feedback-1" class="section level3" number="2.8.9">
 <h3><span class="header-section-number">2.8.9</span> Feedback</h3>
-<p>We value your input! Please take the time to let us know how we might improve these materials. <a href="https://forms.gle/vLkcZq7NxPb2ajTQ6">Survey</a></p>
+<p>We value your input! Please take the time to let us know how we might improve
+these materials using <a href="https://forms.gle/vLkcZq7NxPb2ajTQ6" target="_blank">this survey</a>.</p>
 
 </div>
 </div>
@@ -1679,7 +1689,7 @@ for you.</p>
         </div>
       </div>
 <a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="introduction-to-r-markdown.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="r-markdown.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

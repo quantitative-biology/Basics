@@ -58,7 +58,8 @@ open-science
 feedback
 about-the-authors
 acknowledgments
-introduction-to-git-and-github
+citation
+git-and-github
 what-are-git-and-github-and-how-might-they-be-useful
 you-just-want-do-download-someone-elses-code-from-their-github-repository
 motivation-for-learning-more
@@ -108,7 +109,7 @@ pull-requests
 undoing-stuff
 using-r-and-github-within-rstudio
 feedback-1
-introduction-to-r-markdown
+r-markdown
 motivation
 basic-idea
 simple-example
@@ -156,7 +157,7 @@ what-next
 feedback-3
 references
 answer-key
-introduction-to-classification-and-machine-learning
+machine-learning-and-classification
 logistic-regression
 interpreting-the-logistic-regression
 the-confusion-matrix
@@ -227,4 +228,3 @@ exercise-4-1
 solution-3
 exercise-5-1
 solution-4
-citation

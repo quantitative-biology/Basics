@@ -4,21 +4,21 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>4 Introduction to multivariate analysis: Clustering and Ordination | Building Skills in Quantitative Biology</title>
-  <meta name="description" content="4 Introduction to multivariate analysis: Clustering and Ordination | Building Skills in Quantitative Biology" />
+  <title>4 Multivariate analysis: Clustering and Ordination | Building Skills in Quantitative Biology</title>
+  <meta name="description" content="4 Multivariate analysis: Clustering and Ordination | Building Skills in Quantitative Biology" />
   <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="4 Introduction to multivariate analysis: Clustering and Ordination | Building Skills in Quantitative Biology" />
+  <meta property="og:title" content="4 Multivariate analysis: Clustering and Ordination | Building Skills in Quantitative Biology" />
   <meta property="og:type" content="book" />
   
   
-  <meta property="og:description" content="4 Introduction to multivariate analysis: Clustering and Ordination | Building Skills in Quantitative Biology" />
+  <meta property="og:description" content="4 Multivariate analysis: Clustering and Ordination | Building Skills in Quantitative Biology" />
   <meta name="github-repo" content="rstudio/bookdown-demo" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="4 Introduction to multivariate analysis: Clustering and Ordination | Building Skills in Quantitative Biology" />
+  <meta name="twitter:title" content="4 Multivariate analysis: Clustering and Ordination | Building Skills in Quantitative Biology" />
   
-  <meta name="twitter:description" content="4 Introduction to multivariate analysis: Clustering and Ordination | Building Skills in Quantitative Biology" />
+  <meta name="twitter:description" content="4 Multivariate analysis: Clustering and Ordination | Building Skills in Quantitative Biology" />
   
 
 <meta name="author" content="Kim Cuddington, Andrew M. Edwards, Brian Ingalls" />
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="introduction-to-r-markdown.html"/>
-<link rel="next" href="introduction-to-classification-and-machine-learning.html"/>
+<link rel="prev" href="r-markdown.html"/>
+<link rel="next" href="machine-learning-and-classification.html"/>
 <script src="libs/header-attrs-2.9/header-attrs.js"></script>
 <script src="libs/jquery-3.5.1/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -54,8 +54,6 @@
 <script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
 <script src="libs/kePrint-0.0.1/kePrint.js"></script>
 <link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
-<link href="libs/bsTable-3.3.7/bootstrapTable.min.css" rel="stylesheet" />
-<script src="libs/bsTable-3.3.7/bootstrapTable.js"></script>
 <script src="libs/htmlwidgets-1.5.3/htmlwidgets.js"></script>
 <script src="libs/plotly-binding-4.9.4.1/plotly.js"></script>
 <script src="libs/typedarray-0.1/typedarray.min.js"></script>
@@ -63,6 +61,16 @@
 <script src="libs/crosstalk-1.1.1/js/crosstalk.min.js"></script>
 <link href="libs/plotly-htmlwidgets-css-1.57.1/plotly-htmlwidgets.css" rel="stylesheet" />
 <script src="libs/plotly-main-1.57.1/plotly-latest.min.js"></script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<!-- Adding to index.Rmd as per https://stackoverflow.com/questions/41376989/how-to-include-google-analytics-in-an-rmarkdown-generated-github-page -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-Y14SQ7MY4S"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-Y14SQ7MY4S');
+</script>
 
 
 <style type="text/css">
@@ -149,87 +157,88 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#feedback"><i class="fa fa-check"></i><b>1.2</b> Feedback</a></li>
 <li class="chapter" data-level="1.3" data-path="index.html"><a href="index.html#about-the-authors"><i class="fa fa-check"></i><b>1.3</b> About the authors</a></li>
 <li class="chapter" data-level="1.4" data-path="index.html"><a href="index.html#acknowledgments"><i class="fa fa-check"></i><b>1.4</b> Acknowledgments</a></li>
+<li class="chapter" data-level="1.5" data-path="index.html"><a href="index.html#citation"><i class="fa fa-check"></i><b>1.5</b> Citation</a></li>
 </ul></li>
-<li class="chapter" data-level="2" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html"><i class="fa fa-check"></i><b>2</b> Introduction to Git and GitHub</a>
+<li class="chapter" data-level="2" data-path="git-and-github.html"><a href="git-and-github.html"><i class="fa fa-check"></i><b>2</b> Git and GitHub</a>
 <ul>
-<li class="chapter" data-level="2.1" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#what-are-git-and-github-and-how-might-they-be-useful"><i class="fa fa-check"></i><b>2.1</b> What are Git and GitHub and how might they be useful?</a></li>
-<li class="chapter" data-level="2.2" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#you-just-want-do-download-someone-elses-code-from-their-github-repository"><i class="fa fa-check"></i><b>2.2</b> You just want do download someone else’s code from their GitHub repository</a></li>
-<li class="chapter" data-level="2.3" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#motivation-for-learning-more"><i class="fa fa-check"></i><b>2.3</b> Motivation for learning more</a>
+<li class="chapter" data-level="2.1" data-path="git-and-github.html"><a href="git-and-github.html#what-are-git-and-github-and-how-might-they-be-useful"><i class="fa fa-check"></i><b>2.1</b> What are Git and GitHub and how might they be useful?</a></li>
+<li class="chapter" data-level="2.2" data-path="git-and-github.html"><a href="git-and-github.html#you-just-want-do-download-someone-elses-code-from-their-github-repository"><i class="fa fa-check"></i><b>2.2</b> You just want do download someone else’s code from their GitHub repository</a></li>
+<li class="chapter" data-level="2.3" data-path="git-and-github.html"><a href="git-and-github.html#motivation-for-learning-more"><i class="fa fa-check"></i><b>2.3</b> Motivation for learning more</a>
 <ul>
-<li class="chapter" data-level="2.3.1" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#example-application-pacific-hake-stock-assessment"><i class="fa fa-check"></i><b>2.3.1</b> Example application – Pacific Hake stock assessment</a></li>
-<li class="chapter" data-level="2.3.2" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#examples-of-what-we-can-avoid"><i class="fa fa-check"></i><b>2.3.2</b> Examples of what we can avoid</a></li>
-<li class="chapter" data-level="2.3.3" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#example-of-advantages-that-arise-from-using-github"><i class="fa fa-check"></i><b>2.3.3</b> Example of advantages that arise from using GitHub</a></li>
-<li class="chapter" data-level="2.3.4" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#why-this-course"><i class="fa fa-check"></i><b>2.3.4</b> Why this course?</a></li>
-<li class="chapter" data-level="2.3.5" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#does-it-matter-which-computer-language-my-code-is-in"><i class="fa fa-check"></i><b>2.3.5</b> Does it matter which computer language my code is in?</a></li>
+<li class="chapter" data-level="2.3.1" data-path="git-and-github.html"><a href="git-and-github.html#example-application-pacific-hake-stock-assessment"><i class="fa fa-check"></i><b>2.3.1</b> Example application – Pacific Hake stock assessment</a></li>
+<li class="chapter" data-level="2.3.2" data-path="git-and-github.html"><a href="git-and-github.html#examples-of-what-we-can-avoid"><i class="fa fa-check"></i><b>2.3.2</b> Examples of what we can avoid</a></li>
+<li class="chapter" data-level="2.3.3" data-path="git-and-github.html"><a href="git-and-github.html#example-of-advantages-that-arise-from-using-github"><i class="fa fa-check"></i><b>2.3.3</b> Example of advantages that arise from using GitHub</a></li>
+<li class="chapter" data-level="2.3.4" data-path="git-and-github.html"><a href="git-and-github.html#why-this-course"><i class="fa fa-check"></i><b>2.3.4</b> Why this course?</a></li>
+<li class="chapter" data-level="2.3.5" data-path="git-and-github.html"><a href="git-and-github.html#does-it-matter-which-computer-language-my-code-is-in"><i class="fa fa-check"></i><b>2.3.5</b> Does it matter which computer language my code is in?</a></li>
 </ul></li>
-<li class="chapter" data-level="2.4" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#getting-set-up-for-the-first-time"><i class="fa fa-check"></i><b>2.4</b> Getting set up for the first time</a>
+<li class="chapter" data-level="2.4" data-path="git-and-github.html"><a href="git-and-github.html#getting-set-up-for-the-first-time"><i class="fa fa-check"></i><b>2.4</b> Getting set up for the first time</a>
 <ul>
-<li class="chapter" data-level="2.4.1" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#what-you-will-end-up-having-installed"><i class="fa fa-check"></i><b>2.4.1</b> What you will end up having installed</a></li>
-<li class="chapter" data-level="2.4.2" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#text-editor"><i class="fa fa-check"></i><b>2.4.2</b> Text Editor</a></li>
-<li class="chapter" data-level="2.4.3" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#install-the-git-application-on-your-machine"><i class="fa fa-check"></i><b>2.4.3</b> Install the Git application on your machine</a></li>
-<li class="chapter" data-level="2.4.4" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#git-shell-guis-and-rstudio"><i class="fa fa-check"></i><b>2.4.4</b> Git shell, GUIs and RStudio</a></li>
-<li class="chapter" data-level="2.4.5" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#powershell-and-posh-git"><i class="fa fa-check"></i><b>2.4.5</b> Powershell and posh-git</a></li>
-<li class="chapter" data-level="2.4.6" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#create-a-directory-to-keep-all-your-git-tracked-work"><i class="fa fa-check"></i><b>2.4.6</b> Create a directory to keep all your Git-tracked work</a></li>
-<li class="chapter" data-level="2.4.7" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#install-diffmerge-optional"><i class="fa fa-check"></i><b>2.4.7</b> Install Diffmerge (optional)</a></li>
-<li class="chapter" data-level="2.4.8" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#save-our-template-.gitconfig-file"><i class="fa fa-check"></i><b>2.4.8</b> Save our template <em>.gitconfig</em> file</a></li>
-<li class="chapter" data-level="2.4.9" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#edit-the-.gitconfig-file"><i class="fa fa-check"></i><b>2.4.9</b> Edit the <em>.gitconfig</em> file</a></li>
-<li class="chapter" data-level="2.4.10" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#github-authorisation"><i class="fa fa-check"></i><b>2.4.10</b> GitHub authorisation</a></li>
-<li class="chapter" data-level="2.4.11" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#navigating-in-a-shell"><i class="fa fa-check"></i><b>2.4.11</b> Navigating in a shell</a></li>
-<li class="chapter" data-level="2.4.12" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#one-time-authentication"><i class="fa fa-check"></i><b>2.4.12</b> One-time authentication</a></li>
-<li class="chapter" data-level="2.4.13" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#mac-only-make-your-output-pretty"><i class="fa fa-check"></i><b>2.4.13</b> MAC only: make your output pretty</a></li>
-<li class="chapter" data-level="2.4.14" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#something-to-view-markdown-files-optional"><i class="fa fa-check"></i><b>2.4.14</b> Something to view Markdown files (optional)</a></li>
-<li class="chapter" data-level="2.4.15" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#bonus-keyboard-shortcut-optional"><i class="fa fa-check"></i><b>2.4.15</b> Bonus keyboard shortcut (optional)</a></li>
+<li class="chapter" data-level="2.4.1" data-path="git-and-github.html"><a href="git-and-github.html#what-you-will-end-up-having-installed"><i class="fa fa-check"></i><b>2.4.1</b> What you will end up having installed</a></li>
+<li class="chapter" data-level="2.4.2" data-path="git-and-github.html"><a href="git-and-github.html#text-editor"><i class="fa fa-check"></i><b>2.4.2</b> Text Editor</a></li>
+<li class="chapter" data-level="2.4.3" data-path="git-and-github.html"><a href="git-and-github.html#install-the-git-application-on-your-machine"><i class="fa fa-check"></i><b>2.4.3</b> Install the Git application on your machine</a></li>
+<li class="chapter" data-level="2.4.4" data-path="git-and-github.html"><a href="git-and-github.html#git-shell-guis-and-rstudio"><i class="fa fa-check"></i><b>2.4.4</b> Git shell, GUIs and RStudio</a></li>
+<li class="chapter" data-level="2.4.5" data-path="git-and-github.html"><a href="git-and-github.html#powershell-and-posh-git"><i class="fa fa-check"></i><b>2.4.5</b> Powershell and posh-git</a></li>
+<li class="chapter" data-level="2.4.6" data-path="git-and-github.html"><a href="git-and-github.html#create-a-directory-to-keep-all-your-git-tracked-work"><i class="fa fa-check"></i><b>2.4.6</b> Create a directory to keep all your Git-tracked work</a></li>
+<li class="chapter" data-level="2.4.7" data-path="git-and-github.html"><a href="git-and-github.html#install-diffmerge-optional"><i class="fa fa-check"></i><b>2.4.7</b> Install Diffmerge (optional)</a></li>
+<li class="chapter" data-level="2.4.8" data-path="git-and-github.html"><a href="git-and-github.html#save-our-template-.gitconfig-file"><i class="fa fa-check"></i><b>2.4.8</b> Save our template <em>.gitconfig</em> file</a></li>
+<li class="chapter" data-level="2.4.9" data-path="git-and-github.html"><a href="git-and-github.html#edit-the-.gitconfig-file"><i class="fa fa-check"></i><b>2.4.9</b> Edit the <em>.gitconfig</em> file</a></li>
+<li class="chapter" data-level="2.4.10" data-path="git-and-github.html"><a href="git-and-github.html#github-authorisation"><i class="fa fa-check"></i><b>2.4.10</b> GitHub authorisation</a></li>
+<li class="chapter" data-level="2.4.11" data-path="git-and-github.html"><a href="git-and-github.html#navigating-in-a-shell"><i class="fa fa-check"></i><b>2.4.11</b> Navigating in a shell</a></li>
+<li class="chapter" data-level="2.4.12" data-path="git-and-github.html"><a href="git-and-github.html#one-time-authentication"><i class="fa fa-check"></i><b>2.4.12</b> One-time authentication</a></li>
+<li class="chapter" data-level="2.4.13" data-path="git-and-github.html"><a href="git-and-github.html#mac-only-make-your-output-pretty"><i class="fa fa-check"></i><b>2.4.13</b> MAC only: make your output pretty</a></li>
+<li class="chapter" data-level="2.4.14" data-path="git-and-github.html"><a href="git-and-github.html#something-to-view-markdown-files-optional"><i class="fa fa-check"></i><b>2.4.14</b> Something to view Markdown files (optional)</a></li>
+<li class="chapter" data-level="2.4.15" data-path="git-and-github.html"><a href="git-and-github.html#bonus-keyboard-shortcut-optional"><i class="fa fa-check"></i><b>2.4.15</b> Bonus keyboard shortcut (optional)</a></li>
 </ul></li>
-<li class="chapter" data-level="2.5" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#using-git-and-github-to-share-your-own-code"><i class="fa fa-check"></i><b>2.5</b> Using Git and GitHub to share your own code</a>
+<li class="chapter" data-level="2.5" data-path="git-and-github.html"><a href="git-and-github.html#using-git-and-github-to-share-your-own-code"><i class="fa fa-check"></i><b>2.5</b> Using Git and GitHub to share your own code</a>
 <ul>
-<li class="chapter" data-level="2.5.1" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#definitions"><i class="fa fa-check"></i><b>2.5.1</b> Definitions</a></li>
-<li class="chapter" data-level="2.5.2" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#creating-a-new-repository"><i class="fa fa-check"></i><b>2.5.2</b> Creating a new repository</a></li>
-<li class="chapter" data-level="2.5.3" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#cloning-your-new-repository"><i class="fa fa-check"></i><b>2.5.3</b> Cloning your new repository</a></li>
-<li class="chapter" data-level="2.5.4" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#committing"><i class="fa fa-check"></i><b>2.5.4</b> Committing</a></li>
-<li class="chapter" data-level="2.5.5" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#exercise-1-create-edit-and-commit-simpletext.txt"><i class="fa fa-check"></i><b>2.5.5</b> Exercise 1: create, edit and commit <em>simpleText.txt</em></a></li>
-<li class="chapter" data-level="2.5.6" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#exercise-2-multiple-files"><i class="fa fa-check"></i><b>2.5.6</b> Exercise 2: multiple files</a></li>
-<li class="chapter" data-level="2.5.7" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#what-to-write-in-commit-messages"><i class="fa fa-check"></i><b>2.5.7</b> What to write in commit messages</a></li>
+<li class="chapter" data-level="2.5.1" data-path="git-and-github.html"><a href="git-and-github.html#definitions"><i class="fa fa-check"></i><b>2.5.1</b> Definitions</a></li>
+<li class="chapter" data-level="2.5.2" data-path="git-and-github.html"><a href="git-and-github.html#creating-a-new-repository"><i class="fa fa-check"></i><b>2.5.2</b> Creating a new repository</a></li>
+<li class="chapter" data-level="2.5.3" data-path="git-and-github.html"><a href="git-and-github.html#cloning-your-new-repository"><i class="fa fa-check"></i><b>2.5.3</b> Cloning your new repository</a></li>
+<li class="chapter" data-level="2.5.4" data-path="git-and-github.html"><a href="git-and-github.html#committing"><i class="fa fa-check"></i><b>2.5.4</b> Committing</a></li>
+<li class="chapter" data-level="2.5.5" data-path="git-and-github.html"><a href="git-and-github.html#exercise-1-create-edit-and-commit-simpletext.txt"><i class="fa fa-check"></i><b>2.5.5</b> Exercise 1: create, edit and commit <em>simpleText.txt</em></a></li>
+<li class="chapter" data-level="2.5.6" data-path="git-and-github.html"><a href="git-and-github.html#exercise-2-multiple-files"><i class="fa fa-check"></i><b>2.5.6</b> Exercise 2: multiple files</a></li>
+<li class="chapter" data-level="2.5.7" data-path="git-and-github.html"><a href="git-and-github.html#what-to-write-in-commit-messages"><i class="fa fa-check"></i><b>2.5.7</b> What to write in commit messages</a></li>
 </ul></li>
-<li class="chapter" data-level="2.6" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#using-git-and-github-to-collaborate-with-colleagues"><i class="fa fa-check"></i><b>2.6</b> Using Git and GitHub to collaborate with colleagues</a>
+<li class="chapter" data-level="2.6" data-path="git-and-github.html"><a href="git-and-github.html#using-git-and-github-to-collaborate-with-colleagues"><i class="fa fa-check"></i><b>2.6</b> Using Git and GitHub to collaborate with colleagues</a>
 <ul>
-<li class="chapter" data-level="2.6.1" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#demonstration-of-collaborating"><i class="fa fa-check"></i><b>2.6.1</b> Demonstration of collaborating</a></li>
-<li class="chapter" data-level="2.6.2" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#a-bit-more-about-git-rebase"><i class="fa fa-check"></i><b>2.6.2</b> A bit more about git rebase</a></li>
-<li class="chapter" data-level="2.6.3" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#fixing-a-conflict"><i class="fa fa-check"></i><b>2.6.3</b> Fixing a conflict</a></li>
-<li class="chapter" data-level="2.6.4" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#exercise-3-collaborating-on-a-single-repository"><i class="fa fa-check"></i><b>2.6.4</b> Exercise 3: collaborating on a single repository</a></li>
-<li class="chapter" data-level="2.6.5" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#collaborating-summary"><i class="fa fa-check"></i><b>2.6.5</b> Collaborating summary</a></li>
+<li class="chapter" data-level="2.6.1" data-path="git-and-github.html"><a href="git-and-github.html#demonstration-of-collaborating"><i class="fa fa-check"></i><b>2.6.1</b> Demonstration of collaborating</a></li>
+<li class="chapter" data-level="2.6.2" data-path="git-and-github.html"><a href="git-and-github.html#a-bit-more-about-git-rebase"><i class="fa fa-check"></i><b>2.6.2</b> A bit more about git rebase</a></li>
+<li class="chapter" data-level="2.6.3" data-path="git-and-github.html"><a href="git-and-github.html#fixing-a-conflict"><i class="fa fa-check"></i><b>2.6.3</b> Fixing a conflict</a></li>
+<li class="chapter" data-level="2.6.4" data-path="git-and-github.html"><a href="git-and-github.html#exercise-3-collaborating-on-a-single-repository"><i class="fa fa-check"></i><b>2.6.4</b> Exercise 3: collaborating on a single repository</a></li>
+<li class="chapter" data-level="2.6.5" data-path="git-and-github.html"><a href="git-and-github.html#collaborating-summary"><i class="fa fa-check"></i><b>2.6.5</b> Collaborating summary</a></li>
 </ul></li>
-<li class="chapter" data-level="2.7" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#workflow-tips-when-collaborating"><i class="fa fa-check"></i><b>2.7</b> Workflow tips when collaborating</a></li>
-<li class="chapter" data-level="2.8" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#beyond-the-basics-of-git-and-github-getting-more-advanced"><i class="fa fa-check"></i><b>2.8</b> Beyond the basics of Git and GitHub – getting more advanced</a>
+<li class="chapter" data-level="2.7" data-path="git-and-github.html"><a href="git-and-github.html#workflow-tips-when-collaborating"><i class="fa fa-check"></i><b>2.7</b> Workflow tips when collaborating</a></li>
+<li class="chapter" data-level="2.8" data-path="git-and-github.html"><a href="git-and-github.html#beyond-the-basics-of-git-and-github-getting-more-advanced"><i class="fa fa-check"></i><b>2.8</b> Beyond the basics of Git and GitHub – getting more advanced</a>
 <ul>
-<li class="chapter" data-level="2.8.1" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#so-ive-made-some-changes-but-dont-really-want-to-keep-them-git-stash"><i class="fa fa-check"></i><b>2.8.1</b> So I’ve made some changes but don’t really want to keep them – git stash</a></li>
-<li class="chapter" data-level="2.8.2" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#the-power-to-go-back"><i class="fa fa-check"></i><b>2.8.2</b> The power to go back</a></li>
-<li class="chapter" data-level="2.8.3" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#so-how-does-git-do-all-this"><i class="fa fa-check"></i><b>2.8.3</b> So how does Git do all this?</a></li>
-<li class="chapter" data-level="2.8.4" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#git-terminology"><i class="fa fa-check"></i><b>2.8.4</b> Git terminology</a></li>
-<li class="chapter" data-level="2.8.5" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#branching"><i class="fa fa-check"></i><b>2.8.5</b> Branching</a></li>
-<li class="chapter" data-level="2.8.6" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#pull-requests"><i class="fa fa-check"></i><b>2.8.6</b> Pull requests</a></li>
-<li class="chapter" data-level="2.8.7" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#undoing-stuff"><i class="fa fa-check"></i><b>2.8.7</b> Undoing stuff</a></li>
-<li class="chapter" data-level="2.8.8" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#using-r-and-github-within-rstudio"><i class="fa fa-check"></i><b>2.8.8</b> Using R and GitHub within RStudio</a></li>
-<li class="chapter" data-level="2.8.9" data-path="introduction-to-git-and-github.html"><a href="introduction-to-git-and-github.html#feedback-1"><i class="fa fa-check"></i><b>2.8.9</b> Feedback</a></li>
+<li class="chapter" data-level="2.8.1" data-path="git-and-github.html"><a href="git-and-github.html#so-ive-made-some-changes-but-dont-really-want-to-keep-them-git-stash"><i class="fa fa-check"></i><b>2.8.1</b> So I’ve made some changes but don’t really want to keep them – git stash</a></li>
+<li class="chapter" data-level="2.8.2" data-path="git-and-github.html"><a href="git-and-github.html#the-power-to-go-back"><i class="fa fa-check"></i><b>2.8.2</b> The power to go back</a></li>
+<li class="chapter" data-level="2.8.3" data-path="git-and-github.html"><a href="git-and-github.html#so-how-does-git-do-all-this"><i class="fa fa-check"></i><b>2.8.3</b> So how does Git do all this?</a></li>
+<li class="chapter" data-level="2.8.4" data-path="git-and-github.html"><a href="git-and-github.html#git-terminology"><i class="fa fa-check"></i><b>2.8.4</b> Git terminology</a></li>
+<li class="chapter" data-level="2.8.5" data-path="git-and-github.html"><a href="git-and-github.html#branching"><i class="fa fa-check"></i><b>2.8.5</b> Branching</a></li>
+<li class="chapter" data-level="2.8.6" data-path="git-and-github.html"><a href="git-and-github.html#pull-requests"><i class="fa fa-check"></i><b>2.8.6</b> Pull requests</a></li>
+<li class="chapter" data-level="2.8.7" data-path="git-and-github.html"><a href="git-and-github.html#undoing-stuff"><i class="fa fa-check"></i><b>2.8.7</b> Undoing stuff</a></li>
+<li class="chapter" data-level="2.8.8" data-path="git-and-github.html"><a href="git-and-github.html#using-r-and-github-within-rstudio"><i class="fa fa-check"></i><b>2.8.8</b> Using R and GitHub within RStudio</a></li>
+<li class="chapter" data-level="2.8.9" data-path="git-and-github.html"><a href="git-and-github.html#feedback-1"><i class="fa fa-check"></i><b>2.8.9</b> Feedback</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="3" data-path="introduction-to-r-markdown.html"><a href="introduction-to-r-markdown.html"><i class="fa fa-check"></i><b>3</b> Introduction to R Markdown</a>
+<li class="chapter" data-level="3" data-path="r-markdown.html"><a href="r-markdown.html"><i class="fa fa-check"></i><b>3</b> R Markdown</a>
 <ul>
-<li class="chapter" data-level="3.1" data-path="introduction-to-r-markdown.html"><a href="introduction-to-r-markdown.html#motivation"><i class="fa fa-check"></i><b>3.1</b> Motivation</a></li>
-<li class="chapter" data-level="3.2" data-path="introduction-to-r-markdown.html"><a href="introduction-to-r-markdown.html#basic-idea"><i class="fa fa-check"></i><b>3.2</b> Basic idea</a></li>
-<li class="chapter" data-level="3.3" data-path="introduction-to-r-markdown.html"><a href="introduction-to-r-markdown.html#simple-example"><i class="fa fa-check"></i><b>3.3</b> Simple example</a>
+<li class="chapter" data-level="3.1" data-path="r-markdown.html"><a href="r-markdown.html#motivation"><i class="fa fa-check"></i><b>3.1</b> Motivation</a></li>
+<li class="chapter" data-level="3.2" data-path="r-markdown.html"><a href="r-markdown.html#basic-idea"><i class="fa fa-check"></i><b>3.2</b> Basic idea</a></li>
+<li class="chapter" data-level="3.3" data-path="r-markdown.html"><a href="r-markdown.html#simple-example"><i class="fa fa-check"></i><b>3.3</b> Simple example</a>
 <ul>
-<li class="chapter" data-level="3.3.1" data-path="introduction-to-r-markdown.html"><a href="introduction-to-r-markdown.html#exercise-1"><i class="fa fa-check"></i><b>3.3.1</b> Exercise 1</a></li>
+<li class="chapter" data-level="3.3.1" data-path="r-markdown.html"><a href="r-markdown.html#exercise-1"><i class="fa fa-check"></i><b>3.3.1</b> Exercise 1</a></li>
 </ul></li>
-<li class="chapter" data-level="3.4" data-path="introduction-to-r-markdown.html"><a href="introduction-to-r-markdown.html#output-format"><i class="fa fa-check"></i><b>3.4</b> Output format</a>
+<li class="chapter" data-level="3.4" data-path="r-markdown.html"><a href="r-markdown.html#output-format"><i class="fa fa-check"></i><b>3.4</b> Output format</a>
 <ul>
-<li class="chapter" data-level="3.4.1" data-path="introduction-to-r-markdown.html"><a href="introduction-to-r-markdown.html#exercise-2"><i class="fa fa-check"></i><b>3.4.1</b> Exercise 2</a></li>
+<li class="chapter" data-level="3.4.1" data-path="r-markdown.html"><a href="r-markdown.html#exercise-2"><i class="fa fa-check"></i><b>3.4.1</b> Exercise 2</a></li>
 </ul></li>
-<li class="chapter" data-level="3.5" data-path="introduction-to-r-markdown.html"><a href="introduction-to-r-markdown.html#caching-advanced"><i class="fa fa-check"></i><b>3.5</b> Caching (advanced)</a></li>
-<li class="chapter" data-level="3.6" data-path="introduction-to-r-markdown.html"><a href="introduction-to-r-markdown.html#further-reading"><i class="fa fa-check"></i><b>3.6</b> Further reading</a></li>
-<li class="chapter" data-level="3.7" data-path="introduction-to-r-markdown.html"><a href="introduction-to-r-markdown.html#using-rstudio"><i class="fa fa-check"></i><b>3.7</b> Using RStudio</a></li>
-<li class="chapter" data-level="3.8" data-path="introduction-to-r-markdown.html"><a href="introduction-to-r-markdown.html#feedback-2"><i class="fa fa-check"></i><b>3.8</b> Feedback</a></li>
+<li class="chapter" data-level="3.5" data-path="r-markdown.html"><a href="r-markdown.html#caching-advanced"><i class="fa fa-check"></i><b>3.5</b> Caching (advanced)</a></li>
+<li class="chapter" data-level="3.6" data-path="r-markdown.html"><a href="r-markdown.html#further-reading"><i class="fa fa-check"></i><b>3.6</b> Further reading</a></li>
+<li class="chapter" data-level="3.7" data-path="r-markdown.html"><a href="r-markdown.html#using-rstudio"><i class="fa fa-check"></i><b>3.7</b> Using RStudio</a></li>
+<li class="chapter" data-level="3.8" data-path="r-markdown.html"><a href="r-markdown.html#feedback-2"><i class="fa fa-check"></i><b>3.8</b> Feedback</a></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="multi.html"><a href="multi.html"><i class="fa fa-check"></i><b>4</b> Introduction to multivariate analysis: Clustering and Ordination</a>
+<li class="chapter" data-level="4" data-path="multi.html"><a href="multi.html"><i class="fa fa-check"></i><b>4</b> Multivariate analysis: Clustering and Ordination</a>
 <ul>
 <li class="chapter" data-level="4.1" data-path="multi.html"><a href="multi.html#multivariate-resemblance"><i class="fa fa-check"></i><b>4.1</b> Multivariate resemblance</a>
 <ul>
@@ -264,42 +273,42 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="4.5" data-path="multi.html"><a href="multi.html#references"><i class="fa fa-check"></i><b>4.5</b> References</a></li>
 <li class="chapter" data-level="4.6" data-path="multi.html"><a href="multi.html#answer-key"><i class="fa fa-check"></i><b>4.6</b> Answer Key</a></li>
 </ul></li>
-<li class="chapter" data-level="5" data-path="introduction-to-classification-and-machine-learning.html"><a href="introduction-to-classification-and-machine-learning.html"><i class="fa fa-check"></i><b>5</b> Introduction to classification and machine learning</a>
+<li class="chapter" data-level="5" data-path="machine-learning-and-classification.html"><a href="machine-learning-and-classification.html"><i class="fa fa-check"></i><b>5</b> Machine learning and classification</a>
 <ul>
-<li class="chapter" data-level="5.1" data-path="introduction-to-classification-and-machine-learning.html"><a href="introduction-to-classification-and-machine-learning.html#logistic-regression"><i class="fa fa-check"></i><b>5.1</b> Logistic regression</a>
+<li class="chapter" data-level="5.1" data-path="machine-learning-and-classification.html"><a href="machine-learning-and-classification.html#logistic-regression"><i class="fa fa-check"></i><b>5.1</b> Logistic regression</a>
 <ul>
-<li class="chapter" data-level="5.1.1" data-path="introduction-to-classification-and-machine-learning.html"><a href="introduction-to-classification-and-machine-learning.html#interpreting-the-logistic-regression"><i class="fa fa-check"></i><b>5.1.1</b> Interpreting the logistic regression</a></li>
-<li class="chapter" data-level="5.1.2" data-path="introduction-to-classification-and-machine-learning.html"><a href="introduction-to-classification-and-machine-learning.html#the-confusion-matrix"><i class="fa fa-check"></i><b>5.1.2</b> The confusion matrix</a></li>
-<li class="chapter" data-level="5.1.3" data-path="introduction-to-classification-and-machine-learning.html"><a href="introduction-to-classification-and-machine-learning.html#roc-and-auc"><i class="fa fa-check"></i><b>5.1.3</b> ROC and AUC</a></li>
+<li class="chapter" data-level="5.1.1" data-path="machine-learning-and-classification.html"><a href="machine-learning-and-classification.html#interpreting-the-logistic-regression"><i class="fa fa-check"></i><b>5.1.1</b> Interpreting the logistic regression</a></li>
+<li class="chapter" data-level="5.1.2" data-path="machine-learning-and-classification.html"><a href="machine-learning-and-classification.html#the-confusion-matrix"><i class="fa fa-check"></i><b>5.1.2</b> The confusion matrix</a></li>
+<li class="chapter" data-level="5.1.3" data-path="machine-learning-and-classification.html"><a href="machine-learning-and-classification.html#roc-and-auc"><i class="fa fa-check"></i><b>5.1.3</b> ROC and AUC</a></li>
 </ul></li>
-<li class="chapter" data-level="5.2" data-path="introduction-to-classification-and-machine-learning.html"><a href="introduction-to-classification-and-machine-learning.html#cross-validation"><i class="fa fa-check"></i><b>5.2</b> Cross-validation</a>
+<li class="chapter" data-level="5.2" data-path="machine-learning-and-classification.html"><a href="machine-learning-and-classification.html#cross-validation"><i class="fa fa-check"></i><b>5.2</b> Cross-validation</a>
 <ul>
-<li class="chapter" data-level="5.2.1" data-path="introduction-to-classification-and-machine-learning.html"><a href="introduction-to-classification-and-machine-learning.html#k-fold-cross-validation"><i class="fa fa-check"></i><b>5.2.1</b> k-Fold Cross-Validation</a></li>
-<li class="chapter" data-level="5.2.2" data-path="introduction-to-classification-and-machine-learning.html"><a href="introduction-to-classification-and-machine-learning.html#multiple-logistic-regression"><i class="fa fa-check"></i><b>5.2.2</b> Multiple logistic regression</a></li>
-<li class="chapter" data-level="5.2.3" data-path="introduction-to-classification-and-machine-learning.html"><a href="introduction-to-classification-and-machine-learning.html#examples-of-logistic-regression-used-for-classification"><i class="fa fa-check"></i><b>5.2.3</b> Examples of logistic regression used for classification</a></li>
+<li class="chapter" data-level="5.2.1" data-path="machine-learning-and-classification.html"><a href="machine-learning-and-classification.html#k-fold-cross-validation"><i class="fa fa-check"></i><b>5.2.1</b> k-Fold Cross-Validation</a></li>
+<li class="chapter" data-level="5.2.2" data-path="machine-learning-and-classification.html"><a href="machine-learning-and-classification.html#multiple-logistic-regression"><i class="fa fa-check"></i><b>5.2.2</b> Multiple logistic regression</a></li>
+<li class="chapter" data-level="5.2.3" data-path="machine-learning-and-classification.html"><a href="machine-learning-and-classification.html#examples-of-logistic-regression-used-for-classification"><i class="fa fa-check"></i><b>5.2.3</b> Examples of logistic regression used for classification</a></li>
 </ul></li>
-<li class="chapter" data-level="5.3" data-path="introduction-to-classification-and-machine-learning.html"><a href="introduction-to-classification-and-machine-learning.html#linear-discriminant-analysis-lda"><i class="fa fa-check"></i><b>5.3</b> Linear Discriminant Analysis (LDA)</a>
+<li class="chapter" data-level="5.3" data-path="machine-learning-and-classification.html"><a href="machine-learning-and-classification.html#linear-discriminant-analysis-lda"><i class="fa fa-check"></i><b>5.3</b> Linear Discriminant Analysis (LDA)</a>
 <ul>
-<li class="chapter" data-level="5.3.1" data-path="introduction-to-classification-and-machine-learning.html"><a href="introduction-to-classification-and-machine-learning.html#examples-of-discriminant-analysis-used-for-classification"><i class="fa fa-check"></i><b>5.3.1</b> Examples of discriminant analysis used for classification</a></li>
+<li class="chapter" data-level="5.3.1" data-path="machine-learning-and-classification.html"><a href="machine-learning-and-classification.html#examples-of-discriminant-analysis-used-for-classification"><i class="fa fa-check"></i><b>5.3.1</b> Examples of discriminant analysis used for classification</a></li>
 </ul></li>
-<li class="chapter" data-level="5.4" data-path="introduction-to-classification-and-machine-learning.html"><a href="introduction-to-classification-and-machine-learning.html#tree-based-methods-for-classification"><i class="fa fa-check"></i><b>5.4</b> Tree-based methods for classification</a>
+<li class="chapter" data-level="5.4" data-path="machine-learning-and-classification.html"><a href="machine-learning-and-classification.html#tree-based-methods-for-classification"><i class="fa fa-check"></i><b>5.4</b> Tree-based methods for classification</a>
 <ul>
-<li class="chapter" data-level="5.4.1" data-path="introduction-to-classification-and-machine-learning.html"><a href="introduction-to-classification-and-machine-learning.html#classification-and-regression-trees-carts"><i class="fa fa-check"></i><b>5.4.1</b> Classification and regression trees (CARTs)</a></li>
-<li class="chapter" data-level="5.4.2" data-path="introduction-to-classification-and-machine-learning.html"><a href="introduction-to-classification-and-machine-learning.html#random-forests"><i class="fa fa-check"></i><b>5.4.2</b> Random Forests</a></li>
-<li class="chapter" data-level="5.4.3" data-path="introduction-to-classification-and-machine-learning.html"><a href="introduction-to-classification-and-machine-learning.html#examples-of-tree-based-methods-used-for-classification"><i class="fa fa-check"></i><b>5.4.3</b> Examples of tree-based methods used for classification</a></li>
-<li class="chapter" data-level="5.4.4" data-path="introduction-to-classification-and-machine-learning.html"><a href="introduction-to-classification-and-machine-learning.html#r-functions-1"><i class="fa fa-check"></i><b>5.4.4</b> R functions</a></li>
+<li class="chapter" data-level="5.4.1" data-path="machine-learning-and-classification.html"><a href="machine-learning-and-classification.html#classification-and-regression-trees-carts"><i class="fa fa-check"></i><b>5.4.1</b> Classification and regression trees (CARTs)</a></li>
+<li class="chapter" data-level="5.4.2" data-path="machine-learning-and-classification.html"><a href="machine-learning-and-classification.html#random-forests"><i class="fa fa-check"></i><b>5.4.2</b> Random Forests</a></li>
+<li class="chapter" data-level="5.4.3" data-path="machine-learning-and-classification.html"><a href="machine-learning-and-classification.html#examples-of-tree-based-methods-used-for-classification"><i class="fa fa-check"></i><b>5.4.3</b> Examples of tree-based methods used for classification</a></li>
+<li class="chapter" data-level="5.4.4" data-path="machine-learning-and-classification.html"><a href="machine-learning-and-classification.html#r-functions-1"><i class="fa fa-check"></i><b>5.4.4</b> R functions</a></li>
 </ul></li>
-<li class="chapter" data-level="5.5" data-path="introduction-to-classification-and-machine-learning.html"><a href="introduction-to-classification-and-machine-learning.html#artificial-neural-networks-ann"><i class="fa fa-check"></i><b>5.5</b> Artificial Neural Networks (ANN)</a>
+<li class="chapter" data-level="5.5" data-path="machine-learning-and-classification.html"><a href="machine-learning-and-classification.html#artificial-neural-networks-ann"><i class="fa fa-check"></i><b>5.5</b> Artificial Neural Networks (ANN)</a>
 <ul>
-<li class="chapter" data-level="5.5.1" data-path="introduction-to-classification-and-machine-learning.html"><a href="introduction-to-classification-and-machine-learning.html#ann-learning"><i class="fa fa-check"></i><b>5.5.1</b> ANN learning</a></li>
-<li class="chapter" data-level="5.5.2" data-path="introduction-to-classification-and-machine-learning.html"><a href="introduction-to-classification-and-machine-learning.html#our-first-ann"><i class="fa fa-check"></i><b>5.5.2</b> Our first ANN</a></li>
-<li class="chapter" data-level="5.5.3" data-path="introduction-to-classification-and-machine-learning.html"><a href="introduction-to-classification-and-machine-learning.html#examples-of-anns-used-for-classification"><i class="fa fa-check"></i><b>5.5.3</b> Examples of ANNs used for classification</a></li>
-<li class="chapter" data-level="5.5.4" data-path="introduction-to-classification-and-machine-learning.html"><a href="introduction-to-classification-and-machine-learning.html#r-functions-2"><i class="fa fa-check"></i><b>5.5.4</b> R functions</a></li>
-<li class="chapter" data-level="5.5.5" data-path="introduction-to-classification-and-machine-learning.html"><a href="introduction-to-classification-and-machine-learning.html#what-else"><i class="fa fa-check"></i><b>5.5.5</b> What else?</a></li>
-<li class="chapter" data-level="5.5.6" data-path="introduction-to-classification-and-machine-learning.html"><a href="introduction-to-classification-and-machine-learning.html#feedback-4"><i class="fa fa-check"></i><b>5.5.6</b> Feedback</a></li>
+<li class="chapter" data-level="5.5.1" data-path="machine-learning-and-classification.html"><a href="machine-learning-and-classification.html#ann-learning"><i class="fa fa-check"></i><b>5.5.1</b> ANN learning</a></li>
+<li class="chapter" data-level="5.5.2" data-path="machine-learning-and-classification.html"><a href="machine-learning-and-classification.html#our-first-ann"><i class="fa fa-check"></i><b>5.5.2</b> Our first ANN</a></li>
+<li class="chapter" data-level="5.5.3" data-path="machine-learning-and-classification.html"><a href="machine-learning-and-classification.html#examples-of-anns-used-for-classification"><i class="fa fa-check"></i><b>5.5.3</b> Examples of ANNs used for classification</a></li>
+<li class="chapter" data-level="5.5.4" data-path="machine-learning-and-classification.html"><a href="machine-learning-and-classification.html#r-functions-2"><i class="fa fa-check"></i><b>5.5.4</b> R functions</a></li>
+<li class="chapter" data-level="5.5.5" data-path="machine-learning-and-classification.html"><a href="machine-learning-and-classification.html#what-else"><i class="fa fa-check"></i><b>5.5.5</b> What else?</a></li>
+<li class="chapter" data-level="5.5.6" data-path="machine-learning-and-classification.html"><a href="machine-learning-and-classification.html#feedback-4"><i class="fa fa-check"></i><b>5.5.6</b> Feedback</a></li>
 </ul></li>
-<li class="chapter" data-level="5.6" data-path="introduction-to-classification-and-machine-learning.html"><a href="introduction-to-classification-and-machine-learning.html#references-1"><i class="fa fa-check"></i><b>5.6</b> References</a></li>
-<li class="chapter" data-level="5.7" data-path="introduction-to-classification-and-machine-learning.html"><a href="introduction-to-classification-and-machine-learning.html#answer-key-1"><i class="fa fa-check"></i><b>5.7</b> Answer Key</a></li>
+<li class="chapter" data-level="5.6" data-path="machine-learning-and-classification.html"><a href="machine-learning-and-classification.html#references-1"><i class="fa fa-check"></i><b>5.6</b> References</a></li>
+<li class="chapter" data-level="5.7" data-path="machine-learning-and-classification.html"><a href="machine-learning-and-classification.html#answer-key-1"><i class="fa fa-check"></i><b>5.7</b> Answer Key</a></li>
 </ul></li>
 <li class="chapter" data-level="6" data-path="optimization.html"><a href="optimization.html"><i class="fa fa-check"></i><b>6</b> Optimization</a>
 <ul>
@@ -356,7 +365,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
             <section class="normal" id="section-">
 <div id="multi" class="section level1" number="4">
-<h1><span class="header-section-number">4</span> Introduction to multivariate analysis: Clustering and Ordination</h1>
+<h1><span class="header-section-number">4</span> Multivariate analysis: Clustering and Ordination</h1>
 <p>Imagine you are a public health researcher and you wish to determine how the health of individuals in a population is related to their living and working conditions, and access to health services. You will, of course, have to define health in terms of factors that can be measured for each individual such as: body mass index, mobility, sick days per year, blood pressure, self-reported well-being on a scale of 1 to 5, and so on. One could create a single synthetic “health” metric to which standard univariate approaches, such as multiple linear regression, could be applied. However, it is certainly plausible that different components of this metric could be related to different aspects of the potential predictors. In addition, some of the components of health may not not responsive to the potential predictors. It may be better to explore how all the different indicator and predictor variables are related.</p>
 <p>Similarly, we may wish to understand how precipitation, fertilization application rates, slope, soil composition and compaction are related to plant community composition. In this question, we may be tracking the abundance of over a dozen different species and many different sites with different types of soil, precipitation and other environmental factors. Again, we could possibly convert this multiplicity of information so that we have a single metric to describe the plant community (e.g., biodiversity), but such conversion may obscure important differences between species. Again, you can easily see that this is not a situation that ordinary univariate approaches are designed to handle!</p>
 <p>In this module we’ll be discussing multivariate quantitative methods. Analyses such as linear regression, where we relate a response, <em>y</em>, to a predictor variable, <em>x</em>, are univariate techniques. If we have multiple responses, <span class="math inline">\(y_1...y_n\)</span>, and multiple predictors, <span class="math inline">\(x_1...x_n\)</span>, we need multivariate approaches. There are many types of multivariate analysis, and we will only describe some of the most common ones. We can think of these different types of analysis as laying at different ends of a spectrum of treating the data as discrete vs continuous, and relying on identifying a reponse variable <em>a priori</em> versus letting the “data tell us” about explanatory features, i.e., latent variables (Fig. <a href="multi.html#fig:f1">4.1</a>).</p>
@@ -541,7 +550,7 @@ no
 </tbody>
 </table>
 <p><br>
-We could also use a shared <em>lack</em> of features as an indicator of similarity. The simple matching coefficient uses both shared features, and shared absent features, to quantify similarity as <span class="math inline">\(S_m=\frac{a+d}{a+b+c+d}\)</span>, where <em>a</em> refers to the number of shared characteristics of object 1 and object 2, <em>b</em> is the number characterisitics that object 1 possesses but object 2 does not and so on (see Table <a href="multi.html#tab:t2">4.2</a>).
+We could also use a shared <em>lack</em> of features as an indicator of similarity. The simple matching coefficient uses both shared features, and shared absent features, to quantify similarity as <span class="math inline">\(S_m=\frac{a+d}{a+b+c+d}\)</span>, where <em>a</em> refers to the number of shared characteristics of object 1 and object 2, <em>b</em> is the number characteristics that object 1 possesses but object 2 does not and so on (see Table <a href="multi.html#tab:t2">4.2</a>).
 <br>
 <br></p>
 <table style="width:90%; width: auto !important; " class="table table-bordered">
@@ -919,11 +928,11 @@ erie  1  0
 </div>
 <div id="quantitative-similarity-dissimilarity-metrics" class="section level3" number="4.1.2">
 <h3><span class="header-section-number">4.1.2</span> Quantitative similarity &amp; dissimilarity metrics</h3>
-<p>While binary similarity metrics are easy to understand, there are a few problems. These metrics work best when we have a small number of characteristics and we have sampled very well (e.g., the zooplankton in Lake Erie and Ontario). However, these metrics are biased against maximum similarity values when we have lots of charactersitics (or species) and poor sampling.</p>
-<p>In addition, we sometimes have more information than just a “yes” or “no” which we could use to further characterize similarity. Quantiative similarity and dissimilarity metrics make use of this information. Some examples of quantitative similarity metrics are: Percentage similarity (Renkonen index), Morisita’s index of similarity (not dispersion) and Horn’s index. However, quantitative dissimilarity metrics are perhaps more commonly used. In this case, we often talk about the “distance” between two things. Distances are of two types, either dissimilarity, converted from analogous similarity indices, or specific distance measures, such as Euclidean distance, which doesn’t have a counterpart in any similarity index. There are many, many such metrics, and obviously, you should choose the most accurate and meaningful distance measure for a given application. Legendre &amp; Legendre (2012) offer a key on how to select an appropriate measure for given data and problem (check their Tables 7.4-7.6). If you are uncertain, then choose several distance measures and compare the results.</p>
+<p>While binary similarity metrics are easy to understand, there are a few problems. These metrics work best when we have a small number of characteristics and we have sampled very well (e.g., the zooplankton in Lake Erie and Ontario). However, these metrics are biased against maximum similarity values when we have lots of characteristics (or species) and poor sampling.</p>
+<p>In addition, we sometimes have more information than just a “yes” or “no” which we could use to further characterize similarity. Quantitative similarity and dissimilarity metrics make use of this information. Some examples of quantitative similarity metrics are: Percentage similarity (Renkonen index), Morisita’s index of similarity (not dispersion) and Horn’s index. However, quantitative dissimilarity metrics are perhaps more commonly used. In this case, we often talk about the “distance” between two things. Distances are of two types, either dissimilarity, converted from analogous similarity indices, or specific distance measures, such as Euclidean distance, which doesn’t have a counterpart in any similarity index. There are many, many such metrics, and obviously, you should choose the most accurate and meaningful distance measure for a given application. Legendre &amp; Legendre (2012) offer a key on how to select an appropriate measure for given data and problem (check their Tables 7.4-7.6). If you are uncertain, then choose several distance measures and compare the results.</p>
 <div id="euclidean-distance" class="section level4" number="4.1.2.1">
 <h4><span class="header-section-number">4.1.2.1</span> Euclidean Distance</h4>
-<p>Perhaps the mostly commonly used, and easiest to understand distance measure is Euclidian distance. This metric is zero for identical sampling units and has no fixed upper bound.</p>
+<p>Perhaps the mostly commonly used, and easiest to understand distance measure is Euclidean distance. This metric is zero for identical sampling units and has no fixed upper bound.</p>
 <p>Euclidean distance in multivariate space is derived from our understanding of distance in a Cartesian plane. If we had two species abundances measured in two different samples, we could then plot the abundance of species 1 and species 2 for each sample on a 2D plane, and draw a line between them. This would be our Euclidean distance: the shortest path between the two points (Fig. <a href="multi.html#fig:f2">4.2</a>).</p>
 <div class="figure"><span id="fig:f2"></span>
 <img src="_main_files/figure-html/f2-1.png" alt="This is plot with x-axis labelled 'Species 1' and y-axis labelled 'Species 2'. There is a blue point at coordinate (19,35) titled 'sample j' and a blue point at coordinate (30,10) titled 'sample k'. Both points are connected by a blue line labelled 'c'. Dotted lines emerge downwards from point 'sample j' labelled 'b' and leftwards from point 'sample k' labelled 'a', and meet up perpendicularly at the coordinate (19,10)." width="672" />
@@ -1110,7 +1119,7 @@ TOTAL
 </tbody>
 </table>
 <p><strong>Exercise 1</strong>
-Finish the calculation the euclidean distance for this data.</p>
+Finish the calculation of the Euclidean distance for this data.</p>
 <p>Of course, R makes this much easier, I can calculate Euclidean distance using the <strong>dist()</strong> function, after creating a matrix of the two rows of species abundance data from my original <em>eu</em> dataframe.</p>
 <div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb32-1"><a href="multi.html#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="fu">dist</span>(<span class="fu">rbind</span>(eu<span class="sc">$</span>j, eu<span class="sc">$</span>k), <span class="at">method =</span> <span class="st">&quot;euclidean&quot;</span>)</span></code></pre></div>
 <p>There are many other quantitative dissimilarity metrics. For example, Bray Curtis dissimilarity is frequently used by ecologists to quantify differences between samples based on abundance or count data. This measure is usually applied to raw abundance data, but can be applied to relative abundances. It is calculated as: <span class="math inline">\(BC_{ij}=1-\frac{C_{ij}}{S_{i}+S_{j}}\)</span>, where <span class="math inline">\(C_{ij}\)</span> is the sum over the smallest values for only those species in common between both sites, <span class="math inline">\(S_{i}\)</span> and <span class="math inline">\(S_{j}\)</span> are the sum of abundances at the two sites. This metric is directly related to the Sørenson binary similarity metric, and ranges from 0 to 1, with 0 indicating complete similarity. This is not at distance metric, and so, is not appropriate for some types of analysis.</p>
@@ -1196,11 +1205,11 @@ C 7.615773 9.000000 0.000000</code></pre>
 <div id="r-functions" class="section level3" number="4.1.4">
 <h3><span class="header-section-number">4.1.4</span> R functions</h3>
 <p>There are a number of functions in R that can be used to calculate similarity and dissimilarity metrics. Since we are usually not just comparing two objects, sites or samples, these functions can help make your calculations much quicker when you are comparing many units.</p>
-<p><strong>dist()</strong> (base R, no package needed) offers a number of quantitative distance measures (e.g. euclidean,canberra and manhattan). The result is the distance matrix which gives the dissimilarity of each pair of objects, sites or samples. the matrix is an object of the class dist in R.</p>
+<p><strong>dist()</strong> (base R, no package needed) offers a number of quantitative distance measures (e.g. Euclidean,Canberra and Manhattan). The result is the distance matrix which gives the dissimilarity of each pair of objects, sites or samples. the matrix is an object of the class dist in R.</p>
 <p><strong>vegdist()</strong> (library vegan). The default distance used in this function is Bray-Curtis distance, which is considered more suitable for ecological data.</p>
 <p><strong>dsvdis()</strong> (library labdsv) Offers some other indices than vegdist (e.g., ruzicka or Růžička), a quantitative analogue of Jaccard, and Roberts.</p>
 <p>For full comparison of dist, vegdist and dsvdis, see <a href="http://ecology.msu.montana.edu/labdsv/R/labs/lab8/lab8.html" class="uri">http://ecology.msu.montana.edu/labdsv/R/labs/lab8/lab8.html</a>.</p>
-<p><strong>daisy()</strong> (library cluster) Offers euclidean, manhattan and gower distance.</p>
+<p><strong>daisy()</strong> (library cluster) Offers Euclidean, Manhattan and Gower distance.</p>
 <p><strong>designdist()</strong> (library vegan) Allows one to design virtually any distance measure using the formula for their calculation.</p>
 <p><strong>dist.ldc()</strong> (library adespatial) Includes 21 dissimilarity indices described in Legendre &amp; De Cáceres (2013), twelve of which are not readily available in other packages. Note that Bray-Curtis dissimilarity is called percentage difference (method = “percentdiff”).</p>
 <p><strong>distance()</strong> (library ecodist) Contains seven distance measures, but the function is more for demonstration (for larger matrices, the calculation takes rather long).</p>
@@ -1208,7 +1217,7 @@ C 7.615773 9.000000 0.000000</code></pre>
 </div>
 <div id="cluster-analysis" class="section level2" number="4.2">
 <h2><span class="header-section-number">4.2</span> Cluster Analysis</h2>
-<p>When we have a large number of things to compare, an examination of a matrix of similarlity or dissimilatiry metrics can be tedious or even impossible to do. One way to visualize the similarity among units is to use some form of cluster analysis. Clustering is the grouping of data objects into discrete similarity categories according to a defined similarity or dissimilarity measure.</p>
+<p>When we have a large number of things to compare, an examination of a matrix of similarity or dissimilarity metrics can be tedious or even impossible to do. One way to visualize the similarity among units is to use some form of cluster analysis. Clustering is the grouping of data objects into discrete similarity categories according to a defined similarity or dissimilarity measure.</p>
 <p>We can contrast clustering, which assumes that units (e.g., sites, communities, species or genes) can be grouped into discrete categories based on similarity, with ordination, which treats the similarity between units as a continuous gradient (we’ll discuss ordination in section <a href="multi.html#Ord">4.3</a>). We can use clustering to do things like discern whether there are one or two or three different communities in three or four or five sampling units. It is used in many fields, such as machine learning, data mining, pattern recognition, image analysis, genomics, systems biology, etc. Machine learning typically regards data clustering as a form of unsupervised learning, or from our figure above (Fig <a href="multi.html#fig:f1">4.1</a>), as a technique that uses “latent” variables because we are not guided by <em>a priori</em> ideas of which variables or samples belong in which clusters.</p>
 <div id="hierarchical-clustering-groups-are-nested-within-other-groups." class="section level3" number="4.2.1">
 <h3><span class="header-section-number">4.2.1</span> Hierarchical clustering: groups are nested within other groups.</h3>
@@ -1276,8 +1285,8 @@ data object is assigned to the cluster with the closest centroid. In this method
 <p><strong>hclust()</strong> (base R, no library needed) calculates hierarchical, agglomerative clusters and has its own plot function.</p>
 <p><strong>agnes()</strong> (library cluster) Contains six agglomerative algorithms, some not included in hclust.</p>
 <p><strong>diana()</strong> divisive hierarchical clustering</p>
-<p><strong>kmeans()</strong> - kmeans clustering</p>
-<p><strong>fanny()</strong>(cluster package) - fuzzy clustering</p>
+<p><strong>kmeans()</strong> kmeans clustering</p>
+<p><strong>fanny()</strong>(cluster package) fuzzy clustering</p>
 </div>
 <div id="example-cluster-analysis-of-isotope-data" class="section level3" number="4.2.4">
 <h3><span class="header-section-number">4.2.4</span> Example: Cluster analysis of isotope data</h3>
@@ -1363,7 +1372,7 @@ Try a non-hierarchical cluster analysis on the same data to see if it works bett
 <div id="Ord" class="section level2" number="4.3">
 <h2><span class="header-section-number">4.3</span> Ordination</h2>
 <p>While cluster analysis lets us visualize multivariate data by grouping objects into discrete categories, ordination uses continuous axes to help us accomplish the same task. Physicists grumble if space exceeds four dimensions, while biologists typically grapple with dozens of dimensions. We can “order” this multivariate data to produce a low dimensional picture (i.e., a graph in 1-3 dimensions). Just like cluster analysis, we will use similarity metrics to accomplish this. Also like cluster analysis, simple ordination is not a statistical test: it is a method of visualizing data.</p>
-<p>Essentially, we find axes in the data that explain a lot of variation, and rotate so we can use the axes as our dimensions of visual representation (Fig. <a href="multi.html#fig:dummy1">4.9</a>). I’ve left the scatter about the line, but actually each point would the have only a location on the synthetic xy axis.</p>
+<p>Essentially, we find axes in the data that explain a lot of variation, and rotate so we can use the axes as our dimensions of visual representation (Fig. <a href="multi.html#fig:dummy1">4.9</a>). I’ve left the scatter about the line, but actually each point would have only a location on the synthetic xy axis.</p>
 <div class="figure"><span id="fig:dummy1"></span>
 <img src="_main_files/figure-html/dummy1-1.png" alt="This figure shows two untitled plots placed side by side. Both plots contain a set of light green points and a blue fitted line. The left plot has x-axis label 'x' and y-axis label 'y'. The light green points in the left plot are scattered and show an upwards trend. The blue fitted line in the left plot is shown going upwards and to the right. The right plot has x-axis label 'xy synthesis' and no y-axis label. The light green points in the right plot are scaterred in the center of the plot and the blue fitted line is also located at the center of the plot and is parallel with the x-axis." width="576" />
 <p class="caption">
@@ -1378,7 +1387,7 @@ Figure 4.10: Ordination as data reduction. We summarize data with many observati
 </p>
 </div>
 <p>There are lots of different ways to perform an ordination, but most methods are based on extracting the eigenvalues of a similarity matrix. The four most commonly used methods are: <em>Principle Component Analysis (PCA)</em>, which is the main eigenvector-based method, <em>Correspondence Analysis (CA)</em> which is used used on frequency data, <em>Principle Coordinate Analysis (PCoA)</em> which works on dissimilarity matrices, and <em>Non Metric Multidimensional Scaling (nMDS)</em> which is not an eigenvector method, instead it represents objects along a predetermined number of axes.
-Legendre &amp; Legendre (2012) provide a nice summary of when you should use each method (Table <a href="multi.html#tab:tord">4.6</a>).</p>
+Legendre &amp; Legendre (2012) provide a nice summary of when you can use each method (Table <a href="multi.html#tab:tord">4.6</a>). I would like to reiterate that this is a very basic introduction to these methods, and once you are oriented, I suggest you go in search materials authored by experts like Legendre &amp; Legendre (2012), and related materials for R such as Borcard et al. (2011).</p>
 <table>
 <caption>
 <span id="tab:tord">Table 4.6: </span>Domains of application of ordination methods (adapated from Legendre &amp; Legendre 2012)
@@ -1447,7 +1456,7 @@ Quantitative, semiquantitative, qualitative, or mixed data
 <h3><span class="header-section-number">4.3.1</span> Principal Components Analysis (PCA)</h3>
 <p><strong>P</strong>rincipal <strong>C</strong>omponents <strong>A</strong>nalysis (PCA) is probably the most widely-used and well-known of the standard multivariate methods. It was invented by Pearson (1901) and Hotelling (1933), and first applied in ecology by Goodall (1954) under the name “factor analysis” (NB “principal factor analysis” is also a synonym of PCA). Like most ordination methods, PCA takes a data matrix of <em>n</em> objects by <em>p</em> variables, which may be correlated, and summarizes it by uncorrelated axes (principal components or principal axes) that are linear combinations of the original <em>p</em> variables. The first <em>k</em> components display as much as possible of the variation among objects. PCA uses Euclidean distance calculated from the <em>p</em> variables as the measure of dissimilarity among the <em>n</em> objects, and derives the best possible k-dimensional representation of the Euclidean distances among objects, where <span class="math inline">\(k &lt; p\)</span> .</p>
 <p>We can think about this spatially. Objects are represented as a cloud of n points in a multidimensional space with an axis for each of the p variables. So the centroid of the points is defined by the mean of each variable, and
-the variance of each variable is the average squared deviation of its n values around the mean of that variable (i.e., <span class="math inline">\(V_i= \frac{1}{n-1}\sum_{m=1}^{n}{(X_{im}-\bar{X_i)}^2}\)</span>). The degree to which the variables are linearly correlated is given by their covariances <span class="math inline">\(C_{ij}=\frac{1}{n-1}\sum_{m=1}^n{(X_{im}-\bar{X_i})(X_{jm}-\bar{X_j})}\)</span>. The objective of PCA is to rigidly rotate the axes of the p-dimenional space to new positions (principal axes) that have the following properties: they are ordered such that principal axis 1 (or the <em>principal component</em> has the highest variance, axis 2 has the next highest variance etc, and the covariance among each pair of principal axes is zero (the principal axes are uncorrelated) (Fig. <a href="multi.html#fig:varord">4.11</a>).</p>
+the variance of each variable is the average squared deviation of its n values around the mean of that variable (i.e., <span class="math inline">\(V_i= \frac{1}{n-1}\sum_{m=1}^{n}{(X_{im}-\bar{X_i)}^2}\)</span>). The degree to which the variables are linearly correlated is given by their covariances <span class="math inline">\(C_{ij}=\frac{1}{n-1}\sum_{m=1}^n{(X_{im}-\bar{X_i})(X_{jm}-\bar{X_j})}\)</span>. The objective of PCA is to rigidly rotate the axes of the p-dimensional space to new positions (principal axes) that have the following properties: they are ordered such that principal axis 1 (or the <em>principal component</em> has the highest variance, axis 2 has the next highest variance etc, and the covariance among each pair of principal axes is zero (the principal axes are uncorrelated) (Fig. <a href="multi.html#fig:varord">4.11</a>).</p>
 <div class="figure"><span id="fig:varord"></span>
 <img src="_main_files/figure-html/varord-1.png" alt="This figure shows two plots stacked on top of each other. One plot has blue x-axis labelled 'X1' and a blue y-axis labelled 'X2'. The plot has 24 scattered nyon green points that show an upwards trend and a yellow dashed line that begins at the origin and extends 45° from the x-axis. The second plot is placed on top of the first plot and has a dark red x-axis labelled 'Y1' and a dark red y-axis labelled 'Y2'. The second plot is angled such that the x-axis of the second plot is parallel to the yellow dashed line in the first plot and the center of the y-axis of the second plot touches the origin of the first plot as well as the starting point of the yellow dashed line. The second plot shows two hill-like functions. The first one is located on the dark red x-axis labelled 'Y1' and the second one is on the dark red y-axis labelled 'Y2'. There is text below the plots that says 'Y1 axis selected to maximize variation explained' and 'Y2 axis must be orthogonal to Y1 and maximize variation explained'." width="672" />
 <p class="caption">
@@ -1707,13 +1716,11 @@ Figure 4.16: PCA biplot for the iris data
 </div>
 <div id="r-functions-for-pca" class="section level4" number="4.3.1.5">
 <h4><span class="header-section-number">4.3.1.5</span> R functions for PCA</h4>
-<ul>
-<li><strong>prcomp()</strong> (base R, no library needed)</li>
-<li><strong>rda()</strong> (vegan)</li>
-<li><strong>PCA()</strong> (FactoMineR library)</li>
-<li><strong>dudi.pca()</strong> (ade4)</li>
-<li><strong>acp()</strong> (amap)</li>
-</ul>
+<p><strong>prcomp()</strong> (base R, no library needed)</p>
+<p><strong>rda()</strong> (vegan)</p>
+<p><strong>PCA()</strong> (FactoMineR library)</p>
+<p><strong>dudi.pca()</strong> (ade4)</p>
+<p><strong>acp()</strong> (amap)</p>
 </div>
 </div>
 <div id="principle-coordinates-analysis-pcoa" class="section level3" number="4.3.2">
@@ -1721,15 +1728,12 @@ Figure 4.16: PCA biplot for the iris data
 <p>The PCoA method may be used with all types of distance descriptors, and so might be able to avoid some problems of PCA. Although, a PCoA computed on a Euclidean distance matrix gives the same results as a PCA conducted on the original data</p>
 <div id="r-functions-for-pcoa" class="section level4" number="4.3.2.1">
 <h4><span class="header-section-number">4.3.2.1</span> R functions for PCoA</h4>
-<ul>
-<li><strong>cmdscale()</strong>
-(base R, no package needed)</li>
-<li><strong>smacofSym()</strong> (library smacof)</li>
-<li><strong>pco()</strong>(ecodist)</li>
-<li><strong>pco()</strong>(labdsv)</li>
-<li><strong>pcoa()</strong>(ape)</li>
-<li><strong>dudi.pco()</strong>(ade4)</li>
-</ul>
+<p><strong>cmdscale()</strong> (base R, no package needed)</p>
+<p><strong>smacofSym()</strong> (library smacof)</p>
+<p><strong>pco()</strong>(ecodist)</p>
+<p><strong>pco()</strong>(labdsv)</p>
+<p><strong>pcoa()</strong>(ape)</p>
+<p><strong>dudi.pco()</strong>(ade4)</p>
 </div>
 </div>
 <div id="nonmetric-multidimensional-scaling-nmds" class="section level3" number="4.3.3">
@@ -1782,15 +1786,13 @@ Figure 4.17: Shepard’s plot of an nMDS ordination using 2 axes to represent th
 <p>nMDS often achieves a less deformed representation of the dissimilarity relationships among objects than a PCoA in the same number of dimensions. But nMDS is a computer-intensive iterative technique exposed to the risk of suboptimum solutions. In comparison, PCoA finds the optimal solution by eigenvalue decomposition.</p>
 <div id="r-functions-for-nmds" class="section level4" number="4.3.3.1">
 <h4><span class="header-section-number">4.3.3.1</span> R functions for nMDS</h4>
-<ul>
-<li><strong>metaMDS()</strong> (vegan package)</li>
-<li><strong>isoMDS( )</strong> (MASS)</li>
-</ul>
+<p><strong>metaMDS()</strong> (vegan package)</p>
+<p><strong>isoMDS( )</strong> (MASS)</p>
 </div>
 </div>
 <div id="example-nmds-and-pcoa" class="section level3" number="4.3.4">
 <h3><span class="header-section-number">4.3.4</span> Example: nMDS and PCoA</h3>
-<p>We are going to use the vegan package, and some built-in data with it to run the nMDS and PcOA. Varespec is a data frame of observations of 44 species of lichen at 24 sites. We’ll calculate both an nMDS and a PCoA using the (cmdscale() function) on the Bray-Curtis distance matrix of these data. In each case, we will specify that we want 2 dimensions as our output. The vegan wrapper for nMDS ordination (<strong>metaMDS()</strong>) standardizes our community data by default, using a Wisconsin transform. This is a method of double standardization that avoids negative values in the transformed data, and is completed by first standardizing species data using the maxima, and then the site by totals. We will have to apply this standardization manually for the PCoA analysis, and then calculate the dissimilarity matrix.</p>
+<p>We are going to use the vegan package, and some built-in data with it to run the nMDS and PcOA. Varespec is a data frame of observations of 44 species of lichen at 24 sites. We’ll calculate both an nMDS and a PCoA using the (<strong>cmdscale()</strong> function) on the Bray-Curtis distance matrix of these data. In each case, we will specify that we want 2 dimensions as our output. The vegan wrapper for nMDS ordination (<strong>metaMDS()</strong>) standardizes our community data by default, using a Wisconsin transform. This is a method of double standardization that avoids negative values in the transformed data, and is completed by first standardizing species data using the maxima, and then the site by totals. We will have to apply this standardization manually for the PCoA analysis, and then calculate the dissimilarity matrix.</p>
 <div class="sourceCode" id="cb61"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb61-1"><a href="multi.html#cb61-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(vegan)</span>
 <span id="cb61-2"><a href="multi.html#cb61-2" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(varespec)</span>
 <span id="cb61-3"><a href="multi.html#cb61-3" aria-hidden="true" tabindex="-1"></a>nMDS <span class="ot">&lt;-</span> <span class="fu">metaMDS</span>(varespec, <span class="at">trymax =</span> <span class="dv">100</span>, <span class="at">distance =</span> <span class="st">&quot;bray&quot;</span>, <span class="at">k =</span> <span class="dv">2</span>,</span>
@@ -1863,7 +1865,7 @@ Figure 4.19: Diagram showing the differences between uncontrained ordination, mu
 <p>We should mention that there are several closely related forms of RDA analysis:</p>
 <p><strong>tb-RDA</strong> (transformation-based RDA, Legendre &amp; Gallagher 2001): transform the species data with vegan’s <strong>decostand()</strong>, then use the transformed data matrix as input matrix Y in RDA.</p>
 <p><strong>db-RDA</strong> (distance-based RDA, Legendre &amp; Anderson 1999): compute PCoA from a pre-computed dissimilarity matrix D, then use the principal coordinates as input matrix Y in RDA.</p>
-<p><strong>db-RDA</strong> can also be computed directly by function <strong>dbrda()</strong> in vegan. For a Euclidean matrix, the result is the same as if PCoA had been computed, followed by regular RDA. Function dbrda() can directly handle non-Euclidean D matrices, but beware of the results if the matrix is strongly non-Euclidean and make certain this is what you want.</p>
+<p><strong>db-RDA</strong> can also be computed directly by function <strong>dbrda()</strong> in vegan. For a Euclidean matrix, the result is the same as if PCoA had been computed, followed by regular RDA. Function dbrda() can directly handle non-Euclidean dissimilarity matrices, but beware of the results if the matrix is strongly non-Euclidean and make certain this is what you want.</p>
 <p>Vegan has three methods of constrained ordination: constrained or “canonical” correspondence analysis (<strong>cca()</strong>), redundancy analysis (<strong>rda()</strong>), and distance-based redundancy analysis (<strong>capscale()</strong>). All these functions can have a conditioning term that is “partialled out.” All functions accept similar commands and can be used in the same way. The preferred way is to use formula interface, where the left hand side gives the community data frame and the right hand side lists the constraining variables:</p>
 </div>
 </div>
@@ -1887,8 +1889,8 @@ Figure 4.20: Correlations between environmental variables
 <span id="cb66-2"><a href="multi.html#cb66-2" aria-hidden="true" tabindex="-1"></a>scvarechem <span class="ot">=</span> <span class="fu">as.data.frame</span>(<span class="fu">scale</span>(varechem))</span>
 <span id="cb66-3"><a href="multi.html#cb66-3" aria-hidden="true" tabindex="-1"></a>constr <span class="ot">&lt;-</span> vegan<span class="sc">::</span><span class="fu">rda</span>(stvarespec <span class="sc">~</span> ., <span class="at">data =</span> scvarechem)</span>
 <span id="cb66-4"><a href="multi.html#cb66-4" aria-hidden="true" tabindex="-1"></a>constr</span></code></pre></div>
-<pre><code>Call: rda(formula = stvarespec ~ N + P + K + Ca + Mg + S + Al + Fe + Mn + Zn + Mo + Baresoil + Humdepth
-+ pH, data = scvarechem)
+<pre><code>Call: rda(formula = stvarespec ~ N + P + K + Ca + Mg + S + Al + Fe + Mn + Zn + Mo + Baresoil + Humdepth + pH, data =
+scvarechem)
 
               Inertia Proportion Rank
 Total         0.05084    1.00000     
@@ -1897,10 +1899,8 @@ Unconstrained 0.01471    0.28943    9
 Inertia is variance 
 
 Eigenvalues for constrained axes:
-    RDA1     RDA2     RDA3     RDA4     RDA5     RDA6     RDA7     RDA8     RDA9    RDA10    RDA11    RDA12 
-0.008120 0.005642 0.004808 0.003525 0.002956 0.002592 0.001953 0.001665 0.001265 0.001129 0.000964 0.000627 
-   RDA13    RDA14 
-0.000507 0.000373 
+    RDA1     RDA2     RDA3     RDA4     RDA5     RDA6     RDA7     RDA8     RDA9    RDA10    RDA11    RDA12    RDA13    RDA14 
+0.008120 0.005642 0.004808 0.003525 0.002956 0.002592 0.001953 0.001665 0.001265 0.001129 0.000964 0.000627 0.000507 0.000373 
 
 Eigenvalues for unconstrained axes:
      PC1      PC2      PC3      PC4      PC5      PC6      PC7      PC8      PC9 
@@ -1941,7 +1941,7 @@ Model     3 0.011714 1.996  0.001 ***
 Residual 20 0.039125                 
 ---
 Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
-<p>So the results suggest that our model explains a signficant amount of variation in the data. We can also perform significance tests for each variable:</p>
+<p>So the results suggest that our model explains a significant amount of variation in the data. We can also perform significance tests for each variable:</p>
 <div class="sourceCode" id="cb72"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb72-1"><a href="multi.html#cb72-1" aria-hidden="true" tabindex="-1"></a><span class="fu">anova</span>(ord3, <span class="at">by =</span> <span class="st">&quot;term&quot;</span>, <span class="at">permutations =</span> <span class="dv">199</span>)</span></code></pre></div>
 <pre><code>Permutation test for rda under reduced model
 Terms added sequentially (first to last)
@@ -1957,11 +1957,11 @@ Residual 20 0.039125
 ---
 Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
 <p>The analysis suggests that maybe we haven’t chosen the best set of predictors. For example, N does not explain a significant amount of variation. This test is sequential: the terms are analyzed in the order they happen to be in the model, so you may get different results depending on how the model is specified. See if you can detect this, by rearranging your model terms in the call to ordination.</p>
-<p>NB It is also possible to analyze the significance of marginal effects (“Type III effects”) by specifying that option (by=‘mar’) or analyse the significance of each axis, again by specifiying that option in the anova call (i.e.,by=‘axis’).</p>
+<p>NB It is also possible to analyze the significance of marginal effects (“Type III effects”) by specifying that option (by=‘mar’) or analyse the significance of each axis, again by specifying that option in the anova call (i.e.,by=‘axis’).</p>
 </div>
 <div id="forward-selection-of-explanatory-variables" class="section level3" number="4.4.4">
 <h3><span class="header-section-number">4.4.4</span> Forward Selection of explanatory variables</h3>
-<p>You may wonder if you have selected the correct variables! We can use the <strong>ordiR2step()</strong> function to perform forward selection (and backwards selection or both directions) on a null model. In automatic model building we usually need two extreme models: the smallest and the largest model considered. First we specify a full model with all the environmental variables, and then a minimal model with intercept only, where both are defined using a formula so that terms can be added or removed from the model. Then we allow an automated model selection function to move between these extremes, trying to minimze a metric of model fit, such as <span class="math inline">\(R^2\)</span>. We will then use ordiR2step() to find an optimal model based on both permutation and adjusted <span class="math inline">\(R^2\)</span> values. If you switch the trace=FALSE option to trace=TRUE you can watch the function doing its work.</p>
+<p>You may wonder if you have selected the correct variables! We can use the <strong>ordiR2step()</strong> function to perform forward selection (and backwards selection or both directions) on a null model. In automatic model building we usually need two extreme models: the smallest and the largest model considered. First we specify a full model with all the environmental variables, and then a minimal model with intercept only, where both are defined using a formula so that terms can be added or removed from the model. Then we allow an automated model selection function to move between these extremes, trying to minimize a metric of model fit, such as <span class="math inline">\(R^2\)</span>. We will then use ordiR2step() to find an optimal model based on both permutation and adjusted <span class="math inline">\(R^2\)</span> values. If you switch the trace=FALSE option to trace=TRUE you can watch the function doing its work.</p>
 <div class="sourceCode" id="cb74"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb74-1"><a href="multi.html#cb74-1" aria-hidden="true" tabindex="-1"></a>mfull <span class="ot">&lt;-</span> vegan<span class="sc">::</span><span class="fu">rda</span>(stvarespec <span class="sc">~</span> ., <span class="at">data =</span> scvarechem)</span>
 <span id="cb74-2"><a href="multi.html#cb74-2" aria-hidden="true" tabindex="-1"></a>m0 <span class="ot">&lt;-</span> vegan<span class="sc">::</span><span class="fu">rda</span>(stvarespec <span class="sc">~</span> <span class="dv">1</span>, <span class="at">data =</span> scvarechem)</span>
 <span id="cb74-3"><a href="multi.html#cb74-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -1996,10 +1996,10 @@ Eigenvalues for unconstrained axes:
 <p>Contrary to what one sometimes reads, variables with high VIFs should generally not be manually removed before the application of a procedure of selection of variables. Indeed, two highly correlated variables that are both strong predictors of one or several of the response variables Y may both contribute significantly, in complementary manners, to the linear model of these response variables. A variable selection procedure is the appropriate way of determining if that is the case.</p>
 <p>However, let’s see what happened with collinearity. VIFs can be computed in vegan after RDA or CCA. The algorithm in the <strong>vif.cca()</strong> function allows users to include factors in the RDA; the function will compute VIF after breaking down each factor into dummy variables. If X contains quantitative variables only, the vif.cca() function produces the same result as the normal calculation for quantitative variables.</p>
 <div class="sourceCode" id="cb77"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb77-1"><a href="multi.html#cb77-1" aria-hidden="true" tabindex="-1"></a><span class="fu">vif.cca</span>(mfull)</span></code></pre></div>
-<pre><code>        N         P         K        Ca        Mg         S        Al        Fe        Mn        Zn        Mo 
- 1.884049  6.184742 11.746873  9.825650  9.595203 18.460717 20.331905  8.849137  5.168278  7.755110  4.575108 
- Baresoil  Humdepth        pH 
- 2.213443  5.638807  6.910118 </code></pre>
+<pre><code>        N         P         K        Ca        Mg         S        Al        Fe        Mn        Zn        Mo  Baresoil  Humdepth 
+ 1.884049  6.184742 11.746873  9.825650  9.595203 18.460717 20.331905  8.849137  5.168278  7.755110  4.575108  2.213443  5.638807 
+       pH 
+ 6.910118 </code></pre>
 <div class="sourceCode" id="cb79"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb79-1"><a href="multi.html#cb79-1" aria-hidden="true" tabindex="-1"></a><span class="fu">vif.cca</span>(optm)</span></code></pre></div>
 <pre><code>      Fe        P       Mn 
 1.259334 1.431022 1.738208 </code></pre>
@@ -2079,6 +2079,7 @@ Figure 4.23: Triplot of an RDA ordination on the lichen data with species scalin
 </div>
 <div id="references" class="section level2" number="4.5">
 <h2><span class="header-section-number">4.5</span> References</h2>
+<p>Borcard, D., Gillet, F., &amp; Legendre, P. (2011). Numerical ecology with R. New York: springer.</p>
 <p>Goodall, D. W. (1954). Objective methods for the classification of vegetation. III. An essay in the use of factor analysis. Australian Journal of Botany, 2(3), 304–324. <a href="https://doi.org/10.1071/bt9540304" class="uri">https://doi.org/10.1071/bt9540304</a></p>
 <p>Greenacre, M. (2017). Ordination with any dissimilarity measure: A weighted Euclidean solution. Ecology, 98(9), 2293–2300. <a href="https://doi.org/10.1002/ecy.1937" class="uri">https://doi.org/10.1002/ecy.1937</a></p>
 <p>Hotelling, H. (1933). Analysis of a complex of statistical variables into principal components. Journal of Educational Psychology, 24(6), 417–441. <a href="https://doi.org/10.1037/h0071325" class="uri">https://doi.org/10.1037/h0071325</a></p>
@@ -2099,7 +2100,25 @@ Figure 4.23: Triplot of an RDA ordination on the lichen data with species scalin
 <p><strong>Exercise 1.</strong> All we need to do is to take the square root of the sum of the squared differences to obtain the Euclidean distance as</p>
 <div class="sourceCode" id="cb88"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb88-1"><a href="multi.html#cb88-1" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(<span class="fu">sqrt</span>(eu[<span class="dv">11</span>, <span class="dv">4</span>]), <span class="dv">2</span>)</span></code></pre></div>
 <pre><code>[1] 61.6</code></pre>
-<strong>Exercise 2.</strong> We use the <strong>kmeans()</strong> function with 4 clusters to find groups in the isotope data. We can then save the assigned clusters to our dataframe and plot in a similar way
+<p><strong>Exercise 2.</strong> We use the <strong>kmeans()</strong> function with 4 clusters to find groups in the isotope data. We can then save the assigned clusters to our dataframe and plot in a similar way</p>
+<div class="sourceCode" id="cb90"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb90-1"><a href="multi.html#cb90-1" aria-hidden="true" tabindex="-1"></a><span class="co"># select 4 clusters and run the kmeans function</span></span>
+<span id="cb90-2"><a href="multi.html#cb90-2" aria-hidden="true" tabindex="-1"></a>kclust <span class="ot">=</span> <span class="fu">kmeans</span>(niso[, <span class="fu">c</span>(<span class="st">&quot;C&quot;</span>, <span class="st">&quot;N&quot;</span>)], <span class="dv">4</span>)</span>
+<span id="cb90-3"><a href="multi.html#cb90-3" aria-hidden="true" tabindex="-1"></a>niso<span class="sc">$</span>kclust <span class="ot">=</span> kclust<span class="sc">$</span>cluster</span>
+<span id="cb90-4"><a href="multi.html#cb90-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb90-5"><a href="multi.html#cb90-5" aria-hidden="true" tabindex="-1"></a><span class="co"># superimpose the saved clusters on our plotted isotope</span></span>
+<span id="cb90-6"><a href="multi.html#cb90-6" aria-hidden="true" tabindex="-1"></a><span class="co"># data</span></span>
+<span id="cb90-7"><a href="multi.html#cb90-7" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(iso<span class="sc">$</span>N <span class="sc">~</span> iso<span class="sc">$</span>C, <span class="at">col =</span> <span class="fu">as.numeric</span>(<span class="fu">as.factor</span>(niso<span class="sc">$</span>clust)),</span>
+<span id="cb90-8"><a href="multi.html#cb90-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">xlim =</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">35</span>, <span class="dv">0</span>), <span class="at">pch =</span> <span class="fu">as.numeric</span>(<span class="fu">as.factor</span>(niso<span class="sc">$</span>Species)),</span>
+<span id="cb90-9"><a href="multi.html#cb90-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">xlab =</span> <span class="fu">expression</span>(<span class="fu">paste</span>(delta, <span class="st">&quot;13C&quot;</span>)), <span class="at">ylab =</span> <span class="fu">expression</span>(<span class="fu">paste</span>(delta,</span>
+<span id="cb90-10"><a href="multi.html#cb90-10" aria-hidden="true" tabindex="-1"></a>        <span class="st">&quot;15N&quot;</span>)))</span>
+<span id="cb90-11"><a href="multi.html#cb90-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb90-12"><a href="multi.html#cb90-12" aria-hidden="true" tabindex="-1"></a><span class="fu">legend</span>(<span class="st">&quot;topright&quot;</span>, <span class="at">legend =</span> <span class="fu">unique</span>(<span class="fu">as.factor</span>(niso<span class="sc">$</span>kclust)), <span class="at">pch =</span> <span class="dv">1</span>,</span>
+<span id="cb90-13"><a href="multi.html#cb90-13" aria-hidden="true" tabindex="-1"></a>    <span class="at">col =</span> <span class="fu">as.numeric</span>(<span class="fu">unique</span>(<span class="fu">as.factor</span>(niso<span class="sc">$</span>kclust))), <span class="at">bty =</span> <span class="st">&quot;n&quot;</span>,</span>
+<span id="cb90-14"><a href="multi.html#cb90-14" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">&quot;kcluster&quot;</span>)</span>
+<span id="cb90-15"><a href="multi.html#cb90-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb90-16"><a href="multi.html#cb90-16" aria-hidden="true" tabindex="-1"></a><span class="fu">legend</span>(<span class="st">&quot;bottomright&quot;</span>, <span class="at">legend =</span> <span class="fu">as.character</span>(<span class="fu">unique</span>(<span class="fu">as.factor</span>(niso<span class="sc">$</span>Species))),</span>
+<span id="cb90-17"><a href="multi.html#cb90-17" aria-hidden="true" tabindex="-1"></a>    <span class="at">pch =</span> <span class="fu">as.numeric</span>(<span class="fu">unique</span>(<span class="fu">as.factor</span>(niso<span class="sc">$</span>Species))), <span class="at">bty =</span> <span class="st">&quot;n&quot;</span>,</span>
+<span id="cb90-18"><a href="multi.html#cb90-18" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">&quot;Species&quot;</span>)</span></code></pre></div>
 <div class="figure"><span id="fig:kclust"></span>
 <img src="_main_files/figure-html/kclust-1.png" alt="This figure shows a plot of the Isotope dataset. The plot has x-axis with label 'd13C' that scales from -35 to 0, and y-axis with label 'd15N' that scales from -6 to 8. The right side of the plot contains two legends. The top right legend has label 'kcluster' and contains 4 circles of varying colors as symbols. The symbols from top to bottom have labels '1' with a black circle, '2', with a red circle, '3' with a green circle and '4' with a blue circle. The bottom right legend is labelled 'Species' and has symbols 'X' for 'Plant, circle for 'Aphid', plus sign for 'Hoverfly' and triangle for 'Diplazon. There is a cluster of black symbols of varying species where 'd13C' is between -32 to -25 and 'd15N' is between -6 to 8, blue symbols with varying species where 'd13C' is between -23 to -20 and 'd15N' is between 0 to 4, and red symbols with varying species where 'd13C' is between -14 to -11 and 'd15N' is between -3 to 5." width="672" />
 <p class="caption">
@@ -2118,8 +2137,8 @@ Figure 4.24: K means clustering on Perkins et al (2014) data
           </div>
         </div>
       </div>
-<a href="introduction-to-r-markdown.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="introduction-to-classification-and-machine-learning.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="r-markdown.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="machine-learning-and-classification.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
