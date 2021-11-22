@@ -123,4 +123,4 @@ module.
 
 Currently (title may change), please cite this work as:
 
-Cuddington, K, Edwards, A.M., and Ingalls, E. (2021). *Building Skills in Quantitative Biology*. https://www.quantitative-biology.com
+Cuddington, K, Edwards, A.M., and Ingalls, B. (2021). *Building Skills in Quantitative Biology*. https://www.quantitative-biology.com
