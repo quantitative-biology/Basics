@@ -23,23 +23,23 @@ institution or a biologist's workplace.
 
 This e-book consists of five independent chapters or "modules" designed to teach different quantitative skills to graduate students and biologists working in academia, government agencies and private organisations. A key theme is that while the techniques presented are from various disciplines (such as computer science, statistics and mathematics), they are presented in a way that is suitable for a biological audience. Our examples and approach reflect our personal use of these tools as researchers in biology.
 
-Each module is designed to quickly get you up and running on the topic of interest in 3-5 hours. As such, these materials should be thought of a basic introductions. We provide pointers to more advanced materials, but our aim is to "jump-start" your use of these tools. On the other hand, these modules are not designed for absolute beginners. With the exception of the module on Git and Github, the materials are written assuming that learners have some basic familiarity with R, and a standard undergraduate background in calculus and univariate statistics.
+Each module is designed to quickly get you up and running on the topic of interest in 3-5 hours. As such, these materials should be thought of a basic introduction. We provide pointers to more advanced materials, but our aim is to "jump-start" your use of these tools. On the other hand, these modules are not designed for absolute beginners. With the exception of the module on Git and Github, the materials are written assuming that learners have some basic familiarity with R, and a standard undergraduate background in calculus and univariate statistics.
 
 Because the modules are designed to be independent (i.e., you don't have read the whole e-book!), you can select subtopics that are directly relevant to your research. Our hope is that this approach will simultaneously provide more targeted training and reduce the time commitment that would be involved in more generalized formal courses. Pick and choose what you need!
 
 The five modules are:
 
-* **Introduction to Git and GitHub** (Andrew Edwards) -- covers the tools widely used to share code,
+* **Git and GitHub** (Andrew Edwards) -- covers the tools widely used to share code,
   collaborate with colleagues and create a transparent record of research.
 
-* **Introduction to R Markdown** (Andrew Edwards) -- demonstrates how to create dynamic documents
+* **R Markdown** (Andrew Edwards) -- demonstrates how to create dynamic documents
   that are fully reproducible, with a clear link between the underlying R code
   and the resulting figures, tables and results.
 
-* **Introduction to multivariate analysis** (Kim Cuddington) -- discusses multivariate quantitative
+* **Multivariate analysis** (Kim Cuddington) -- discusses multivariate quantitative
   methods that are used to understand data when there is more than one response (or measurement)
 
-* **Introduction to classification and machine learning** (Kim Cuddington) -- continues explorations
+* **Machine learning and classification** (Kim Cuddington) -- continues explorations
   of multivariate data and in particular the topic of classification but using machine learning approaches. 
 
 * **Optimization** (Brian Ingalls) -- optimization is the act of identifying the extreme (cheapest,
@@ -67,7 +67,7 @@ let us know how they work for you, using this
 
 [Kim Cuddington](https://uwaterloo.ca/biology/people-profiles/kim-md-cuddington){target="_blank"}
 is an Associate Professor at the University of Waterloo in the Department
-of Biology, with a cross-appointment to Applied Mathematics. She has several projects designed to improve worked on quantitative
+of Biology, with a cross-appointment to Applied Mathematics. She has several projects designed to improve quantitative
 education for biology students and has training in instructional design
 (University of Waterloo, Center for Teaching Excellence). She teaches courses
 that emphasize quantitative methods (such as Quantitative Ecology and
@@ -116,3 +116,8 @@ The Git and GitHub module builds upon workshop materials that were originally
 developed with Chris Grandin (DFO), who AME also thanks for assistance with the
 module.
 
+## Citation
+
+Currently (title may change), please cite this work as:
+
+Cuddington, K, Edwards, E., and Ingalls, E. (2021). *Building Skills in Quantitative Biology*. https://www.quantitative-biology.com
