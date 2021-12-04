@@ -26,7 +26,7 @@ institution or a biologist's workplace.
 
 This e-book consists of five independent chapters or "modules" designed to teach different quantitative skills to graduate students and biologists working in academia, government agencies and private organisations. A key theme is that while the techniques presented are from various disciplines (such as computer science, statistics and mathematics), they are presented in a way that is suitable for a biological audience. Our examples and approach reflect our personal use of these tools as researchers in biology.
 
-Each module is designed to quickly get you up and running on the topic of interest in 3-5 hours. As such, these materials should be thought of a basic introduction. We provide pointers to more advanced materials, but our aim is to "jump-start" your use of these tools. On the other hand, these modules are not designed for absolute beginners. With the exception of the module on Git and Github, the materials are written assuming that learners have some basic familiarity with R, and a standard undergraduate background in calculus and univariate statistics.
+Each module is designed to quickly get you up and running on the topic of interest in 3-5 hours. As such, these materials should be thought of a basic introduction. We provide pointers to more advanced materials, but our aim is to "jump-start" your use of these tools. On the other hand, these modules are not designed for absolute beginners. With the exception of the module on Git and Github, the materials are written assuming that learners have some basic familiarity with R, and a standard undergraduate background in calculus and univariate statistics (see the [Prerequisites section](#prerequisites) for resources to brush up on these materials).
 
 Because the modules are designed to be independent (i.e., you don't have read the whole e-book!), you can select subtopics that are directly relevant to your research. Our hope is that this approach will simultaneously provide more targeted training and reduce the time commitment that would be involved in more generalized formal courses. Pick and choose what you need!
 
@@ -124,3 +124,43 @@ module.
 Currently (title may change), please cite this work as:
 
 Cuddington, K, Edwards, A.M., and Ingalls, B. (2021). *Building Skills in Quantitative Biology*. https://www.quantitative-biology.com
+
+
+## Prerequisites {#prerequisites}
+
+We assume that learners have some basic familiarity with R, and a standard undergraduate background in calculus and univariate statistics. If needed, we have provided some excellent resources below that will help you brush up on these topics. We have tried to choose resources that have a biological bent and will help you get up to speed quickly. In line with the style of this e-book, we have also focused on open source materials. 
+
+### R and RStudio
+
+[R is a programming language]((https://cran.r-project.org/doc/FAQ/R-FAQ.html#What-is-R_003f)) and a free system for statistical computation and graphics . [RStudio](https://www.rstudio.com/) is a piece of software that allows users to more easily work with R. 
+
+The [Software Carpentry](https://software-carpentry.org/) and [Data Carpentry](https://datacarpentry.org/) organizations maintain excellent resources for learning computational tools. There are two sets of modules that users can work through on their own to obtain the needed level of fluency and R to make the most of this e-book. These lessons will teach you how to navigate RStudio, load and clean data, build simple plots, use control flow, and how use the Tidyverse ecosystem of packages. 
+
+- https://datacarpentry.org/R-ecology-lesson/
+- https://swcarpentry.github.io/r-novice-gapminder/
+
+Beyond these initial resources, there are a number of useful resources to continue building your R skills. 
+
+- [R for Data Science textbook](https://r4ds.had.co.nz/index.html)
+- [RStudio Education](https://education.rstudio.com/learn/beginner/)
+- [StackOverflow](https://stackoverflow.com/questions/tagged/r)
+
+
+### Calculus
+
+A typical biology undergraduate takes a single semester of calculus during their studies. It is difficult for us to recommend specific calculus resources as most will have a lot of material that is not needed specifically for this e-book. We recommend using the following resources to brush up on calculus in general. However, we recommend you focus on building some intuition for derivatives and integration (don't focus too much on memorizing rules and instead focus on the concepts), how to work with simple differential equations, and ideas of optimization.  
+
+- [OpenStax textbook](https://openstax.org/books/calculus-volume-1/pages/1-introduction)
+- [KhanAcademy videos and exercises](https://www.khanacademy.org/math)
+
+
+### Univariate statistics
+
+To prepare for the modules on multivariate analysis, machine learning and classification, and optimization, readers should have a basic understanding of univariate statistics. Similar to calculus, it is more important to understand the key concepts as opposed to memorizing specific formulas or vocabulary. Readers should spend some time reviewing the basic principles of linear regression, hypothesis testing (including the terminology of model parameters, p-values, and confidence intervals), statistical distributions, and the basics of probability theory.
+
+- [OpenStax textbook](https://openstax.org/books/introductory-statistics/pages/1-introduction)
+- [Handbook of Biological Statistics](http://biostathandbook.com/)
+- [KhanAcademy videos and exercises](https://www.khanacademy.org/math/statistics-probability)
+- [Nature series on statistics for biologists](https://www.nature.com/collections/qghhqm/)
+
+
