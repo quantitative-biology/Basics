@@ -139,6 +139,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </style>
 
 
+<link rel="stylesheet" href="style.css" type="text/css" />
 </head>
 
 <body>
@@ -648,9 +649,9 @@ Deviance Residuals:
 -1.8592  -0.6557  -0.4518  -0.1982   1.8227  
 
 Coefficients:
-            Estimate Std. Error z value Pr(&gt;|z|)    
-(Intercept) -6.56702    1.30310  -5.040 4.67e-07 ***
-temp         0.42048    0.09782   4.298 1.72e-05 ***
+            Estimate Std. Error z value    Pr(&gt;|z|)    
+(Intercept) -6.56702    1.30310  -5.040 0.000000467 ***
+temp         0.42048    0.09782   4.298 0.000017212 ***
 ---
 Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
 
@@ -802,16 +803,11 @@ Figure 5.4: Species occurrence vs temperature and land classification as urban o
 <p>You might wonder how finding a linear combination of predictors differs from linear regression, logistic regression, or principal components analysis (PCA). LDA is popular when we have more than two response classes (polytomous responses), which logistic regression can only handle with some modification. In addition, when classes are well-separated, parameter estimates for logistic regression are surprisingly unstable, but LDA does not suffer from this problem. Finally, unlike linear regression, LDA chooses parameters to maximize distance between means of different categories.</p>
 <p>This approach of using a linear combination of predictors to predict similarity also seems similar to <a href="multi.html#PCA">PCA</a>, although of course PCA is an unsupervised learning technique (that is we don’t don’t have classification which we provide), while LDA is a supervised learning technique (it uses <em>a priori</em> class information to train the model). Both PCA and LDA provide the possibility of dimensionality reduction, which is very useful for visualization, and is often used to prepare data for machine learning techniques. However, we would expect (by definition) LDA to provide better data separation when compared to PCA.</p>
 <p>Let’s try out this method by attempting to classify observations in the iris dataset to species using the 4 metrics of sepal and petal length and width. You may want to take a look at the data first using the <strong>head()</strong>, <strong>str()</strong> or <strong>summary()</strong> functions. There are three species where quantitative morphological features are recorded for each individual.</p>
-<div class="sourceCode" id="cb110"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb110-1"><a href="machine-learning-and-classification.html#cb110-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(MASS)</span></code></pre></div>
-<pre><code>
-Attaching package: &#39;MASS&#39;</code></pre>
-<pre><code>The following object is masked from &#39;package:dplyr&#39;:
-
-    select</code></pre>
-<div class="sourceCode" id="cb113"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb113-1"><a href="machine-learning-and-classification.html#cb113-1" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(<span class="st">&quot;iris&quot;</span>)</span>
-<span id="cb113-2"><a href="machine-learning-and-classification.html#cb113-2" aria-hidden="true" tabindex="-1"></a>train <span class="ot">&lt;-</span> <span class="fu">sample</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">150</span>, <span class="dv">75</span>)</span>
-<span id="cb113-3"><a href="machine-learning-and-classification.html#cb113-3" aria-hidden="true" tabindex="-1"></a>irislda <span class="ot">&lt;-</span> <span class="fu">lda</span>(Species <span class="sc">~</span> ., iris, <span class="at">subset =</span> train)</span>
-<span id="cb113-4"><a href="machine-learning-and-classification.html#cb113-4" aria-hidden="true" tabindex="-1"></a>irislda</span></code></pre></div>
+<div class="sourceCode" id="cb110"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb110-1"><a href="machine-learning-and-classification.html#cb110-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(MASS)</span>
+<span id="cb110-2"><a href="machine-learning-and-classification.html#cb110-2" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(<span class="st">&quot;iris&quot;</span>)</span>
+<span id="cb110-3"><a href="machine-learning-and-classification.html#cb110-3" aria-hidden="true" tabindex="-1"></a>train <span class="ot">&lt;-</span> <span class="fu">sample</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">150</span>, <span class="dv">75</span>)</span>
+<span id="cb110-4"><a href="machine-learning-and-classification.html#cb110-4" aria-hidden="true" tabindex="-1"></a>irislda <span class="ot">&lt;-</span> <span class="fu">lda</span>(Species <span class="sc">~</span> ., iris, <span class="at">subset =</span> train)</span>
+<span id="cb110-5"><a href="machine-learning-and-classification.html#cb110-5" aria-hidden="true" tabindex="-1"></a>irislda</span></code></pre></div>
 <pre><code>Call:
 lda(Species ~ ., data = iris, subset = train)
 
@@ -838,8 +834,8 @@ Proportion of trace:
 <p>Look at the lda object you have saved. A call to <strong>lda()</strong> returns the prior probability of each class, which is just based on the number of classes (the 3 difference species in this case), and the number of observations in each class. We start out very close to an even probability of an observation falling in any class (about 1/3). We also have the class-specific means for each covariate. So observations of species <em>I.setosa</em> have a mean Sepal.Length of 4.95.</p>
 <p>Finally we have the fitted model, which consists of the the linear combination of predictor variables that are used to form the LDA decision rule. With 3 classes we have at most two linear discriminants, and similar to PCA we can see parameters that relate the various characteristics such as Sepal.Length to these axes (e.g., LD1 = -0.03 Sepal.Length + 2.78 Sepal.Width + -2.12 Petal.Length + -3.49 Petal.Width. The trace shows us how much variance is captured by each axis. In this case, almost all of our class division can be done on the first axis.</p>
 <p>There is also a prediction method implemented for lda objects. It returns the classification and the posterior probabilities of the new data. If you examine the prediction object, you will see it contains a matrix called posterior whose columns are the groups, rows are the individuals and values are the posterior probability that the corresponding observation belongs to each of the groups. Let’s see how we do with prediction on the testing portion of the data (i.e., everything that is not the training data).</p>
-<div class="sourceCode" id="cb115"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb115-1"><a href="machine-learning-and-classification.html#cb115-1" aria-hidden="true" tabindex="-1"></a>plda <span class="ot">=</span> <span class="fu">predict</span>(irislda, <span class="at">newdata =</span> iris[<span class="sc">-</span>train, ])</span>
-<span id="cb115-2"><a href="machine-learning-and-classification.html#cb115-2" aria-hidden="true" tabindex="-1"></a><span class="fu">confusionMatrix</span>(iris<span class="sc">$</span>Species[<span class="sc">-</span>train], plda<span class="sc">$</span>class)</span></code></pre></div>
+<div class="sourceCode" id="cb112"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb112-1"><a href="machine-learning-and-classification.html#cb112-1" aria-hidden="true" tabindex="-1"></a>plda <span class="ot">=</span> <span class="fu">predict</span>(irislda, <span class="at">newdata =</span> iris[<span class="sc">-</span>train, ])</span>
+<span id="cb112-2"><a href="machine-learning-and-classification.html#cb112-2" aria-hidden="true" tabindex="-1"></a><span class="fu">confusionMatrix</span>(iris<span class="sc">$</span>Species[<span class="sc">-</span>train], plda<span class="sc">$</span>class)</span></code></pre></div>
 <pre><code>Confusion Matrix and Statistics
 
             Reference
@@ -871,10 +867,10 @@ Detection Rate              0.3067            0.3067           0.3467
 Detection Prevalence        0.3067            0.3467           0.3467
 Balanced Accuracy           1.0000            0.9712           0.9483</code></pre>
 <p>We have very good accuracy. We can also visualize our prediction accuracy using a regular plot() function.</p>
-<div class="sourceCode" id="cb117"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb117-1"><a href="machine-learning-and-classification.html#cb117-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(plda<span class="sc">$</span>x, <span class="at">col =</span> plda<span class="sc">$</span>class, <span class="at">pch =</span> <span class="fu">as.numeric</span>(iris[<span class="sc">-</span>train,</span>
-<span id="cb117-2"><a href="machine-learning-and-classification.html#cb117-2" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;Species&quot;</span>]), <span class="at">ylim =</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">4</span>, <span class="dv">4</span>))</span>
-<span id="cb117-3"><a href="machine-learning-and-classification.html#cb117-3" aria-hidden="true" tabindex="-1"></a><span class="fu">legend</span>(<span class="st">&quot;bottomright&quot;</span>, <span class="fu">levels</span>(iris[<span class="sc">-</span>train, <span class="st">&quot;Species&quot;</span>]), <span class="at">pch =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>,</span>
-<span id="cb117-4"><a href="machine-learning-and-classification.html#cb117-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">col =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb114"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb114-1"><a href="machine-learning-and-classification.html#cb114-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(plda<span class="sc">$</span>x, <span class="at">col =</span> plda<span class="sc">$</span>class, <span class="at">pch =</span> <span class="fu">as.numeric</span>(iris[<span class="sc">-</span>train,</span>
+<span id="cb114-2"><a href="machine-learning-and-classification.html#cb114-2" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;Species&quot;</span>]), <span class="at">ylim =</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">4</span>, <span class="dv">4</span>))</span>
+<span id="cb114-3"><a href="machine-learning-and-classification.html#cb114-3" aria-hidden="true" tabindex="-1"></a><span class="fu">legend</span>(<span class="st">&quot;bottomright&quot;</span>, <span class="fu">levels</span>(iris[<span class="sc">-</span>train, <span class="st">&quot;Species&quot;</span>]), <span class="at">pch =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>,</span>
+<span id="cb114-4"><a href="machine-learning-and-classification.html#cb114-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">col =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>)</span></code></pre></div>
 <div class="figure"><span id="fig:classlda"></span>
 <img src="_main_files/figure-html/classlda-1.png" alt="Figure shows symbols for each species where the colour of the symbol indicates the classification produced by the LDA model" width="672" />
 <p class="caption">
@@ -882,7 +878,7 @@ Figure 5.5: Classification of the iris dataset using LDA
 </p>
 </div>
 <p>Again, we see some misclassifications (Fig. <a href="machine-learning-and-classification.html#fig:classlda">5.5</a>), where the colour of the symbol indicates whether it has been correctly identified, but this classifier works pretty well. The <strong>ldahist()</strong> function shows us why this is so, the centers of our synthetic variables are pretty well-separated between predicted groups on the first axis (<a href="machine-learning-and-classification.html#fig:ldahist">5.6</a>).</p>
-<div class="sourceCode" id="cb118"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb118-1"><a href="machine-learning-and-classification.html#cb118-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ldahist</span>(plda<span class="sc">$</span>x[, <span class="dv">1</span>], <span class="at">g =</span> plda<span class="sc">$</span>class, <span class="at">col =</span> <span class="st">&quot;red&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb115"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb115-1"><a href="machine-learning-and-classification.html#cb115-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ldahist</span>(plda<span class="sc">$</span>x[, <span class="dv">1</span>], <span class="at">g =</span> plda<span class="sc">$</span>class, <span class="at">col =</span> <span class="st">&quot;red&quot;</span>)</span></code></pre></div>
 <div class="figure"><span id="fig:ldahist"></span>
 <img src="_main_files/figure-html/ldahist-1.png" alt="Three histograms" width="672" />
 <p class="caption">
@@ -909,16 +905,16 @@ Figure 5.6: Histogram of the synthetic axis coordinates for each species
 <p>Tree-based methods for classification involve dividing up regions defined by the predictor variables. For example, simple species identification trees use this approach. You are looking at a plant: does it have smooth or serrated leaves? The leaf characteristic predictor is used to divide up the classification possibilities (not without errors!). So we repeatedly split the response data into two groups that are as homogeneous as possible. The split is determined by the single predictor that best discriminates among the data. The binary splits continue to partition the data into smaller and smaller groups, or nodes, until the groups are no longer homogeneous. This effort produces a single tree where the binary splits form the branches and the final groups compose the terminal nodes, or leaves.</p>
 <p>If this type of method is applied with a continuous response variable instead it is called a <em>regression tree</em>, if the response is categorical, it is called a <em>classification tree</em>. Often we refer to both techniques at the same time as <strong>C</strong>lassification <strong>A</strong>nd <strong>R</strong>egression <strong>T</strong>rees (CARTs). When used as a regression response predictor, this technique differs from standard regression approaches which are global models where the predictive formula is supposed to hold in the entire data space. Instead trees try to partition the data space into small enough parts where we can apply a simple different model on each part.</p>
 <p>Let’s try a simple example on the iris data. We’ll first split the data into a training and testing set, and run our classification tree algorithm using the <strong>rpart</strong> package.</p>
-<div class="sourceCode" id="cb119"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb119-1"><a href="machine-learning-and-classification.html#cb119-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(rpart)</span>
-<span id="cb119-2"><a href="machine-learning-and-classification.html#cb119-2" aria-hidden="true" tabindex="-1"></a>alpha <span class="ot">&lt;-</span> <span class="fl">0.7</span>  <span class="co"># percentage of training set</span></span>
-<span id="cb119-3"><a href="machine-learning-and-classification.html#cb119-3" aria-hidden="true" tabindex="-1"></a>inTrain <span class="ot">&lt;-</span> <span class="fu">sample</span>(<span class="dv">1</span><span class="sc">:</span><span class="fu">nrow</span>(iris), alpha <span class="sc">*</span> <span class="fu">nrow</span>(iris))</span>
-<span id="cb119-4"><a href="machine-learning-and-classification.html#cb119-4" aria-hidden="true" tabindex="-1"></a>train.set <span class="ot">&lt;-</span> iris[inTrain, ]</span>
-<span id="cb119-5"><a href="machine-learning-and-classification.html#cb119-5" aria-hidden="true" tabindex="-1"></a>test.set <span class="ot">&lt;-</span> iris[<span class="sc">-</span>inTrain, ]</span>
-<span id="cb119-6"><a href="machine-learning-and-classification.html#cb119-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb119-7"><a href="machine-learning-and-classification.html#cb119-7" aria-hidden="true" tabindex="-1"></a>mytree <span class="ot">&lt;-</span> <span class="fu">rpart</span>(Species <span class="sc">~</span> ., <span class="at">data =</span> train.set, <span class="at">method =</span> <span class="st">&quot;class&quot;</span>)</span>
-<span id="cb119-8"><a href="machine-learning-and-classification.html#cb119-8" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mar =</span> <span class="fu">c</span>(<span class="dv">5</span>, <span class="dv">3</span>, <span class="dv">3</span>, <span class="dv">3</span>))</span>
-<span id="cb119-9"><a href="machine-learning-and-classification.html#cb119-9" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(mytree)</span>
-<span id="cb119-10"><a href="machine-learning-and-classification.html#cb119-10" aria-hidden="true" tabindex="-1"></a><span class="fu">text</span>(mytree)</span></code></pre></div>
+<div class="sourceCode" id="cb116"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb116-1"><a href="machine-learning-and-classification.html#cb116-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(rpart)</span>
+<span id="cb116-2"><a href="machine-learning-and-classification.html#cb116-2" aria-hidden="true" tabindex="-1"></a>alpha <span class="ot">&lt;-</span> <span class="fl">0.7</span>  <span class="co"># percentage of training set</span></span>
+<span id="cb116-3"><a href="machine-learning-and-classification.html#cb116-3" aria-hidden="true" tabindex="-1"></a>inTrain <span class="ot">&lt;-</span> <span class="fu">sample</span>(<span class="dv">1</span><span class="sc">:</span><span class="fu">nrow</span>(iris), alpha <span class="sc">*</span> <span class="fu">nrow</span>(iris))</span>
+<span id="cb116-4"><a href="machine-learning-and-classification.html#cb116-4" aria-hidden="true" tabindex="-1"></a>train.set <span class="ot">&lt;-</span> iris[inTrain, ]</span>
+<span id="cb116-5"><a href="machine-learning-and-classification.html#cb116-5" aria-hidden="true" tabindex="-1"></a>test.set <span class="ot">&lt;-</span> iris[<span class="sc">-</span>inTrain, ]</span>
+<span id="cb116-6"><a href="machine-learning-and-classification.html#cb116-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb116-7"><a href="machine-learning-and-classification.html#cb116-7" aria-hidden="true" tabindex="-1"></a>mytree <span class="ot">&lt;-</span> <span class="fu">rpart</span>(Species <span class="sc">~</span> ., <span class="at">data =</span> train.set, <span class="at">method =</span> <span class="st">&quot;class&quot;</span>)</span>
+<span id="cb116-8"><a href="machine-learning-and-classification.html#cb116-8" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mar =</span> <span class="fu">c</span>(<span class="dv">5</span>, <span class="dv">3</span>, <span class="dv">3</span>, <span class="dv">3</span>))</span>
+<span id="cb116-9"><a href="machine-learning-and-classification.html#cb116-9" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(mytree)</span>
+<span id="cb116-10"><a href="machine-learning-and-classification.html#cb116-10" aria-hidden="true" tabindex="-1"></a><span class="fu">text</span>(mytree)</span></code></pre></div>
 <div class="figure"><span id="fig:firstree"></span>
 <img src="_main_files/figure-html/firstree-1.png" alt="This figure shows a classification tree using the iris dataset. The top of the plot has label 'Petal.Length&lt;2.45' and splits into two groups: 'setosa' and 'Petal.Width&lt;1.75'. The 'Petal.Width&lt;1.75' group splits into two smaller groups: 'versicolor' and 'virginica'." width="960" />
 <p class="caption">
@@ -926,8 +922,8 @@ Figure 5.7: A simple plot of a tree classifier for the iris data
 </p>
 </div>
 <p>We can see that petal length is used to distinguish species <em>I.setosa</em> from the other two species, and then petal width classifies into <em>I. versicolor</em> or <em>I. virginia</em>. The model of course includes more information than this regarding the number of observations aggregating to each branch of the tree etc. More detailed information can be obtained from <strong>summary(mytree)</strong>, or just typing mytree. A nicer plot, with more details can also be obtained with rpart.plot library.</p>
-<div class="sourceCode" id="cb120"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb120-1"><a href="machine-learning-and-classification.html#cb120-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(rpart.plot)</span>
-<span id="cb120-2"><a href="machine-learning-and-classification.html#cb120-2" aria-hidden="true" tabindex="-1"></a><span class="fu">rpart.plot</span>(mytree)</span></code></pre></div>
+<div class="sourceCode" id="cb117"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb117-1"><a href="machine-learning-and-classification.html#cb117-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(rpart.plot)</span>
+<span id="cb117-2"><a href="machine-learning-and-classification.html#cb117-2" aria-hidden="true" tabindex="-1"></a><span class="fu">rpart.plot</span>(mytree)</span></code></pre></div>
 <div class="figure"><span id="fig:fancytree"></span>
 <img src="_main_files/figure-html/fancytree-1.png" alt="The figure shows a classification tree using the iris dataset. The top right of the figure shows a legend with labels 'setosa', 'versicolor' and 'virginica' which are denoted by an orange square, a gray square and a green square respectively. The top of the plot has a textbox with label 'setosa .36 .30 .33 100%'. Beneath the textbox is the label 'Petal.Length &lt; 2.5' which branches off into options 'yes' to the left of the label and 'no' to the right. Following the 'yes' option is an orange textbox with label 'setosa 1.00 .00 .00 36%'. Following the 'no' option is a light green textbox with label 'virginica .00 .48 .52 64%'. Beneath the textbox is the label 'Petal.Width &lt; 1.8' which splits off into a gray textbox with label 'versicolor .00 .89 .11 33%' and a green textbox with label 'virginica .00 .03 .97 30%'." width="672" />
 <p class="caption">
@@ -937,8 +933,8 @@ Figure 5.8: A nicer plot of a tree classifier for the iris data made with the rp
 <p>This plot (Fig. <a href="machine-learning-and-classification.html#fig:fancytree">5.8</a>), in addition to the factor that splits each branch, also tells us the percentage of the data in each class, and the percentage that travels down each branch in each class. Starting at the top, each species makes up roughly a third of the data, after the petal length branch, travelling down the petal length greater than or equal to 2.5, all I.setosa observations all on the other side of the split, and we are left with data divided evenly between the <em>I.versicolor</em> and <em>I. viriginica</em>. The petal length &lt; 4.8 branch separates out these two species, with some error in classification.</p>
 <p>The algorithm determines which variable to split based on <strong>impurity</strong>, or how similar points are within a group. If all data points are identical, then impurity is zero. Impurity increases as points become more dissimilar. Impurity is calculated differently for different kinds of trees. For classification trees: the Gini index, which reflects the proportion of responses in each level of a categorical variable is often used. The Gini index is calculated as: <span class="math inline">\(Gini=1-\sum p_i\)</span>, where <span class="math inline">\(p_i\)</span> is the proportion of observations in each class. The Gini index is small when many observations fall into a single category, so the split is made at the single variable which minimizes the Gini index. Some classifiers use the Shannon-Weiner index instead, which has similar properties.</p>
 <p>Using this tree classifier, we can make predictions for our testing data, and get a confusion matrix</p>
-<div class="sourceCode" id="cb121"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb121-1"><a href="machine-learning-and-classification.html#cb121-1" aria-hidden="true" tabindex="-1"></a>pred <span class="ot">&lt;-</span> <span class="fu">predict</span>(mytree, test.set, <span class="at">type =</span> <span class="st">&quot;class&quot;</span>)</span>
-<span id="cb121-2"><a href="machine-learning-and-classification.html#cb121-2" aria-hidden="true" tabindex="-1"></a><span class="fu">confusionMatrix</span>(pred, test.set<span class="sc">$</span>Species)</span></code></pre></div>
+<div class="sourceCode" id="cb118"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb118-1"><a href="machine-learning-and-classification.html#cb118-1" aria-hidden="true" tabindex="-1"></a>pred <span class="ot">&lt;-</span> <span class="fu">predict</span>(mytree, test.set, <span class="at">type =</span> <span class="st">&quot;class&quot;</span>)</span>
+<span id="cb118-2"><a href="machine-learning-and-classification.html#cb118-2" aria-hidden="true" tabindex="-1"></a><span class="fu">confusionMatrix</span>(pred, test.set<span class="sc">$</span>Species)</span></code></pre></div>
 <pre><code>Confusion Matrix and Statistics
 
             Reference
@@ -982,9 +978,9 @@ To select the tree of optimal size we use cross-validation. For a given tree siz
 <p>Even with pruning, a single CART is likely to overfit the data, particularly when there are many, many predictors, and thus is not very good for prediction. One way to get around this is to build a bunch of different, non-nested, trees on subsets of the data, and then average across them. Because any given tree is constructed with only a portion of the data, the likelihood of overfitting is drastically reduced. Moreover, averaging across many trees reduces the impact of anomalous results from a single tree. This is the idea of <strong>ensemble learning</strong>, or combining many ‘weak learners’ (individual trees) to produce one ‘strong learner’ (the ensemble).</p>
 <p>One type of ensemble decision tree is a random forest. Random forests are a frequently used machine learning tool that can be used for both classification and regression. Random forests use a bootstrapped sample of the data, and only a portion of the predictors to construct each tree. This procedure ensures that each individual tree is independent from the others, making it a much more accurate method than some other ensemble learning techniques. As well, since both the data and the predictors are subsampled, these models can be fit to more predictors than there are observations. This seems a little counterintuitive, but can be a real benefit for ecological data which typically suffers from low replication.</p>
 <p>Let’s try an ensemble decision tree on the iris data. We will use the <em>randomForest</em> package. Note that we do not have to split our data into training and testing sets now, the randomForest package is already doing this sort of thing for us.</p>
-<div class="sourceCode" id="cb123"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb123-1"><a href="machine-learning-and-classification.html#cb123-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(randomForest)</span>
-<span id="cb123-2"><a href="machine-learning-and-classification.html#cb123-2" aria-hidden="true" tabindex="-1"></a>RF.model <span class="ot">=</span> <span class="fu">randomForest</span>(Species <span class="sc">~</span> ., <span class="at">data =</span> iris)</span>
-<span id="cb123-3"><a href="machine-learning-and-classification.html#cb123-3" aria-hidden="true" tabindex="-1"></a>RF.model</span></code></pre></div>
+<div class="sourceCode" id="cb120"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb120-1"><a href="machine-learning-and-classification.html#cb120-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(randomForest)</span>
+<span id="cb120-2"><a href="machine-learning-and-classification.html#cb120-2" aria-hidden="true" tabindex="-1"></a>RF.model <span class="ot">=</span> <span class="fu">randomForest</span>(Species <span class="sc">~</span> ., <span class="at">data =</span> iris)</span>
+<span id="cb120-3"><a href="machine-learning-and-classification.html#cb120-3" aria-hidden="true" tabindex="-1"></a>RF.model</span></code></pre></div>
 <pre><code>
 Call:
  randomForest(formula = Species ~ ., data = iris) 
@@ -1007,7 +1003,7 @@ Figure 5.9: Out of bag error, and individual classification errors for the three
 </p>
 </div>
 <p>Obviously with fewer trees the error rate is higher, but as more trees are added you can see the error rate decrease and more or less flatten out. As we can see (Fig <a href="machine-learning-and-classification.html#fig:rfoob">5.9</a>), we could easily reduce the number of trees down to 300 and experience relatively little loss in predictive ability. This is easy to do:</p>
-<div class="sourceCode" id="cb125"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb125-1"><a href="machine-learning-and-classification.html#cb125-1" aria-hidden="true" tabindex="-1"></a><span class="fu">update</span>(RF.model, <span class="at">ntree =</span> <span class="dv">300</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb122"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb122-1"><a href="machine-learning-and-classification.html#cb122-1" aria-hidden="true" tabindex="-1"></a><span class="fu">update</span>(RF.model, <span class="at">ntree =</span> <span class="dv">300</span>)</span></code></pre></div>
 <pre><code>
 Call:
  randomForest(formula = Species ~ ., data = iris, ntree = 300) 
@@ -1023,7 +1019,7 @@ versicolor      0         47         3        0.06
 virginica       0          4        46        0.08</code></pre>
 <p>So we see little change in our error rate.</p>
 <p>Despite not yielding a single visualizable tree, we can get information about the random forest model. One metric is the relative importance of the predictors. By ranking predictors based on how much they influence the response, random forests may be a useful tool for selecting predictors before trying another framework, such as CART. Importance can be obtained and plotted using the <strong>varImpPlotfunction()</strong>:</p>
-<div class="sourceCode" id="cb127"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb127-1"><a href="machine-learning-and-classification.html#cb127-1" aria-hidden="true" tabindex="-1"></a><span class="fu">varImpPlot</span>(RF.model)</span></code></pre></div>
+<div class="sourceCode" id="cb124"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb124-1"><a href="machine-learning-and-classification.html#cb124-1" aria-hidden="true" tabindex="-1"></a><span class="fu">varImpPlot</span>(RF.model)</span></code></pre></div>
 <div class="figure"><span id="fig:vipp"></span>
 <img src="_main_files/figure-html/vipp-1.png" alt="This figure shows a plot with title 'RF.model' that has y-axis with variables 'Petal.Width', 'Petal.Length', 'Sepal.Length' and 'Sepal.Width' from top to bottom and x-axis with label 'MeanDecreaseGini'. There are 4 points on the graph. Each point corresponds to one of the y-axis variables. The mean decrease in Gini Index is at the lowest for 'Sepal.Width' followed by 'Sepal.Length', then 'Petal.Length' and lastly is at the highest for 'Petal.Width'." width="672" />
 <p class="caption">
@@ -1033,7 +1029,7 @@ Figure 5.10: Variable importance plot for our random forest model of the iris da
 <p>Variable importance reports the mean decrease in the Gini Index for each predictor (Fig. <a href="machine-learning-and-classification.html#fig:vipp">5.10</a>). If you recall, the Gini index is a measure of impurity for categorical data. For each tree, each predictor in the OOB sample is randomly permuted (aka, shuffled around) and passed to the tree to obtain the error rate. The error rate from the unpermuted OOB is then subtracted from the error rate on the permuted OOB data, and averaged across all trees. When this value is large, it implies that a variable had a strong relationship with the response. That is, the model got much worse at predicting the data when that variable was permuted. As we already knew, Petal.Length and Petal.Width are the two most important variables.</p>
 <p>One other useful aspect of random forests is getting a sense of the partial effect of each predictor given the other predictors in the model. This has analogues to partial correlation plots in linear models. We can construct a partial effects response by holding each value of the predictor of interest constant (while allowing all other predictors to vary at their original values), passing it through the random forest, and predicting the responses. The average of the predicted responses are plotted against each value of the predictor of interest (the ones that were held constant) to see how the effect of that predictor changes based on its value. This exercise can be repeated for all other predictors to gain a sense of their partial effects.</p>
 <p>The function to calculate partial effects in the randomForest package is <em>partialPlot()</em>. Let’s look at the effect of Petal.Length:</p>
-<div class="sourceCode" id="cb128"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb128-1"><a href="machine-learning-and-classification.html#cb128-1" aria-hidden="true" tabindex="-1"></a><span class="fu">partialPlot</span>(RF.model, iris, <span class="st">&quot;Petal.Length&quot;</span>, <span class="at">main =</span> <span class="st">&quot;&quot;</span>, <span class="at">ylab =</span> <span class="st">&quot;log odds&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb125"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb125-1"><a href="machine-learning-and-classification.html#cb125-1" aria-hidden="true" tabindex="-1"></a><span class="fu">partialPlot</span>(RF.model, iris, <span class="st">&quot;Petal.Length&quot;</span>, <span class="at">main =</span> <span class="st">&quot;&quot;</span>, <span class="at">ylab =</span> <span class="st">&quot;log odds&quot;</span>)</span></code></pre></div>
 <div class="figure"><span id="fig:PEplot"></span>
 <img src="_main_files/figure-html/PEplot-1.png" alt="This figure shows a plot with y-axis labelled 'log odds' and x-axis labelled 'Petal.Length'. The plot shows a line that begins where 'log odds' is highest and trends downwards as 'Petal.Length' increases." width="672" />
 <p class="caption">
@@ -1096,26 +1092,26 @@ Figure 5.13: Diagram of an artificial neural network
 <h3><span class="header-section-number">5.5.2</span> Our first ANN</h3>
 <p>We’ll get started trying to use this machine learning technique using our old friend the iris data and the package neuralnets. We divide the data into training and test sets, and then run the neural net algorithm from the neuralnet package. Let’s use two inputs, three neurons and standard backward error propagation just like in Fig. <a href="machine-learning-and-classification.html#fig:ann">5.13</a>. We’ll also need to set the learning rate to some small value. Our output will be the classification of one of the three species.</p>
 <p>When you are done, take a look at the output produced by the algorithm, and plot the ANN using the plot function. What is the meaning of the numbers on the diagram?</p>
-<div class="sourceCode" id="cb129"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb129-1"><a href="machine-learning-and-classification.html#cb129-1" aria-hidden="true" tabindex="-1"></a><span class="co"># sample the data to divide into training and test</span></span>
-<span id="cb129-2"><a href="machine-learning-and-classification.html#cb129-2" aria-hidden="true" tabindex="-1"></a>train <span class="ot">&lt;-</span> <span class="fu">sample</span>(<span class="at">x =</span> <span class="fu">nrow</span>(iris), <span class="at">size =</span> <span class="fu">nrow</span>(iris) <span class="sc">*</span> <span class="fl">0.5</span>)</span>
-<span id="cb129-3"><a href="machine-learning-and-classification.html#cb129-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb129-4"><a href="machine-learning-and-classification.html#cb129-4" aria-hidden="true" tabindex="-1"></a>iristrain <span class="ot">&lt;-</span> iris[train, ]</span>
-<span id="cb129-5"><a href="machine-learning-and-classification.html#cb129-5" aria-hidden="true" tabindex="-1"></a>iristest <span class="ot">&lt;-</span> iris[<span class="sc">-</span>train, ]</span>
-<span id="cb129-6"><a href="machine-learning-and-classification.html#cb129-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb129-7"><a href="machine-learning-and-classification.html#cb129-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Run the multiclass neural net to produce a classifier</span></span>
-<span id="cb129-8"><a href="machine-learning-and-classification.html#cb129-8" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(neuralnet)</span></code></pre></div>
-<pre><code>Warning: package &#39;neuralnet&#39; was built under R version 4.1.1</code></pre>
-<div class="sourceCode" id="cb131"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb131-1"><a href="machine-learning-and-classification.html#cb131-1" aria-hidden="true" tabindex="-1"></a>nniris <span class="ot">&lt;-</span> <span class="fu">neuralnet</span>(Species <span class="sc">~</span> Petal.Width <span class="sc">+</span> Petal.Length, iristrain,</span>
-<span id="cb131-2"><a href="machine-learning-and-classification.html#cb131-2" aria-hidden="true" tabindex="-1"></a>    <span class="at">hidden =</span> <span class="dv">3</span>, <span class="at">linear.output =</span> <span class="cn">FALSE</span>, <span class="at">algorith =</span> <span class="st">&quot;backprop&quot;</span>,</span>
-<span id="cb131-3"><a href="machine-learning-and-classification.html#cb131-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">learningrate =</span> <span class="fl">0.01</span>)</span>
-<span id="cb131-4"><a href="machine-learning-and-classification.html#cb131-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb131-5"><a href="machine-learning-and-classification.html#cb131-5" aria-hidden="true" tabindex="-1"></a><span class="co"># rounding the weight values so the plot is tidier</span></span>
-<span id="cb131-6"><a href="machine-learning-and-classification.html#cb131-6" aria-hidden="true" tabindex="-1"></a>nniris<span class="sc">$</span>weights[[<span class="dv">1</span>]] <span class="ot">&lt;-</span> <span class="fu">lapply</span>(nniris<span class="sc">$</span>weights[[<span class="dv">1</span>]], <span class="cf">function</span>(x) <span class="fu">round</span>(x,</span>
-<span id="cb131-7"><a href="machine-learning-and-classification.html#cb131-7" aria-hidden="true" tabindex="-1"></a>    <span class="dv">1</span>))</span>
-<span id="cb131-8"><a href="machine-learning-and-classification.html#cb131-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb131-9"><a href="machine-learning-and-classification.html#cb131-9" aria-hidden="true" tabindex="-1"></a><span class="co"># plotting the neural net (but not the intercepts or error</span></span>
-<span id="cb131-10"><a href="machine-learning-and-classification.html#cb131-10" aria-hidden="true" tabindex="-1"></a><span class="co"># rates)</span></span>
-<span id="cb131-11"><a href="machine-learning-and-classification.html#cb131-11" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(nniris, <span class="at">rep =</span> <span class="st">&quot;best&quot;</span>, <span class="at">information =</span> <span class="cn">FALSE</span>, <span class="at">intercept =</span> <span class="cn">FALSE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb126"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb126-1"><a href="machine-learning-and-classification.html#cb126-1" aria-hidden="true" tabindex="-1"></a><span class="co"># sample the data to divide into training and test</span></span>
+<span id="cb126-2"><a href="machine-learning-and-classification.html#cb126-2" aria-hidden="true" tabindex="-1"></a>train <span class="ot">&lt;-</span> <span class="fu">sample</span>(<span class="at">x =</span> <span class="fu">nrow</span>(iris), <span class="at">size =</span> <span class="fu">nrow</span>(iris) <span class="sc">*</span> <span class="fl">0.5</span>)</span>
+<span id="cb126-3"><a href="machine-learning-and-classification.html#cb126-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb126-4"><a href="machine-learning-and-classification.html#cb126-4" aria-hidden="true" tabindex="-1"></a>iristrain <span class="ot">&lt;-</span> iris[train, ]</span>
+<span id="cb126-5"><a href="machine-learning-and-classification.html#cb126-5" aria-hidden="true" tabindex="-1"></a>iristest <span class="ot">&lt;-</span> iris[<span class="sc">-</span>train, ]</span>
+<span id="cb126-6"><a href="machine-learning-and-classification.html#cb126-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb126-7"><a href="machine-learning-and-classification.html#cb126-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Run the multiclass neural net to produce a classifier</span></span>
+<span id="cb126-8"><a href="machine-learning-and-classification.html#cb126-8" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(neuralnet)</span>
+<span id="cb126-9"><a href="machine-learning-and-classification.html#cb126-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb126-10"><a href="machine-learning-and-classification.html#cb126-10" aria-hidden="true" tabindex="-1"></a>nniris <span class="ot">&lt;-</span> <span class="fu">neuralnet</span>(Species <span class="sc">~</span> Petal.Width <span class="sc">+</span> Petal.Length, iristrain,</span>
+<span id="cb126-11"><a href="machine-learning-and-classification.html#cb126-11" aria-hidden="true" tabindex="-1"></a>    <span class="at">hidden =</span> <span class="dv">3</span>, <span class="at">linear.output =</span> <span class="cn">FALSE</span>, <span class="at">algorith =</span> <span class="st">&quot;backprop&quot;</span>,</span>
+<span id="cb126-12"><a href="machine-learning-and-classification.html#cb126-12" aria-hidden="true" tabindex="-1"></a>    <span class="at">learningrate =</span> <span class="fl">0.01</span>)</span>
+<span id="cb126-13"><a href="machine-learning-and-classification.html#cb126-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb126-14"><a href="machine-learning-and-classification.html#cb126-14" aria-hidden="true" tabindex="-1"></a><span class="co"># rounding the weight values so the plot is tidier</span></span>
+<span id="cb126-15"><a href="machine-learning-and-classification.html#cb126-15" aria-hidden="true" tabindex="-1"></a>nniris<span class="sc">$</span>weights[[<span class="dv">1</span>]] <span class="ot">&lt;-</span> <span class="fu">lapply</span>(nniris<span class="sc">$</span>weights[[<span class="dv">1</span>]], <span class="cf">function</span>(x) <span class="fu">round</span>(x,</span>
+<span id="cb126-16"><a href="machine-learning-and-classification.html#cb126-16" aria-hidden="true" tabindex="-1"></a>    <span class="dv">1</span>))</span>
+<span id="cb126-17"><a href="machine-learning-and-classification.html#cb126-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb126-18"><a href="machine-learning-and-classification.html#cb126-18" aria-hidden="true" tabindex="-1"></a><span class="co"># plotting the neural net (but not the intercepts or error</span></span>
+<span id="cb126-19"><a href="machine-learning-and-classification.html#cb126-19" aria-hidden="true" tabindex="-1"></a><span class="co"># rates)</span></span>
+<span id="cb126-20"><a href="machine-learning-and-classification.html#cb126-20" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(nniris, <span class="at">rep =</span> <span class="st">&quot;best&quot;</span>, <span class="at">information =</span> <span class="cn">FALSE</span>, <span class="at">intercept =</span> <span class="cn">FALSE</span>)</span></code></pre></div>
 <p><img src="_main_files/figure-html/unnamed-chunk-67-1.png" width="672" /></p>
 Finally, we’ll generate a confusion matrix for our neural net to see how well it did. The <strong>compute()</strong> function gives us the probability of class membership, and we’ll just select the species with the highest probability.
 <table>
@@ -1214,32 +1210,32 @@ MXNet, darch, deepnet, and h2o</p>
 <div id="answer-key-1" class="section level2" number="5.7">
 <h2><span class="header-section-number">5.7</span> Answer Key</h2>
 <p><strong>Exercise 1.</strong> Once you have fitted your model, you can use the code</p>
-<div class="sourceCode" id="cb132"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb132-1"><a href="machine-learning-and-classification.html#cb132-1" aria-hidden="true" tabindex="-1"></a>p18 <span class="ot">=</span> <span class="fu">round</span>(<span class="dv">1</span><span class="sc">/</span>(<span class="dv">1</span> <span class="sc">+</span> <span class="fu">exp</span>(<span class="sc">-</span>(logcoefs[<span class="dv">1</span>, <span class="dv">1</span>] <span class="sc">+</span> logcoefs[<span class="dv">2</span>, <span class="dv">1</span>] <span class="sc">*</span> <span class="dv">18</span>))),</span>
-<span id="cb132-2"><a href="machine-learning-and-classification.html#cb132-2" aria-hidden="true" tabindex="-1"></a>    <span class="dv">2</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb127"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb127-1"><a href="machine-learning-and-classification.html#cb127-1" aria-hidden="true" tabindex="-1"></a>p18 <span class="ot">=</span> <span class="fu">round</span>(<span class="dv">1</span><span class="sc">/</span>(<span class="dv">1</span> <span class="sc">+</span> <span class="fu">exp</span>(<span class="sc">-</span>(logcoefs[<span class="dv">1</span>, <span class="dv">1</span>] <span class="sc">+</span> logcoefs[<span class="dv">2</span>, <span class="dv">1</span>] <span class="sc">*</span> <span class="dv">18</span>))),</span>
+<span id="cb127-2"><a href="machine-learning-and-classification.html#cb127-2" aria-hidden="true" tabindex="-1"></a>    <span class="dv">2</span>)</span></code></pre></div>
 <p>to get the probability of occupancy at locations with a mean annual temperature of 18°C of approximately 0.91. Your value will vary slightly depending on the stochasticity from the random routines used to generate our simulated observations.</p>
 <p><strong>Exercise 2.</strong> We first need to change the threshold for our classification, and then recalculate sensitivity and specificity for our results</p>
-<div class="sourceCode" id="cb133"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb133-1"><a href="machine-learning-and-classification.html#cb133-1" aria-hidden="true" tabindex="-1"></a><span class="co"># determine model predictions based on a new threshold</span></span>
-<span id="cb133-2"><a href="machine-learning-and-classification.html#cb133-2" aria-hidden="true" tabindex="-1"></a><span class="co"># value</span></span>
-<span id="cb133-3"><a href="machine-learning-and-classification.html#cb133-3" aria-hidden="true" tabindex="-1"></a>logoccnew <span class="ot">&lt;-</span> <span class="fu">ifelse</span>(glm.probs <span class="sc">&gt;</span> <span class="fl">0.45</span>, <span class="dv">1</span>, <span class="dv">0</span>)</span>
-<span id="cb133-4"><a href="machine-learning-and-classification.html#cb133-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb133-5"><a href="machine-learning-and-classification.html#cb133-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb133-6"><a href="machine-learning-and-classification.html#cb133-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate a new confusion matrix</span></span>
-<span id="cb133-7"><a href="machine-learning-and-classification.html#cb133-7" aria-hidden="true" tabindex="-1"></a>ctabnew <span class="ot">=</span> <span class="fu">table</span>(logoccnew, y)</span>
-<span id="cb133-8"><a href="machine-learning-and-classification.html#cb133-8" aria-hidden="true" tabindex="-1"></a><span class="fu">dimnames</span>(ctabnew) <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="at">Actual =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">1</span>), <span class="at">Predicted =</span> <span class="fu">c</span>(<span class="dv">0</span>,</span>
-<span id="cb133-9"><a href="machine-learning-and-classification.html#cb133-9" aria-hidden="true" tabindex="-1"></a>    <span class="dv">1</span>))</span>
-<span id="cb133-10"><a href="machine-learning-and-classification.html#cb133-10" aria-hidden="true" tabindex="-1"></a>ctabnew</span></code></pre></div>
+<div class="sourceCode" id="cb128"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb128-1"><a href="machine-learning-and-classification.html#cb128-1" aria-hidden="true" tabindex="-1"></a><span class="co"># determine model predictions based on a new threshold</span></span>
+<span id="cb128-2"><a href="machine-learning-and-classification.html#cb128-2" aria-hidden="true" tabindex="-1"></a><span class="co"># value</span></span>
+<span id="cb128-3"><a href="machine-learning-and-classification.html#cb128-3" aria-hidden="true" tabindex="-1"></a>logoccnew <span class="ot">&lt;-</span> <span class="fu">ifelse</span>(glm.probs <span class="sc">&gt;</span> <span class="fl">0.45</span>, <span class="dv">1</span>, <span class="dv">0</span>)</span>
+<span id="cb128-4"><a href="machine-learning-and-classification.html#cb128-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb128-5"><a href="machine-learning-and-classification.html#cb128-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb128-6"><a href="machine-learning-and-classification.html#cb128-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate a new confusion matrix</span></span>
+<span id="cb128-7"><a href="machine-learning-and-classification.html#cb128-7" aria-hidden="true" tabindex="-1"></a>ctabnew <span class="ot">=</span> <span class="fu">table</span>(logoccnew, y)</span>
+<span id="cb128-8"><a href="machine-learning-and-classification.html#cb128-8" aria-hidden="true" tabindex="-1"></a><span class="fu">dimnames</span>(ctabnew) <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="at">Actual =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">1</span>), <span class="at">Predicted =</span> <span class="fu">c</span>(<span class="dv">0</span>,</span>
+<span id="cb128-9"><a href="machine-learning-and-classification.html#cb128-9" aria-hidden="true" tabindex="-1"></a>    <span class="dv">1</span>))</span>
+<span id="cb128-10"><a href="machine-learning-and-classification.html#cb128-10" aria-hidden="true" tabindex="-1"></a>ctabnew</span></code></pre></div>
 <pre><code>      Predicted
 Actual   0   1
      0 124  28
      1  21  27</code></pre>
-<div class="sourceCode" id="cb135"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb135-1"><a href="machine-learning-and-classification.html#cb135-1" aria-hidden="true" tabindex="-1"></a>errN <span class="ot">=</span> (ctabnew[<span class="dv">1</span>, <span class="dv">2</span>] <span class="sc">+</span> ctabnew[<span class="dv">2</span>, <span class="dv">1</span>])<span class="sc">/</span><span class="fu">sum</span>(ctabnew)</span>
-<span id="cb135-2"><a href="machine-learning-and-classification.html#cb135-2" aria-hidden="true" tabindex="-1"></a>sensN <span class="ot">=</span> ctabnew[<span class="dv">2</span>, <span class="dv">2</span>]<span class="sc">/</span>(ctabnew[<span class="dv">2</span>, <span class="dv">1</span>] <span class="sc">+</span> ctabnew[<span class="dv">2</span>, <span class="dv">2</span>])</span>
-<span id="cb135-3"><a href="machine-learning-and-classification.html#cb135-3" aria-hidden="true" tabindex="-1"></a>specN <span class="ot">=</span> <span class="dv">1</span> <span class="sc">-</span> ctabnew[<span class="dv">1</span>, <span class="dv">2</span>]<span class="sc">/</span>(ctabnew[<span class="dv">1</span>, <span class="dv">1</span>] <span class="sc">+</span> ctabnew[<span class="dv">1</span>, <span class="dv">2</span>])</span></code></pre></div>
+<div class="sourceCode" id="cb130"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb130-1"><a href="machine-learning-and-classification.html#cb130-1" aria-hidden="true" tabindex="-1"></a>errN <span class="ot">=</span> (ctabnew[<span class="dv">1</span>, <span class="dv">2</span>] <span class="sc">+</span> ctabnew[<span class="dv">2</span>, <span class="dv">1</span>])<span class="sc">/</span><span class="fu">sum</span>(ctabnew)</span>
+<span id="cb130-2"><a href="machine-learning-and-classification.html#cb130-2" aria-hidden="true" tabindex="-1"></a>sensN <span class="ot">=</span> ctabnew[<span class="dv">2</span>, <span class="dv">2</span>]<span class="sc">/</span>(ctabnew[<span class="dv">2</span>, <span class="dv">1</span>] <span class="sc">+</span> ctabnew[<span class="dv">2</span>, <span class="dv">2</span>])</span>
+<span id="cb130-3"><a href="machine-learning-and-classification.html#cb130-3" aria-hidden="true" tabindex="-1"></a>specN <span class="ot">=</span> <span class="dv">1</span> <span class="sc">-</span> ctabnew[<span class="dv">1</span>, <span class="dv">2</span>]<span class="sc">/</span>(ctabnew[<span class="dv">1</span>, <span class="dv">1</span>] <span class="sc">+</span> ctabnew[<span class="dv">1</span>, <span class="dv">2</span>])</span></code></pre></div>
 <p>Again, there will be a bit of variation in your exact result. We obtain a sensitivity of 0.56 and specificity of 0.82</p>
 <p><strong>Exercise 3.</strong> To construct a logistic regression to determine if a patient has diabetes or not, first read in the the training dataset Pima.tr from the MASS package</p>
-<div class="sourceCode" id="cb136"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb136-1"><a href="machine-learning-and-classification.html#cb136-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(MASS)</span>
-<span id="cb136-2"><a href="machine-learning-and-classification.html#cb136-2" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(Pima.tr)</span>
-<span id="cb136-3"><a href="machine-learning-and-classification.html#cb136-3" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(Pima.tr)</span></code></pre></div>
+<div class="sourceCode" id="cb131"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb131-1"><a href="machine-learning-and-classification.html#cb131-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(MASS)</span>
+<span id="cb131-2"><a href="machine-learning-and-classification.html#cb131-2" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(Pima.tr)</span>
+<span id="cb131-3"><a href="machine-learning-and-classification.html#cb131-3" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(Pima.tr)</span></code></pre></div>
 <pre><code>&#39;data.frame&#39;:   200 obs. of  8 variables:
  $ npreg: int  5 7 5 0 0 5 3 1 3 2 ...
  $ glu  : int  86 195 77 165 107 97 83 193 142 128 ...
@@ -1250,17 +1246,17 @@ Actual   0   1
  $ age  : int  24 55 35 26 23 52 25 24 63 31 ...
  $ type : Factor w/ 2 levels &quot;No&quot;,&quot;Yes&quot;: 1 2 1 1 1 2 1 1 1 2 ...</code></pre>
 <p>Next construct a logistic regression on the training data</p>
-<div class="sourceCode" id="cb138"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb138-1"><a href="machine-learning-and-classification.html#cb138-1" aria-hidden="true" tabindex="-1"></a><span class="co"># run logistic regression</span></span>
-<span id="cb138-2"><a href="machine-learning-and-classification.html#cb138-2" aria-hidden="true" tabindex="-1"></a>Pima.log <span class="ot">&lt;-</span> <span class="fu">glm</span>(type <span class="sc">~</span> ., <span class="at">family =</span> binomial, <span class="at">data =</span> Pima.tr)</span></code></pre></div>
+<div class="sourceCode" id="cb133"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb133-1"><a href="machine-learning-and-classification.html#cb133-1" aria-hidden="true" tabindex="-1"></a><span class="co"># run logistic regression</span></span>
+<span id="cb133-2"><a href="machine-learning-and-classification.html#cb133-2" aria-hidden="true" tabindex="-1"></a>Pima.log <span class="ot">&lt;-</span> <span class="fu">glm</span>(type <span class="sc">~</span> ., <span class="at">family =</span> binomial, <span class="at">data =</span> Pima.tr)</span></code></pre></div>
 <p>Then get the predictions of the model for the testing data. We’ve just used a threshold of 50%.</p>
-<div class="sourceCode" id="cb139"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb139-1"><a href="machine-learning-and-classification.html#cb139-1" aria-hidden="true" tabindex="-1"></a>testPima <span class="ot">&lt;-</span> <span class="fu">predict</span>(Pima.log, <span class="at">newdata =</span> Pima.te, <span class="at">type =</span> <span class="st">&quot;response&quot;</span>)</span>
-<span id="cb139-2"><a href="machine-learning-and-classification.html#cb139-2" aria-hidden="true" tabindex="-1"></a>testPima <span class="ot">=</span> <span class="fu">as.factor</span>(<span class="fu">ifelse</span>(testPima <span class="sc">&gt;</span> <span class="fl">0.5</span>, <span class="st">&quot;Yes&quot;</span>, <span class="st">&quot;No&quot;</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb134"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb134-1"><a href="machine-learning-and-classification.html#cb134-1" aria-hidden="true" tabindex="-1"></a>testPima <span class="ot">&lt;-</span> <span class="fu">predict</span>(Pima.log, <span class="at">newdata =</span> Pima.te, <span class="at">type =</span> <span class="st">&quot;response&quot;</span>)</span>
+<span id="cb134-2"><a href="machine-learning-and-classification.html#cb134-2" aria-hidden="true" tabindex="-1"></a>testPima <span class="ot">=</span> <span class="fu">as.factor</span>(<span class="fu">ifelse</span>(testPima <span class="sc">&gt;</span> <span class="fl">0.5</span>, <span class="st">&quot;Yes&quot;</span>, <span class="st">&quot;No&quot;</span>))</span></code></pre></div>
 <p>Finally create a confusion matrix</p>
-<div class="sourceCode" id="cb140"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb140-1"><a href="machine-learning-and-classification.html#cb140-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate a confusion matrix</span></span>
-<span id="cb140-2"><a href="machine-learning-and-classification.html#cb140-2" aria-hidden="true" tabindex="-1"></a>atab <span class="ot">=</span> <span class="fu">table</span>(Pima.te<span class="sc">$</span>type, testPima)</span>
-<span id="cb140-3"><a href="machine-learning-and-classification.html#cb140-3" aria-hidden="true" tabindex="-1"></a><span class="fu">dimnames</span>(atab) <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="at">Actual =</span> <span class="fu">levels</span>(Pima.te<span class="sc">$</span>type), <span class="at">Predicted =</span> <span class="fu">levels</span>(Pima.te<span class="sc">$</span>type))</span>
-<span id="cb140-4"><a href="machine-learning-and-classification.html#cb140-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb140-5"><a href="machine-learning-and-classification.html#cb140-5" aria-hidden="true" tabindex="-1"></a>atab</span></code></pre></div>
+<div class="sourceCode" id="cb135"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb135-1"><a href="machine-learning-and-classification.html#cb135-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate a confusion matrix</span></span>
+<span id="cb135-2"><a href="machine-learning-and-classification.html#cb135-2" aria-hidden="true" tabindex="-1"></a>atab <span class="ot">=</span> <span class="fu">table</span>(Pima.te<span class="sc">$</span>type, testPima)</span>
+<span id="cb135-3"><a href="machine-learning-and-classification.html#cb135-3" aria-hidden="true" tabindex="-1"></a><span class="fu">dimnames</span>(atab) <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="at">Actual =</span> <span class="fu">levels</span>(Pima.te<span class="sc">$</span>type), <span class="at">Predicted =</span> <span class="fu">levels</span>(Pima.te<span class="sc">$</span>type))</span>
+<span id="cb135-4"><a href="machine-learning-and-classification.html#cb135-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb135-5"><a href="machine-learning-and-classification.html#cb135-5" aria-hidden="true" tabindex="-1"></a>atab</span></code></pre></div>
 <pre><code>      Predicted
 Actual  No Yes
    No  200  23
@@ -1269,14 +1265,14 @@ Actual  No Yes
 <p><strong>Exercise 4.</strong></p>
 <p>We’ve used the caret package to run our random forest to classify the Pima diabetes data using a k-fold cross-validation procedure, given that the dataset is fairly small. We’ve even divided the data into training and testing data (i.e., this is a bit overkill, considering that random forest will calculate out of bag error all by itself).</p>
 <p>We use the fitted model to predict the test data, and then generate a confusion matrix to take a look at how well it does. We also examine which predictors are most important.</p>
-<div class="sourceCode" id="cb142"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb142-1"><a href="machine-learning-and-classification.html#cb142-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(randomForest)</span>
-<span id="cb142-2"><a href="machine-learning-and-classification.html#cb142-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(caret)</span>
-<span id="cb142-3"><a href="machine-learning-and-classification.html#cb142-3" aria-hidden="true" tabindex="-1"></a><span class="co"># cross-validation with 5 folds</span></span>
-<span id="cb142-4"><a href="machine-learning-and-classification.html#cb142-4" aria-hidden="true" tabindex="-1"></a>train_control <span class="ot">&lt;-</span> <span class="fu">trainControl</span>(<span class="at">method =</span> <span class="st">&quot;cv&quot;</span>, <span class="at">number =</span> <span class="dv">5</span>)</span>
-<span id="cb142-5"><a href="machine-learning-and-classification.html#cb142-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb142-6"><a href="machine-learning-and-classification.html#cb142-6" aria-hidden="true" tabindex="-1"></a>rf_Pima <span class="ot">&lt;-</span> <span class="fu">train</span>(type <span class="sc">~</span> ., <span class="at">data =</span> Pima.tr, <span class="at">trControl =</span> train_control,</span>
-<span id="cb142-7"><a href="machine-learning-and-classification.html#cb142-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">method =</span> <span class="st">&quot;rf&quot;</span>)</span>
-<span id="cb142-8"><a href="machine-learning-and-classification.html#cb142-8" aria-hidden="true" tabindex="-1"></a>rf_Pima</span></code></pre></div>
+<div class="sourceCode" id="cb137"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb137-1"><a href="machine-learning-and-classification.html#cb137-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(randomForest)</span>
+<span id="cb137-2"><a href="machine-learning-and-classification.html#cb137-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(caret)</span>
+<span id="cb137-3"><a href="machine-learning-and-classification.html#cb137-3" aria-hidden="true" tabindex="-1"></a><span class="co"># cross-validation with 5 folds</span></span>
+<span id="cb137-4"><a href="machine-learning-and-classification.html#cb137-4" aria-hidden="true" tabindex="-1"></a>train_control <span class="ot">&lt;-</span> <span class="fu">trainControl</span>(<span class="at">method =</span> <span class="st">&quot;cv&quot;</span>, <span class="at">number =</span> <span class="dv">5</span>)</span>
+<span id="cb137-5"><a href="machine-learning-and-classification.html#cb137-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb137-6"><a href="machine-learning-and-classification.html#cb137-6" aria-hidden="true" tabindex="-1"></a>rf_Pima <span class="ot">&lt;-</span> <span class="fu">train</span>(type <span class="sc">~</span> ., <span class="at">data =</span> Pima.tr, <span class="at">trControl =</span> train_control,</span>
+<span id="cb137-7"><a href="machine-learning-and-classification.html#cb137-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">method =</span> <span class="st">&quot;rf&quot;</span>)</span>
+<span id="cb137-8"><a href="machine-learning-and-classification.html#cb137-8" aria-hidden="true" tabindex="-1"></a>rf_Pima</span></code></pre></div>
 <pre><code>Random Forest 
 
 200 samples
@@ -1295,7 +1291,7 @@ Resampling results across tuning parameters:
 
 Accuracy was used to select the optimal model using the largest value.
 The final value used for the model was mtry = 7.</code></pre>
-<div class="sourceCode" id="cb144"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb144-1"><a href="machine-learning-and-classification.html#cb144-1" aria-hidden="true" tabindex="-1"></a>rf_Pima<span class="sc">$</span>finalModel</span></code></pre></div>
+<div class="sourceCode" id="cb139"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb139-1"><a href="machine-learning-and-classification.html#cb139-1" aria-hidden="true" tabindex="-1"></a>rf_Pima<span class="sc">$</span>finalModel</span></code></pre></div>
 <pre><code>
 Call:
  randomForest(x = x, y = y, mtry = min(param$mtry, ncol(x))) 
@@ -1308,9 +1304,9 @@ Confusion matrix:
      No Yes class.error
 No  107  25   0.1893939
 Yes  32  36   0.4705882</code></pre>
-<div class="sourceCode" id="cb146"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb146-1"><a href="machine-learning-and-classification.html#cb146-1" aria-hidden="true" tabindex="-1"></a>rf_Pima_pred <span class="ot">=</span> <span class="fu">predict</span>(rf_Pima, Pima.te)</span>
-<span id="cb146-2"><a href="machine-learning-and-classification.html#cb146-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb146-3"><a href="machine-learning-and-classification.html#cb146-3" aria-hidden="true" tabindex="-1"></a><span class="fu">confusionMatrix</span>(rf_Pima_pred, Pima.te<span class="sc">$</span>type)</span></code></pre></div>
+<div class="sourceCode" id="cb141"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb141-1"><a href="machine-learning-and-classification.html#cb141-1" aria-hidden="true" tabindex="-1"></a>rf_Pima_pred <span class="ot">=</span> <span class="fu">predict</span>(rf_Pima, Pima.te)</span>
+<span id="cb141-2"><a href="machine-learning-and-classification.html#cb141-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb141-3"><a href="machine-learning-and-classification.html#cb141-3" aria-hidden="true" tabindex="-1"></a><span class="fu">confusionMatrix</span>(rf_Pima_pred, Pima.te<span class="sc">$</span>type)</span></code></pre></div>
 <pre><code>Confusion Matrix and Statistics
 
           Reference
@@ -1338,7 +1334,7 @@ Prediction  No Yes
                                           
        &#39;Positive&#39; Class : No              
                                           </code></pre>
-<div class="sourceCode" id="cb148"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb148-1"><a href="machine-learning-and-classification.html#cb148-1" aria-hidden="true" tabindex="-1"></a><span class="fu">varImpPlot</span>(rf_Pima<span class="sc">$</span>finalModel, <span class="at">main =</span> <span class="st">&quot;final random forest model from caret&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb143"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb143-1"><a href="machine-learning-and-classification.html#cb143-1" aria-hidden="true" tabindex="-1"></a><span class="fu">varImpPlot</span>(rf_Pima<span class="sc">$</span>finalModel, <span class="at">main =</span> <span class="st">&quot;final random forest model from caret&quot;</span>)</span></code></pre></div>
 <div class="figure"><span id="fig:e4"></span>
 <img src="_main_files/figure-html/e4-1.png" alt="Variable importance is indicated by the mean decrease in the Gini index" width="672" />
 <p class="caption">
@@ -1399,7 +1395,7 @@ gitbook.start({
 },
 "download": null,
 "toc": {
-"collapse": "subsection"
+"collapse": "section"
 }
 });
 });
