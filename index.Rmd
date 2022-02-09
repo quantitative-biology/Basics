@@ -5,6 +5,10 @@ date: "`r format(Sys.time(), '%d %B, %Y')`"
 site: bookdown::bookdown_site
 output:
   bookdown::gitbook:
+    css: style.css
+    config:
+      toc:
+        collapse: section
     includes:
       in_header: google_analytics_script.html
 documentclass: book
@@ -14,7 +18,10 @@ link-citations: yes
 github-repo: rstudio/bookdown-demo
 description: "Building Skills in Quantitative Biology"
 ---
-
+```{r sinit, include=FALSE}
+knitr::opts_chunk$set(tidy.opts = list(width.cutoff = 60), tidy = TRUE, echo = FALSE,kableExtra.auto_format = FALSE)
+library(kableExtra)
+```
 #  Welcome!
 
 Quantitative skills are essential for biological research. We consider such
@@ -32,20 +39,20 @@ Because the modules are designed to be independent (i.e., you don't have read th
 
 The five modules are:
 
-* **Git and GitHub** (Andrew Edwards) -- covers the tools widely used to share code,
+* **[Git and GitHub]** (Andrew Edwards) -- covers the tools widely used to share code,
   collaborate with colleagues and create a transparent record of research.
 
-* **R Markdown** (Andrew Edwards) -- demonstrates how to create dynamic documents
+* **[R Markdown]** (Andrew Edwards) -- demonstrates how to create dynamic documents
   that are fully reproducible, with a clear link between the underlying R code
   and the resulting figures, tables and results.
 
-* **Multivariate analysis** (Kim Cuddington) -- discusses multivariate quantitative
+* **[Multivariate analysis: Clustering and Ordination]** (Kim Cuddington) -- discusses multivariate quantitative
   methods that are used to understand data when there is more than one response (or measurement)
 
-* **Machine learning and classification** (Kim Cuddington) -- continues explorations
+* **[Machine learning and classification]** (Kim Cuddington) -- continues explorations
   of multivariate data and in particular the topic of classification but using machine learning approaches.
 
-* **Optimization** (Brian Ingalls) -- optimization is the act of identifying the extreme (cheapest,
+* **[Optimization]** (Brian Ingalls) -- optimization is the act of identifying the extreme (cheapest,
   tallest, fastest, ...) over a collection of possibilities. Applications include the manipulation  (e.g. optimal
   harvesting or optimal drug dosing) and construction (e.g. robust synthetic genetic circuits) of biological systems, and experimental design.
 
@@ -125,8 +132,8 @@ Currently (title may change), please cite this work as:
 
 Cuddington, K, Edwards, A.M., and Ingalls, B. (2021). *Building Skills in Quantitative Biology*. https://www.quantitative-biology.com
 
-@Kim Cuddington, Andrew M. Edwards, and Brian Ingalls.
-Building Skills in Quantitative Biology(https://www.quantitative-biology.ca) is available under an Ontario Commons License and a CC BY-NC-SA 4.0. Contact kcudding _AT_ uwaterloo _DOT_ ca for more information
+Kim Cuddington, Andrew M. Edwards, and Brian Ingalls.
+Building Skills in Quantitative Biology (https://www.quantitative-biology.ca) is available under an Ontario Commons License and a CC BY-NC-SA 4.0. Contact kcudding _AT_ uwaterloo _DOT_ ca for more information
 
 All materials licensed under the Ontario Commons License (Version 1.0) unless otherwise specified. The license deed is available to read at https://vls.ecampusontario.ca/wp-content/uploads/2021/01/Ontario-Commons-License-1.0.pdf.  
 
