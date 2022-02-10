@@ -6,15 +6,46 @@
 }
 
 .book .book-body .page-wrapper .page-inner section.normal a:hover {
-color: purple; /* darker color when hovering */
+color: #0096D1; /* darker color when hovering */
 
+}
+
+  /* all TOC list items, basically */
+
+.book .book-summary ul.summary li a, 
+.book .book-summary ul.summary li span {
+font-size: 150% !important;
+  color: #2f5175;
+ 
+}
+
+/*------------ TOC --------------*/
+
+.book .book-summary {
+  background: #f6fff2;
+  border-right: none;
 }
 
 .book .book-summary ul.summary li.active>a { /*active TOC links*/
   color: #0000FF !important;
   font-weight: bold !important;
+  font-size: 150% !important;
   border-left: solid 4px;
-  border-color: #5699cc;
+  border-color: #000;
   padding-left: 11px !important;
+ 
 }  
+
+.summary a:hover {
+  color: purple !important;
+  font-size: 120% !important;
+} 
+
+.book .book-body .page-wrapper .page-inner section.normal pre {
+    font-size: 150% ;
+    color: purple !important;
+    background: #f6fff2;
+    border: 1px solid #ddd;
+    border-color: #000;
+}
 
