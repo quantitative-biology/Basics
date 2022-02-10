@@ -22,7 +22,7 @@ font-size: 150% !important;
 /*------------ TOC --------------*/
 
 .book .book-summary {
-  background: #f8fff5;
+  background: #fbf2ef;
   border-right: none;
 }
 
@@ -46,7 +46,7 @@ font-size: 150% !important;
 .book .book-body .page-wrapper .page-inner section.normal pre {
     font-size: 150% ;
     /*color: purple !important;*/
-    background: #f8fff5;
+    background: #fbf2ef;
     border: 1px solid #ddd;
     border-color: #000;
 }
