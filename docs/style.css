@@ -37,17 +37,46 @@ font-size: 150% !important;
 }  
 
 .summary a:hover {
-  color: purple !important;
+  color: #bb112 !important;
   font-size: 120% !important;
 } 
 
-/*------------ Code Chunks --------------*/
+/*------------ Code Chunks --------------
 
-.book .book-body .page-wrapper .page-inner section.normal pre {
-    font-size: 150% ;
-    /*color: purple !important;*/
-     /*background: #fff6ea; */
-    border: 1px solid #ddd;
-    border-color: #000;
+/*.book .book-body .page-wrapper .page-inner section.normal pre {
+/*    font-size: 150% ;
+/*    /*color: purple !important;*/
+/*     /*background: #fff6ea; */
+/*    border: 1px solid #ddd;
+/*    border-color: #000;
+/*}
+*/
+
+
+
+.Rchunk {
+  font-size: 130% ;
+  background-color: #f7f9fb  !important;
+ /*  #fff6ea*/
+    font-weight: bolder;
+  
+  
 }
+
+
+.Rout {
+  font-size: 130% ;
+  background-color: #fff7e6 !important;
+ /* #d9edf7*/
+    font-weight: bolder;
+  color: black !important;
+}
+
+/* INLINE...doesn't work?? */
+/* .book .book-body .page-wrapper .page-inner section.normal code /*{
+   font-weight: bolder;
+/*  background-color: #eaeff0;
+/*  font-family: Monospace;*/
+ /* color: black*/
+/*}*/
 
