@@ -22,7 +22,9 @@ description: "Building Skills in Quantitative Biology"
 ```{r sinit, include=FALSE}
 knitr::opts_chunk$set(tidy.opts = list(width.cutoff = 60), tidy = TRUE, echo = FALSE,kableExtra.auto_format = FALSE,
                       class.source="Rchunk", class.output="Rout", comment="")
-
+textcol=c("black","#AC1F34",  "#1C850A", "#2322E6", "#930DB3", "#784438", "#C502AB")
+graphcol=c("black","#DB374D", "#138A06", "#0C24E7", "#C35034", "#727780")
+palette(graphcol)
 library(kableExtra)
 ```
 #  Welcome!
