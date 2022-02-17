@@ -21,7 +21,7 @@ description: "Building Skills in Quantitative Biology"
 ---
 ```{r sinit, include=FALSE}
 knitr::opts_chunk$set(tidy.opts = list(width.cutoff = 60), tidy = TRUE, echo = FALSE,kableExtra.auto_format = FALSE,
-                      class.source="Rchunk", class.output="Rout", comment="", prompt=TRUE)
+                      class.source="Rchunk", class.output="Rout", comment="")
 
 library(kableExtra)
 ```

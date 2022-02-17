@@ -58,7 +58,7 @@ font-size: 150% !important;
   font-size: 130% ;
   background-color: #f7f9fb  !important;
  /*  #fff6ea*/
-    font-weight: bolder;
+   /*  font-weight: bolder;*/ 
   
   
 }
@@ -66,9 +66,9 @@ font-size: 150% !important;
 
 .Rout {
   font-size: 130% ;
-  background-color: #fff7e6 !important;
+  background-color: #fff6e6 !important;
  /* #d9edf7*/
-    font-weight: bolder;
+  
   color: black !important;
 }
 
