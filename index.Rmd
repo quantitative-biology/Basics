@@ -5,6 +5,7 @@ date: "`r format(Sys.time(), '%d %B, %Y')`"
 site: bookdown::bookdown_site
 output:
   bookdown::gitbook:
+    highlight: monochrome
     css: style.css
     config:
       toc:
