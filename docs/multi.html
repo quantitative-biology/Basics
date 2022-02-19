@@ -1873,8 +1873,8 @@ Figure 4.20: Pairwise correlations between environmental variables in the varech
 <span id="cb53-2"><a href="multi.html#cb53-2" aria-hidden="true" tabindex="-1"></a>scvarechem <span class="ot">=</span> <span class="fu">as.data.frame</span>(<span class="fu">scale</span>(varechem))</span>
 <span id="cb53-3"><a href="multi.html#cb53-3" aria-hidden="true" tabindex="-1"></a>constr <span class="ot">&lt;-</span> vegan<span class="sc">::</span><span class="fu">rda</span>(stvarespec <span class="sc">~</span> ., <span class="at">data =</span> scvarechem)</span>
 <span id="cb53-4"><a href="multi.html#cb53-4" aria-hidden="true" tabindex="-1"></a>constr</span></code></pre></div>
-<pre class="Rout"><code>Call: rda(formula = stvarespec ~ N + P + K + Ca + Mg + S + Al + Fe + Mn + Zn + Mo +
-Baresoil + Humdepth + pH, data = scvarechem)
+<pre class="Rout"><code>Call: rda(formula = stvarespec ~ N + P + K + Ca + Mg + S + Al + Fe + Mn + Zn + Mo + Baresoil +
+Humdepth + pH, data = scvarechem)
 
               Inertia Proportion Rank
 Total         0.05084    1.00000     
@@ -1982,10 +1982,10 @@ Eigenvalues for unconstrained axes:
 <p>Contrary to what one sometimes reads, variables with high VIFs should generally not be manually removed before the application of a procedure of selection of variables. Indeed, two highly correlated variables that are both strong predictors of one or several of the response variables Y may both contribute significantly, in complementary manners, to the linear model of these response variables. A variable selection procedure is the appropriate way of determining if that is the case.</p>
 <p>However, let’s see what happened with collinearity. VIFs can be computed in vegan after RDA or CCA. The algorithm in the <strong>vif.cca()</strong> function allows users to include factors in the RDA; the function will compute VIF after breaking down each factor into dummy variables. If X contains quantitative variables only, the vif.cca() function produces the same result as the normal calculation for quantitative variables.</p>
 <div class="sourceCode" id="cb64"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb64-1"><a href="multi.html#cb64-1" aria-hidden="true" tabindex="-1"></a><span class="fu">vif.cca</span>(mfull)</span></code></pre></div>
-<pre class="Rout"><code>        N         P         K        Ca        Mg         S        Al        Fe        Mn 
- 1.884049  6.184742 11.746873  9.825650  9.595203 18.460717 20.331905  8.849137  5.168278 
-       Zn        Mo  Baresoil  Humdepth        pH 
- 7.755110  4.575108  2.213443  5.638807  6.910118 </code></pre>
+<pre class="Rout"><code>        N         P         K        Ca        Mg         S        Al        Fe        Mn        Zn 
+ 1.884049  6.184742 11.746873  9.825650  9.595203 18.460717 20.331905  8.849137  5.168278  7.755110 
+       Mo  Baresoil  Humdepth        pH 
+ 4.575108  2.213443  5.638807  6.910118 </code></pre>
 <div class="sourceCode" id="cb66"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb66-1"><a href="multi.html#cb66-1" aria-hidden="true" tabindex="-1"></a><span class="fu">vif.cca</span>(optm)</span></code></pre></div>
 <pre class="Rout"><code>      Fe        P       Mn 
 1.259334 1.431022 1.738208 </code></pre>
