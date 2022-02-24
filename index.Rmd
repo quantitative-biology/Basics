@@ -27,6 +27,19 @@ textcol=c("black","#AC1F34",  "#1C850A", "#2322E6", "#930DB3", "#784438", "#C502
 graphcol=c("black","#DB374D", "#138A06", "#0C24E7", "#C35034", "#727780")
 palette(graphcol)
 library(kableExtra)
+knitr::write_bib(file = 'packages.bib')
+
+# From  https://bookdown.org/yihui/rmarkdown-cookbook/font-color.html
+#  to then say `r colorize("some words in red", "red")` etc. ("red" is the
+#  default so you don't need to say that.
+colorize <- function(x, color = textcol[7]) { # 5 or 7 are best
+  if (knitr::is_latex_output()) {
+    sprintf("\\textcolor{%s}{%s}", color, x)
+  } else if (knitr::is_html_output()) {
+    sprintf("<b><span style='color: %s;'>%s</span></b>", color,
+      x)
+  } else x
+}
 ```
 #  Welcome!
 
@@ -136,12 +149,11 @@ module.
 
 Please cite this work as:
 
-Cuddington, K, Edwards, A.M., and Ingalls, B. (2021). *Building Skills in Quantitative Biology*. https://www.quantitative-biology.com
+Cuddington, K, Edwards, A.M., and Ingalls, B. (2021). *Building Skills in Quantitative Biology*. https://www.quantitative-biology.ca
 
 Kim Cuddington, Andrew M. Edwards, and Brian Ingalls.
 Building Skills in Quantitative Biology (https://www.quantitative-biology.ca) is available under an Ontario Commons License and a CC BY-NC-SA 4.0. Contact kcudding _AT_ uwaterloo _DOT_ ca for more information
 
-All materials licensed under the Ontario Commons License (Version 1.0) unless otherwise specified. The license deed is available to read at https://vls.ecampusontario.ca/wp-content/uploads/2021/01/Ontario-Commons-License-1.0.pdf.  
+All materials licensed under the Ontario Commons License (Version 1.0) unless otherwise specified. The license deed is available to read at https://vls.ecampusontario.ca/wp-content/uploads/2021/01/Ontario-Commons-License-1.0.pdf.
 
-All materials are also licensed under the Creative Commons BY-NC-SA 4.0 license unless otherwise specified. The license deed is available to read at https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode. 
-
+All materials are also licensed under the Creative Commons BY-NC-SA 4.0 license unless otherwise specified. The license deed is available to read at https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode.
