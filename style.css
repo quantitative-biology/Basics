@@ -75,7 +75,7 @@ font-size: 150% !important;
 }
 
 a[target="_blank"]:after {
-    content: " (external)";
+    content: " (external link)";
 }
 
 a.anchor-section::before {
