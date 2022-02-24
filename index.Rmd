@@ -27,6 +27,18 @@ graphcol=c("black","#DB374D", "#138A06", "#0C24E7", "#C35034", "#727780")
 palette(graphcol)
 library(kableExtra)
 knitr::write_bib(file = 'packages.bib')
+
+# From  https://bookdown.org/yihui/rmarkdown-cookbook/font-color.html
+#  to then say `r colorize("some words in red", "red")` etc. ("red" is the
+#  default so you don't need to say that.
+colorize <- function(x, color = textcol[7]) { # 5 or 7 are best
+  if (knitr::is_latex_output()) {
+    sprintf("\\textcolor{%s}{%s}", color, x)
+  } else if (knitr::is_html_output()) {
+    sprintf("<b><span style='color: %s;'>%s</span></b>", color,
+      x)
+  } else x
+}
 ```
 #  Welcome!
 
