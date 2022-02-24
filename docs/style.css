@@ -37,8 +37,10 @@ font-size: 150% !important;
 }  
 
 .summary a:hover {
-  color: #bb112 !important;
+   font-weight: bold !important;
+  color: #7009B4 !important;
   font-size: 120% !important;
+  padding-left: 11px !important;
 } 
 
 /*------------ Code Chunks --------------
@@ -55,7 +57,7 @@ font-size: 150% !important;
 
 
 .Rchunk {
-  font-size: 130% ;
+  font-size: 120% ;
   background-color: #f7f9fb  !important;
  /*  #fff6ea*/
    /*  font-weight: bolder;*/ 
@@ -65,11 +67,19 @@ font-size: 150% !important;
 
 
 .Rout {
-  font-size: 130% ;
+  font-size: 120% ;
   background-color: #fff6e6 !important;
  /* #d9edf7*/
   
   color: black !important;
+}
+
+a[target="_blank"]:after {
+    content: " (external)";
+}
+
+a.anchor-section::before {
+  content: '(section link)';
 }
 
 /* INLINE...doesn't work?? */

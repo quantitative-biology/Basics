@@ -355,7 +355,7 @@ code span.wa { font-style: italic; } /* Warning */
 <p><br>
 <br></p>
 <div class="figure"><span id="fig:f1"></span>
-<img src="_main_files/figure-html/f1-1.png" alt="A 4 quadrant plane titled Types of mulitvariate analysis where the vertical axis has lables response variable at the top and latent variable at the bottom. The top left quadrant contains the text Regression in green, the bottom left contains the word Ordination in orange, the top right contains the word Classification in red, and the bottom right contains the word Clustering in blue." width="576" />
+<img src="_main_files/figure-html/f1-1.png" alt="A 4 quadrant plane with y-axis 'response variable' and 'latent variable' and x-axis 'Continuous' and 'Discrete'. There are four quadrants 'Regression', 'Ordination', 'Classification', and 'Clustering' labelled counterclockwise from the top left." width="576" />
 <p class="caption">
 Figure 4.1: Types of multivariate analysis
 </p>
@@ -906,7 +906,7 @@ erie  1  0
 <pre class="Rout"><code>[1] 0.9</code></pre>
 <div class="sourceCode" id="cb17"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb17-1"><a href="multi.html#cb17-1" aria-hidden="true" tabindex="-1"></a>S_s <span class="ot">=</span> <span class="dv">2</span> <span class="sc">*</span> a<span class="sc">/</span>(<span class="dv">2</span> <span class="sc">*</span> a <span class="sc">+</span> b <span class="sc">+</span> c)</span>
 <span id="cb17-2"><a href="multi.html#cb17-2" aria-hidden="true" tabindex="-1"></a>S_s</span></code></pre></div>
-<pre class="Rout"><code>[1] 0.9473684</code></pre>
+<pre class="Rout"><code>[1] 0.95</code></pre>
 <p>A final note: when a dissimilarity or similarity metric has a finite range, we can simply convert from one to the other. For example, for similarities that range from 1 (identical) to 0 (completely different), dissimilarity would simply be 1-similarity.</p>
 </div>
 <div id="quantitative-similarity-dissimilarity-metrics" class="section level3" number="4.1.2">
@@ -916,9 +916,9 @@ erie  1  0
 <div id="euclidean-distance" class="section level4" number="4.1.2.1">
 <h4><span class="header-section-number">4.1.2.1</span> Euclidean Distance</h4>
 <p>Perhaps the mostly commonly used, and easiest to understand distance measure is Euclidean distance. This metric is zero for identical sampling units and has no fixed upper bound.</p>
-<p>Euclidean distance in multivariate space is derived from our understanding of distance in a Cartesian plane. If we had two species abundances measured in two different samples, we could then plot the abundance of species 1 and species 2 for each sample on a 2D plane, and draw a line between them. This would be our Euclidean distance: the shortest path between the two points (Fig. <a href="multi.html#fig:f2">4.2</a>).</p>
+Euclidean distance in multivariate space is derived from our understanding of distance in a Cartesian plane. If we had two species abundances measured in two different samples, we could then plot the abundance of species 1 and species 2 for each sample on a 2D plane, and draw a line between them. This would be our Euclidean distance: the shortest path between the two points (Fig. <a href="multi.html#fig:f2">4.2</a>).
 <div class="figure"><span id="fig:f2"></span>
-<img src="_main_files/figure-html/f2-1.png" alt="This is plot with x-axis labelled 'Species 1' and y-axis labelled 'Species 2'. There is a blue point at coordinate (19,35) titled 'sample j' and a blue point at coordinate (30,10) titled 'sample k'. Both points are connected by a blue line labelled 'c'. Dotted lines emerge downwards from point 'sample j' labelled 'b' and leftwards from point 'sample k' labelled 'a', and meet up perpendicularly at the coordinate (19,10)." width="672" />
+<img src="_main_files/figure-html/f2-1.png" alt="A plot with x-axis 'Species 1' and y-axis 'Species 2'. A descending linear line connects two blue points title 'sample j' and 'sample k' which are connected by dotted vertical and horizontal lines titled 'b' and 'a'." width="672" />
 <p class="caption">
 Figure 4.2: Example of a Euclidean distance calculation in a two dimensional space of species abundance
 </p>
@@ -1179,10 +1179,10 @@ species 3
 <p><br>
 <br></p>
 <div class="sourceCode" id="cb20"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb20-1"><a href="multi.html#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">dist</span>(<span class="fu">t</span>(spmatrix), <span class="at">method =</span> <span class="st">&quot;euclidean&quot;</span>, <span class="at">diag =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
-<pre class="Rout"><code>         A        B        C
-A 0.000000                  
-B 1.732051 0.000000         
-C 7.615773 9.000000 0.000000</code></pre>
+<pre class="Rout"><code>    A   B   C
+A 0.0        
+B 1.7 0.0    
+C 7.6 9.0 0.0</code></pre>
 <p>There are other disadvantages as well, and in general, there is simply no perfect metric. For example, you may dislike the fact that Euclidean distance also has no upper bound, and so it becomes difficult to understand how similar two things are (i.e., the metric can only be understood in a relative way when comparing many things, Sample A is more similar to sample B than sample C, for example). You could use a Bray-Curtis dissimilarity metric, which is quite easy to interpret, but this metric will also confound differences in species presences and differences in species counts (Greenacre 2017). The best policy is to be aware of the advantages and disadvantages of the metrics you choose, and interpret your analysis in light of this information.</p>
 </div>
 <div id="r-functions" class="section level3" number="4.1.4">
@@ -1206,7 +1206,7 @@ C 7.615773 9.000000 0.000000</code></pre>
 <h3><span class="header-section-number">4.2.1</span> Hierarchical clustering: groups are nested within other groups.</h3>
 <p>Perhaps the most familiar type of clustering is hierarchical. There are two kinds of hierarchical clustering: <strong>divisive</strong> and <strong>agglomerative</strong>. In the divisive method, the entire set of units is divided into smaller and smaller groups. The agglomerative method starts with small groups of few units, and groups them into larger and larger clusters, until the entire data set is sampled (Pielou, 1984). Of course, once you have more than two units, you need some way to assess similarity between the clusters. There are a couple of different methods here. Single linkage assigns the similarity between clusters to the most similar units in each cluster. Complete linkage uses the similarity between the most dissimilar units in each cluster, while average linkage averages over all the units in each cluster (Fig. <a href="multi.html#fig:f6">4.3</a>).</p>
 <div class="figure"><span id="fig:f6"></span>
-<img src="_main_files/figure-html/f6-1.png" alt="This figure shows six circles arranged in three rows and two columns. Each circle contains three black dots. The first two circles in the first row are labelled 'Simple Linkage' and a single dot from each circle of this row is connected by a black line. The two circles in the second row are labelled 'Complete Linkage' and a single dot in each circle of this row is connected by a black line. The two circles in the last row are labelled 'Average Linkage' and all the dots in each circle make connections to each other through black lines." width="768" />
+<img src="_main_files/figure-html/f6-1.png" alt="Six ovals arranged in three rows and two columns labelled 'Simple Linkage', 'Complete Linkage', and 'Average Linkage'. Each contain three dots with the first and second connecting a single dot from each oval with a line and the third row connecting all dots in each oval with many lines." width="768" />
 <p class="caption">
 Figure 4.3: Different methods of determining similarity between clusters
 </p>
@@ -1228,18 +1228,18 @@ d 76 76 36
 e 51 62 48 66</code></pre>
 <p>We can see that we construct the cluster diagram by first grouping a and b, followed by c &amp; d, and so on (Fig. <a href="multi.html#fig:clust5">4.4</a>).</p>
 <div class="figure"><span id="fig:clust5"></span>
-<img src="_main_files/figure-html/clust5-1.png" alt="This figure shows three dendrograms, separated horizontally into sections 'a)', 'b)' and 'c)'. Each section contains 5 categories labelled 'a', 'b', 'c', 'd' and 'e'. In section 'a)', cateogries 'a' and 'b' are connected to each other and given the label '33'. In section 'b)', categories 'a' and 'b' are connected to each other and categories 'c' and 'd' are connected to each other with labels '33' and '36' respectively. Section 'c)' contains the same groupings as in section 'b)' with two additional connections between group 'c', 'd' and category 'e' with label '48' and group 'a', 'b' with group 'c', 'd', 'e' labelled '51'." width="672" />
+<img src="_main_files/figure-html/clust5-1.png" alt="In panel a) we first group items a and e. In panel b) we group items c and d, and in panel c) we group item e with c and d, and then finally group the a and e cluster with this larger group" width="672" />
 <p class="caption">
-Figure 4.4: Example of using a dissimilarity matrix to construct a single-linkage cluster diagram
+Figure 4.4: Example of using a dissimilarity matrix to construct a single-linkage cluster diagram. Each panel labelled a), b) and c) shows each successive step in constructing the diagram for items a to e, where numbers indicate the similarity between two items, groups or a group and an item
 </p>
 </div>
 </div>
 <div id="how-many-clusters" class="section level4" number="4.2.1.2">
 <h4><span class="header-section-number">4.2.1.2</span> How many clusters?</h4>
 <p>These hierarchical methods just keep going until all objects are included (agglomerative methods), or are each in their own group (divisive methods). However, neither endpoint is very useful. How do we select the number of groups? There are metrics and techniques to make this decision more objective (see the <a href="https://www.jstatsoft.org/article/view/v061i06">NbClust package</a>). In this brief introduction, we’ll just mention that for hierarchical methods, you can determine the number of groups a given degree of similarity, or set the number of groups and find the degree of similarity that results in that number of groups. Let’s try. We’ll use the <strong>cutree()</strong> function that works on cluster diagrams produced by the <strong>hclust()</strong> function (Fig. <a href="multi.html#fig:hclustfig">4.5</a>).</p>
-<p>If we set our dissimilarity threshold at 40, we find that there are three groups: a&amp;b, c&amp;d, and e in its own group.</p>
+If we set our dissimilarity threshold at 40, we find that there are three groups: a&amp;b, c&amp;d, and e in its own group.
 <div class="figure"><span id="fig:hclustfig"></span>
-<img src="_main_files/figure-html/hclustfig-1.png" alt="This figure shows a dendrogram with 5 categories labelled 'a', 'b', 'c', 'd' and 'e'. There is a y-axis with title 'Height' that scales from 33 to 51. Category 'a' and 'b' are connected together and category 'c' and 'd' are connected together. Category 'e' is connected to the 'c', 'd' grouping. Group 'a', 'b' and group 'e', 'c', 'd' also form a connection. There is a horizontal red line where 'Height' is at 40." width="480" />
+<img src="_main_files/figure-html/hclustfig-1.png" alt="A dendrogram with y-axis labelled 'Height' and and 5 items labelled 'a' to 'e'. Items a &amp; e are shown linked, as are items c &amp; d, below the cutoff of euclidean distance = 40" width="480" />
 <p class="caption">
 Figure 4.5: Cluster diagram produced by the function <strong>hclust()</strong> with cut-off line at euclidean distance=40 for group membership
 </p>
@@ -1291,11 +1291,12 @@ data object is assigned to the cluster with the closest centroid. In this method
 <span id="cb26-8"><a href="multi.html#cb26-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">bty =</span> <span class="st">&quot;n&quot;</span>, <span class="at">title =</span> <span class="st">&quot;Food chain&quot;</span>)</span>
 <span id="cb26-9"><a href="multi.html#cb26-9" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb26-10"><a href="multi.html#cb26-10" aria-hidden="true" tabindex="-1"></a><span class="fu">legend</span>(<span class="st">&quot;bottomright&quot;</span>, <span class="at">legend =</span> <span class="fu">as.character</span>(<span class="fu">unique</span>(<span class="fu">as.factor</span>(iso<span class="sc">$</span>Species))),</span>
-<span id="cb26-11"><a href="multi.html#cb26-11" aria-hidden="true" tabindex="-1"></a>    <span class="at">pch =</span> <span class="fu">as.numeric</span>(<span class="fu">unique</span>(<span class="fu">as.factor</span>(iso<span class="sc">$</span>Species))), <span class="at">bty =</span> <span class="st">&quot;n&quot;</span>)</span></code></pre></div>
+<span id="cb26-11"><a href="multi.html#cb26-11" aria-hidden="true" tabindex="-1"></a>    <span class="at">pch =</span> <span class="fu">as.numeric</span>(<span class="fu">unique</span>(<span class="fu">as.factor</span>(iso<span class="sc">$</span>Species))), <span class="at">bty =</span> <span class="st">&quot;n&quot;</span>,</span>
+<span id="cb26-12"><a href="multi.html#cb26-12" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">&quot;Species&quot;</span>)</span></code></pre></div>
 <div class="figure"><span id="fig:chkperkins"></span>
-<img src="_main_files/figure-html/chkperkins-1.png" alt="This figure shows a plot of the Isotope dataset. The plot has x-axis with label 'd13C' that scales from -35 to 0, and y-axis with label 'd15N' that scales from -6 to 8. The right side of the plot contains two legends. The top right legend is labelled 'Food chain' and has 4 circles of varying colors for symbols. The symbols from top to bottom have labels 'Wheat' with a green circle, 'Maize' with a black circle, 'Wheat.Maize' with a blue circle and 'Nettle' with a red circle. The bottom right legend has 4 different characters: an 'X' with label 'Plant', a circle with label 'Aphid', a plus sign with label 'Hoverfly' and a triangle with label 'Diplazon'. There is a cluster of green symbols with varying characters where 'd13C' is at -30 and 'd15N' is between -6 and 6, red symbols with varying characters where 'd13C' is between -29 and -25 and 'd15N' is between 0 and 8, blue symbols with varying characters where 'd13C' is between -23 and -20 and 'd15N' is between 0 and 5, and black symbols with varying characters where 'd13C' is between -14 and -11 and 'd15N' is between -4 and 4." width="672" />
+<img src="_main_files/figure-html/chkperkins-1.png" alt="Moving from left to right on the x-axis ('d13C') are groupings for foodwebs with plant species dominated by 'Wheat' 'Nettle', 'Wheat.Maize and 'Maize'. Indicated species are 'Plant', 'Aphid', 'Diplazon' and 'Hoverfly'" width="672" />
 <p class="caption">
-Figure 4.6: Isotope data from Perkins et al (2014)
+Figure 4.6: Isotope data from Perkins et al (2014), showing the both the food web membership as given by the dominant plants (colour) and species (symbol) of each sample vs the carbon (‘d13C’) and nitrogen (‘d15N’) isotope signature. Higher tropic levels are found closer to the top of the graph, and food webs with more C4 plant metabolism are found more to the right
 </p>
 </div>
 <p>We are going to use this data set to see if a cluster analysis on δ15N and δ13C can identify the foodweb. That is we are going to see if the latent variables identified by our clustering method match up to what we think we know about the data. Our first step is to create a dissimilarity matrix, but even before this, we must select that part of the data that we wish to use, just the δ15N and δ13C data, not the other components of the dataframe for the downloaded data.</p>
@@ -1311,12 +1312,12 @@ Figure 4.6: Isotope data from Perkins et al (2014)
  $ C              : num  -30.1 -31.7 -30.1 -30.9 -31 ...
  $ N              : num  -3.47 -2.68 3.42 1.27 6.2 ...</code></pre>
 <div class="sourceCode" id="cb29"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb29-1"><a href="multi.html#cb29-1" aria-hidden="true" tabindex="-1"></a>diso <span class="ot">&lt;-</span> <span class="fu">dist</span>((iso[, <span class="fu">c</span>(<span class="st">&quot;C&quot;</span>, <span class="st">&quot;N&quot;</span>)]), <span class="at">method =</span> <span class="st">&quot;euclidean&quot;</span>)</span>
-<span id="cb29-2"><a href="multi.html#cb29-2" aria-hidden="true" tabindex="-1"></a>p <span class="ot">=</span> <span class="fu">hclust</span>(diso, <span class="at">method =</span> <span class="st">&quot;single&quot;</span>)</span>
-<span id="cb29-3"><a href="multi.html#cb29-3" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(p, <span class="at">cex =</span> <span class="fl">0.5</span>, <span class="at">main =</span> <span class="st">&quot;&quot;</span>)</span></code></pre></div>
+<span id="cb29-2"><a href="multi.html#cb29-2" aria-hidden="true" tabindex="-1"></a>p <span class="ot">=</span> <span class="fu">hclust</span>(diso, <span class="at">method =</span> <span class="st">&quot;single&quot;</span>, )</span>
+<span id="cb29-3"><a href="multi.html#cb29-3" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(p, <span class="at">cex =</span> <span class="fl">0.5</span>, <span class="at">main =</span> <span class="st">&quot;&quot;</span>, <span class="at">xlab =</span> <span class="st">&quot;&quot;</span>)</span></code></pre></div>
 <div class="figure"><span id="fig:perkclust"></span>
-<img src="_main_files/figure-html/perkclust-1.png" alt="This figure shows a cluster diagram of isotope data from Perkins et al. (2014) with y-axis labelled 'Height' that scales from 0 to 5. " width="672" />
+<img src="_main_files/figure-html/perkclust-1.png" alt="Y-axis is labelled 'Height'" width="672" />
 <p class="caption">
-Figure 4.7: Cluster figure of isotope data from Perkins et al. 2014)
+Figure 4.7: A dendrogram of isotope data from Perkins et al. (2014), where links between samples and groups at lower height indicate greater similarity. Note the distance between sample 5 and all other samples
 </p>
 </div>
 <p>When you graph your cluster using plot(), you notice that there are many individual measurements, but there are only a few large groups. Does it look like there is an outlier? If so, you may want to remove this point from the data set, and then rerun the analysis. The row numbers are used as labels by default, so this is easy to do (niso=niso[-5,]).</p>
@@ -1342,9 +1343,9 @@ Figure 4.7: Cluster figure of isotope data from Perkins et al. 2014)
 <span id="cb30-19"><a href="multi.html#cb30-19" aria-hidden="true" tabindex="-1"></a>    <span class="at">pch =</span> <span class="fu">as.numeric</span>(<span class="fu">unique</span>(<span class="fu">as.factor</span>(niso<span class="sc">$</span>Species))), <span class="at">bty =</span> <span class="st">&quot;n&quot;</span>,</span>
 <span id="cb30-20"><a href="multi.html#cb30-20" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">&quot;Species&quot;</span>)</span></code></pre></div>
 <div class="figure"><span id="fig:clustdata"></span>
-<img src="_main_files/figure-html/clustdata-1.png" alt="This figure shows a plot of the isotope dataset. The plot has x-axis with label 'd13C' that scales from -35 to 0, and y-axis with label 'd15N' that scales from -6 to 8. The right side of the plot contains two legends. The top right legend has label 'cluster' and contains 4 circles of varying colors as symbols. The symbols from top to bottom have labels '1' with a black circle, '2', with a red circle, '3' with a green circle and '4' with a blue circle. The bottom right legend is labelled 'Species' and has symbols 'X' for 'Plant, circle for 'Aphid', plus sign for 'Hoverfly' and triangle for 'Diplazon. There is a cluster of black symbols of varying species where 'd13C' is between -32 to -25 and 'd15N' is between -6 to 8, blue symbols with varying species where 'd13C' is between -23 to -20 and 'd15N' is between 0 to 4, and red symbols with varying species where 'd13C' is between -14 to -11 and 'd15N' is between -3 to 5." width="672" />
+<img src="_main_files/figure-html/clustdata-1.png" alt="This figure has x-axis labelled 'd13C', y-axis labelled 'd15N. There are only two samples indicated as belonging to cluster 3'." width="672" />
 <p class="caption">
-Figure 4.8: Data from Perkins et al (2014) with grouping from single linkage clustering superimposed
+Figure 4.8: Data from Perkins et al (2014) with grouping from single linkage clustering superimposed with calculated clusters 1 to 4 as well as species categories of ‘Plant,’ ‘Aphid,’ ‘Diplazon’ and ‘Hoverfly’ with varying symbols
 </p>
 </div>
 <p>It doesn’t look like our cluster algorithm is matching up with our Food.chain data categories very well. Wheat- and Nettle-based food chains cannot be distinguished, which makes sense when you consider that both of these plants are terrestrial and use a C3 photosynthesis system. If you are not happy with the success of this clustering algorithm you could try other variants (e.g., “complete” linkage) and a different number of groups.</p>
@@ -1357,14 +1358,14 @@ Try a non-hierarchical cluster analysis on the same data to see if it works bett
 <p>While cluster analysis lets us visualize multivariate data by grouping objects into discrete categories, ordination uses continuous axes to help us accomplish the same task. Physicists grumble if space exceeds four dimensions, while biologists typically grapple with dozens of dimensions. We can “order” this multivariate data to produce a low dimensional picture (i.e., a graph in 1-3 dimensions). Just like cluster analysis, we will use similarity metrics to accomplish this. Also like cluster analysis, simple ordination is not a statistical test: it is a method of visualizing data.</p>
 <p>Essentially, we find axes in the data that explain a lot of variation, and rotate so we can use the axes as our dimensions of visual representation (Fig. <a href="multi.html#fig:dummy1">4.9</a>). I’ve left the scatter about the line, but actually each point would have only a location on the synthetic xy axis.</p>
 <div class="figure"><span id="fig:dummy1"></span>
-<img src="_main_files/figure-html/dummy1-1.png" alt="This figure shows two untitled plots placed side by side. Both plots contain a set of light green points and a blue fitted line. The left plot has x-axis label 'x' and y-axis label 'y'. The light green points in the left plot are scattered and show an upwards trend. The blue fitted line in the left plot is shown going upwards and to the right. The right plot has x-axis label 'xy synthesis' and no y-axis label. The light green points in the right plot are scaterred in the center of the plot and the blue fitted line is also located at the center of the plot and is parallel with the x-axis." width="576" />
+<img src="_main_files/figure-html/dummy1-1.png" alt="This figure shows two plots each with green points and a blue line of best fit. The first plot is the original orientation and the second is rotated with the x axis labelled 'xy synthesis'" width="576" />
 <p class="caption">
 Figure 4.9: Synthetic axis rotation in ordination. We find the axis in 2D that explains most variation, and rotate to give a 1D representation
 </p>
 </div>
 <p>Another way to think about it is that we are going to summarize the raw data, which has many variables, <em>p</em>, by a smaller set of synthetic variables, <em>k</em> (Fig. <a href="multi.html#fig:dimred">4.10</a>). If the ordination is informative, it reduces a large number of original correlated variables to a small number of new uncorrelated variables. But it really is a bit of a balancing act between clarity of representation, ease of understanding, and oversimplification. We will lose information in this data reduction, and if that information is important, then we can make the multivariate data harder to understand! Also note that if the original variables are not correlated, then we won’t gain anything with ordination.</p>
 <div class="figure"><span id="fig:dimred"></span>
-<img src="_main_files/figure-html/dimred-1.png" alt="This figure shows two grids placed side by side each other. The left grid is a wide grid with black borders and labels 'n' on the left side of the grid and 'p' on the top of the grid. In the center of this grid is a large, italicized letter 'A'. The right grid is a narrower grid with purple borders and labels 'n' in purple on the left side of the grid and 'k' in purple on the top of the grid. In the center of this grid is a large, italicized, purple letter 'X'." width="480" />
+<img src="_main_files/figure-html/dimred-1.png" alt="This figure shows one wide grid labelled 'A' and one narrow grid labelled 'X'. The wide grid  represents the original data while the narrow grid is the reduced data." width="480" />
 <p class="caption">
 Figure 4.10: Ordination as data reduction. We summarize data with many observations (n) and variables (p) by a smaller set of derived or synthetic variables (k)
 </p>
@@ -1441,9 +1442,9 @@ Quantitative, semiquantitative, qualitative, or mixed data
 <p>We can think about this spatially. Objects are represented as a cloud of n points in a multidimensional space with an axis for each of the p variables. So the centroid of the points is defined by the mean of each variable, and
 the variance of each variable is the average squared deviation of its n values around the mean of that variable (i.e., <span class="math inline">\(V_i= \frac{1}{n-1}\sum_{m=1}^{n}{(X_{im}-\bar{X_i)}^2}\)</span>). The degree to which the variables are linearly correlated is given by their covariances <span class="math inline">\(C_{ij}=\frac{1}{n-1}\sum_{m=1}^n{(X_{im}-\bar{X_i})(X_{jm}-\bar{X_j})}\)</span>. The objective of PCA is to rigidly rotate the axes of the p-dimensional space to new positions (principal axes) that have the following properties: they are ordered such that principal axis 1 (or the <em>principal component</em> has the highest variance, axis 2 has the next highest variance etc, and the covariance among each pair of principal axes is zero (the principal axes are uncorrelated) (Fig. <a href="multi.html#fig:varord">4.11</a>).</p>
 <div class="figure"><span id="fig:varord"></span>
-<img src="_main_files/figure-html/varord-1.png" alt="This figure shows two plots stacked on top of each other. One plot has blue x-axis labelled 'X1' and a blue y-axis labelled 'X2'. The plot has 24 scattered nyon green points that show an upwards trend and a yellow dashed line that begins at the origin and extends 45° from the x-axis. The second plot is placed on top of the first plot and has a dark red x-axis labelled 'Y1' and a dark red y-axis labelled 'Y2'. The second plot is angled such that the x-axis of the second plot is parallel to the yellow dashed line in the first plot and the center of the y-axis of the second plot touches the origin of the first plot as well as the starting point of the yellow dashed line. The second plot shows two hill-like functions. The first one is located on the dark red x-axis labelled 'Y1' and the second one is on the dark red y-axis labelled 'Y2'. There is text below the plots that says 'Y1 axis selected to maximize variation explained' and 'Y2 axis must be orthogonal to Y1 and maximize variation explained'." width="672" />
+<img src="_main_files/figure-html/varord-1.png" alt="Two overlayed plots with axes as described in the caption, a cluster of points and an upwards trend shown by a dashed line of best fit. There are two guassian curves parallel to each synthetic (Y) axis" width="672" />
 <p class="caption">
-Figure 4.11: Selecting the synthetic axes in ordination
+Figure 4.11: Selecting the synthetic axes in ordination. We have two overlaid plots where those axes labelled X1 and X2 are the original data, and those labelled Y1 and Y2 are our synthetic axis. The two guassian functions suggest how much variation is present on each of the two y synthetic axes.
 </p>
 </div>
 <p>So our steps are to compute the variance-covariance matrix of the data, calculate the eigenvalues of this matrix and then calculate the associated eigenvectors. Then, the jth eigenvalue is the variance of the jth principle component and the sum of all the eigenvalues is the total variance explained. The proportion of variance explained by each component, or synthetic axis, is the eigenvalue for the component divided by the total variance explained, while the rotations are the eigenvectors. Dimensionality reduction is the same as first rotating the data with the eigenvalues to be aligned with the principle components, then display using only the components with the greatest eigenvalues.</p>
@@ -1459,19 +1460,19 @@ Figure 4.11: Selecting the synthetic axes in ordination
  $ Petal.Width : num  0.2 0.2 0.2 0.2 0.2 0.4 0.3 0.2 0.2 0.1 ...
  $ Species     : Factor w/ 3 levels &quot;setosa&quot;,&quot;versicolor&quot;,..: 1 1 1 1 1 1 1 1 1 1 ...</code></pre>
 <div class="sourceCode" id="cb33"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb33-1"><a href="multi.html#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(iris[<span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>])</span></code></pre></div>
-<pre class="Rout"><code>  Sepal.Length    Sepal.Width     Petal.Length    Petal.Width   
- Min.   :4.300   Min.   :2.000   Min.   :1.000   Min.   :0.100  
- 1st Qu.:5.100   1st Qu.:2.800   1st Qu.:1.600   1st Qu.:0.300  
- Median :5.800   Median :3.000   Median :4.350   Median :1.300  
- Mean   :5.843   Mean   :3.057   Mean   :3.758   Mean   :1.199  
- 3rd Qu.:6.400   3rd Qu.:3.300   3rd Qu.:5.100   3rd Qu.:1.800  
- Max.   :7.900   Max.   :4.400   Max.   :6.900   Max.   :2.500  </code></pre>
+<pre class="Rout"><code>  Sepal.Length  Sepal.Width   Petal.Length  Petal.Width 
+ Min.   :4.3   Min.   :2.0   Min.   :1.0   Min.   :0.1  
+ 1st Qu.:5.1   1st Qu.:2.8   1st Qu.:1.6   1st Qu.:0.3  
+ Median :5.8   Median :3.0   Median :4.3   Median :1.3  
+ Mean   :5.8   Mean   :3.1   Mean   :3.8   Mean   :1.2  
+ 3rd Qu.:6.4   3rd Qu.:3.3   3rd Qu.:5.1   3rd Qu.:1.8  
+ Max.   :7.9   Max.   :4.4   Max.   :6.9   Max.   :2.5  </code></pre>
 <div class="sourceCode" id="cb35"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb35-1"><a href="multi.html#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="fu">pairs</span>(iris[<span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>], <span class="at">main =</span> <span class="st">&quot;Iris Data&quot;</span>, <span class="at">pch =</span> <span class="fu">as.numeric</span>(iris<span class="sc">$</span>Species) <span class="sc">+</span></span>
 <span id="cb35-2"><a href="multi.html#cb35-2" aria-hidden="true" tabindex="-1"></a>    <span class="dv">14</span>, <span class="at">col =</span> <span class="fu">as.numeric</span>(iris<span class="sc">$</span>Species) <span class="sc">+</span> <span class="dv">1</span>)</span></code></pre></div>
 <div class="figure"><span id="fig:coriris"></span>
-<img src="_main_files/figure-html/coriris-1.png" alt="The graph shows a total of twelve pairwise correlation plots given four dimensions in iris dataset: speal length, sepal width, petal length, and petal width. In each pairwise correlation plot, one of the four dimensions is selected as x axis and one is selected as y axis. Data points are colored in red, green and blue based on  species." width="672" />
+<img src="_main_files/figure-html/coriris-1.png" alt="A total of twelve pairwise correlation plots for the four characteristics in iris dataset: sepal length, sepal width, petal length, and petal width. In each plot, one of the four characterstics is selected as x-axis and y-axis with data points based on species." width="672" />
 <p class="caption">
-Figure 4.12: Correlation matrix for the iris data
+Figure 4.12: Correlation matrix for characteristics of each individual the iris data. Colours give species identity
 </p>
 </div>
 <p>The colours let us see the data for each species, the graph is all the pairwise plots of each pair of the 4 variables (Fig. <a href="multi.html#fig:coriris">4.12</a>). Do you see any correlations?</p>
@@ -1479,26 +1480,26 @@ Figure 4.12: Correlation matrix for the iris data
 <div class="sourceCode" id="cb36"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb36-1"><a href="multi.html#cb36-1" aria-hidden="true" tabindex="-1"></a>pca <span class="ot">&lt;-</span> <span class="fu">prcomp</span>(iris[, <span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>])</span>
 <span id="cb36-2"><a href="multi.html#cb36-2" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(pca)</span></code></pre></div>
 <pre class="Rout"><code>Importance of components:
-                          PC1     PC2    PC3     PC4
-Standard deviation     2.0563 0.49262 0.2797 0.15439
-Proportion of Variance 0.9246 0.05307 0.0171 0.00521
-Cumulative Proportion  0.9246 0.97769 0.9948 1.00000</code></pre>
+                         PC1    PC2    PC3     PC4
+Standard deviation     2.056 0.4926 0.2797 0.15439
+Proportion of Variance 0.925 0.0531 0.0171 0.00521
+Cumulative Proportion  0.925 0.9777 0.9948 1.00000</code></pre>
 </div>
 <div id="standardize-your-data" class="section level4" number="4.3.1.2">
 <h4><span class="header-section-number">4.3.1.2</span> Standardize your data</h4>
 <p>There is a problem though, let’s examine the variance in the raw data. Use the <strong>apply()</strong> function to quickly calculate the variance in each of the numeric columns of the data as apply(iris[,1:3], 1, var). What do you see? Are the variances of each the columns comparable?</p>
 <div class="sourceCode" id="cb38"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb38-1"><a href="multi.html#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="fu">apply</span>(iris[, <span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>], <span class="dv">2</span>, var)</span></code></pre></div>
 <pre class="Rout"><code>Sepal.Length  Sepal.Width Petal.Length  Petal.Width 
-   0.6856935    0.1899794    3.1162779    0.5810063 </code></pre>
+        0.69         0.19         3.12         0.58 </code></pre>
 <p>Using covariances among variables only makes sense if they are measured in the same units, and even then, variables with high variances will dominate the principal components. These problems are generally avoided by standardizing each variable to unit variance and zero mean as <span class="math inline">\(X_{im}^{&#39;}=\frac{x_{im}-\bar{X_i}}{sd_i}\)</span> where <em>sd</em> is the standard deviation of variable <em>i</em>. After standardizaton, the variance of each variable is 1 and the covariances of the standardized variables are correlations.</p>
 <p>If you look at the help menu, the notes for the use of <strong>prcomp()</strong> STRONGLY recommend standardizing the data. To do this there is a built in option. We just need to set scale=TRUE. Let’s try again with data standardization. Save your new PCA output to a different name. Take a look at the summary.</p>
 <div class="sourceCode" id="cb40"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb40-1"><a href="multi.html#cb40-1" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span> <span class="fu">prcomp</span>(iris[, <span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>], <span class="at">scale =</span> <span class="cn">TRUE</span>)</span>
 <span id="cb40-2"><a href="multi.html#cb40-2" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(p)</span></code></pre></div>
 <pre class="Rout"><code>Importance of components:
-                          PC1    PC2     PC3     PC4
-Standard deviation     1.7084 0.9560 0.38309 0.14393
-Proportion of Variance 0.7296 0.2285 0.03669 0.00518
-Cumulative Proportion  0.7296 0.9581 0.99482 1.00000</code></pre>
+                        PC1   PC2    PC3     PC4
+Standard deviation     1.71 0.956 0.3831 0.14393
+Proportion of Variance 0.73 0.229 0.0367 0.00518
+Cumulative Proportion  0.73 0.958 0.9948 1.00000</code></pre>
 <p>We now have less variance explained by axis 1. This makes sense, because, as we will see in a moment, axis 1 is strongly influenced by petal length, but in the unstandardized data, petal length had larger variance than anything else.</p>
 </div>
 <div id="choose-your-axes" class="section level4" number="4.3.1.3">
@@ -1506,9 +1507,9 @@ Cumulative Proportion  0.7296 0.9581 0.99482 1.00000</code></pre>
 <p>Now we need to determine how many axes to use to interpret our analysis. For 4 variables it is easy enough to just look that the amount of variance, as we just did. For larger numbers of variables a plot can be useful. The <strong>screeplot()</strong> function will output the variance (called inertia) explained by each of the principle component axes, and you can make a decision based on that.</p>
 <div class="sourceCode" id="cb42"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb42-1"><a href="multi.html#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="fu">screeplot</span>(p, <span class="at">type =</span> (<span class="st">&quot;lines&quot;</span>), <span class="at">main =</span> <span class="st">&quot;&quot;</span>, <span class="at">pch =</span> <span class="dv">16</span>, <span class="at">cex =</span> <span class="dv">1</span>)</span></code></pre></div>
 <div class="figure"><span id="fig:scree"></span>
-<img src="_main_files/figure-html/scree-1.png" alt="The graph shows the relationship between variances and the number of axes that explain the dataset. As the number of axes increasing from 1 to 4, the variances decrease from 3 to 0." width="672" />
+<img src="_main_files/figure-html/scree-1.png" alt="The relationship between variances and the number of axes that explain the dataset. As the number of axes increases from 1 to 4, the variances decrease from 3 to 0." width="672" />
 <p class="caption">
-Figure 4.13: Screeplot: a display of the variance explained by each of the synthetic axes
+Figure 4.13: Screeplot: a display of the variance explained by each of the principal components (i.e., synthetic axes). The variance explained decreases for each subsequent axis
 </p>
 </div>
 <p>An ideal curve should be steep, then bend at an “elbow” — this is your cutting-off point — and after that flattens out. To deal with a not-so-ideal scree plot curve you can apply the Kaiser rule: pick PCs with eigenvalues of at least 1. Or you can select using the proportion of variance where the PCs should be able to describe at least 80% of the variance.</p>
@@ -1526,9 +1527,9 @@ Figure 4.13: Screeplot: a display of the variance explained by each of the synth
 <span id="cb43-7"><a href="multi.html#cb43-7" aria-hidden="true" tabindex="-1"></a><span class="fu">legend</span>(<span class="st">&quot;topright&quot;</span>, <span class="at">legend =</span> <span class="fu">unique</span>(iris<span class="sc">$</span>Species), <span class="at">pch =</span> <span class="fu">as.numeric</span>(<span class="fu">unique</span>(iris<span class="sc">$</span>Species)) <span class="sc">+</span></span>
 <span id="cb43-8"><a href="multi.html#cb43-8" aria-hidden="true" tabindex="-1"></a>    <span class="dv">14</span>, <span class="at">col =</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>), <span class="at">bty =</span> <span class="st">&quot;n&quot;</span>)</span></code></pre></div>
 <div class="figure"><span id="fig:pacfirst"></span>
-<img src="_main_files/figure-html/pacfirst-1.png" alt="This figure shows a scatterplot with x-axis labelled 'PC1 (73%)' that scales from -3 to 3 and y-axis labelled 'PC2 (23%)' that scales from -3 to 3. The top right of the plot has a legend with three symbols. They are labelled 'setosa', 'versicolor' and 'virginica' and are denoted by a red circle, a green circle and a blue circle, respectively. The plot shows a cluster of 'setosa' red points where 'PC1 (73%)' is between -3 and -2 and 'PC2 (23%)' is between -3 and 2. A cluster of 'versicolor' green points are located where 'PC1 (73%)' is between -0.5 and 0.5 and 'PC2 (23%)' is between -1 and 3. A cluster of blue points are located where 'PC1 (73%)' is between 0.5 and 3.5 and 'PC2 (23%)' is between -3 and 2." width="672" />
+<img src="_main_files/figure-html/pacfirst-1.png" alt="This figure shows a scatterplot with x-axis labelled 'PC1 (73%)' and y-axis labelled 'PC2 (23%)'. From left to right on the x-axis, the plot shows a cluster of 'setosa' points, 'versicolor' points, to 'virginica' points." width="672" />
 <p class="caption">
-Figure 4.14: PCA plot for the iris data
+Figure 4.14: PCA plot for the iris data where distance is related to the similarlity between each sample. Species identity is indicated by colour and symbol shape
 </p>
 </div>
 <p>I’ve plotted the amount of variance explained by each axis, but remember that the 1st axis always explains the most variance. Your interpretation of the ordination plot hould reflect this fact</p>
@@ -1654,9 +1655,9 @@ We can see that a lot of information is coming from the petal variables for PC1,
 <span id="cb44-23"><a href="multi.html#cb44-23" aria-hidden="true" tabindex="-1"></a><span class="fu">text</span>(l.x, l.y, <span class="at">labels =</span> <span class="fu">row.names</span>(p<span class="sc">$</span>rotation), <span class="at">col =</span> <span class="dv">5</span>, <span class="at">pos =</span> l.pos,</span>
 <span id="cb44-24"><a href="multi.html#cb44-24" aria-hidden="true" tabindex="-1"></a>    <span class="at">cex =</span> <span class="dv">1</span>)</span></code></pre></div>
 <div class="figure"><span id="fig:loadplot"></span>
-<img src="_main_files/figure-html/loadplot-1.png" alt="This figure shows a plot with x-axis labelled 'PC1 (73%)' that scales from -4 to 4 and y-axis labelled 'PC2 (23%)' that scales from -4 to 4. 4 purple arrowed lines emerge from the coordinate (0,0). One line ends at the coordinate (-1,-4) and has label 'Sepal.Width'. Another line ends at coordinate (2.2,-2) and has label 'Sepal.Length'. Another line ends at coordinate (2.4,0.2) and has label 'Petal.Length'. The last line ends at coordinate (2.5,0.1) and has label 'Petal.Width'." width="672" />
+<img src="_main_files/figure-html/loadplot-1.png" alt="A plot with x-axis labelled 'PC1 (73%)' and y-axis labelled 'PC2 (23%)'. Four purple arrowed lines labelled 'Sepal.Width', 'Sepal.Length', , 'Petal.Width' and 'Petal.Length' emerge from the center point in various directions" width="672" />
 <p class="caption">
-Figure 4.15: Contribution of each variable to the first two principal component axes
+Figure 4.15: Contribution of each of the characteristics of the samples to the first two principal component axes
 </p>
 </div>
 <p>We can see that petal width and length are aligned along the PC1 axis, while PC2 explains more variation in sepal width (Fig. <a href="multi.html#fig:loadplot">4.15</a>). That is, petal length and petal width variables are the most important contributors to the first PC. Sepal width variable is the most important contributor to the second PC. To interpret the variable plot remember that positively correlated variables are grouped close together (e.g., petal length and width). Variables with about a 90 angle are probably not correlated (sepal width is not correlated with the other variables), while negatively correlated variables are positioned on opposite sides of the plot origin (~180 angle; opposed quadrants). However, the direction of the axes is arbitrary! The distance between variables and the origin measures the contribution of the variables to the ordination. A shorter arrow indicates its less importance for the ordination. Variables that are away from the origin are well represented. Avoid the mistake of interpreting the relationships among variables based on the proximities of the apices (tips) of the vector arrows instead of their angles.</p>
@@ -1689,9 +1690,9 @@ Figure 4.15: Contribution of each variable to the first two principal component 
 <span id="cb45-25"><a href="multi.html#cb45-25" aria-hidden="true" tabindex="-1"></a><span class="fu">text</span>(l.x, l.y, <span class="at">labels =</span> <span class="fu">row.names</span>(p<span class="sc">$</span>rotation), <span class="at">col =</span> <span class="dv">5</span>, <span class="at">pos =</span> l.pos,</span>
 <span id="cb45-26"><a href="multi.html#cb45-26" aria-hidden="true" tabindex="-1"></a>    <span class="at">cex =</span> <span class="dv">1</span>)</span></code></pre></div>
 <div class="figure"><span id="fig:pactwo"></span>
-<img src="_main_files/figure-html/pactwo-1.png" alt="This figure shows a plot with x-axis labelled 'PC1 (73%)' that scales from -4 to 4 and y-axis labelled 'PC2 (23%)' that scales from -4 to 4. 4 purple arrowed lines emerge from the coordinate (0,0). One line ends at the coordinate (-1,-4) and has label 'Sepal.Width'. Another line ends at coordinate (2.2,-2) and has label 'Sepal.Length'. Another line ends at coordinate (2.4,0.2) and has label 'Petal.Length'. The last line ends at coordinate (2.5,0.1) and has label 'Petal.Width'. The top left of the plot has a legend with three symbols. They are labelled 'setosa', 'versicolor' and 'virginica' and are denoted by a red circle, a green circle and a blue circle respectively. The plot shows a cluster of 'setosa' red points where 'PC1 (73%)' is between -3 and -2 and 'PC2 (23%)' is between -3 and 2. A cluster of 'versicolor' green points are located where 'PC1 (73%)' is between -0.5 and 0.5 and 'PC2 (23%)' is between -1 and 3. A cluster of blue points are located where 'PC1 (73%)' is between 0.5 and 3.5 and 'PC2 (23%)' is between -3 and 2." width="672" />
+<img src="_main_files/figure-html/pactwo-1.png" alt="A plot with x-axis labelled 'PC1 (73%)' and y-axis labelled 'PC2 (23%)'. Moving from left to right on the x-axis it shows a centered cluster of 'setosa', 'versicolor' to 'virginica' and 4 arrowed lines emerge from the center and pointing in various directions labelled 'Sepal.Width', 'Sepal.Length' 'Petal.Length', and 'Petal.Width'" width="672" />
 <p class="caption">
-Figure 4.16: PCA biplot for the iris data
+Figure 4.16: PCA biplot for the iris data. This plot combines the vectors that should how the various characteristics of the samples are aligned with the synthetic axes, and the similarity of the the samples as given by their proximity in the ordination space
 </p>
 </div>
 <p>There are some final points to note regarding interpretation. Principal components analysis assumes the relationships among variables are <em>linear</em>, so that the cloud of points in p-dimensional space has linear dimensions that can be effectively summarized by the principal axes. If the structure in the data is nonlinear (i.e., the cloud of points twists and curves its way through p-dimensional space), the principal axes will not be an efficient and informative summary of the data.</p>
@@ -1761,9 +1762,9 @@ Figure 4.16: PCA biplot for the iris data
 <span id="cb47-23"><a href="multi.html#cb47-23" aria-hidden="true" tabindex="-1"></a><span class="fu">text</span>(l.x1, l.y1, <span class="at">labels =</span> <span class="fu">row.names</span>(nMDS<span class="sc">$</span>species), <span class="at">col =</span> <span class="dv">1</span>, <span class="at">pos =</span> <span class="dv">3</span>,</span>
 <span id="cb47-24"><a href="multi.html#cb47-24" aria-hidden="true" tabindex="-1"></a>    <span class="at">cex =</span> <span class="fl">0.8</span>)</span></code></pre></div>
 <div class="figure"><span id="fig:sheptwo"></span>
-<img src="_main_files/figure-html/sheptwo-1.png" alt="This figure shows two plots placed side by side. The left plot has x-axis labelled 'Observed Dissimilarity' that scales from 0.0 to 0.4 and a y-axis with label 'Ordination Distance' that scales from 0.0 to 0.8. The left plot shows a cluster of blue points that form a thickened line that trends upwards. The top of the plot also has text with label 'Non-metric fit, R^2^ = 0.999' and 'Linear fit, R^2^ = 0.995'. The right plot has x-axis labelled 'nMDS1' y-axis labelled 'nMDS2'.  The plot shows two clusters of points beside each other near the center of the plot. There are 4 arrows originating from the (0,0) point. From left to right, they are labeled 'Sepal.Width', 'Sepal.Length', 'Petal.Length' and 'Petal.Width'." width="768" />
+<img src="_main_files/figure-html/sheptwo-1.png" alt="Two plots: the left plot has x-axis labelled 'Observed Dissimilarity' and a y-axis labelled 'Ordination Distance', with a cluster of points that trend upwards, the right plot has x-axis labelled 'nMDS1' and y-axis labelled 'nMDS2' with three clusters of points and 4 arrows originating from the center" width="768" />
 <p class="caption">
-Figure 4.17: Shepard’s plot of an nMDS ordination using 2 axes to represent the varespec data in the vegan package
+Figure 4.17: Shepard’s plot and ordination plot of an nMDS ordination using 2 axes to represent the varespec data in the vegan package
 </p>
 </div>
 <p>In addition to the original dissimilarity and ordination distance, the plot displays two correlation-like statistics on the goodness of fit. The nonmetric fit is given by <span class="math inline">\(R^2\)</span>, while the “linear fit” is the squared correlation between fitted values and ordination distances (Fig. <a href="multi.html#fig:sheptwo">4.17</a> ). There is some deformation here, but in general the representation is really quite good.</p>
@@ -1809,7 +1810,7 @@ Figure 4.17: Shepard’s plot of an nMDS ordination using 2 axes to represent th
 <span id="cb50-11"><a href="multi.html#cb50-11" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">h =</span> <span class="dv">0</span>, <span class="at">col =</span> <span class="st">&quot;grey&quot;</span>)</span>
 <span id="cb50-12"><a href="multi.html#cb50-12" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">v =</span> <span class="dv">0</span>, <span class="at">col =</span> <span class="st">&quot;grey&quot;</span>)</span></code></pre></div>
 <div class="figure"><span id="fig:2panelord"></span>
-<img src="_main_files/figure-html/2panelord-1.png" alt="This figure shows two plots placed side by side. The right plot is titled 'PCoA', has x-axis labelled 'PCoA1'.  The left plot is titled 'nMDS', has x-axis labelled 'MDS1' and y-axis labelled 'MDS2'  Each plot contains 24 scattered numbers which represent the sites as well as 44 scattered red species names" width="768" />
+<img src="_main_files/figure-html/2panelord-1.png" alt="This figure shows two plots, the right plot is titled 'PCoA', has x-axis labelled 'PCoA1' and the left plot is titled 'nMDS', has x-axis labelled 'MDS1' and y-axis labelled 'MDS2'. Each plot contains 24 scattered numbers which represent the sites as well as 44 scattered species names." width="768" />
 <p class="caption">
 Figure 4.18: Biplots of the lichen data for nMDS and PCoA ordinations
 </p>
@@ -1824,7 +1825,7 @@ Provide an interpretation of these plots</p>
 <p>Simple (or unconstrained) ordination is done on one data set, and we try to explain/understand the data by examining a graph constructed with a reduced set of orthogonal axes. The ordination is not influenced by external variables; these may only be considered after we construct the ordination. There is no hypotheses or hypothesis testing: this is an exploratory technique only. In unconstrained ordination axes correspond to the directions of the greatest variability within the data set.</p>
 <p>In contrast, constrained ordination associates two or more data sets in the ordination and explicitly explores the relationships between two matrices: a response matrix and an explanatory matrix (Fig <a href="multi.html#fig:ordreg">4.19</a>). Both matrices are used in the production of the ordination. In this method, we can formally test statistical hypotheses about the significance of these relationships. The constrained ordination axes correspond to the directions of the greatest variability of the data set that can be explained by the environmental variables</p>
 <div class="figure"><span id="fig:ordreg"></span>
-<img src="_main_files/figure-html/ordreg-1.png" alt="This figure shows three sets of diagrams.The top left of the figure has title 'Simple ordination:PCA/CA' and is represented by a box with label 'matrix Y' in the middle. The box has label 'Variables y1...yp' at the top and 'Objects 1 to n' on the left. The top right of the figure has title 'Multiple regression' and is represented by two boxes placed side by side and a double sided arrow that connects them. The left rectangle has text 'y' in the middle with label 'Variable y' at the top of the box and 'Objects 1 to n' on the left. The right triangle is labelled 'Matrix X' with 'Variables x1 ... xm' at the top. The bottom of the figure has title 'Ordination under constraint:RDA/CCA' and is represented by two boxes placed side by side and a double sided arrow that connects them. The left box has label 'matrix Y' in the middle of the box with 'Variables y1 ... yp' at the top and 'Objects 1 to n' to the left. The right box has label 'matrix X' at the center and 'Variables x1 ... xm' at the top." width="672" />
+<img src="_main_files/figure-html/ordreg-1.png" alt="Three figures all with the y-axis labelled 'Objects 1 to n'; 'Simple ordination:PCA/CA' has one rectangle named 'matrix Y'. 'Multiple regression' and 'Ordination under constraint: RDA/CCA' both have two retangles connected by a double arrow, the left ones named 'y' and 'matrix Y', and the right ones both named 'matrix X'." width="672" />
 <p class="caption">
 Figure 4.19: Diagram showing the differences between uncontrained ordination, multiple regression and constrained ordination (adapted from Legendre &amp; Legendre 2012)
 </p>
@@ -1863,7 +1864,7 @@ Figure 4.19: Diagram showing the differences between uncontrained ordination, mu
 <div class="sourceCode" id="cb52"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb52-1"><a href="multi.html#cb52-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(varechem, <span class="at">gap =</span> <span class="dv">0</span>, <span class="at">panel =</span> panel.smooth, <span class="at">cex.lab =</span> <span class="fl">1.2</span>,</span>
 <span id="cb52-2"><a href="multi.html#cb52-2" aria-hidden="true" tabindex="-1"></a>    <span class="at">lwd =</span> <span class="dv">2</span>, <span class="at">pch =</span> <span class="dv">16</span>, <span class="at">cex =</span> <span class="fl">0.75</span>, <span class="at">col =</span> <span class="fu">rgb</span>(<span class="fl">0.5</span>, <span class="fl">0.5</span>, <span class="fl">0.7</span>, <span class="fl">0.8</span>))</span></code></pre></div>
 <div class="figure"><span id="fig:lichCOR"></span>
-<img src="_main_files/figure-html/lichCOR-1.png" alt="Large plot matrix with pairwise correlations where individual point and overall trend lines are give." width="672" />
+<img src="_main_files/figure-html/lichCOR-1.png" alt="Large plot matrix with pairwise correlations where individual points and overall trend lines are given." width="672" />
 <p class="caption">
 Figure 4.20: Pairwise correlations between environmental variables in the varechem dataset, where variable name is listed on the diagonal. Chemical measurements are denoted by their chemical element names. ‘Baresoil’ gives the estimated cover of bare soil, ‘Humdepth’ provides the thickness of the humus layer and ‘pH.’
 </p>
@@ -1873,24 +1874,24 @@ Figure 4.20: Pairwise correlations between environmental variables in the varech
 <span id="cb53-2"><a href="multi.html#cb53-2" aria-hidden="true" tabindex="-1"></a>scvarechem <span class="ot">=</span> <span class="fu">as.data.frame</span>(<span class="fu">scale</span>(varechem))</span>
 <span id="cb53-3"><a href="multi.html#cb53-3" aria-hidden="true" tabindex="-1"></a>constr <span class="ot">&lt;-</span> vegan<span class="sc">::</span><span class="fu">rda</span>(stvarespec <span class="sc">~</span> ., <span class="at">data =</span> scvarechem)</span>
 <span id="cb53-4"><a href="multi.html#cb53-4" aria-hidden="true" tabindex="-1"></a>constr</span></code></pre></div>
-<pre class="Rout"><code>Call: rda(formula = stvarespec ~ N + P + K + Ca + Mg + S + Al + Fe + Mn + Zn + Mo + Baresoil +
-Humdepth + pH, data = scvarechem)
+<pre class="Rout"><code>Call: rda(formula = stvarespec ~ N + P + K + Ca + Mg + S + Al + Fe + Mn + Zn +
+Mo + Baresoil + Humdepth + pH, data = scvarechem)
 
               Inertia Proportion Rank
-Total         0.05084    1.00000     
-Constrained   0.03612    0.71057   14
-Unconstrained 0.01471    0.28943    9
+Total          0.0508     1.0000     
+Constrained    0.0361     0.7106   14
+Unconstrained  0.0147     0.2894    9
 Inertia is variance 
 
 Eigenvalues for constrained axes:
-    RDA1     RDA2     RDA3     RDA4     RDA5     RDA6     RDA7     RDA8     RDA9    RDA10    RDA11 
-0.008120 0.005642 0.004808 0.003525 0.002956 0.002592 0.001953 0.001665 0.001265 0.001129 0.000964 
-   RDA12    RDA13    RDA14 
-0.000627 0.000507 0.000373 
+   RDA1    RDA2    RDA3    RDA4    RDA5    RDA6    RDA7    RDA8    RDA9   RDA10   RDA11 
+0.00812 0.00564 0.00481 0.00353 0.00296 0.00259 0.00195 0.00166 0.00126 0.00113 0.00096 
+  RDA12   RDA13   RDA14 
+0.00063 0.00051 0.00037 
 
 Eigenvalues for unconstrained axes:
-     PC1      PC2      PC3      PC4      PC5      PC6      PC7      PC8      PC9 
-0.004051 0.002184 0.002003 0.001853 0.001247 0.001101 0.001022 0.000722 0.000532 </code></pre>
+    PC1     PC2     PC3     PC4     PC5     PC6     PC7     PC8     PC9 
+0.00405 0.00218 0.00200 0.00185 0.00125 0.00110 0.00102 0.00072 0.00053 </code></pre>
 <p>However, it is not recommended to perform a constrained ordination with all the environmental variables you happen to have: adding a large number of constraints means eventually you end up with solution similar to the unconstrained ordination. Moreover, collinearity in the explanatory variables will cause instability in the estimation of regression coefficients (see Fig <a href="multi.html#fig:lichCOR">4.20</a>).</p>
 <p>Instead, let’s use the formula interface to select particular constraining variables</p>
 <div class="sourceCode" id="cb55"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb55-1"><a href="multi.html#cb55-1" aria-hidden="true" tabindex="-1"></a>ord3 <span class="ot">=</span> vegan<span class="sc">::</span><span class="fu">rda</span>(stvarespec <span class="sc">~</span> N <span class="sc">+</span> K <span class="sc">+</span> Al, <span class="at">data =</span> scvarechem)</span>
@@ -1898,18 +1899,18 @@ Eigenvalues for unconstrained axes:
 <pre class="Rout"><code>Call: rda(formula = stvarespec ~ N + K + Al, data = scvarechem)
 
               Inertia Proportion Rank
-Total         0.05084    1.00000     
-Constrained   0.01171    0.23041    3
-Unconstrained 0.03913    0.76959   20
+Total          0.0508     1.0000     
+Constrained    0.0117     0.2304    3
+Unconstrained  0.0391     0.7696   20
 Inertia is variance 
 
 Eigenvalues for constrained axes:
-    RDA1     RDA2     RDA3 
-0.006722 0.003232 0.001761 
+  RDA1   RDA2   RDA3 
+0.0067 0.0032 0.0018 
 
 Eigenvalues for unconstrained axes:
-     PC1      PC2      PC3      PC4      PC5      PC6      PC7      PC8 
-0.007246 0.004097 0.003737 0.003515 0.003305 0.002474 0.002369 0.001785 
+   PC1    PC2    PC3    PC4    PC5    PC6    PC7    PC8 
+0.0072 0.0041 0.0037 0.0035 0.0033 0.0025 0.0024 0.0018 
 (Showing 8 of 20 unconstrained eigenvalues)</code></pre>
 <p>Examine the output. How did we do? Unsurprisingly, we have not explained as much variance as the full model. In addition, the amount of variance (inertia) explained by the constrained axes is less than the unconstrained axes. Maybe we shouldn’t be using this analysis at all. Of course, some of the variables in the full model may or may not be important. We need a significance test to try and sort this out.</p>
 </div>
@@ -1922,9 +1923,9 @@ Permutation: free
 Number of permutations: 999
 
 Model: rda(formula = stvarespec ~ N + K + Al, data = scvarechem)
-         Df Variance     F Pr(&gt;F)    
-Model     3 0.011714 1.996  0.001 ***
-Residual 20 0.039125                 
+         Df Variance  F Pr(&gt;F)    
+Model     3   0.0117  2  0.001 ***
+Residual 20   0.0391              
 ---
 Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
 <p>So the results suggest that our model explains a significant amount of variation in the data. We can also perform significance tests for each variable:</p>
@@ -1935,11 +1936,11 @@ Permutation: free
 Number of permutations: 199
 
 Model: rda(formula = stvarespec ~ N + K + Al, data = scvarechem)
-         Df Variance      F Pr(&gt;F)   
-N         1 0.002922 1.4937  0.085 . 
-K         1 0.003120 1.5948  0.045 * 
-Al        1 0.005672 2.8994  0.005 **
-Residual 20 0.039125                 
+         Df Variance    F Pr(&gt;F)   
+N         1   0.0029 1.49  0.085 . 
+K         1   0.0031 1.59  0.045 * 
+Al        1   0.0057 2.90  0.005 **
+Residual 20   0.0391               
 ---
 Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
 <p>The analysis suggests that maybe we haven’t chosen the best set of predictors. For example, N does not explain a significant amount of variation. This test is sequential: the terms are analyzed in the order they happen to be in the model, so you may get different results depending on how the model is specified. See if you can detect this, by rearranging your model terms in the call to ordination.</p>
@@ -1953,11 +1954,11 @@ Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&
 <span id="cb61-3"><a href="multi.html#cb61-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb61-4"><a href="multi.html#cb61-4" aria-hidden="true" tabindex="-1"></a>optm <span class="ot">&lt;-</span> <span class="fu">ordiR2step</span>(m0, <span class="at">scope =</span> <span class="fu">formula</span>(mfull), <span class="at">trace =</span> <span class="cn">FALSE</span>)</span>
 <span id="cb61-5"><a href="multi.html#cb61-5" aria-hidden="true" tabindex="-1"></a>optm<span class="sc">$</span>anova</span></code></pre></div>
-<pre class="Rout"><code>                  R2.adj Df     AIC      F Pr(&gt;F)   
-+ Fe            0.063299  1 -71.156 2.5543  0.004 **
-+ P             0.103626  1 -71.329 1.9898  0.008 **
-+ Mn            0.136721  1 -71.402 1.8051  0.022 * 
-&lt;All variables&gt; 0.260356                            
+<pre class="Rout"><code>                R2.adj Df   AIC    F Pr(&gt;F)   
++ Fe            0.0633  1 -71.2 2.55  0.004 **
++ P             0.1036  1 -71.3 1.99  0.008 **
++ Mn            0.1367  1 -71.4 1.81  0.022 * 
+&lt;All variables&gt; 0.2604                        
 ---
 Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
 <p><strong>Exercise 4</strong>
@@ -1966,29 +1967,29 @@ Examine the significance test. How does this automatically selected model differ
 <pre class="Rout"><code>Call: rda(formula = stvarespec ~ Fe + P + Mn, data = scvarechem)
 
               Inertia Proportion Rank
-Total         0.05084    1.00000     
-Constrained   0.01268    0.24932    3
-Unconstrained 0.03816    0.75068   20
+Total          0.0508     1.0000     
+Constrained    0.0127     0.2493    3
+Unconstrained  0.0382     0.7507   20
 Inertia is variance 
 
 Eigenvalues for constrained axes:
-    RDA1     RDA2     RDA3 
-0.006070 0.003607 0.002998 
+  RDA1   RDA2   RDA3 
+0.0061 0.0036 0.0030 
 
 Eigenvalues for unconstrained axes:
-     PC1      PC2      PC3      PC4      PC5      PC6      PC7      PC8 
-0.006435 0.004626 0.003763 0.003301 0.003204 0.002592 0.002003 0.001852 
+   PC1    PC2    PC3    PC4    PC5    PC6    PC7    PC8 
+0.0064 0.0046 0.0038 0.0033 0.0032 0.0026 0.0020 0.0018 
 (Showing 8 of 20 unconstrained eigenvalues)</code></pre>
 <p>Contrary to what one sometimes reads, variables with high VIFs should generally not be manually removed before the application of a procedure of selection of variables. Indeed, two highly correlated variables that are both strong predictors of one or several of the response variables Y may both contribute significantly, in complementary manners, to the linear model of these response variables. A variable selection procedure is the appropriate way of determining if that is the case.</p>
 <p>However, let’s see what happened with collinearity. VIFs can be computed in vegan after RDA or CCA. The algorithm in the <strong>vif.cca()</strong> function allows users to include factors in the RDA; the function will compute VIF after breaking down each factor into dummy variables. If X contains quantitative variables only, the vif.cca() function produces the same result as the normal calculation for quantitative variables.</p>
 <div class="sourceCode" id="cb64"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb64-1"><a href="multi.html#cb64-1" aria-hidden="true" tabindex="-1"></a><span class="fu">vif.cca</span>(mfull)</span></code></pre></div>
-<pre class="Rout"><code>        N         P         K        Ca        Mg         S        Al        Fe        Mn        Zn 
- 1.884049  6.184742 11.746873  9.825650  9.595203 18.460717 20.331905  8.849137  5.168278  7.755110 
-       Mo  Baresoil  Humdepth        pH 
- 4.575108  2.213443  5.638807  6.910118 </code></pre>
+<pre class="Rout"><code>       N        P        K       Ca       Mg        S       Al       Fe       Mn 
+     1.9      6.2     11.7      9.8      9.6     18.5     20.3      8.8      5.2 
+      Zn       Mo Baresoil Humdepth       pH 
+     7.8      4.6      2.2      5.6      6.9 </code></pre>
 <div class="sourceCode" id="cb66"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb66-1"><a href="multi.html#cb66-1" aria-hidden="true" tabindex="-1"></a><span class="fu">vif.cca</span>(optm)</span></code></pre></div>
-<pre class="Rout"><code>      Fe        P       Mn 
-1.259334 1.431022 1.738208 </code></pre>
+<pre class="Rout"><code> Fe   P  Mn 
+1.3 1.4 1.7 </code></pre>
 <p>Some VIF values are above 10 or even 20 in the full model, so that a reduction of the number of explanatory variables is justified. The VIF values in the reduced model are quite low.</p>
 <p>Finally, let’s examine the adjusted <span class="math inline">\(R^2\)</span> of the full and selected models.</p>
 <div class="sourceCode" id="cb68"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb68-1"><a href="multi.html#cb68-1" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(<span class="fu">RsquareAdj</span>(mfull)<span class="sc">$</span>adj.r.squared, <span class="dv">2</span>)</span></code></pre></div>
@@ -2011,7 +2012,7 @@ Eigenvalues for unconstrained axes:
 <span id="cb72-7"><a href="multi.html#cb72-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Triplots of the parsimonious RDA (scaling=2) Scaling 2</span></span>
 <span id="cb72-8"><a href="multi.html#cb72-8" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(optm, <span class="at">scaling =</span> <span class="st">&quot;species&quot;</span>, <span class="at">main =</span> <span class="st">&quot;Species scaling (scaling=2)&quot;</span>)</span></code></pre></div>
 <div class="figure"><span id="fig:triplotscale2"></span>
-<img src="_main_files/figure-html/triplotscale2-1.png" alt="Two plots each with with y-axis labelled 'RDA2' and x-axis labelled 'RDA1'. The plots contains the variable names of the 44 species in the varaspec dataset. There are three blue arrows that emerge from the point (0,0). One arrow points towards the top left of the plot and has label 'P'. Another arrow points towards the right and has label 'Fe'. The last arrow points slightly towards the bottom left of the plot and has label 'Mn'. There are 24 site numbers scaterred throughout the plots." width="672" />
+<img src="_main_files/figure-html/triplotscale2-1.png" alt="Two plots each with with y-axis labelled 'RDA2' and x-axis labelled 'RDA1' contains the variable names of the species in the varaspec dataset and site numbers respectively. Three arrows emerge from the center, 'P', 'Mn', and 'Fe'" width="672" />
 <p class="caption">
 Figure 4.21: Triplots of an RDA ordination on the lichen data with either site or species scaling using a basic plot command
 </p>
@@ -2031,7 +2032,7 @@ Figure 4.21: Triplots of an RDA ordination on the lichen data with either site o
 <span id="cb73-12"><a href="multi.html#cb73-12" aria-hidden="true" tabindex="-1"></a>    <span class="fu">row.names</span>(<span class="fu">scores</span>(optm, <span class="at">display =</span> <span class="st">&quot;bp&quot;</span>)), <span class="at">col =</span> <span class="dv">4</span>)</span>
 <span id="cb73-13"><a href="multi.html#cb73-13" aria-hidden="true" tabindex="-1"></a><span class="fu">text</span>(optm, <span class="at">display =</span> <span class="fu">c</span>(<span class="st">&quot;sites&quot;</span>), <span class="at">scaling =</span> <span class="dv">1</span>, <span class="at">cex =</span> <span class="dv">1</span>)</span></code></pre></div>
 <div class="figure"><span id="fig:triplotscale3"></span>
-<img src="_main_files/figure-html/triplotscale3-1.png" alt="A plot with y-axis labelled 'RDA2' and x-axis labelled 'RDA1'. The plot contains the variable names of the 44 species in the varaspec dataset. There are three blue arrows that emerge from the point (0,0). One arrow points towards the top left of the plot and has label 'P'. Another arrow points towards the right and has label 'Fe'. The last arrow points slightly towards the bottom left of the plot and has label 'Mn'. There are 24 site numbers scattered throughout the plots." width="672" />
+<img src="_main_files/figure-html/triplotscale3-1.png" alt="A plot with y-axis labelled 'RDA2' and x-axis labelled 'RDA1' contain the variable names of the species in the varaspec dataset and site numbers. There are three arrows that emerge from the center, 'P', 'Fe', and 'Mn'." width="672" />
 <p class="caption">
 Figure 4.22: Triplot of an RDA ordination on the lichen data with site scaling
 </p>
@@ -2045,7 +2046,7 @@ Figure 4.22: Triplot of an RDA ordination on the lichen data with site scaling
 <span id="cb74-7"><a href="multi.html#cb74-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">row.names</span>(<span class="fu">scores</span>(optm, <span class="at">display =</span> <span class="st">&quot;bp&quot;</span>)), <span class="at">col =</span> <span class="dv">4</span>)</span>
 <span id="cb74-8"><a href="multi.html#cb74-8" aria-hidden="true" tabindex="-1"></a><span class="fu">text</span>(optm, <span class="at">display =</span> <span class="fu">c</span>(<span class="st">&quot;sites&quot;</span>), <span class="at">scaling =</span> <span class="dv">2</span>, <span class="at">cex =</span> <span class="dv">1</span>)</span></code></pre></div>
 <div class="figure"><span id="fig:triplotscale4"></span>
-<img src="_main_files/figure-html/triplotscale4-1.png" alt="A plot with y-axis labelled 'RDA2' and x-axis labelled 'RDA1'. The plot contains the variable names of the 44 species in the varaspec dataset. There are three blue arrows that emerge from the point (0,0). One arrow points towards the top left of the plot and has label 'P'. Another arrow points towards the right and has label 'Fe'. The last arrow points slightly towards the bottom left of the plot and has label 'Mn'. There are 24 site numbers scattered throughout the plots." width="672" />
+<img src="_main_files/figure-html/triplotscale4-1.png" alt="A plot similar to the previous with different scaling based on species." width="672" />
 <p class="caption">
 Figure 4.23: Triplot of an RDA ordination on the lichen data with species scaling
 </p>
@@ -2085,7 +2086,7 @@ Figure 4.23: Triplot of an RDA ordination on the lichen data with species scalin
 <h2><span class="header-section-number">4.6</span> Answer Key</h2>
 <p><strong>Exercise 1.</strong> All we need to do is to take the square root of the sum of the squared differences to obtain the Euclidean distance as</p>
 <div class="sourceCode" id="cb75"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb75-1"><a href="multi.html#cb75-1" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(<span class="fu">sqrt</span>(eu[<span class="dv">11</span>, <span class="dv">4</span>]), <span class="dv">2</span>)</span></code></pre></div>
-<pre class="Rout"><code>[1] 61.6</code></pre>
+<pre class="Rout"><code>[1] 62</code></pre>
 <p><strong>Exercise 2.</strong> We use the <strong>kmeans()</strong> function with 4 clusters to find groups in the isotope data. We can then save the assigned clusters to our dataframe and plot in a similar way</p>
 <div class="sourceCode" id="cb77"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb77-1"><a href="multi.html#cb77-1" aria-hidden="true" tabindex="-1"></a><span class="co"># select 4 clusters and run the kmeans function</span></span>
 <span id="cb77-2"><a href="multi.html#cb77-2" aria-hidden="true" tabindex="-1"></a>kclust <span class="ot">=</span> <span class="fu">kmeans</span>(niso[, <span class="fu">c</span>(<span class="st">&quot;C&quot;</span>, <span class="st">&quot;N&quot;</span>)], <span class="dv">4</span>)</span>
@@ -2106,9 +2107,9 @@ Figure 4.23: Triplot of an RDA ordination on the lichen data with species scalin
 <span id="cb77-17"><a href="multi.html#cb77-17" aria-hidden="true" tabindex="-1"></a>    <span class="at">pch =</span> <span class="fu">as.numeric</span>(<span class="fu">unique</span>(<span class="fu">as.factor</span>(niso<span class="sc">$</span>Species))), <span class="at">bty =</span> <span class="st">&quot;n&quot;</span>,</span>
 <span id="cb77-18"><a href="multi.html#cb77-18" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">&quot;Species&quot;</span>)</span></code></pre></div>
 <div class="figure"><span id="fig:kclust"></span>
-<img src="_main_files/figure-html/kclust-1.png" alt="This figure shows a plot of the Isotope dataset. The plot has x-axis with label 'd13C' that scales from -35 to 0, and y-axis with label 'd15N' that scales from -6 to 8. The right side of the plot contains two legends. The top right legend has label 'kcluster' and contains 4 circles of varying colors as symbols. The symbols from top to bottom have labels '1' with a black circle, '2', with a red circle, '3' with a green circle and '4' with a blue circle. The bottom right legend is labelled 'Species' and has symbols 'X' for 'Plant, circle for 'Aphid', plus sign for 'Hoverfly' and triangle for 'Diplazon. There is a cluster of black symbols of varying species where 'd13C' is between -32 to -25 and 'd15N' is between -6 to 8, blue symbols with varying species where 'd13C' is between -23 to -20 and 'd15N' is between 0 to 4, and red symbols with varying species where 'd13C' is between -14 to -11 and 'd15N' is between -3 to 5." width="672" />
+<img src="_main_files/figure-html/kclust-1.png" alt="X-axis labelled 'd13C', y-axis labelled 'd15N'and two legends, one as 'kcluster' ranging from 1 to 4, and the second with 'Species'. Moving from left to right on the x-axis, '1' goes from bottom to top with all species, '4' is near midde with 'Diplazon' and 'Hoverfly', '2' is near the middle with all but 'Diplazon', and '3' is directly under with two 'Plant'." width="672" />
 <p class="caption">
-Figure 4.24: K means clustering on Perkins et al (2014) data
+Figure 4.24: K means clustering on Perkins et al (2014) data for 4 clusters
 </p>
 </div>
 <p>It looks like kmeans has the same problem with distinguishing C3 plant-based foodwebs. But we still get three groups that roughly map onto our information about the data.</p>

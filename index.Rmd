@@ -12,6 +12,7 @@ output:
         collapse: section
     includes:
       in_header: google_analytics_script.html
+      
 documentclass: book
 bibliography: [book.bib, packages.bib]
 biblio-style: apalike
