@@ -136,11 +136,12 @@ code span.wa { font-style: italic; } /* Warning */
 <ul class="summary">
 <li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Welcome!</a>
 <ul>
-<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#open-science"><i class="fa fa-check"></i><b>1.1</b> Open Science</a></li>
-<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#feedback"><i class="fa fa-check"></i><b>1.2</b> Feedback</a></li>
-<li class="chapter" data-level="1.3" data-path="index.html"><a href="index.html#about-the-authors"><i class="fa fa-check"></i><b>1.3</b> About the authors</a></li>
-<li class="chapter" data-level="1.4" data-path="index.html"><a href="index.html#acknowledgments"><i class="fa fa-check"></i><b>1.4</b> Acknowledgments</a></li>
-<li class="chapter" data-level="1.5" data-path="index.html"><a href="index.html#citation"><i class="fa fa-check"></i><b>1.5</b> Citation</a></li>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#open-science"><i class="fa fa-check"></i><b>1.1</b> Open science</a></li>
+<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#accessibility-statement"><i class="fa fa-check"></i><b>1.2</b> Accessibility Statement</a></li>
+<li class="chapter" data-level="1.3" data-path="index.html"><a href="index.html#feedback"><i class="fa fa-check"></i><b>1.3</b> Feedback</a></li>
+<li class="chapter" data-level="1.4" data-path="index.html"><a href="index.html#about-the-authors"><i class="fa fa-check"></i><b>1.4</b> About the authors</a></li>
+<li class="chapter" data-level="1.5" data-path="index.html"><a href="index.html#acknowledgments"><i class="fa fa-check"></i><b>1.5</b> Acknowledgments</a></li>
+<li class="chapter" data-level="1.6" data-path="index.html"><a href="index.html#citation"><i class="fa fa-check"></i><b>1.6</b> Citation</a></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="git-and-github.html"><a href="git-and-github.html"><i class="fa fa-check"></i><b>2</b> Git and GitHub</a>
 <ul>
@@ -219,7 +220,8 @@ code span.wa { font-style: italic; } /* Warning */
 <li class="chapter" data-level="3.5" data-path="r-markdown.html"><a href="r-markdown.html#caching-advanced"><i class="fa fa-check"></i><b>3.5</b> Caching (advanced)</a></li>
 <li class="chapter" data-level="3.6" data-path="r-markdown.html"><a href="r-markdown.html#further-reading"><i class="fa fa-check"></i><b>3.6</b> Further reading</a></li>
 <li class="chapter" data-level="3.7" data-path="r-markdown.html"><a href="r-markdown.html#using-rstudio"><i class="fa fa-check"></i><b>3.7</b> Using RStudio</a></li>
-<li class="chapter" data-level="3.8" data-path="r-markdown.html"><a href="r-markdown.html#feedback-2"><i class="fa fa-check"></i><b>3.8</b> Feedback</a></li>
+<li class="chapter" data-level="3.8" data-path="r-markdown.html"><a href="r-markdown.html#using-emacs-for-r-and-everything-else"><i class="fa fa-check"></i><b>3.8</b> Using Emacs for R (and everything else)</a></li>
+<li class="chapter" data-level="3.9" data-path="r-markdown.html"><a href="r-markdown.html#feedback-2"><i class="fa fa-check"></i><b>3.9</b> Feedback</a></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="multi.html"><a href="multi.html"><i class="fa fa-check"></i><b>4</b> Multivariate analysis: Clustering and Ordination</a>
 <ul>
@@ -387,9 +389,19 @@ like, you can just copy that code and use it elsewhere.</p>
 for over 100 species of British Columbia
 groundfish</a>.
 For each of 113 species, we produced two pages of figures:</p>
-<p><img src="silvergray-rockfish-1.png" title="First example page showing multiple figures of data." alt="First example page showing multiple figures of data."  /></p>
+<div class="figure"><span id="fig:unnamed-chunk-20"></span>
+<img src="silvergray-rockfish-1.png" alt="Screenshot of a page with a complex layout of 23 figures."  />
+<p class="caption">
+Figure 3.1: First example page showing multiple figures of data.
+</p>
+</div>
 <p>and</p>
-<p><img src="silvergray-rockfish-2.png" title="Second example page showing multiple figures of data." alt="Second example page showing multiple figures of data."  /></p>
+<div class="figure"><span id="fig:unnamed-chunk-21"></span>
+<img src="silvergray-rockfish-2.png" alt="Second example page showing further figures of data."  />
+<p class="caption">
+Figure 3.2: Second example page showing multiple figures of data.
+</p>
+</div>
 <p>Do not worry about the details – the point here is that for each species the
 layout of the figures is identical (even to show no data
 when none are available). Producing each figure and manually inserting them into
@@ -450,7 +462,7 @@ the value of <code>n</code> (because of the final line of the code).</p>
 <p>We have a sample size of 50.</p>
 <p>This is done (as mentioned above) by the code:</p>
 <p>Note that you need the space straight after the <code>r</code>.</p>
-<p>We can also automatically say that the maximum value of the data is 506.5564788, or round it to a
+<p>We can also automatically say that the maximum value of the data is 506.56, or round it to a
 whole number: the maximum value of the data is 507. These were done by:</p>
 <p><strong>Show some of the data</strong></p>
 <p>Let’s combine the data in a tibble (think of it as a data frame if you don’t
@@ -491,7 +503,7 @@ y
 1
 </td>
 <td style="text-align:right;">
-23.70958
+24
 </td>
 </tr>
 <tr>
@@ -499,7 +511,7 @@ y
 2
 </td>
 <td style="text-align:right;">
-14.35302
+14
 </td>
 </tr>
 <tr>
@@ -507,7 +519,7 @@ y
 3
 </td>
 <td style="text-align:right;">
-33.63128
+34
 </td>
 </tr>
 <tr>
@@ -515,7 +527,7 @@ y
 4
 </td>
 <td style="text-align:right;">
-46.32863
+46
 </td>
 </tr>
 <tr>
@@ -523,7 +535,7 @@ y
 5
 </td>
 <td style="text-align:right;">
-54.04268
+54
 </td>
 </tr>
 <tr>
@@ -531,7 +543,7 @@ y
 6
 </td>
 <td style="text-align:right;">
-58.93875
+59
 </td>
 </tr>
 <tr>
@@ -539,7 +551,7 @@ y
 7
 </td>
 <td style="text-align:right;">
-85.11522
+85
 </td>
 </tr>
 <tr>
@@ -547,7 +559,7 @@ y
 8
 </td>
 <td style="text-align:right;">
-79.05341
+79
 </td>
 </tr>
 <tr>
@@ -555,7 +567,7 @@ y
 9
 </td>
 <td style="text-align:right;">
-110.18424
+110
 </td>
 </tr>
 <tr>
@@ -563,7 +575,7 @@ y
 10
 </td>
 <td style="text-align:right;">
-99.37286
+99
 </td>
 </tr>
 </tbody>
@@ -573,26 +585,31 @@ because of settings we have, but pretty much everything is tweakable with the
 <code>kable</code> and <code>kableExtra</code> packages).</p>
 <p><strong>Plot then fit a regression data</strong></p>
 <p>Now to plot the data:</p>
-<p><img src="_main_files/figure-html/plot-1.png" title="Simple plot of the 50 simulated data points." alt="Simple plot of the 50 simulated data points." width="672" /></p>
+<div class="figure"><span id="fig:plot"></span>
+<img src="_main_files/figure-html/plot-1.png" alt="Simple plot of the 50 simulated data points." width="672" />
+<p class="caption">
+Figure 3.3: Simple plot of the 50 simulated data points.
+</p>
+</div>
 <p>To fit and then print the summary regression output from R:</p>
 <pre class="Rout"><code>
 Call:
 lm(formula = y ~ x)
 
 Residuals:
-    Min      1Q  Median      3Q     Max 
--27.403  -4.366  -1.193   8.319  21.072 
+   Min     1Q Median     3Q    Max 
+-27.40  -4.37  -1.19   8.32  21.07 
 
 Coefficients:
             Estimate Std. Error t value Pr(&gt;|t|)    
-(Intercept)   3.7071     3.2719   1.133    0.263    
-x             9.8406     0.1117  88.124   &lt;2e-16 ***
+(Intercept)    3.707      3.272    1.13     0.26    
+x              9.841      0.112   88.12   &lt;2e-16 ***
 ---
 Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
 
-Residual standard error: 11.39 on 48 degrees of freedom
-Multiple R-squared:  0.9939,    Adjusted R-squared:  0.9937 
-F-statistic:  7766 on 1 and 48 DF,  p-value: &lt; 2.2e-16</code></pre>
+Residual standard error: 11 on 48 degrees of freedom
+Multiple R-squared:  0.994, Adjusted R-squared:  0.994 
+F-statistic: 7.77e+03 on 1 and 48 DF,  p-value: &lt;2e-16</code></pre>
 <p>And for a report we can produce a simple table (including a caption) of output and the regression fit:</p>
 <table>
 <caption>
@@ -622,16 +639,16 @@ Pr(&gt;|t|)
 (Intercept)
 </td>
 <td style="text-align:right;">
-3.707115
+3.7
 </td>
 <td style="text-align:right;">
-3.2719100
+3.27
 </td>
 <td style="text-align:right;">
-1.133012
+1.1
 </td>
 <td style="text-align:right;">
-0.2628368
+0.26
 </td>
 </tr>
 <tr>
@@ -639,22 +656,27 @@ Pr(&gt;|t|)
 x
 </td>
 <td style="text-align:right;">
-9.840634
+9.8
 </td>
 <td style="text-align:right;">
-0.1116686
+0.11
 </td>
 <td style="text-align:right;">
-88.123530
+88.1
 </td>
 <td style="text-align:right;">
-0.0000000
+0.00
 </td>
 </tr>
 </tbody>
 </table>
-<p>And create a plot:
-<img src="_main_files/figure-html/plotfit-1.png" title="Simple plot of the 50 simulated data points with the fitted regression added in red." alt="Simple plot of the 50 simulated data points with the fitted regression added in red." width="672" /></p>
+And create a plot:
+<div class="figure"><span id="fig:plotfit"></span>
+<img src="_main_files/figure-html/plotfit-1.png" alt="Same simple plot with simple regression line added." width="672" />
+<p class="caption">
+Figure 3.4: Simple plot of the 50 simulated data points with the fitted regression added in red.
+</p>
+</div>
 <p><strong>Now, let’s go back and change the data</strong></p>
 <p>The <em>big</em> feature of dynamically generating reports is when you go back and
 change or update the input data. For example, changing the data in the above
@@ -846,20 +868,48 @@ of containing commands/options/tips that you use a lot.</p>
 <h2><span class="header-section-number">3.7</span> Using RStudio</h2>
 <p>Here are some screenshots for using RStudio (thanks to Joe Watson).</p>
 <p>To knit a document:</p>
-<p><img src="Step_1_Knit.png" title="Screenshot showing how to knit in RStudio." alt="Screenshot showing how to knit in RStudio."  /></p>
+<div class="figure"><span id="fig:unnamed-chunk-26"></span>
+<img src="Step_1_Knit.png" alt="Screenshot highlighting the knit button in RStudio."  />
+<p class="caption">
+Figure 3.5: Screenshot highlighting the knit button in RStudio.
+</p>
+</div>
 <p>and then select the format with</p>
-<p><img src="Step_2_Choose_Format.png" title="Screenshot showing how to select knit output in RStudio." alt="Screenshot showing how to select knit output in RStudio." style="display: block; margin: auto;" /></p>
+<div class="figure" style="text-align: center">
+<img src="Step_2_Choose_Format.png" alt="Screenshot showing how to select knit output in RStudio."  />
+<p class="caption">
+(#fig:Screenshot showing knit options in RStudio.)Screenshot showing how to select knit output in RStudio.
+</p>
+</div>
 <p>Be sure to click the correct format, though RStudio does not seem to over-ride the <code>output</code> option
 set in the <code>.Rmd</code> file (in the YAML at the top).</p>
 <p>You need to view the .html output in Exercise 1 in a browser, either clicking on
 the resulting file or doing:</p>
-<p><img src="Step_3_View_in_Dedicated_Browser.png" title="Screenshot showing how to open .html file in RStudio." alt="Screenshot showing how to open .html file in RStudio."  /></p>
+<div class="figure"><span id="fig:unnamed-chunk-27"></span>
+<img src="Step_3_View_in_Dedicated_Browser.png" alt="Screenshot highlighting the open in browser button in RStudio."  />
+<p class="caption">
+Figure 3.6: Screenshot highlighting the open in browser button in RStudio.
+</p>
+</div>
 <p>To run a line of code you can click Ctrl-Enter, and to run a chunk you can click
 on the green triangle:</p>
-<p><img src="Step_4_Run_code_within_a_single_chunk.png" title="Screenshot showing how to run a chunk in RStudio." alt="Screenshot showing how to run a chunk in RStudio."  /></p>
+<div class="figure"><span id="fig:unnamed-chunk-28"></span>
+<img src="Step_4_Run_code_within_a_single_chunk.png" alt="Screenshot highlighting the green triangle run a chunk in RStudio."  />
+<p class="caption">
+Figure 3.7: Screenshot showing how to run a chunk in RStudio.
+</p>
+</div>
 <p>and click the green rectangle to run all the preceding chunks also (useful if
 variables have changed):</p>
-<p><img src="Step_5_Run_all_code_preceding_chunk.png" title="Screenshot showing how to run all code preceding a chunk." alt="Screenshot showing how to run all code preceding a chunk."  /></p>
+<div class="figure"><span id="fig:unnamed-chunk-29"></span>
+<img src="Step_5_Run_all_code_preceding_chunk.png" alt="Screenshot showing the green rectangle to click to run all code preceding a chunk."  />
+<p class="caption">
+Figure 3.8: Screenshot showing how to run all code preceding a chunk.
+</p>
+</div>
+</div>
+<div id="using-emacs-for-r-and-everything-else" class="section level2" number="3.8">
+<h2><span class="header-section-number">3.8</span> Using Emacs for R (and everything else)</h2>
 <p>If you have issues with using a mouse too much, or would rather just type
 commands (especially if you have vision issues) and prefer a less cluttered
 interface, then I’d recommend <a href="https://ess.r-project.org/" target="_blank">Emacs Speaks
@@ -868,8 +918,8 @@ from the text editor Emacs. You can also use Emacs for editing all types of file
 highlights code very well), so you only need to learn one editor for all your
 needs.</p>
 </div>
-<div id="feedback-2" class="section level2" number="3.8">
-<h2><span class="header-section-number">3.8</span> Feedback</h2>
+<div id="feedback-2" class="section level2" number="3.9">
+<h2><span class="header-section-number">3.9</span> Feedback</h2>
 <p>We value your input! Please take the time to let us know how we might improve
 these materials in <a href="https://forms.gle/vLkcZq7NxPb2ajTQ6" target="_blank">this survey</a>.</p>
 

@@ -84,6 +84,21 @@ In the spirit of open science (and using the tools introduced in the first
 two modules), this e-book was written collaboratively and
 openly in R Markdown, with files shared via GitHub [here](https://github.com/quantitative-biology/Basics){target="_blank"}.
 
+
+## Accessibility Statement
+
+We developed **Building Skills in Quantitative Biology** with a commitment to accessibility and usability for all learners.  
+
+The accessibility of these materials was assessed by the Centre for Extended Learning, University of Waterloo.  This review was based on the WCAG 2.0 Guidelines at success criteria Level AA. The authors have addressed all known accessibility issues to the best of their abilities.
+
+The following known accessibility issues persist and may cause difficulties for some persons with disabilities:
+
+1. Code output is only distinguished from code input by colour shading in boxes
+
+2. Internal links to figures and tables are only linked by the numbering (e.g., 5.1) of the object, rather than the full text (e.g., Figure 5.1)
+
+Please let us know if you discover other issues on the [issues tab for the github repository](https://github.com/quantitative-biology/Basics/issues){target="_blank"}
+
 ## Feedback
 
 Despite extensive feedback from our student guinea pigs, we anticipate further

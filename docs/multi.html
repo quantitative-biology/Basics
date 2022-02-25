@@ -136,11 +136,12 @@ code span.wa { font-style: italic; } /* Warning */
 <ul class="summary">
 <li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Welcome!</a>
 <ul>
-<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#open-science"><i class="fa fa-check"></i><b>1.1</b> Open Science</a></li>
-<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#feedback"><i class="fa fa-check"></i><b>1.2</b> Feedback</a></li>
-<li class="chapter" data-level="1.3" data-path="index.html"><a href="index.html#about-the-authors"><i class="fa fa-check"></i><b>1.3</b> About the authors</a></li>
-<li class="chapter" data-level="1.4" data-path="index.html"><a href="index.html#acknowledgments"><i class="fa fa-check"></i><b>1.4</b> Acknowledgments</a></li>
-<li class="chapter" data-level="1.5" data-path="index.html"><a href="index.html#citation"><i class="fa fa-check"></i><b>1.5</b> Citation</a></li>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#open-science"><i class="fa fa-check"></i><b>1.1</b> Open science</a></li>
+<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#accessibility-statement"><i class="fa fa-check"></i><b>1.2</b> Accessibility Statement</a></li>
+<li class="chapter" data-level="1.3" data-path="index.html"><a href="index.html#feedback"><i class="fa fa-check"></i><b>1.3</b> Feedback</a></li>
+<li class="chapter" data-level="1.4" data-path="index.html"><a href="index.html#about-the-authors"><i class="fa fa-check"></i><b>1.4</b> About the authors</a></li>
+<li class="chapter" data-level="1.5" data-path="index.html"><a href="index.html#acknowledgments"><i class="fa fa-check"></i><b>1.5</b> Acknowledgments</a></li>
+<li class="chapter" data-level="1.6" data-path="index.html"><a href="index.html#citation"><i class="fa fa-check"></i><b>1.6</b> Citation</a></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="git-and-github.html"><a href="git-and-github.html"><i class="fa fa-check"></i><b>2</b> Git and GitHub</a>
 <ul>
@@ -219,7 +220,8 @@ code span.wa { font-style: italic; } /* Warning */
 <li class="chapter" data-level="3.5" data-path="r-markdown.html"><a href="r-markdown.html#caching-advanced"><i class="fa fa-check"></i><b>3.5</b> Caching (advanced)</a></li>
 <li class="chapter" data-level="3.6" data-path="r-markdown.html"><a href="r-markdown.html#further-reading"><i class="fa fa-check"></i><b>3.6</b> Further reading</a></li>
 <li class="chapter" data-level="3.7" data-path="r-markdown.html"><a href="r-markdown.html#using-rstudio"><i class="fa fa-check"></i><b>3.7</b> Using RStudio</a></li>
-<li class="chapter" data-level="3.8" data-path="r-markdown.html"><a href="r-markdown.html#feedback-2"><i class="fa fa-check"></i><b>3.8</b> Feedback</a></li>
+<li class="chapter" data-level="3.8" data-path="r-markdown.html"><a href="r-markdown.html#using-emacs-for-r-and-everything-else"><i class="fa fa-check"></i><b>3.8</b> Using Emacs for R (and everything else)</a></li>
+<li class="chapter" data-level="3.9" data-path="r-markdown.html"><a href="r-markdown.html#feedback-2"><i class="fa fa-check"></i><b>3.9</b> Feedback</a></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="multi.html"><a href="multi.html"><i class="fa fa-check"></i><b>4</b> Multivariate analysis: Clustering and Ordination</a>
 <ul>
@@ -906,7 +908,7 @@ erie  1  0
 <pre class="Rout"><code>[1] 0.9</code></pre>
 <div class="sourceCode" id="cb17"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb17-1"><a href="multi.html#cb17-1" aria-hidden="true" tabindex="-1"></a>S_s <span class="ot">=</span> <span class="dv">2</span> <span class="sc">*</span> a<span class="sc">/</span>(<span class="dv">2</span> <span class="sc">*</span> a <span class="sc">+</span> b <span class="sc">+</span> c)</span>
 <span id="cb17-2"><a href="multi.html#cb17-2" aria-hidden="true" tabindex="-1"></a>S_s</span></code></pre></div>
-<pre class="Rout"><code>[1] 0.9473684</code></pre>
+<pre class="Rout"><code>[1] 0.95</code></pre>
 <p>A final note: when a dissimilarity or similarity metric has a finite range, we can simply convert from one to the other. For example, for similarities that range from 1 (identical) to 0 (completely different), dissimilarity would simply be 1-similarity.</p>
 </div>
 <div id="quantitative-similarity-dissimilarity-metrics" class="section level3" number="4.1.2">
@@ -1179,10 +1181,10 @@ species 3
 <p><br>
 <br></p>
 <div class="sourceCode" id="cb20"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb20-1"><a href="multi.html#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">dist</span>(<span class="fu">t</span>(spmatrix), <span class="at">method =</span> <span class="st">&quot;euclidean&quot;</span>, <span class="at">diag =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
-<pre class="Rout"><code>         A        B        C
-A 0.000000                  
-B 1.732051 0.000000         
-C 7.615773 9.000000 0.000000</code></pre>
+<pre class="Rout"><code>    A   B   C
+A 0.0        
+B 1.7 0.0    
+C 7.6 9.0 0.0</code></pre>
 <p>There are other disadvantages as well, and in general, there is simply no perfect metric. For example, you may dislike the fact that Euclidean distance also has no upper bound, and so it becomes difficult to understand how similar two things are (i.e., the metric can only be understood in a relative way when comparing many things, Sample A is more similar to sample B than sample C, for example). You could use a Bray-Curtis dissimilarity metric, which is quite easy to interpret, but this metric will also confound differences in species presences and differences in species counts (Greenacre 2017). The best policy is to be aware of the advantages and disadvantages of the metrics you choose, and interpret your analysis in light of this information.</p>
 </div>
 <div id="r-functions" class="section level3" number="4.1.4">
@@ -1460,13 +1462,13 @@ Figure 4.11: Selecting the synthetic axes in ordination. We have two overlaid pl
  $ Petal.Width : num  0.2 0.2 0.2 0.2 0.2 0.4 0.3 0.2 0.2 0.1 ...
  $ Species     : Factor w/ 3 levels &quot;setosa&quot;,&quot;versicolor&quot;,..: 1 1 1 1 1 1 1 1 1 1 ...</code></pre>
 <div class="sourceCode" id="cb33"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb33-1"><a href="multi.html#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(iris[<span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>])</span></code></pre></div>
-<pre class="Rout"><code>  Sepal.Length    Sepal.Width     Petal.Length    Petal.Width   
- Min.   :4.300   Min.   :2.000   Min.   :1.000   Min.   :0.100  
- 1st Qu.:5.100   1st Qu.:2.800   1st Qu.:1.600   1st Qu.:0.300  
- Median :5.800   Median :3.000   Median :4.350   Median :1.300  
- Mean   :5.843   Mean   :3.057   Mean   :3.758   Mean   :1.199  
- 3rd Qu.:6.400   3rd Qu.:3.300   3rd Qu.:5.100   3rd Qu.:1.800  
- Max.   :7.900   Max.   :4.400   Max.   :6.900   Max.   :2.500  </code></pre>
+<pre class="Rout"><code>  Sepal.Length  Sepal.Width   Petal.Length  Petal.Width 
+ Min.   :4.3   Min.   :2.0   Min.   :1.0   Min.   :0.1  
+ 1st Qu.:5.1   1st Qu.:2.8   1st Qu.:1.6   1st Qu.:0.3  
+ Median :5.8   Median :3.0   Median :4.3   Median :1.3  
+ Mean   :5.8   Mean   :3.1   Mean   :3.8   Mean   :1.2  
+ 3rd Qu.:6.4   3rd Qu.:3.3   3rd Qu.:5.1   3rd Qu.:1.8  
+ Max.   :7.9   Max.   :4.4   Max.   :6.9   Max.   :2.5  </code></pre>
 <div class="sourceCode" id="cb35"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb35-1"><a href="multi.html#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="fu">pairs</span>(iris[<span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>], <span class="at">main =</span> <span class="st">&quot;Iris Data&quot;</span>, <span class="at">pch =</span> <span class="fu">as.numeric</span>(iris<span class="sc">$</span>Species) <span class="sc">+</span></span>
 <span id="cb35-2"><a href="multi.html#cb35-2" aria-hidden="true" tabindex="-1"></a>    <span class="dv">14</span>, <span class="at">col =</span> <span class="fu">as.numeric</span>(iris<span class="sc">$</span>Species) <span class="sc">+</span> <span class="dv">1</span>)</span></code></pre></div>
 <div class="figure"><span id="fig:coriris"></span>
@@ -1480,26 +1482,26 @@ Figure 4.12: Correlation matrix for characteristics of each individual the iris 
 <div class="sourceCode" id="cb36"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb36-1"><a href="multi.html#cb36-1" aria-hidden="true" tabindex="-1"></a>pca <span class="ot">&lt;-</span> <span class="fu">prcomp</span>(iris[, <span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>])</span>
 <span id="cb36-2"><a href="multi.html#cb36-2" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(pca)</span></code></pre></div>
 <pre class="Rout"><code>Importance of components:
-                          PC1     PC2    PC3     PC4
-Standard deviation     2.0563 0.49262 0.2797 0.15439
-Proportion of Variance 0.9246 0.05307 0.0171 0.00521
-Cumulative Proportion  0.9246 0.97769 0.9948 1.00000</code></pre>
+                         PC1    PC2    PC3     PC4
+Standard deviation     2.056 0.4926 0.2797 0.15439
+Proportion of Variance 0.925 0.0531 0.0171 0.00521
+Cumulative Proportion  0.925 0.9777 0.9948 1.00000</code></pre>
 </div>
 <div id="standardize-your-data" class="section level4" number="4.3.1.2">
 <h4><span class="header-section-number">4.3.1.2</span> Standardize your data</h4>
 <p>There is a problem though, let’s examine the variance in the raw data. Use the <strong>apply()</strong> function to quickly calculate the variance in each of the numeric columns of the data as apply(iris[,1:3], 1, var). What do you see? Are the variances of each the columns comparable?</p>
 <div class="sourceCode" id="cb38"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb38-1"><a href="multi.html#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="fu">apply</span>(iris[, <span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>], <span class="dv">2</span>, var)</span></code></pre></div>
 <pre class="Rout"><code>Sepal.Length  Sepal.Width Petal.Length  Petal.Width 
-   0.6856935    0.1899794    3.1162779    0.5810063 </code></pre>
+        0.69         0.19         3.12         0.58 </code></pre>
 <p>Using covariances among variables only makes sense if they are measured in the same units, and even then, variables with high variances will dominate the principal components. These problems are generally avoided by standardizing each variable to unit variance and zero mean as <span class="math inline">\(X_{im}^{&#39;}=\frac{x_{im}-\bar{X_i}}{sd_i}\)</span> where <em>sd</em> is the standard deviation of variable <em>i</em>. After standardizaton, the variance of each variable is 1 and the covariances of the standardized variables are correlations.</p>
 <p>If you look at the help menu, the notes for the use of <strong>prcomp()</strong> STRONGLY recommend standardizing the data. To do this there is a built in option. We just need to set scale=TRUE. Let’s try again with data standardization. Save your new PCA output to a different name. Take a look at the summary.</p>
 <div class="sourceCode" id="cb40"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb40-1"><a href="multi.html#cb40-1" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span> <span class="fu">prcomp</span>(iris[, <span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>], <span class="at">scale =</span> <span class="cn">TRUE</span>)</span>
 <span id="cb40-2"><a href="multi.html#cb40-2" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(p)</span></code></pre></div>
 <pre class="Rout"><code>Importance of components:
-                          PC1    PC2     PC3     PC4
-Standard deviation     1.7084 0.9560 0.38309 0.14393
-Proportion of Variance 0.7296 0.2285 0.03669 0.00518
-Cumulative Proportion  0.7296 0.9581 0.99482 1.00000</code></pre>
+                        PC1   PC2    PC3     PC4
+Standard deviation     1.71 0.956 0.3831 0.14393
+Proportion of Variance 0.73 0.229 0.0367 0.00518
+Cumulative Proportion  0.73 0.958 0.9948 1.00000</code></pre>
 <p>We now have less variance explained by axis 1. This makes sense, because, as we will see in a moment, axis 1 is strongly influenced by petal length, but in the unstandardized data, petal length had larger variance than anything else.</p>
 </div>
 <div id="choose-your-axes" class="section level4" number="4.3.1.3">
@@ -1874,24 +1876,24 @@ Figure 4.20: Pairwise correlations between environmental variables in the varech
 <span id="cb53-2"><a href="multi.html#cb53-2" aria-hidden="true" tabindex="-1"></a>scvarechem <span class="ot">=</span> <span class="fu">as.data.frame</span>(<span class="fu">scale</span>(varechem))</span>
 <span id="cb53-3"><a href="multi.html#cb53-3" aria-hidden="true" tabindex="-1"></a>constr <span class="ot">&lt;-</span> vegan<span class="sc">::</span><span class="fu">rda</span>(stvarespec <span class="sc">~</span> ., <span class="at">data =</span> scvarechem)</span>
 <span id="cb53-4"><a href="multi.html#cb53-4" aria-hidden="true" tabindex="-1"></a>constr</span></code></pre></div>
-<pre class="Rout"><code>Call: rda(formula = stvarespec ~ N + P + K + Ca + Mg + S + Al + Fe + Mn + Zn + Mo +
-Baresoil + Humdepth + pH, data = scvarechem)
+<pre class="Rout"><code>Call: rda(formula = stvarespec ~ N + P + K + Ca + Mg + S + Al + Fe + Mn + Zn + Mo + Baresoil +
+Humdepth + pH, data = scvarechem)
 
               Inertia Proportion Rank
-Total         0.05084    1.00000     
-Constrained   0.03612    0.71057   14
-Unconstrained 0.01471    0.28943    9
+Total          0.0508     1.0000     
+Constrained    0.0361     0.7106   14
+Unconstrained  0.0147     0.2894    9
 Inertia is variance 
 
 Eigenvalues for constrained axes:
-    RDA1     RDA2     RDA3     RDA4     RDA5     RDA6     RDA7     RDA8     RDA9    RDA10    RDA11 
-0.008120 0.005642 0.004808 0.003525 0.002956 0.002592 0.001953 0.001665 0.001265 0.001129 0.000964 
-   RDA12    RDA13    RDA14 
-0.000627 0.000507 0.000373 
+   RDA1    RDA2    RDA3    RDA4    RDA5    RDA6    RDA7    RDA8    RDA9   RDA10   RDA11   RDA12   RDA13 
+0.00812 0.00564 0.00481 0.00353 0.00296 0.00259 0.00195 0.00166 0.00126 0.00113 0.00096 0.00063 0.00051 
+  RDA14 
+0.00037 
 
 Eigenvalues for unconstrained axes:
-     PC1      PC2      PC3      PC4      PC5      PC6      PC7      PC8      PC9 
-0.004051 0.002184 0.002003 0.001853 0.001247 0.001101 0.001022 0.000722 0.000532 </code></pre>
+    PC1     PC2     PC3     PC4     PC5     PC6     PC7     PC8     PC9 
+0.00405 0.00218 0.00200 0.00185 0.00125 0.00110 0.00102 0.00072 0.00053 </code></pre>
 <p>However, it is not recommended to perform a constrained ordination with all the environmental variables you happen to have: adding a large number of constraints means eventually you end up with solution similar to the unconstrained ordination. Moreover, collinearity in the explanatory variables will cause instability in the estimation of regression coefficients (see Fig <a href="multi.html#fig:lichCOR">4.20</a>).</p>
 <p>Instead, let’s use the formula interface to select particular constraining variables</p>
 <div class="sourceCode" id="cb55"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb55-1"><a href="multi.html#cb55-1" aria-hidden="true" tabindex="-1"></a>ord3 <span class="ot">=</span> vegan<span class="sc">::</span><span class="fu">rda</span>(stvarespec <span class="sc">~</span> N <span class="sc">+</span> K <span class="sc">+</span> Al, <span class="at">data =</span> scvarechem)</span>
@@ -1899,18 +1901,18 @@ Eigenvalues for unconstrained axes:
 <pre class="Rout"><code>Call: rda(formula = stvarespec ~ N + K + Al, data = scvarechem)
 
               Inertia Proportion Rank
-Total         0.05084    1.00000     
-Constrained   0.01171    0.23041    3
-Unconstrained 0.03913    0.76959   20
+Total          0.0508     1.0000     
+Constrained    0.0117     0.2304    3
+Unconstrained  0.0391     0.7696   20
 Inertia is variance 
 
 Eigenvalues for constrained axes:
-    RDA1     RDA2     RDA3 
-0.006722 0.003232 0.001761 
+  RDA1   RDA2   RDA3 
+0.0067 0.0032 0.0018 
 
 Eigenvalues for unconstrained axes:
-     PC1      PC2      PC3      PC4      PC5      PC6      PC7      PC8 
-0.007246 0.004097 0.003737 0.003515 0.003305 0.002474 0.002369 0.001785 
+   PC1    PC2    PC3    PC4    PC5    PC6    PC7    PC8 
+0.0072 0.0041 0.0037 0.0035 0.0033 0.0025 0.0024 0.0018 
 (Showing 8 of 20 unconstrained eigenvalues)</code></pre>
 <p>Examine the output. How did we do? Unsurprisingly, we have not explained as much variance as the full model. In addition, the amount of variance (inertia) explained by the constrained axes is less than the unconstrained axes. Maybe we shouldn’t be using this analysis at all. Of course, some of the variables in the full model may or may not be important. We need a significance test to try and sort this out.</p>
 </div>
@@ -1923,9 +1925,9 @@ Permutation: free
 Number of permutations: 999
 
 Model: rda(formula = stvarespec ~ N + K + Al, data = scvarechem)
-         Df Variance     F Pr(&gt;F)    
-Model     3 0.011714 1.996  0.001 ***
-Residual 20 0.039125                 
+         Df Variance  F Pr(&gt;F)    
+Model     3   0.0117  2  0.001 ***
+Residual 20   0.0391              
 ---
 Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
 <p>So the results suggest that our model explains a significant amount of variation in the data. We can also perform significance tests for each variable:</p>
@@ -1936,11 +1938,11 @@ Permutation: free
 Number of permutations: 199
 
 Model: rda(formula = stvarespec ~ N + K + Al, data = scvarechem)
-         Df Variance      F Pr(&gt;F)   
-N         1 0.002922 1.4937  0.085 . 
-K         1 0.003120 1.5948  0.045 * 
-Al        1 0.005672 2.8994  0.005 **
-Residual 20 0.039125                 
+         Df Variance    F Pr(&gt;F)   
+N         1   0.0029 1.49  0.085 . 
+K         1   0.0031 1.59  0.045 * 
+Al        1   0.0057 2.90  0.005 **
+Residual 20   0.0391               
 ---
 Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
 <p>The analysis suggests that maybe we haven’t chosen the best set of predictors. For example, N does not explain a significant amount of variation. This test is sequential: the terms are analyzed in the order they happen to be in the model, so you may get different results depending on how the model is specified. See if you can detect this, by rearranging your model terms in the call to ordination.</p>
@@ -1954,11 +1956,11 @@ Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&
 <span id="cb61-3"><a href="multi.html#cb61-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb61-4"><a href="multi.html#cb61-4" aria-hidden="true" tabindex="-1"></a>optm <span class="ot">&lt;-</span> <span class="fu">ordiR2step</span>(m0, <span class="at">scope =</span> <span class="fu">formula</span>(mfull), <span class="at">trace =</span> <span class="cn">FALSE</span>)</span>
 <span id="cb61-5"><a href="multi.html#cb61-5" aria-hidden="true" tabindex="-1"></a>optm<span class="sc">$</span>anova</span></code></pre></div>
-<pre class="Rout"><code>                  R2.adj Df     AIC      F Pr(&gt;F)   
-+ Fe            0.063299  1 -71.156 2.5543  0.004 **
-+ P             0.103626  1 -71.329 1.9898  0.008 **
-+ Mn            0.136721  1 -71.402 1.8051  0.022 * 
-&lt;All variables&gt; 0.260356                            
+<pre class="Rout"><code>                R2.adj Df   AIC    F Pr(&gt;F)   
++ Fe            0.0633  1 -71.2 2.55  0.004 **
++ P             0.1036  1 -71.3 1.99  0.008 **
++ Mn            0.1367  1 -71.4 1.81  0.022 * 
+&lt;All variables&gt; 0.2604                        
 ---
 Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
 <p><strong>Exercise 4</strong>
@@ -1967,29 +1969,29 @@ Examine the significance test. How does this automatically selected model differ
 <pre class="Rout"><code>Call: rda(formula = stvarespec ~ Fe + P + Mn, data = scvarechem)
 
               Inertia Proportion Rank
-Total         0.05084    1.00000     
-Constrained   0.01268    0.24932    3
-Unconstrained 0.03816    0.75068   20
+Total          0.0508     1.0000     
+Constrained    0.0127     0.2493    3
+Unconstrained  0.0382     0.7507   20
 Inertia is variance 
 
 Eigenvalues for constrained axes:
-    RDA1     RDA2     RDA3 
-0.006070 0.003607 0.002998 
+  RDA1   RDA2   RDA3 
+0.0061 0.0036 0.0030 
 
 Eigenvalues for unconstrained axes:
-     PC1      PC2      PC3      PC4      PC5      PC6      PC7      PC8 
-0.006435 0.004626 0.003763 0.003301 0.003204 0.002592 0.002003 0.001852 
+   PC1    PC2    PC3    PC4    PC5    PC6    PC7    PC8 
+0.0064 0.0046 0.0038 0.0033 0.0032 0.0026 0.0020 0.0018 
 (Showing 8 of 20 unconstrained eigenvalues)</code></pre>
 <p>Contrary to what one sometimes reads, variables with high VIFs should generally not be manually removed before the application of a procedure of selection of variables. Indeed, two highly correlated variables that are both strong predictors of one or several of the response variables Y may both contribute significantly, in complementary manners, to the linear model of these response variables. A variable selection procedure is the appropriate way of determining if that is the case.</p>
 <p>However, let’s see what happened with collinearity. VIFs can be computed in vegan after RDA or CCA. The algorithm in the <strong>vif.cca()</strong> function allows users to include factors in the RDA; the function will compute VIF after breaking down each factor into dummy variables. If X contains quantitative variables only, the vif.cca() function produces the same result as the normal calculation for quantitative variables.</p>
 <div class="sourceCode" id="cb64"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb64-1"><a href="multi.html#cb64-1" aria-hidden="true" tabindex="-1"></a><span class="fu">vif.cca</span>(mfull)</span></code></pre></div>
-<pre class="Rout"><code>        N         P         K        Ca        Mg         S        Al        Fe        Mn        Zn 
- 1.884049  6.184742 11.746873  9.825650  9.595203 18.460717 20.331905  8.849137  5.168278  7.755110 
-       Mo  Baresoil  Humdepth        pH 
- 4.575108  2.213443  5.638807  6.910118 </code></pre>
+<pre class="Rout"><code>       N        P        K       Ca       Mg        S       Al       Fe       Mn       Zn       Mo Baresoil 
+     1.9      6.2     11.7      9.8      9.6     18.5     20.3      8.8      5.2      7.8      4.6      2.2 
+Humdepth       pH 
+     5.6      6.9 </code></pre>
 <div class="sourceCode" id="cb66"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb66-1"><a href="multi.html#cb66-1" aria-hidden="true" tabindex="-1"></a><span class="fu">vif.cca</span>(optm)</span></code></pre></div>
-<pre class="Rout"><code>      Fe        P       Mn 
-1.259334 1.431022 1.738208 </code></pre>
+<pre class="Rout"><code> Fe   P  Mn 
+1.3 1.4 1.7 </code></pre>
 <p>Some VIF values are above 10 or even 20 in the full model, so that a reduction of the number of explanatory variables is justified. The VIF values in the reduced model are quite low.</p>
 <p>Finally, let’s examine the adjusted <span class="math inline">\(R^2\)</span> of the full and selected models.</p>
 <div class="sourceCode" id="cb68"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb68-1"><a href="multi.html#cb68-1" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(<span class="fu">RsquareAdj</span>(mfull)<span class="sc">$</span>adj.r.squared, <span class="dv">2</span>)</span></code></pre></div>
@@ -2086,7 +2088,7 @@ Figure 4.23: Triplot of an RDA ordination on the lichen data with species scalin
 <h2><span class="header-section-number">4.6</span> Answer Key</h2>
 <p><strong>Exercise 1.</strong> All we need to do is to take the square root of the sum of the squared differences to obtain the Euclidean distance as</p>
 <div class="sourceCode" id="cb75"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb75-1"><a href="multi.html#cb75-1" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(<span class="fu">sqrt</span>(eu[<span class="dv">11</span>, <span class="dv">4</span>]), <span class="dv">2</span>)</span></code></pre></div>
-<pre class="Rout"><code>[1] 61.6</code></pre>
+<pre class="Rout"><code>[1] 62</code></pre>
 <p><strong>Exercise 2.</strong> We use the <strong>kmeans()</strong> function with 4 clusters to find groups in the isotope data. We can then save the assigned clusters to our dataframe and plot in a similar way</p>
 <div class="sourceCode" id="cb77"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb77-1"><a href="multi.html#cb77-1" aria-hidden="true" tabindex="-1"></a><span class="co"># select 4 clusters and run the kmeans function</span></span>
 <span id="cb77-2"><a href="multi.html#cb77-2" aria-hidden="true" tabindex="-1"></a>kclust <span class="ot">=</span> <span class="fu">kmeans</span>(niso[, <span class="fu">c</span>(<span class="st">&quot;C&quot;</span>, <span class="st">&quot;N&quot;</span>)], <span class="dv">4</span>)</span>

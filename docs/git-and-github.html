@@ -136,11 +136,12 @@ code span.wa { font-style: italic; } /* Warning */
 <ul class="summary">
 <li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Welcome!</a>
 <ul>
-<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#open-science"><i class="fa fa-check"></i><b>1.1</b> Open Science</a></li>
-<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#feedback"><i class="fa fa-check"></i><b>1.2</b> Feedback</a></li>
-<li class="chapter" data-level="1.3" data-path="index.html"><a href="index.html#about-the-authors"><i class="fa fa-check"></i><b>1.3</b> About the authors</a></li>
-<li class="chapter" data-level="1.4" data-path="index.html"><a href="index.html#acknowledgments"><i class="fa fa-check"></i><b>1.4</b> Acknowledgments</a></li>
-<li class="chapter" data-level="1.5" data-path="index.html"><a href="index.html#citation"><i class="fa fa-check"></i><b>1.5</b> Citation</a></li>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#open-science"><i class="fa fa-check"></i><b>1.1</b> Open science</a></li>
+<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#accessibility-statement"><i class="fa fa-check"></i><b>1.2</b> Accessibility Statement</a></li>
+<li class="chapter" data-level="1.3" data-path="index.html"><a href="index.html#feedback"><i class="fa fa-check"></i><b>1.3</b> Feedback</a></li>
+<li class="chapter" data-level="1.4" data-path="index.html"><a href="index.html#about-the-authors"><i class="fa fa-check"></i><b>1.4</b> About the authors</a></li>
+<li class="chapter" data-level="1.5" data-path="index.html"><a href="index.html#acknowledgments"><i class="fa fa-check"></i><b>1.5</b> Acknowledgments</a></li>
+<li class="chapter" data-level="1.6" data-path="index.html"><a href="index.html#citation"><i class="fa fa-check"></i><b>1.6</b> Citation</a></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="git-and-github.html"><a href="git-and-github.html"><i class="fa fa-check"></i><b>2</b> Git and GitHub</a>
 <ul>
@@ -219,7 +220,8 @@ code span.wa { font-style: italic; } /* Warning */
 <li class="chapter" data-level="3.5" data-path="r-markdown.html"><a href="r-markdown.html#caching-advanced"><i class="fa fa-check"></i><b>3.5</b> Caching (advanced)</a></li>
 <li class="chapter" data-level="3.6" data-path="r-markdown.html"><a href="r-markdown.html#further-reading"><i class="fa fa-check"></i><b>3.6</b> Further reading</a></li>
 <li class="chapter" data-level="3.7" data-path="r-markdown.html"><a href="r-markdown.html#using-rstudio"><i class="fa fa-check"></i><b>3.7</b> Using RStudio</a></li>
-<li class="chapter" data-level="3.8" data-path="r-markdown.html"><a href="r-markdown.html#feedback-2"><i class="fa fa-check"></i><b>3.8</b> Feedback</a></li>
+<li class="chapter" data-level="3.8" data-path="r-markdown.html"><a href="r-markdown.html#using-emacs-for-r-and-everything-else"><i class="fa fa-check"></i><b>3.8</b> Using Emacs for R (and everything else)</a></li>
+<li class="chapter" data-level="3.9" data-path="r-markdown.html"><a href="r-markdown.html#feedback-2"><i class="fa fa-check"></i><b>3.9</b> Feedback</a></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="multi.html"><a href="multi.html"><i class="fa fa-check"></i><b>4</b> Multivariate analysis: Clustering and Ordination</a>
 <ul>
@@ -448,13 +450,18 @@ of us (two from each country) conduct an
 annual stock assessment for Pacific Hake (<em>Merluccius productus</em>) off the west
 coast of Canada and the US. The assessment is used to manage the stock, which is of important
 ecological and economic value ($100 million export value in Canada).</p>
-<p><img src="hake-picture.png" title="Artist rendition of a Pacific Hake." alt="Artist rendition of a Pacific Hake." style="display: block; margin: auto;" /></p>
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-1"></span>
+<img src="hake-picture.png" alt="Artist rendition of a Pacific Hake."  />
+<p class="caption">
+Figure 2.1: Artist rendition of a Pacific Hake
+</p>
+</div>
 <p>We fit complex population models to data to make projections about future
 health of the stock under different levels of catch. There is an extremely short
 turnaround (four to five weeks) between getting the final data, doing the analyses
 (model runs can take many hours of computer time), resolving new problems, and submitting the
 assessment document, which is typically &gt;200 pages and contains numerous figures
-and tables <a href="https://media.fisheries.noaa.gov/2021-03/hake-assessment-post-srg-final_20210303.pdf?null" target="_blank">(2021 assessment available
+and tables <a href="https://media.fisheries.noaa.gov/2022-02/2022-hake-assessment-post-srg.pdf" target="_blank">(2022 assessment available
 here)</a>.</p>
 <p>Prior to 2016, the document was assembled in Word, requiring lots of editing
 and amaglamating of files, often late at night. Now we share our code via
@@ -478,23 +485,43 @@ can <em>avoid</em> when using GitHub.</p>
 <li>Using GitHub it is easy to see what text/code collaborators have changed, avoiding
 things like the following example of Track Changes in Word, for which it hard to see where to get started:</li>
 </ol>
-<p><img src="interim.png" title="Example of Track Changes smorgasbord in Word." alt="Example of Track Changes smorgasbord in Word." width="80%" style="display: block; margin: auto;" /></p>
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-2"></span>
+<img src="interim.png" alt="Example screenshot of Track Changes in Word showing numerous crossings out and edits, which leave the reader where to start editing." width="80%" />
+<p class="caption">
+Figure 2.2: Example of numerous Track Changes in Word, leaving the reader unsure of how to proceed.
+</p>
+</div>
 <ol start="2" style="list-style-type: decimal">
 <li>Often we may want to keep old versions of files (and email them back and forth), but
 without GitHub we can end up with a veritable gong show, with multiple saved
 versions of the same file:</li>
 </ol>
-<p><img src="EAversions.png" title="Example of having multiple saved versions of a file." alt="Example of having multiple saved versions of a file." width="80%" style="display: block; margin: auto;" /></p>
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-3"></span>
+<img src="EAversions.png" alt="Screenshot of a directory containing multiple saved versions of a file, with names that include dates and initials, which can create confusion and edits getting missed." width="80%" />
+<p class="caption">
+Figure 2.3: Having multiple versions of the same file can easily lead to not all edits being considered.
+</p>
+</div>
 <ol start="3" style="list-style-type: decimal">
 <li>We can avoid having to manually co-ordinate having only one person working on the latest
 version of a document. So we don’t get things like this example, which tells me
 I shouldn’t really do anything now and should wait until others are done merging edits:</li>
 </ol>
-<p><img src="proposalEmail.png" title="Example of having to wait for colleagues to merge edits." alt="Example of having to wait for colleagues to merge edits." width="90%" style="display: block; margin: auto;" /></p>
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-4"></span>
+<img src="proposalEmail.png" alt="Example email exchange: I'm going to merge my draft bits to Carrie by 7:30pm, and she will merge my edits into hers. And then recirculate when she's ready." width="90%" />
+<p class="caption">
+Figure 2.4: Example of having to wait for colleagues to merge edits.
+</p>
+</div>
 <ol start="4" style="list-style-type: decimal">
 <li>We can avoid having multiple versions of a file that then have to be carefully merged:</li>
 </ol>
-<p><img src="dogsBreakfast.png" title="Example of having to manually manage multiple version of the same document." alt="Example of having to manually manage multiple version of the same document." width="90%" style="display: block; margin: auto;" /></p>
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-5"></span>
+<img src="dogsBreakfast.png" alt="Example email: Hi Andy, I'm not sure how Lesley is handling this. Paul and I had sent edits to her yesterday and I guess she will have to merge our edits with yours. I can just hear you saying something about GitHub..." width="90%" />
+<p class="caption">
+Figure 2.5: Example of having to manually manage multiple version of the same document.
+</p>
+</div>
 <p>While GoogleDocs, for example, is fine for collaborating on a short document, it
 isn’t suitable for sharing code that needs to be run on your local computer (or
 complex code containing files that refer to each other), or complex documents
@@ -530,24 +557,44 @@ thanks.”</p></li>
 <li><p>By having code shared publicly, it is easy to answer questions, such as
 this one I once received:</p></li>
 </ol>
-<p><img src="MEEcodeQuest.png" title="Question someone once had about some code." alt="Question someone once had about some code." width="90%" style="display: block; margin: auto;" /></p>
+<p><code>{r, echo = FALSE, fig.cap = "Part of an email someone once had about some code.", fig.alt = "Screenshot of part of an email from someone asking about some code I had written. They helpfully provided a directly link to the file on GitHub plus referred to explicit line numbers." out.width="90%", fig.align = "center"} knitr::include_graphics("MEEcodeQuest.png")</code></p>
 <p>Rather than go searching on my laptop for the code that I hadn’t looked at
 for six months, I could immediately open the file (on GitHub) by clicking on the
 link the questioner sent. I could answer very
 quickly, with a simple link to the file I am referring to (there is no ambiguity):</p>
-<p><img src="MEEcodeAnswer.png" title="Reply showing link to code on GitHub." alt="Reply showing link to code on GitHub." width="70%" style="display: block; margin: auto;" /></p>
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-6"></span>
+<img src="MEEcodeAnswer.png" alt="Screenshot of my reply, giving the GitHub link to another file containing the function definition that answered the question." width="70%" />
+<p class="caption">
+Figure 2.6: Reply showing link to code on GitHub.
+</p>
+</div>
 <ol start="3" style="list-style-type: decimal">
 <li>You can even work out who last edited a particular line of code/text (GitHub
 amusingly calls it ‘Blame’). Just open a file on GitHub and click Blame:</li>
 </ol>
-<p><img src="blame.png" title="Example of GitHub showing who wrote each last line of a file." alt="Example of GitHub showing who wrote each last line of a file." style="display: block; margin: auto;" /></p>
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-7"></span>
+<img src="blame.png" alt="Screenshot of GitHub blame page, identifying the last person who edited each line of code."  />
+<p class="caption">
+Figure 2.7: Example of GitHub showing who wrote each last line of a file.
+</p>
+</div>
 <p>Though you’ll often find that it was you all along:</p>
-<p><img src="scooby-blame.png" title="Very amusing cartoon based on the storyline in every Scooby Doo episode. " alt="Very amusing cartoon based on the storyline in every Scooby Doo episode. " style="display: block; margin: auto;" /></p>
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-8"></span>
+<img src="scooby-blame.png" alt="Cartoon showing that often you'll look up who wrote a piece of code and realise it was you all along; based on the popular Scooby Doo cartoon series."  />
+<p class="caption">
+Figure 2.8: Amusing cartoon based on the storyline in every Scooby Doo episode.
+</p>
+</div>
 <ol start="4" style="list-style-type: decimal">
 <li>You can properly keep track of ‘Issues’ on GitHub (discussed later) to be
 thought about or fixed, rather than having things in emails that get forgotten:</li>
 </ol>
-<p><img src="hakeIssues21.png" title="Example of GitHub Issues." alt="Example of GitHub Issues." style="display: block; margin: auto;" /></p>
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-9"></span>
+<img src="hakeIssues21.png" alt="Screenshot of example GitHub Issues; click on the Issues tab in any repository to see them."  />
+<p class="caption">
+Figure 2.9: Example of GitHub Issues.
+</p>
+</div>
 <ol start="5" style="list-style-type: decimal">
 <li><strong>Important:</strong> You still have all your work locally on your computer. So if
 your internet access goes down or GitHub is unavailable (which of course will only happen
@@ -777,7 +824,12 @@ clicking on folders or going back in File Explorer (Windows) or Finder
 following screenshot, for which I opened up my Git
 shell in Windows and did the above commands,
 moving into the <code>test</code> directory, seeing what’s there, and then moving back up:</p>
-<p><img src="shell-commands.png" title="Screenshot of basic shell commands." alt="Screenshot of basic shell commands." style="display: block; margin: auto;" /></p>
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-10"></span>
+<img src="shell-commands.png" alt="Screenshot of showing that dir command lists the directory contents, and cd.. moves back up."  />
+<p class="caption">
+Figure 2.10: Screenshot of basic shell commands.
+</p>
+</div>
 <p>You will create such a <code>test</code> directory during Video 2.</p>
 </div>
 <div id="one-time-authentication" class="section level3" number="2.4.12">
@@ -963,7 +1015,12 @@ this case).</p>
 <p>If you got Diffmerge installed okay, then instead of <code>git diff</code> you can do <code>git difftool</code>. This opens up, in turn, each file that changed since your last commit
 and shows you the differences. On the right is the new text (actually the code
 for this paragraph):</p>
-<p><img src="git-difftool.png" title="Screenshot of using git difftool." alt="Screenshot of using git difftool." style="display: block; margin: auto;" /></p>
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-11"></span>
+<img src="git-difftool.png" alt="Screenshot showing changed text on the right-hand side."  />
+<p class="caption">
+Figure 2.11: Screenshot of using git difftool.
+</p>
+</div>
 <p>This is useful for changes that are more complex
 than can be easily see in the quick <code>git d</code>.</p>
 </div>
@@ -1132,7 +1189,12 @@ like spoilers!):</p>
 there are recent commits on GitHub (by Person B) that Person A has not yet
 merged into their local version of the repository.</p>
 <p>Here is an example of the error message you get:</p>
-<p><img src="unable-to-pull.png" title="Example of a lengthy error message when trying to push; essentially its just telling you to pull before trying to push." alt="Example of a lengthy error message when trying to push; essentially its just telling you to pull before trying to push." style="display: block; margin: auto;" /></p>
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-12"></span>
+<img src="unable-to-pull.png" alt="Screenshot of an error message when trying to push, saying that the problem is usually due to someone else having pushed commits that you have not yet fetched, and that you should next fetch those commits."  />
+<p class="caption">
+Figure 2.12: Example of a lengthy error message when trying to push; essentially it’s just telling you to fetch before trying to push.
+</p>
+</div>
 <p>While a bit lengthy, the error message is useful. It forces you to get the other
 person’s work before you push yours. You do this by:</p>
 <p><code>git f</code>
@@ -1146,7 +1208,7 @@ skim the white output text to check that Git did not give an error. The yellow
 arrows I think
 of as just implying I need to do a rebase (before doing that I would usually browse
 through the other person’s commits on GitHub to check what they did):</p>
-<p><img src="fix-the-pull.png" title="Example of output when having 8 commits to push but then having to fetch and then rebase." alt="Example of output when having 8 commits to push but then having to fetch and then rebase." style="display: block; margin: auto;" /></p>
+<p><code>{r, echo = FALSE, fig.cap = "Example of output when having 8 commits to push but then having to fetch and then rebase.", fig.alt = "Screenshot showing yellow  text with up and down arrows, which I think of as meaning I have fetched commits and just need to rebase.", width="100%", fig.align = "center"} knitr::include_graphics("fix-the-pull.png")</code></p>
 <p>After the <code>rebase</code> I was allowed to <code>push</code> and then everything is up to date.</p>
 </div>
 <div id="a-bit-more-about-git-rebase" class="section level3" number="2.6.2">
@@ -1288,7 +1350,12 @@ GitHub click <b><span style="color: #C502AB;">Blame</span></b>, as mentioned ear
 <p><strong>GitHub Issues</strong></p>
 <p>GitHub <em>Issues</em> are very useful for discussing issues with your repo. For our
 annual Pacific Hake assessment we have used them extensively over the years:</p>
-<p><img src="hakeIssues21.png" title="Example screenshot of GitHub Issues, click on Issues in any repository in GitHub to see more." alt="Example screenshot of GitHub Issues, click on Issues in any repository in GitHub to see more." style="display: block; margin: auto;" /></p>
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-13"></span>
+<img src="hakeIssues21.png" alt="Screenshot of example GitHub Issues; click on the Issues tab in any repository to see them."  />
+<p class="caption">
+Figure 2.13: Example of GitHub Issues.
+</p>
+</div>
 <p>The Issues tab lists our current ‘Open’ issues – we have 20, of which five (the
 most recently posted) are
 shown here. We are currently in-between assessments (and not working on it), so
@@ -1359,7 +1426,7 @@ see the ‘Undoing changes not yet committed’ section near the end of this mod
 </div>
 <div id="the-power-to-go-back" class="section level3" number="2.8.2">
 <h3><span class="header-section-number">2.8.2</span> The power to go back</h3>
-<p>With Git you can revert back to any previous state of your repository.
+<p>With Git you can go back to any previous state of your repository.
 This is <b><span style="color: #C502AB;">very powerful</span></b>, though slightly
 <b><span style="color: #C502AB;">scary</span></b> at first.</p>
 <p>Do this with your test repository, that should have some files in it from the
@@ -1386,15 +1453,20 @@ have saved backup versions; manually delete them plus the
 <li><code>git checkout main</code> (it used to be <code>git checkout master</code>, the names have recently changed).</li>
 </ul>
 <p>That’s it! Check that your files are back. All this means that you can
-<b><span style="color: #C502AB;">revert to any previous commit in your repository</span></b>.</p>
+<b><span style="color: #C502AB;">go back to any previous commit in your repository</span></b>.</p>
 <p>This is very reassuring. For example you have some complex code that you realise
 is now a complete mess and you want to go back to yesterday’s version of everything.</p>
 <p>In practice you rarely actually do this, but it’s very comforting to know
 that you can.</p>
 <p>Consequently, your workflow is less cluttered and more tractable than having
 to save multiple versions of the same files with dates in the filename, such
-as this nightmare:</p>
-<p><img src="EAversions.png" title="Example showing multiple saved versions of the same file, to show what you can avoid by using Git." alt="Example showing multiple saved versions of the same file, to show what you can avoid by using Git." style="display: block; margin: auto;" /></p>
+as this nightmare shown earlier:</p>
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-14"></span>
+<img src="EAversions.png" alt="Screenshot of a directory containing multiple saved versions of a file, with names that include dates and initials, which can create confusion and edits getting missed." width="80%" />
+<p class="caption">
+Figure 2.14: Having multiple versions of the same file can be confusing and easily lead to not all edits being considered.
+</p>
+</div>
 <p><strong>Retrieving older work in practice</strong></p>
 <p>I think there are fancy ways that Git can replace a current file with a version
 from an earlier commit. But, in practice (especially since you rarely want to do
@@ -1468,7 +1540,12 @@ if not using Git), but just not the full repository history.</li>
 <li>However, when I tried to later do some work and then <code>commit</code> I got lots of
 ‘fatal’ errors with scary messages like <code>bad object HEAD</code> and the awesomely titled <code>You are on a branch yet to be born</code>:</li>
 </ul>
-<p><img src="notGood.png" title="Example of why you shouldn't mess with the .git directory, as you get confusing error messages and have to start again." alt="Example of why you shouldn't mess with the .git directory, as you get confusing error messages and have to start again." style="display: block; margin: auto;" /></p>
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-15"></span>
+<img src="notGood.png" alt="Screenshot of error messages you can get if you mess with the .git directory, as just described."  />
+<p class="caption">
+Figure 2.15: Example of why you shouldn’t mess with the .git directory, as you get scary error messages and have to start again.
+</p>
+</div>
 <p>I just had to start again from scratch (<code>clone</code> again I think). Take-home message:</p>
 <p><strong>Don’t mess with the .git directory!!</strong></p>
 </div>
@@ -1624,15 +1701,30 @@ may want to use RStudio to use Git. Having already learnt the basic Git commands
 shell should help you.</p>
 <p>One way of using Git in RStudio is just to use the commands we have learnt
 within the ‘Terminal’:</p>
-<p><img src="Rstudio-terminal.png" title="Example screenshot of using Git in the RStudio terminal." alt="Example screenshot of using Git in the RStudio terminal." style="display: block; margin: auto;" /></p>
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-17"></span>
+<img src="Rstudio-terminal.png" alt="Screenshot showing you can just type the Git commands in the Terminal of RStudio."  />
+<p class="caption">
+Figure 2.16: Example screenshot of using Git in the RStudio terminal.
+</p>
+</div>
 <p>Alternatively, the RStudio interface has buttons with words that you are now familiar with, such as
 ‘Diff’ and ‘Commit’:</p>
-<p><img src="Rstudio-git.png" title="Screenshot of the Git buttons in RStudio." alt="Screenshot of the Git buttons in RStudio." style="display: block; margin: auto;" />
-The blue arrow has options for fetching from GitHub, while the green arrow
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-18"></span>
+<img src="Rstudio-git.png" alt="Screenshot of the Git RStudio interface."  />
+<p class="caption">
+Figure 2.17: Screenshot of the Git buttons in RStudio.
+</p>
+</div>
+<p>The blue arrow has options for fetching from GitHub, while the green arrow
 is for pushing to GitHub.</p>
 <p>When you commit, instead of including the message in the Git
 command like we did, with <code>git com "&lt;Message&gt;"</code>, RStudio opens a window:</p>
-<p><img src="Rstudio-commit-message.png" title="Screenshot of the Git commit message window in RStudio." alt="Screenshot of the Git commit message window in RStudio." style="display: block; margin: auto;" /></p>
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-19"></span>
+<img src="Rstudio-commit-message.png" alt="Screenshot of the window that pops open to write a commit message in RStudio."  />
+<p class="caption">
+Figure 2.18: Screenshot of the Git commit message window in RStudio.
+</p>
+</div>
 <p>As you can see, having learnt what these various Git commands mean, it may be fairly
 intuitive how to proceed.</p>
 <p>To delve further, Jenny Bryan’s <a href="https://happygitwithr.com/index.html" target="_blank">Happy Git and GitHub for the
