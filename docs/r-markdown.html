@@ -450,7 +450,7 @@ the value of <code>n</code> (because of the final line of the code).</p>
 <p>We have a sample size of 50.</p>
 <p>This is done (as mentioned above) by the code:</p>
 <p>Note that you need the space straight after the <code>r</code>.</p>
-<p>We can also automatically say that the maximum value of the data is 506.56, or round it to a
+<p>We can also automatically say that the maximum value of the data is 506.5564788, or round it to a
 whole number: the maximum value of the data is 507. These were done by:</p>
 <p><strong>Show some of the data</strong></p>
 <p>Let’s combine the data in a tibble (think of it as a data frame if you don’t
@@ -491,7 +491,7 @@ y
 1
 </td>
 <td style="text-align:right;">
-24
+23.70958
 </td>
 </tr>
 <tr>
@@ -499,7 +499,7 @@ y
 2
 </td>
 <td style="text-align:right;">
-14
+14.35302
 </td>
 </tr>
 <tr>
@@ -507,7 +507,7 @@ y
 3
 </td>
 <td style="text-align:right;">
-34
+33.63128
 </td>
 </tr>
 <tr>
@@ -515,7 +515,7 @@ y
 4
 </td>
 <td style="text-align:right;">
-46
+46.32863
 </td>
 </tr>
 <tr>
@@ -523,7 +523,7 @@ y
 5
 </td>
 <td style="text-align:right;">
-54
+54.04268
 </td>
 </tr>
 <tr>
@@ -531,7 +531,7 @@ y
 6
 </td>
 <td style="text-align:right;">
-59
+58.93875
 </td>
 </tr>
 <tr>
@@ -539,7 +539,7 @@ y
 7
 </td>
 <td style="text-align:right;">
-85
+85.11522
 </td>
 </tr>
 <tr>
@@ -547,7 +547,7 @@ y
 8
 </td>
 <td style="text-align:right;">
-79
+79.05341
 </td>
 </tr>
 <tr>
@@ -555,7 +555,7 @@ y
 9
 </td>
 <td style="text-align:right;">
-110
+110.18424
 </td>
 </tr>
 <tr>
@@ -563,7 +563,7 @@ y
 10
 </td>
 <td style="text-align:right;">
-99
+99.37286
 </td>
 </tr>
 </tbody>
@@ -580,19 +580,19 @@ Call:
 lm(formula = y ~ x)
 
 Residuals:
-   Min     1Q Median     3Q    Max 
--27.40  -4.37  -1.19   8.32  21.07 
+    Min      1Q  Median      3Q     Max 
+-27.403  -4.366  -1.193   8.319  21.072 
 
 Coefficients:
             Estimate Std. Error t value Pr(&gt;|t|)    
-(Intercept)    3.707      3.272    1.13     0.26    
-x              9.841      0.112   88.12   &lt;2e-16 ***
+(Intercept)   3.7071     3.2719   1.133    0.263    
+x             9.8406     0.1117  88.124   &lt;2e-16 ***
 ---
 Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
 
-Residual standard error: 11 on 48 degrees of freedom
-Multiple R-squared:  0.994, Adjusted R-squared:  0.994 
-F-statistic: 7.77e+03 on 1 and 48 DF,  p-value: &lt;2e-16</code></pre>
+Residual standard error: 11.39 on 48 degrees of freedom
+Multiple R-squared:  0.9939,    Adjusted R-squared:  0.9937 
+F-statistic:  7766 on 1 and 48 DF,  p-value: &lt; 2.2e-16</code></pre>
 <p>And for a report we can produce a simple table (including a caption) of output and the regression fit:</p>
 <table>
 <caption>
@@ -622,16 +622,16 @@ Pr(&gt;|t|)
 (Intercept)
 </td>
 <td style="text-align:right;">
-3.7
+3.707115
 </td>
 <td style="text-align:right;">
-3.27
+3.2719100
 </td>
 <td style="text-align:right;">
-1.1
+1.133012
 </td>
 <td style="text-align:right;">
-0.26
+0.2628368
 </td>
 </tr>
 <tr>
@@ -639,16 +639,16 @@ Pr(&gt;|t|)
 x
 </td>
 <td style="text-align:right;">
-9.8
+9.840634
 </td>
 <td style="text-align:right;">
-0.11
+0.1116686
 </td>
 <td style="text-align:right;">
-88.1
+88.123530
 </td>
 <td style="text-align:right;">
-0.00
+0.0000000
 </td>
 </tr>
 </tbody>
