@@ -68,10 +68,12 @@ font-size: 150% !important;
 
 .Rout {
   font-size: 120% ;
-  background-color: #fff6e6 !important;
+background-color: #fff6e6 !important; 
  /* #d9edf7*/
-  
   color: black !important;
+  border: 1px solid #ddd;!important;
+  border-color: #000;!important;
+
 }
 
 a[target="_blank"]:after {

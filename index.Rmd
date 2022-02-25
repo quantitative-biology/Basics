@@ -87,7 +87,7 @@ openly in R Markdown, with files shared via GitHub [here](https://github.com/qua
 
 ## Accessibility Statement
 
-We developed **Building Skills in Quantitative Biology** with a commitment to accessibility and usability for all learners.  
+We developed *Building Skills in Quantitative Biology* with a commitment to accessibility and usability for all learners.  
 
 The accessibility of these materials was assessed by the Centre for Extended Learning, University of Waterloo.  This review was based on the WCAG 2.0 Guidelines at success criteria Level AA. The authors have addressed all known accessibility issues to the best of their abilities.
 
@@ -160,6 +160,11 @@ Burbank, Nicole Gauvreau and Aranksha Dilip Thakor provided valuable feedback.
 The Git and GitHub module builds upon workshop materials that were originally
 developed with Chris Grandin (DFO), who AME also thanks for assistance with the
 module.
+
+## Funding
+This project is made possible with funding by the Government of Ontario and through
+eCampusOntario’s support of the Virtual Learning Strategy. To learn more about the Virtual
+Learning Strategy visit: https://vls.ecampusontario.ca.
 
 ## Citation
 

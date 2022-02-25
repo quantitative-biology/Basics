@@ -102,6 +102,7 @@ fig:plot-wireframe-ex5-function
 fig:exercise-1-dataset
 fig:exercise-1-nls-exp-soln
 fig:exercise-1-nls-biexp-soln
+fig:exercise-1-grad-descent-exp-soln
 fig:exercise-1-grad-descent-biexp-soln
 fig:ex2-results
 fig:ex4-plot-rejection-histograms-1
@@ -114,6 +115,7 @@ accessibility-statement
 feedback
 about-the-authors
 acknowledgments
+funding
 citation
 git-and-github
 what-are-git-and-github-and-how-might-they-be-useful

@@ -141,7 +141,8 @@ code span.wa { font-style: italic; } /* Warning */
 <li class="chapter" data-level="1.3" data-path="index.html"><a href="index.html#feedback"><i class="fa fa-check"></i><b>1.3</b> Feedback</a></li>
 <li class="chapter" data-level="1.4" data-path="index.html"><a href="index.html#about-the-authors"><i class="fa fa-check"></i><b>1.4</b> About the authors</a></li>
 <li class="chapter" data-level="1.5" data-path="index.html"><a href="index.html#acknowledgments"><i class="fa fa-check"></i><b>1.5</b> Acknowledgments</a></li>
-<li class="chapter" data-level="1.6" data-path="index.html"><a href="index.html#citation"><i class="fa fa-check"></i><b>1.6</b> Citation</a></li>
+<li class="chapter" data-level="1.6" data-path="index.html"><a href="index.html#funding"><i class="fa fa-check"></i><b>1.6</b> Funding</a></li>
+<li class="chapter" data-level="1.7" data-path="index.html"><a href="index.html#citation"><i class="fa fa-check"></i><b>1.7</b> Citation</a></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="git-and-github.html"><a href="git-and-github.html"><i class="fa fa-check"></i><b>2</b> Git and GitHub</a>
 <ul>
@@ -433,10 +434,10 @@ Pr(&gt;|z|)
 -8.87
 </td>
 <td style="text-align:right;">
-1.4
+1.38
 </td>
 <td style="text-align:right;">
--6.4
+-6.41
 </td>
 <td style="text-align:right;">
 0
@@ -450,10 +451,10 @@ x
 0.62
 </td>
 <td style="text-align:right;">
-0.1
+0.10
 </td>
 <td style="text-align:right;">
-6.0
+5.97
 </td>
 <td style="text-align:right;">
 0
@@ -642,13 +643,13 @@ Call:
 NULL
 
 Deviance Residuals: 
-   Min      1Q  Median      3Q     Max  
--1.859  -0.656  -0.452  -0.198   1.823  
+    Min       1Q   Median       3Q      Max  
+-1.8592  -0.6557  -0.4518  -0.1982   1.8227  
 
 Coefficients:
             Estimate Std. Error z value Pr(&gt;|z|)    
-(Intercept)  -6.5670     1.3031   -5.04  4.7e-07 ***
-temp          0.4205     0.0978    4.30  1.7e-05 ***
+(Intercept) -6.56702    1.30310  -5.040 4.67e-07 ***
+temp         0.42048    0.09782   4.298 1.72e-05 ***
 ---
 Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
 
@@ -656,7 +657,7 @@ Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&
 
     Null deviance: 158.07  on 149  degrees of freedom
 Residual deviance: 134.21  on 148  degrees of freedom
-AIC: 138.2
+AIC: 138.21
 
 Number of Fisher Scoring iterations: 5</code></pre>
 <div class="sourceCode" id="cb97"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb97-1"><a href="machine-learning-and-classification.html#cb97-1" aria-hidden="true" tabindex="-1"></a>habprob <span class="ot">&lt;-</span> hab<span class="sc">$</span>finalModel<span class="sc">$</span>fitted.values</span>
@@ -674,27 +675,27 @@ Number of Fisher Scoring iterations: 5</code></pre>
 Prediction   0   1
          0 109  28
          1   8   5
-                                        
-               Accuracy : 0.76          
-                 95% CI : (0.684, 0.826)
-    No Information Rate : 0.78          
-    P-Value [Acc &gt; NIR] : 0.75785       
-                                        
-                  Kappa : 0.106         
-                                        
- Mcnemar&#39;s Test P-Value : 0.00154       
-                                        
-            Sensitivity : 0.932         
-            Specificity : 0.152         
-         Pos Pred Value : 0.796         
-         Neg Pred Value : 0.385         
-             Prevalence : 0.780         
-         Detection Rate : 0.727         
-   Detection Prevalence : 0.913         
-      Balanced Accuracy : 0.542         
-                                        
-       &#39;Positive&#39; Class : 0             
-                                        </code></pre>
+                                          
+               Accuracy : 0.76            
+                 95% CI : (0.6835, 0.8259)
+    No Information Rate : 0.78            
+    P-Value [Acc &gt; NIR] : 0.757854        
+                                          
+                  Kappa : 0.1063          
+                                          
+ Mcnemar&#39;s Test P-Value : 0.001542        
+                                          
+            Sensitivity : 0.9316          
+            Specificity : 0.1515          
+         Pos Pred Value : 0.7956          
+         Neg Pred Value : 0.3846          
+             Prevalence : 0.7800          
+         Detection Rate : 0.7267          
+   Detection Prevalence : 0.9133          
+      Balanced Accuracy : 0.5416          
+                                          
+       &#39;Positive&#39; Class : 0               
+                                          </code></pre>
 <p>Perhaps the most informative of these stats is the <em>No Information Rate</em> which tests whether our classifier does better than random assignment. We see that our accuracy rate is significantly greater than this no information rate, and so, this should be an okay classifier. Also, the <em>Balanced Accuracy Statistic</em> gives an accuracy value that weights both majority and minority classes evenly, and is useful if you have unbalanced class membership in your data. In our case, the accuracy and balanced accuracy rates are a bit different, so we may want to investigate further (see <a href="machine-learning-and-classification.html#unbal">Unbalanced classes</a>).</p>
 </div>
 <div id="multiple-logistic-regression" class="section level3" number="5.2.2">
@@ -738,7 +739,7 @@ Pr(&gt;|z|)
 1.52
 </td>
 <td style="text-align:right;">
--6.4
+-6.39
 </td>
 <td style="text-align:right;">
 0
@@ -755,7 +756,7 @@ x
 0.11
 </td>
 <td style="text-align:right;">
-5.9
+5.87
 </td>
 <td style="text-align:right;">
 0
@@ -772,7 +773,7 @@ as.factor(x2)urban
 0.42
 </td>
 <td style="text-align:right;">
-3.3
+3.30
 </td>
 <td style="text-align:right;">
 0
@@ -822,16 +823,16 @@ Prior probabilities of groups:
 
 Group means:
            Sepal.Length Sepal.Width Petal.Length Petal.Width
-setosa              5.0         3.4          1.5        0.23
-versicolor          5.8         2.8          4.1        1.29
-virginica           6.6         3.0          5.6        2.07
+setosa         4.951852    3.385185     1.462963   0.2259259
+versicolor     5.766667    2.762500     4.133333   1.2875000
+virginica      6.629167    3.050000     5.616667   2.0666667
 
 Coefficients of linear discriminants:
-                LD1   LD2
-Sepal.Length -0.033 -0.29
-Sepal.Width   2.777 -2.64
-Petal.Length -2.117  1.09
-Petal.Width  -3.487 -2.90
+                     LD1        LD2
+Sepal.Length -0.03310001 -0.2888114
+Sepal.Width   2.77688758 -2.6437916
+Petal.Length -2.11727618  1.0919196
+Petal.Width  -3.48689106 -2.8981641
 
 Proportion of trace:
  LD1  LD2 
@@ -850,27 +851,27 @@ Prediction   setosa versicolor virginica
   virginica       0          0        26
 
 Overall Statistics
-                                        
-               Accuracy : 0.96          
-                 95% CI : (0.888, 0.992)
-    No Information Rate : 0.387         
-    P-Value [Acc &gt; NIR] : &lt;2e-16        
-                                        
-                  Kappa : 0.94          
-                                        
- Mcnemar&#39;s Test P-Value : NA            
+                                          
+               Accuracy : 0.96            
+                 95% CI : (0.8875, 0.9917)
+    No Information Rate : 0.3867          
+    P-Value [Acc &gt; NIR] : &lt; 2.2e-16       
+                                          
+                  Kappa : 0.9399          
+                                          
+ Mcnemar&#39;s Test P-Value : NA              
 
 Statistics by Class:
 
                      Class: setosa Class: versicolor Class: virginica
-Sensitivity                  1.000             1.000            0.897
-Specificity                  1.000             0.942            1.000
-Pos Pred Value               1.000             0.885            1.000
-Neg Pred Value               1.000             1.000            0.939
-Prevalence                   0.307             0.307            0.387
-Detection Rate               0.307             0.307            0.347
-Detection Prevalence         0.307             0.347            0.347
-Balanced Accuracy            1.000             0.971            0.948</code></pre>
+Sensitivity                 1.0000            1.0000           0.8966
+Specificity                 1.0000            0.9423           1.0000
+Pos Pred Value              1.0000            0.8846           1.0000
+Neg Pred Value              1.0000            1.0000           0.9388
+Prevalence                  0.3067            0.3067           0.3867
+Detection Rate              0.3067            0.3067           0.3467
+Detection Prevalence        0.3067            0.3467           0.3467
+Balanced Accuracy           1.0000            0.9712           0.9483</code></pre>
 <p>We have very good accuracy. We can also visualize our prediction accuracy using a regular plot() function.</p>
 <div class="sourceCode" id="cb104"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb104-1"><a href="machine-learning-and-classification.html#cb104-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(plda<span class="sc">$</span>x, <span class="at">col =</span> <span class="fu">as.numeric</span>(plda<span class="sc">$</span>class) <span class="sc">+</span> <span class="dv">1</span>, <span class="at">pch =</span> <span class="fu">as.numeric</span>(plda<span class="sc">$</span>class) <span class="sc">+</span></span>
 <span id="cb104-2"><a href="machine-learning-and-classification.html#cb104-2" aria-hidden="true" tabindex="-1"></a>    <span class="dv">14</span>, <span class="at">ylim =</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">4</span>, <span class="dv">4</span>))</span>
@@ -950,27 +951,27 @@ Prediction   setosa versicolor virginica
   virginica       0          1        14
 
 Overall Statistics
-                                        
-               Accuracy : 0.956         
-                 95% CI : (0.849, 0.995)
-    No Information Rate : 0.356         
-    P-Value [Acc &gt; NIR] : &lt;2e-16        
-                                        
-                  Kappa : 0.933         
-                                        
- Mcnemar&#39;s Test P-Value : NA            
+                                          
+               Accuracy : 0.9556          
+                 95% CI : (0.8485, 0.9946)
+    No Information Rate : 0.3556          
+    P-Value [Acc &gt; NIR] : &lt; 2.2e-16       
+                                          
+                  Kappa : 0.9332          
+                                          
+ Mcnemar&#39;s Test P-Value : NA              
 
 Statistics by Class:
 
                      Class: setosa Class: versicolor Class: virginica
-Sensitivity                  1.000             0.929            0.933
-Specificity                  1.000             0.968            0.967
-Pos Pred Value               1.000             0.929            0.933
-Neg Pred Value               1.000             0.968            0.967
-Prevalence                   0.356             0.311            0.333
-Detection Rate               0.356             0.289            0.311
-Detection Prevalence         0.356             0.311            0.333
-Balanced Accuracy            1.000             0.948            0.950</code></pre>
+Sensitivity                 1.0000            0.9286           0.9333
+Specificity                 1.0000            0.9677           0.9667
+Pos Pred Value              1.0000            0.9286           0.9333
+Neg Pred Value              1.0000            0.9677           0.9667
+Prevalence                  0.3556            0.3111           0.3333
+Detection Rate              0.3556            0.2889           0.3111
+Detection Prevalence        0.3556            0.3111           0.3333
+Balanced Accuracy           1.0000            0.9482           0.9500</code></pre>
 <p>Our accuracy is pretty good for all species, and significantly greater than the no information rate.</p>
 <div id="tree-pruning" class="section level4" number="5.4.1.1">
 <h4><span class="header-section-number">5.4.1.1</span> Tree pruning</h4>
@@ -1017,7 +1018,7 @@ Call:
                      Number of trees: 300
 No. of variables tried at each split: 2
 
-        OOB estimate of  error rate: 4.7%
+        OOB estimate of  error rate: 4.67%
 Confusion matrix:
            setosa versicolor virginica class.error
 setosa         50          0         0        0.00
@@ -1296,10 +1297,10 @@ Resampling: Cross-Validated (5 fold)
 Summary of sample sizes: 161, 159, 161, 160, 159 
 Resampling results across tuning parameters:
 
-  mtry  Accuracy  Kappa
-  2     0.71      0.31 
-  4     0.70      0.31 
-  7     0.71      0.33 
+  mtry  Accuracy   Kappa    
+  2     0.7093621  0.3148905
+  4     0.6997405  0.3057397
+  7     0.7094903  0.3271013
 
 Accuracy was used to select the optimal model using the largest value.
 The final value used for the model was mtry = 7.</code></pre>
@@ -1311,11 +1312,11 @@ Call:
                      Number of trees: 500
 No. of variables tried at each split: 7
 
-        OOB estimate of  error rate: 28%
+        OOB estimate of  error rate: 28.5%
 Confusion matrix:
      No Yes class.error
-No  107  25        0.19
-Yes  32  36        0.47</code></pre>
+No  107  25   0.1893939
+Yes  32  36   0.4705882</code></pre>
 <div class="sourceCode" id="cb131"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb131-1"><a href="machine-learning-and-classification.html#cb131-1" aria-hidden="true" tabindex="-1"></a>rf_Pima_pred <span class="ot">=</span> <span class="fu">predict</span>(rf_Pima, Pima.te)</span>
 <span id="cb131-2"><a href="machine-learning-and-classification.html#cb131-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb131-3"><a href="machine-learning-and-classification.html#cb131-3" aria-hidden="true" tabindex="-1"></a><span class="fu">confusionMatrix</span>(rf_Pima_pred, Pima.te<span class="sc">$</span>type)</span></code></pre></div>
@@ -1325,27 +1326,27 @@ Yes  32  36        0.47</code></pre>
 Prediction  No Yes
        No  185  43
        Yes  38  66
-                                        
-               Accuracy : 0.756         
-                 95% CI : (0.706, 0.801)
-    No Information Rate : 0.672         
-    P-Value [Acc &gt; NIR] : 0.000503      
-                                        
-                  Kappa : 0.44          
-                                        
- Mcnemar&#39;s Test P-Value : 0.656721      
-                                        
-            Sensitivity : 0.830         
-            Specificity : 0.606         
-         Pos Pred Value : 0.811         
-         Neg Pred Value : 0.635         
-             Prevalence : 0.672         
-         Detection Rate : 0.557         
-   Detection Prevalence : 0.687         
-      Balanced Accuracy : 0.718         
-                                        
-       &#39;Positive&#39; Class : No            
-                                        </code></pre>
+                                          
+               Accuracy : 0.756           
+                 95% CI : (0.7062, 0.8013)
+    No Information Rate : 0.6717          
+    P-Value [Acc &gt; NIR] : 0.0005027       
+                                          
+                  Kappa : 0.4403          
+                                          
+ Mcnemar&#39;s Test P-Value : 0.6567213       
+                                          
+            Sensitivity : 0.8296          
+            Specificity : 0.6055          
+         Pos Pred Value : 0.8114          
+         Neg Pred Value : 0.6346          
+             Prevalence : 0.6717          
+         Detection Rate : 0.5572          
+   Detection Prevalence : 0.6867          
+      Balanced Accuracy : 0.7176          
+                                          
+       &#39;Positive&#39; Class : No              
+                                          </code></pre>
 <div class="sourceCode" id="cb133"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb133-1"><a href="machine-learning-and-classification.html#cb133-1" aria-hidden="true" tabindex="-1"></a><span class="fu">varImpPlot</span>(rf_Pima<span class="sc">$</span>finalModel, <span class="at">main =</span> <span class="st">&quot;final random forest model from caret&quot;</span>,</span>
 <span id="cb133-2"><a href="machine-learning-and-classification.html#cb133-2" aria-hidden="true" tabindex="-1"></a>    <span class="at">cex =</span> <span class="fl">1.2</span>, <span class="at">pch =</span> <span class="dv">16</span>)</span></code></pre></div>
 <div class="figure"><span id="fig:e4"></span>
