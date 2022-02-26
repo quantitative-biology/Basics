@@ -143,6 +143,7 @@ code span.wa { font-style: italic; } /* Warning */
 <li class="chapter" data-level="1.5" data-path="index.html"><a href="index.html#acknowledgments"><i class="fa fa-check"></i><b>1.5</b> Acknowledgments</a></li>
 <li class="chapter" data-level="1.6" data-path="index.html"><a href="index.html#funding"><i class="fa fa-check"></i><b>1.6</b> Funding</a></li>
 <li class="chapter" data-level="1.7" data-path="index.html"><a href="index.html#citation"><i class="fa fa-check"></i><b>1.7</b> Citation</a></li>
+<li class="chapter" data-level="1.8" data-path="index.html"><a href="index.html#license"><i class="fa fa-check"></i><b>1.8</b> License</a></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="git-and-github.html"><a href="git-and-github.html"><i class="fa fa-check"></i><b>2</b> Git and GitHub</a>
 <ul>
@@ -1877,8 +1878,9 @@ Figure 4.20: Pairwise correlations between environmental variables in the varech
 <span id="cb53-2"><a href="multi.html#cb53-2" aria-hidden="true" tabindex="-1"></a>scvarechem <span class="ot">=</span> <span class="fu">as.data.frame</span>(<span class="fu">scale</span>(varechem))</span>
 <span id="cb53-3"><a href="multi.html#cb53-3" aria-hidden="true" tabindex="-1"></a>constr <span class="ot">&lt;-</span> vegan<span class="sc">::</span><span class="fu">rda</span>(stvarespec <span class="sc">~</span> ., <span class="at">data =</span> scvarechem)</span>
 <span id="cb53-4"><a href="multi.html#cb53-4" aria-hidden="true" tabindex="-1"></a>constr</span></code></pre></div>
-<pre class="Rout"><code>Call: rda(formula = stvarespec ~ N + P + K + Ca + Mg + S + Al + Fe + Mn + Zn + Mo + Baresoil + Humdepth +
-pH, data = scvarechem)
+<pre class="Rout"><code>Call: rda(formula = stvarespec ~ N + P + K + Ca + Mg + S + Al
++ Fe + Mn + Zn + Mo + Baresoil + Humdepth + pH, data =
+scvarechem)
 
               Inertia Proportion Rank
 Total         0.05084    1.00000     
@@ -1887,19 +1889,22 @@ Unconstrained 0.01471    0.28943    9
 Inertia is variance 
 
 Eigenvalues for constrained axes:
-    RDA1     RDA2     RDA3     RDA4     RDA5     RDA6     RDA7     RDA8     RDA9    RDA10    RDA11    RDA12    RDA13 
-0.008120 0.005642 0.004808 0.003525 0.002956 0.002592 0.001953 0.001665 0.001265 0.001129 0.000964 0.000627 0.000507 
-   RDA14 
-0.000373 
+    RDA1     RDA2     RDA3     RDA4     RDA5     RDA6     RDA7 
+0.008120 0.005642 0.004808 0.003525 0.002956 0.002592 0.001953 
+    RDA8     RDA9    RDA10    RDA11    RDA12    RDA13    RDA14 
+0.001665 0.001265 0.001129 0.000964 0.000627 0.000507 0.000373 
 
 Eigenvalues for unconstrained axes:
-     PC1      PC2      PC3      PC4      PC5      PC6      PC7      PC8      PC9 
-0.004051 0.002184 0.002003 0.001853 0.001247 0.001101 0.001022 0.000722 0.000532 </code></pre>
+     PC1      PC2      PC3      PC4      PC5      PC6      PC7 
+0.004051 0.002184 0.002003 0.001853 0.001247 0.001101 0.001022 
+     PC8      PC9 
+0.000722 0.000532 </code></pre>
 <p>However, it is not recommended to perform a constrained ordination with all the environmental variables you happen to have: adding a large number of constraints means eventually you end up with solution similar to the unconstrained ordination. Moreover, collinearity in the explanatory variables will cause instability in the estimation of regression coefficients (see Fig <a href="multi.html#fig:lichCOR">4.20</a>).</p>
 <p>Instead, let’s use the formula interface to select particular constraining variables</p>
 <div class="sourceCode" id="cb55"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb55-1"><a href="multi.html#cb55-1" aria-hidden="true" tabindex="-1"></a>ord3 <span class="ot">=</span> vegan<span class="sc">::</span><span class="fu">rda</span>(stvarespec <span class="sc">~</span> N <span class="sc">+</span> K <span class="sc">+</span> Al, <span class="at">data =</span> scvarechem)</span>
 <span id="cb55-2"><a href="multi.html#cb55-2" aria-hidden="true" tabindex="-1"></a>ord3</span></code></pre></div>
-<pre class="Rout"><code>Call: rda(formula = stvarespec ~ N + K + Al, data = scvarechem)
+<pre class="Rout"><code>Call: rda(formula = stvarespec ~ N + K + Al, data =
+scvarechem)
 
               Inertia Proportion Rank
 Total         0.05084    1.00000     
@@ -1912,8 +1917,10 @@ Eigenvalues for constrained axes:
 0.006722 0.003232 0.001761 
 
 Eigenvalues for unconstrained axes:
-     PC1      PC2      PC3      PC4      PC5      PC6      PC7      PC8 
-0.007246 0.004097 0.003737 0.003515 0.003305 0.002474 0.002369 0.001785 
+     PC1      PC2      PC3      PC4      PC5      PC6      PC7 
+0.007246 0.004097 0.003737 0.003515 0.003305 0.002474 0.002369 
+     PC8 
+0.001785 
 (Showing 8 of 20 unconstrained eigenvalues)</code></pre>
 <p>Examine the output. How did we do? Unsurprisingly, we have not explained as much variance as the full model. In addition, the amount of variance (inertia) explained by the constrained axes is less than the unconstrained axes. Maybe we shouldn’t be using this analysis at all. Of course, some of the variables in the full model may or may not be important. We need a significance test to try and sort this out.</p>
 </div>
@@ -1967,7 +1974,8 @@ Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&
 <p><strong>Exercise 4</strong>
 Examine the significance test. How does this automatically selected model differ from the full model and your manually selected version?</p>
 <p>Next check the variance (i.e., inertia). If the variance explained by the constrained model is not much higher than your unconstrained variance, then it may be that the rda is not really needed. This certainly seems to be the case, but let’s press on regardless!</p>
-<pre class="Rout"><code>Call: rda(formula = stvarespec ~ Fe + P + Mn, data = scvarechem)
+<pre class="Rout"><code>Call: rda(formula = stvarespec ~ Fe + P + Mn, data =
+scvarechem)
 
               Inertia Proportion Rank
 Total         0.05084    1.00000     
@@ -1980,16 +1988,18 @@ Eigenvalues for constrained axes:
 0.006070 0.003607 0.002998 
 
 Eigenvalues for unconstrained axes:
-     PC1      PC2      PC3      PC4      PC5      PC6      PC7      PC8 
-0.006435 0.004626 0.003763 0.003301 0.003204 0.002592 0.002003 0.001852 
+     PC1      PC2      PC3      PC4      PC5      PC6      PC7 
+0.006435 0.004626 0.003763 0.003301 0.003204 0.002592 0.002003 
+     PC8 
+0.001852 
 (Showing 8 of 20 unconstrained eigenvalues)</code></pre>
 <p>Contrary to what one sometimes reads, variables with high VIFs should generally not be manually removed before the application of a procedure of selection of variables. Indeed, two highly correlated variables that are both strong predictors of one or several of the response variables Y may both contribute significantly, in complementary manners, to the linear model of these response variables. A variable selection procedure is the appropriate way of determining if that is the case.</p>
 <p>However, let’s see what happened with collinearity. VIFs can be computed in vegan after RDA or CCA. The algorithm in the <strong>vif.cca()</strong> function allows users to include factors in the RDA; the function will compute VIF after breaking down each factor into dummy variables. If X contains quantitative variables only, the vif.cca() function produces the same result as the normal calculation for quantitative variables.</p>
 <div class="sourceCode" id="cb64"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb64-1"><a href="multi.html#cb64-1" aria-hidden="true" tabindex="-1"></a><span class="fu">vif.cca</span>(mfull)</span></code></pre></div>
-<pre class="Rout"><code>        N         P         K        Ca        Mg         S        Al        Fe        Mn        Zn        Mo  Baresoil 
- 1.884049  6.184742 11.746873  9.825650  9.595203 18.460717 20.331905  8.849137  5.168278  7.755110  4.575108  2.213443 
- Humdepth        pH 
- 5.638807  6.910118 </code></pre>
+<pre class="Rout"><code>        N         P         K        Ca        Mg         S        Al 
+ 1.884049  6.184742 11.746873  9.825650  9.595203 18.460717 20.331905 
+       Fe        Mn        Zn        Mo  Baresoil  Humdepth        pH 
+ 8.849137  5.168278  7.755110  4.575108  2.213443  5.638807  6.910118 </code></pre>
 <div class="sourceCode" id="cb66"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb66-1"><a href="multi.html#cb66-1" aria-hidden="true" tabindex="-1"></a><span class="fu">vif.cca</span>(optm)</span></code></pre></div>
 <pre class="Rout"><code>      Fe        P       Mn 
 1.259334 1.431022 1.738208 </code></pre>

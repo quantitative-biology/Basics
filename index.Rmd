@@ -93,7 +93,7 @@ The accessibility of these materials was assessed by the Centre for Extended Lea
 
 The following known accessibility issues persist and may cause difficulties for some persons with disabilities:
 
-1. Code output is only distinguished from code input by colour shading in boxes
+1. Code output is only distinguished from code input by 1. output has a black border box and 2. input is colour shaded
 
 2. Internal links to figures and tables are only linked by the numbering (e.g., 5.1) of the object, rather than the full text (e.g., Figure 5.1)
 
@@ -172,8 +172,10 @@ Please cite this work as:
 
 Cuddington, K, Edwards, A.M., and Ingalls, B. (2021). *Building Skills in Quantitative Biology*. https://www.quantitative-biology.ca
 
+## License
+
 Kim Cuddington, Andrew M. Edwards, and Brian Ingalls.
-Building Skills in Quantitative Biology (https://www.quantitative-biology.ca) is available under an Ontario Commons License and a CC BY-NC-SA 4.0. Contact kcudding _AT_ uwaterloo _DOT_ ca for more information
+Building Skills in Quantitative Biology (https://www.quantitative-biology.ca) is available under an Ontario Commons License and a CC BY-NC-SA 4.0. ![](https://mirrors.creativecommons.org/presskit/buttons/88x31/png/by-nc-sa.png){width=100px}. Contact kcudding _AT_ uwaterloo _DOT_ ca for more information
 
 All materials licensed under the Ontario Commons License (Version 1.0) unless otherwise specified. The license deed is available to read at https://vls.ecampusontario.ca/wp-content/uploads/2021/01/Ontario-Commons-License-1.0.pdf.
 
