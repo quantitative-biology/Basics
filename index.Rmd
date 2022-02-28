@@ -170,7 +170,7 @@ Learning Strategy visit: https://vls.ecampusontario.ca.
 
 Please cite this work as:
 
-Cuddington, K, Edwards, A.M., and Ingalls, B. (2021). *Building Skills in Quantitative Biology*. https://www.quantitative-biology.ca
+Cuddington, K, Edwards, A.M., and Ingalls, B. (2022). *Building Skills in Quantitative Biology*. https://www.quantitative-biology.ca
 
 ## License
 
